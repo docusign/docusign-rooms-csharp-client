@@ -35,8 +35,6 @@ Contact: devcenter@docusign.com
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>[1.0.0] - DocuSign Rooms API v2 - 10/15/2020 </PackageReleaseNotes>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>DocuSignClient.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <!-- .NET Framework 4.5.2 compilation flags and build options -->
