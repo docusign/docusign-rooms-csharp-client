@@ -88,7 +88,7 @@ The DocuSign Rooms C# Client is licensed under the [MIT License](https://github.
 
 [nuget-image]: https://img.shields.io/nuget/v/DocuSign.Rooms.svg?style=flat
 [nuget-url]: https://www.nuget.org/packages/DocuSign.Rooms
-[downloads-image]: https://img.shields.io/nuget/v/DocuSign.Rooms.svg?style=flat
+[downloads-image]: https://img.shields.io/nuget/dt/DocuSign.Rooms
 [downloads-url]: https://www.nuget.org/packages/DocuSign.Rooms
 
 ### Additional Resources
