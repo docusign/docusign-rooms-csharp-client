@@ -36,10 +36,19 @@ namespace DocuSign.Rooms.Model
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="OfficeReferenceCount" /> class.
+        /// </summary>
+        /// <param name="ReferenceType">ReferenceType.</param>
+        public OfficeReferenceCount(string ReferenceType = default(string))
+        {
+            this.ReferenceType = ReferenceType;
+        }
+        
+        /// <summary>
         /// Gets or Sets ReferenceType
         /// </summary>
         [DataMember(Name="referenceType", EmitDefaultValue=false)]
-        public string ReferenceType { get; private set; }
+        public string ReferenceType { get; set; }
         /// <summary>
         /// Gets or Sets ReferencedCount
         /// </summary>

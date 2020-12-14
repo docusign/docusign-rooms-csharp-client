@@ -32,10 +32,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="formFillSessionForCreate"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
-        ExternalFormFillSession CreateExternalFormFillSession (string accountId, ExternalFormFillSessionForCreate formFillSessionForCreate);
+        ExternalFormFillSession CreateExternalFormFillSession (string accountId, ExternalFormFillSessionForCreate body = null);
 
         /// <summary>
         /// Creates an external form fill session.
@@ -45,10 +45,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="formFillSessionForCreate"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
-        ApiResponse<ExternalFormFillSession> CreateExternalFormFillSessionWithHttpInfo (string accountId, ExternalFormFillSessionForCreate formFillSessionForCreate);
+        ApiResponse<ExternalFormFillSession> CreateExternalFormFillSessionWithHttpInfo (string accountId, ExternalFormFillSessionForCreate body = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -59,10 +59,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="formFillSessionForCreate"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ExternalFormFillSession</returns>
-        System.Threading.Tasks.Task<ExternalFormFillSession> CreateExternalFormFillSessionAsync (string accountId, ExternalFormFillSessionForCreate formFillSessionForCreate);
+        System.Threading.Tasks.Task<ExternalFormFillSession> CreateExternalFormFillSessionAsync (string accountId, ExternalFormFillSessionForCreate body = null);
 
         /// <summary>
         /// Creates an external form fill session.
@@ -72,10 +72,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="formFillSessionForCreate"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (ExternalFormFillSession)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalFormFillSession>> CreateExternalFormFillSessionAsyncWithHttpInfo (string accountId, ExternalFormFillSessionForCreate formFillSessionForCreate);
+        System.Threading.Tasks.Task<ApiResponse<ExternalFormFillSession>> CreateExternalFormFillSessionAsyncWithHttpInfo (string accountId, ExternalFormFillSessionForCreate body = null);
         #endregion Asynchronous Operations
     }
 
@@ -137,12 +137,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="formFillSessionForCreate"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>ExternalFormFillSession</returns>
-        public ExternalFormFillSession CreateExternalFormFillSession (string accountId, ExternalFormFillSessionForCreate formFillSessionForCreate)
+        public ExternalFormFillSession CreateExternalFormFillSession (string accountId, ExternalFormFillSessionForCreate body = null)
         {
-             ApiResponse<ExternalFormFillSession> localVarResponse = CreateExternalFormFillSessionWithHttpInfo(accountId, formFillSessionForCreate);
+             ApiResponse<ExternalFormFillSession> localVarResponse = CreateExternalFormFillSessionWithHttpInfo(accountId, body);
              return localVarResponse.Data;
         }
 
@@ -151,14 +151,11 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="formFillSessionForCreate"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of ExternalFormFillSession</returns>
-        public ApiResponse< ExternalFormFillSession > CreateExternalFormFillSessionWithHttpInfo (string accountId, ExternalFormFillSessionForCreate formFillSessionForCreate)
+        public ApiResponse< ExternalFormFillSession > CreateExternalFormFillSessionWithHttpInfo (string accountId, ExternalFormFillSessionForCreate body = null)
         {
-            // verify the required parameter 'formFillSessionForCreate' is set
-            if (formFillSessionForCreate == null)
-                throw new ApiException(400, "Missing required parameter 'formFillSessionForCreate' when calling ExternalFormFillSessionsApi->CreateExternalFormFillSession");
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling ExternalFormFillSessionsApi->CreateExternalFormFillSession");
@@ -173,13 +170,18 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json"
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -191,13 +193,13 @@ namespace DocuSign.Rooms.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
 
 
-            if (formFillSessionForCreate != null && formFillSessionForCreate.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(formFillSessionForCreate); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = formFillSessionForCreate; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -238,12 +240,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="formFillSessionForCreate"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ExternalFormFillSession</returns>
-        public async System.Threading.Tasks.Task<ExternalFormFillSession> CreateExternalFormFillSessionAsync (string accountId, ExternalFormFillSessionForCreate formFillSessionForCreate)
+        public async System.Threading.Tasks.Task<ExternalFormFillSession> CreateExternalFormFillSessionAsync (string accountId, ExternalFormFillSessionForCreate body = null)
         {
-             ApiResponse<ExternalFormFillSession> localVarResponse = await CreateExternalFormFillSessionAsyncWithHttpInfo(accountId, formFillSessionForCreate);
+             ApiResponse<ExternalFormFillSession> localVarResponse = await CreateExternalFormFillSessionAsyncWithHttpInfo(accountId, body);
              return localVarResponse.Data;
 
         }
@@ -253,14 +255,11 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="formFillSessionForCreate"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (ExternalFormFillSession)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalFormFillSession>> CreateExternalFormFillSessionAsyncWithHttpInfo (string accountId, ExternalFormFillSessionForCreate formFillSessionForCreate)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalFormFillSession>> CreateExternalFormFillSessionAsyncWithHttpInfo (string accountId, ExternalFormFillSessionForCreate body = null)
         {
-            // verify the required parameter 'formFillSessionForCreate' is set
-            if (formFillSessionForCreate == null)
-                throw new ApiException(400, "Missing required parameter 'formFillSessionForCreate' when calling ExternalFormFillSessionsApi->CreateExternalFormFillSession");
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling ExternalFormFillSessionsApi->CreateExternalFormFillSession");
@@ -275,13 +274,18 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json"
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -293,13 +297,13 @@ namespace DocuSign.Rooms.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
 
 
-            if (formFillSessionForCreate != null && formFillSessionForCreate.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(formFillSessionForCreate); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = formFillSessionForCreate; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (docusignAccessCode) required

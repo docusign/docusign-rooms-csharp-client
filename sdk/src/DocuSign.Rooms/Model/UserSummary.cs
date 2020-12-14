@@ -36,48 +36,19 @@ namespace DocuSign.Rooms.Model
         }
 
         /// <summary>
-        /// Defines AccessLevel
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum AccessLevelEnum
-        {
-            
-            /// <summary>
-            /// Enum Contributor for value: Contributor
-            /// </summary>
-            [EnumMember(Value = "Contributor")]
-            Contributor = 1,
-            
-            /// <summary>
-            /// Enum Office for value: Office
-            /// </summary>
-            [EnumMember(Value = "Office")]
-            Office = 2,
-            
-            /// <summary>
-            /// Enum Region for value: Region
-            /// </summary>
-            [EnumMember(Value = "Region")]
-            Region = 3,
-            
-            /// <summary>
-            /// Enum Company for value: Company
-            /// </summary>
-            [EnumMember(Value = "Company")]
-            Company = 4,
-            
-            /// <summary>
-            /// Enum Admin for value: Admin
-            /// </summary>
-            [EnumMember(Value = "Admin")]
-            Admin = 5
-        }
-
-        /// <summary>
         /// Gets or Sets AccessLevel
         /// </summary>
         [DataMember(Name="accessLevel", EmitDefaultValue=false)]
-        public AccessLevelEnum? AccessLevel { get; set; }
+        public AccessLevel? AccessLevel { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserSummary" /> class.
+        /// </summary>
+        /// <param name="AccessLevel">AccessLevel.</param>
+        public UserSummary(AccessLevel? AccessLevel = default(AccessLevel?))
+        {
+            this.AccessLevel = AccessLevel;
+        }
+        
         /// <summary>
         /// Gets or Sets UserId
         /// </summary>

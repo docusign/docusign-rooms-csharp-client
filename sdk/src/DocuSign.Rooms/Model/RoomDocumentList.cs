@@ -42,13 +42,15 @@ namespace DocuSign.Rooms.Model
         /// <param name="StartPosition">StartPosition.</param>
         /// <param name="NextUri">NextUri.</param>
         /// <param name="PriorUri">PriorUri.</param>
+        /// <param name="TotalRowCount">TotalRowCount.</param>
         /// <param name="Documents">Documents.</param>
-        public RoomDocumentList(int? ResultSetSize = default(int?), int? StartPosition = default(int?), string NextUri = default(string), string PriorUri = default(string), List<RoomDocument> Documents = default(List<RoomDocument>))
+        public RoomDocumentList(int? ResultSetSize = default(int?), int? StartPosition = default(int?), string NextUri = default(string), string PriorUri = default(string), int? TotalRowCount = default(int?), List<RoomDocument> Documents = default(List<RoomDocument>))
         {
             this.ResultSetSize = ResultSetSize;
             this.StartPosition = StartPosition;
             this.NextUri = NextUri;
             this.PriorUri = PriorUri;
+            this.TotalRowCount = TotalRowCount;
             this.Documents = Documents;
         }
         
@@ -78,6 +80,11 @@ namespace DocuSign.Rooms.Model
         [DataMember(Name="priorUri", EmitDefaultValue=false)]
         public string PriorUri { get; set; }
         /// <summary>
+        /// Gets or Sets TotalRowCount
+        /// </summary>
+        [DataMember(Name="totalRowCount", EmitDefaultValue=false)]
+        public int? TotalRowCount { get; set; }
+        /// <summary>
         /// Gets or Sets Documents
         /// </summary>
         [DataMember(Name="documents", EmitDefaultValue=false)]
@@ -95,6 +102,7 @@ namespace DocuSign.Rooms.Model
             sb.Append("  EndPosition: ").Append(EndPosition).Append("\n");
             sb.Append("  NextUri: ").Append(NextUri).Append("\n");
             sb.Append("  PriorUri: ").Append(PriorUri).Append("\n");
+            sb.Append("  TotalRowCount: ").Append(TotalRowCount).Append("\n");
             sb.Append("  Documents: ").Append(Documents).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -158,6 +166,11 @@ namespace DocuSign.Rooms.Model
                     this.PriorUri.Equals(other.PriorUri)
                 ) && 
                 (
+                    this.TotalRowCount == other.TotalRowCount ||
+                    this.TotalRowCount != null &&
+                    this.TotalRowCount.Equals(other.TotalRowCount)
+                ) && 
+                (
                     this.Documents == other.Documents ||
                     this.Documents != null &&
                     this.Documents.SequenceEqual(other.Documents)
@@ -185,6 +198,8 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.NextUri.GetHashCode();
                 if (this.PriorUri != null)
                     hash = hash * 59 + this.PriorUri.GetHashCode();
+                if (this.TotalRowCount != null)
+                    hash = hash * 59 + this.TotalRowCount.GetHashCode();
                 if (this.Documents != null)
                     hash = hash * 59 + this.Documents.GetHashCode();
                 return hash;

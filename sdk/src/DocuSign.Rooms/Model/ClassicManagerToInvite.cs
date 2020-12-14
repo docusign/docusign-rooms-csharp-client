@@ -36,48 +36,11 @@ namespace DocuSign.Rooms.Model
         }
 
         /// <summary>
-        /// Defines AccessLevel
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum AccessLevelEnum
-        {
-            
-            /// <summary>
-            /// Enum Contributor for value: Contributor
-            /// </summary>
-            [EnumMember(Value = "Contributor")]
-            Contributor = 1,
-            
-            /// <summary>
-            /// Enum Office for value: Office
-            /// </summary>
-            [EnumMember(Value = "Office")]
-            Office = 2,
-            
-            /// <summary>
-            /// Enum Region for value: Region
-            /// </summary>
-            [EnumMember(Value = "Region")]
-            Region = 3,
-            
-            /// <summary>
-            /// Enum Company for value: Company
-            /// </summary>
-            [EnumMember(Value = "Company")]
-            Company = 4,
-            
-            /// <summary>
-            /// Enum Admin for value: Admin
-            /// </summary>
-            [EnumMember(Value = "Admin")]
-            Admin = 5
-        }
-
-        /// <summary>
         /// Gets or Sets AccessLevel
         /// </summary>
         [DataMember(Name="accessLevel", EmitDefaultValue=false)]
-        public AccessLevelEnum? AccessLevel { get; set; }
+        public AccessLevel? AccessLevel { get; set; }
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassicManagerToInvite" /> class.
         /// </summary>
@@ -91,7 +54,7 @@ namespace DocuSign.Rooms.Model
         /// <param name="Offices">Offices.</param>
         /// <param name="Regions">Regions.</param>
         /// <param name="ESignPermissionProfileId">Required when the company is tightly bound to an eSign account; otherwise ignored..</param>
-        public ClassicManagerToInvite(string FirstName = default(string), string LastName = default(string), string Email = default(string), int? DefaultOfficeId = default(int?), int? TitleId = default(int?), AccessLevelEnum? AccessLevel = default(AccessLevelEnum?), ClassicManagerPermissions Permissions = default(ClassicManagerPermissions), List<int?> Offices = default(List<int?>), List<int?> Regions = default(List<int?>), string ESignPermissionProfileId = default(string))
+        public ClassicManagerToInvite(string FirstName = default(string), string LastName = default(string), string Email = default(string), int? DefaultOfficeId = default(int?), int? TitleId = default(int?), AccessLevel? AccessLevel = default(AccessLevel?), ClassicManagerPermissions Permissions = default(ClassicManagerPermissions), List<int?> Offices = default(List<int?>), List<int?> Regions = default(List<int?>), string ESignPermissionProfileId = default(string))
         {
             // to ensure "FirstName" is required (not null)
             if (FirstName == null)

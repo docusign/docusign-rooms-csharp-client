@@ -34,6 +34,7 @@ namespace DocuSign.Rooms.Model
         {
             // Empty Constructor
         }
+        
         /// <summary>
         /// Gets or Sets UserId
         /// </summary>
@@ -70,6 +71,16 @@ namespace DocuSign.Rooms.Model
         [DataMember(Name="titleId", EmitDefaultValue=false)]
         public int? TitleId { get; private set; }
         /// <summary>
+        /// Gets or Sets CompanyName
+        /// </summary>
+        [DataMember(Name="companyName", EmitDefaultValue=false)]
+        public string CompanyName { get; private set; }
+        /// <summary>
+        /// Gets or Sets RoleName
+        /// </summary>
+        [DataMember(Name="roleName", EmitDefaultValue=false)]
+        public string RoleName { get; private set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -84,6 +95,8 @@ namespace DocuSign.Rooms.Model
             sb.Append("  TransactionSideId: ").Append(TransactionSideId).Append("\n");
             sb.Append("  RoleId: ").Append(RoleId).Append("\n");
             sb.Append("  TitleId: ").Append(TitleId).Append("\n");
+            sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
+            sb.Append("  RoleName: ").Append(RoleName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -154,6 +167,16 @@ namespace DocuSign.Rooms.Model
                     this.TitleId == other.TitleId ||
                     this.TitleId != null &&
                     this.TitleId.Equals(other.TitleId)
+                ) && 
+                (
+                    this.CompanyName == other.CompanyName ||
+                    this.CompanyName != null &&
+                    this.CompanyName.Equals(other.CompanyName)
+                ) && 
+                (
+                    this.RoleName == other.RoleName ||
+                    this.RoleName != null &&
+                    this.RoleName.Equals(other.RoleName)
                 );
         }
 
@@ -182,6 +205,10 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.RoleId.GetHashCode();
                 if (this.TitleId != null)
                     hash = hash * 59 + this.TitleId.GetHashCode();
+                if (this.CompanyName != null)
+                    hash = hash * 59 + this.CompanyName.GetHashCode();
+                if (this.RoleName != null)
+                    hash = hash * 59 + this.RoleName.GetHashCode();
                 return hash;
             }
         }

@@ -46,7 +46,10 @@ namespace DocuSign.Rooms.Model
         /// <param name="CreatedDate">CreatedDate.</param>
         /// <param name="IsSigned">IsSigned.</param>
         /// <param name="DocuSignFormId">DocuSignFormId.</param>
-        public RoomDocument(int? DocumentId = default(int?), string Name = default(string), int? OwnerId = default(int?), long? Size = default(long?), int? FolderId = default(int?), DateTime CreatedDate = default(DateTime), bool? IsSigned = default(bool?), string DocuSignFormId = default(string))
+        /// <param name="IsArchived">IsArchived.</param>
+        /// <param name="IsVirtual">IsVirtual.</param>
+        /// <param name="Owner">Owner.</param>
+        public RoomDocument(int? DocumentId = default(int?), string Name = default(string), int? OwnerId = default(int?), long? Size = default(long?), int? FolderId = default(int?), DateTime CreatedDate = default(DateTime), bool? IsSigned = default(bool?), string DocuSignFormId = default(string), bool? IsArchived = default(bool?), bool? IsVirtual = default(bool?), RoomDocumentOwner Owner = default(RoomDocumentOwner))
         {
             this.DocumentId = DocumentId;
             this.Name = Name;
@@ -56,6 +59,9 @@ namespace DocuSign.Rooms.Model
             this.CreatedDate = CreatedDate;
             this.IsSigned = IsSigned;
             this.DocuSignFormId = DocuSignFormId;
+            this.IsArchived = IsArchived;
+            this.IsVirtual = IsVirtual;
+            this.Owner = Owner;
         }
         
         /// <summary>
@@ -99,6 +105,21 @@ namespace DocuSign.Rooms.Model
         [DataMember(Name="docuSignFormId", EmitDefaultValue=false)]
         public string DocuSignFormId { get; set; }
         /// <summary>
+        /// Gets or Sets IsArchived
+        /// </summary>
+        [DataMember(Name="isArchived", EmitDefaultValue=false)]
+        public bool? IsArchived { get; set; }
+        /// <summary>
+        /// Gets or Sets IsVirtual
+        /// </summary>
+        [DataMember(Name="isVirtual", EmitDefaultValue=false)]
+        public bool? IsVirtual { get; set; }
+        /// <summary>
+        /// Gets or Sets Owner
+        /// </summary>
+        [DataMember(Name="owner", EmitDefaultValue=false)]
+        public RoomDocumentOwner Owner { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -114,6 +135,9 @@ namespace DocuSign.Rooms.Model
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  IsSigned: ").Append(IsSigned).Append("\n");
             sb.Append("  DocuSignFormId: ").Append(DocuSignFormId).Append("\n");
+            sb.Append("  IsArchived: ").Append(IsArchived).Append("\n");
+            sb.Append("  IsVirtual: ").Append(IsVirtual).Append("\n");
+            sb.Append("  Owner: ").Append(Owner).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -189,6 +213,21 @@ namespace DocuSign.Rooms.Model
                     this.DocuSignFormId == other.DocuSignFormId ||
                     this.DocuSignFormId != null &&
                     this.DocuSignFormId.Equals(other.DocuSignFormId)
+                ) && 
+                (
+                    this.IsArchived == other.IsArchived ||
+                    this.IsArchived != null &&
+                    this.IsArchived.Equals(other.IsArchived)
+                ) && 
+                (
+                    this.IsVirtual == other.IsVirtual ||
+                    this.IsVirtual != null &&
+                    this.IsVirtual.Equals(other.IsVirtual)
+                ) && 
+                (
+                    this.Owner == other.Owner ||
+                    this.Owner != null &&
+                    this.Owner.Equals(other.Owner)
                 );
         }
 
@@ -219,6 +258,12 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.IsSigned.GetHashCode();
                 if (this.DocuSignFormId != null)
                     hash = hash * 59 + this.DocuSignFormId.GetHashCode();
+                if (this.IsArchived != null)
+                    hash = hash * 59 + this.IsArchived.GetHashCode();
+                if (this.IsVirtual != null)
+                    hash = hash * 59 + this.IsVirtual.GetHashCode();
+                if (this.Owner != null)
+                    hash = hash * 59 + this.Owner.GetHashCode();
                 return hash;
             }
         }

@@ -32,10 +32,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="region">The information required to create a new region for the caller&#39;s company</param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
-        Region CreateRegion (string accountId, Region region);
+        Region CreateRegion (string accountId, Region body = null);
 
         /// <summary>
         /// Creates a new region for a company
@@ -45,10 +45,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="region">The information required to create a new region for the caller&#39;s company</param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Region> CreateRegionWithHttpInfo (string accountId, Region region);
+        ApiResponse<Region> CreateRegionWithHttpInfo (string accountId, Region body = null);
         /// <summary>
         /// Delete a region.
         /// </summary>
@@ -125,7 +125,7 @@ namespace DocuSign.Rooms.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<RegionReferenceCountList> GetRegionReferenceCountsWithHttpInfo (string accountId, int? regionId);
         /// <summary>
-        /// Get account regions.
+        /// Get account 
         /// </summary>
         /// <remarks>
         /// 
@@ -138,7 +138,7 @@ namespace DocuSign.Rooms.Api
         RegionSummaryList GetRegions (string accountId, RegionsApi.GetRegionsOptions options = null);
 
         /// <summary>
-        /// Get account regions.
+        /// Get account 
         /// </summary>
         /// <remarks>
         /// 
@@ -159,10 +159,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="region">The information required to create a new region for the caller&#39;s company</param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of Region</returns>
-        System.Threading.Tasks.Task<Region> CreateRegionAsync (string accountId, Region region);
+        System.Threading.Tasks.Task<Region> CreateRegionAsync (string accountId, Region body = null);
 
         /// <summary>
         /// Creates a new region for a company
@@ -172,10 +172,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="region">The information required to create a new region for the caller&#39;s company</param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (Region)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Region>> CreateRegionAsyncWithHttpInfo (string accountId, Region region);
+        System.Threading.Tasks.Task<ApiResponse<Region>> CreateRegionAsyncWithHttpInfo (string accountId, Region body = null);
         /// <summary>
         /// Delete a region.
         /// </summary>
@@ -252,7 +252,7 @@ namespace DocuSign.Rooms.Api
         /// <returns>Task of ApiResponse (RegionReferenceCountList)</returns>
         System.Threading.Tasks.Task<ApiResponse<RegionReferenceCountList>> GetRegionReferenceCountsAsyncWithHttpInfo (string accountId, int? regionId);
         /// <summary>
-        /// Get account regions.
+        /// Get account 
         /// </summary>
         /// <remarks>
         /// 
@@ -265,7 +265,7 @@ namespace DocuSign.Rooms.Api
         System.Threading.Tasks.Task<RegionSummaryList> GetRegionsAsync (string accountId, RegionsApi.GetRegionsOptions options = null);
 
         /// <summary>
-        /// Get account regions.
+        /// Get account 
         /// </summary>
         /// <remarks>
         /// 
@@ -337,12 +337,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="region">The information required to create a new region for the caller&#39;s company</param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Region</returns>
-        public Region CreateRegion (string accountId, Region region)
+        public Region CreateRegion (string accountId, Region body = null)
         {
-             ApiResponse<Region> localVarResponse = CreateRegionWithHttpInfo(accountId, region);
+             ApiResponse<Region> localVarResponse = CreateRegionWithHttpInfo(accountId, body);
              return localVarResponse.Data;
         }
 
@@ -351,14 +351,11 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="region">The information required to create a new region for the caller&#39;s company</param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of Region</returns>
-        public ApiResponse< Region > CreateRegionWithHttpInfo (string accountId, Region region)
+        public ApiResponse< Region > CreateRegionWithHttpInfo (string accountId, Region body = null)
         {
-            // verify the required parameter 'region' is set
-            if (region == null)
-                throw new ApiException(400, "Missing required parameter 'region' when calling RegionsApi->CreateRegion");
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling RegionsApi->CreateRegion");
@@ -373,13 +370,18 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json"
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -391,13 +393,13 @@ namespace DocuSign.Rooms.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
 
 
-            if (region != null && region.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(region); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = region; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -438,12 +440,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="region">The information required to create a new region for the caller&#39;s company</param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of Region</returns>
-        public async System.Threading.Tasks.Task<Region> CreateRegionAsync (string accountId, Region region)
+        public async System.Threading.Tasks.Task<Region> CreateRegionAsync (string accountId, Region body = null)
         {
-             ApiResponse<Region> localVarResponse = await CreateRegionAsyncWithHttpInfo(accountId, region);
+             ApiResponse<Region> localVarResponse = await CreateRegionAsyncWithHttpInfo(accountId, body);
              return localVarResponse.Data;
 
         }
@@ -453,14 +455,11 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="region">The information required to create a new region for the caller&#39;s company</param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (Region)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Region>> CreateRegionAsyncWithHttpInfo (string accountId, Region region)
+        public async System.Threading.Tasks.Task<ApiResponse<Region>> CreateRegionAsyncWithHttpInfo (string accountId, Region body = null)
         {
-            // verify the required parameter 'region' is set
-            if (region == null)
-                throw new ApiException(400, "Missing required parameter 'region' when calling RegionsApi->CreateRegion");
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling RegionsApi->CreateRegion");
@@ -475,13 +474,18 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json"
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -493,13 +497,13 @@ namespace DocuSign.Rooms.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
 
 
-            if (region != null && region.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(region); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = region; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -575,7 +579,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -660,7 +666,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -748,7 +756,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -842,7 +852,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -930,7 +942,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1024,7 +1038,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1066,7 +1082,7 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Get account regions. 
+        /// Get account  
         /// </summary>
         public class GetRegionsOptions
         {
@@ -1079,7 +1095,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get account regions. 
+        /// Get account  
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1093,7 +1109,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get account regions. 
+        /// Get account  
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1121,7 +1137,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1174,7 +1192,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get account regions. 
+        /// Get account  
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1189,7 +1207,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get account regions. 
+        /// Get account  
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1217,7 +1235,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)

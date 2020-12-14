@@ -136,10 +136,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         public class GetRoomTemplatesOptions
         {
-            /// Get all room templates you have access to for this office. Response includes Company and Region level templates. If onlyAssignable is true, and no officeId is provided, user&#39;s default office is assumed. 
+            /// Get all room templates you have access to for this office. Response includes Company and Region level  If onlyAssignable is true, and no officeId is provided, user&#39;s default office is assumed. 
             public int? officeId {get; set;}
             /// Get list of templates you have access to. Default value false. 
             public bool? onlyAssignable {get; set;}
+            /// When set to true, only returns room templates that are not disabled. 
+            public bool? onlyEnabled {get; set;}
             /// Number of room templates to return. Defaults to the maximum which is 100. 
             public int? count {get; set;}
             /// Position of the first item in the total results. Defaults to 0. 
@@ -189,7 +191,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -204,6 +208,7 @@ namespace DocuSign.Rooms.Api
             {
                 if (options.officeId != null) localVarQueryParams.Add("officeId", this.ApiClient.ParameterToString(options.officeId)); // query parameter
                 if (options.onlyAssignable != null) localVarQueryParams.Add("onlyAssignable", this.ApiClient.ParameterToString(options.onlyAssignable)); // query parameter
+                if (options.onlyEnabled != null) localVarQueryParams.Add("onlyEnabled", this.ApiClient.ParameterToString(options.onlyEnabled)); // query parameter
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("startPosition", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
             }
@@ -286,7 +291,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -301,6 +308,7 @@ namespace DocuSign.Rooms.Api
             {
                 if (options.officeId != null) localVarQueryParams.Add("officeId", this.ApiClient.ParameterToString(options.officeId)); // query parameter
                 if (options.onlyAssignable != null) localVarQueryParams.Add("onlyAssignable", this.ApiClient.ParameterToString(options.onlyAssignable)); // query parameter
+                if (options.onlyEnabled != null) localVarQueryParams.Add("onlyEnabled", this.ApiClient.ParameterToString(options.onlyEnabled)); // query parameter
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("startPosition", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
             }

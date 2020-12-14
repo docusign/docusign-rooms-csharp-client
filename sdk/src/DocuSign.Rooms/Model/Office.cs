@@ -34,10 +34,10 @@ namespace DocuSign.Rooms.Model
         {
             // Empty Constructor
         }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Office" /> class.
         /// </summary>
+        /// <param name="OfficeId">OfficeId.</param>
         /// <param name="Name">Name (required).</param>
         /// <param name="RegionId">RegionId.</param>
         /// <param name="Address1">Address1.</param>
@@ -48,7 +48,8 @@ namespace DocuSign.Rooms.Model
         /// <param name="CountryId">CountryId.</param>
         /// <param name="TimeZoneId">TimeZoneId.</param>
         /// <param name="Phone">Phone.</param>
-        public Office(string Name = default(string), int? RegionId = default(int?), string Address1 = default(string), string Address2 = default(string), string City = default(string), string StateId = default(string), string PostalCode = default(string), string CountryId = default(string), string TimeZoneId = default(string), string Phone = default(string))
+        /// <param name="CreatedDate">CreatedDate.</param>
+        public Office(int? OfficeId = default(int?), string Name = default(string), int? RegionId = default(int?), string Address1 = default(string), string Address2 = default(string), string City = default(string), string StateId = default(string), string PostalCode = default(string), string CountryId = default(string), string TimeZoneId = default(string), string Phone = default(string), DateTime CreatedDate = default(DateTime))
         {
             // to ensure "Name" is required (not null)
             if (Name == null)
@@ -59,6 +60,7 @@ namespace DocuSign.Rooms.Model
             {
                 this.Name = Name;
             }
+            this.OfficeId = OfficeId;
             this.RegionId = RegionId;
             this.Address1 = Address1;
             this.Address2 = Address2;
@@ -68,13 +70,14 @@ namespace DocuSign.Rooms.Model
             this.CountryId = CountryId;
             this.TimeZoneId = TimeZoneId;
             this.Phone = Phone;
+            this.CreatedDate = CreatedDate;
         }
         
         /// <summary>
         /// Gets or Sets OfficeId
         /// </summary>
         [DataMember(Name="officeId", EmitDefaultValue=false)]
-        public int? OfficeId { get; private set; }
+        public int? OfficeId { get; set; }
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
@@ -129,7 +132,7 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
-        public DateTime CreatedDate { get; private set; }
+        public DateTime CreatedDate { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
