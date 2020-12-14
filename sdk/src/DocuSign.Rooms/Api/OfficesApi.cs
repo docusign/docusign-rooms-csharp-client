@@ -32,10 +32,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="office"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
-        Office CreateOffice (string accountId, OfficeForCreate office);
+        Office CreateOffice (string accountId, OfficeForCreate body = null);
 
         /// <summary>
         /// Create an office.
@@ -45,10 +45,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="office"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Office> CreateOfficeWithHttpInfo (string accountId, OfficeForCreate office);
+        ApiResponse<Office> CreateOfficeWithHttpInfo (string accountId, OfficeForCreate body = null);
         /// <summary>
         /// Delete an office.
         /// </summary>
@@ -100,7 +100,7 @@ namespace DocuSign.Rooms.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<Office> GetOfficeWithHttpInfo (string accountId, int? officeId);
         /// <summary>
-        /// Get all offices.
+        /// Get all 
         /// </summary>
         /// <remarks>
         /// 
@@ -113,7 +113,7 @@ namespace DocuSign.Rooms.Api
         OfficeSummaryList GetOffices (string accountId, OfficesApi.GetOfficesOptions options = null);
 
         /// <summary>
-        /// Get all offices.
+        /// Get all 
         /// </summary>
         /// <remarks>
         /// 
@@ -159,10 +159,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="office"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of Office</returns>
-        System.Threading.Tasks.Task<Office> CreateOfficeAsync (string accountId, OfficeForCreate office);
+        System.Threading.Tasks.Task<Office> CreateOfficeAsync (string accountId, OfficeForCreate body = null);
 
         /// <summary>
         /// Create an office.
@@ -172,10 +172,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="office"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (Office)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Office>> CreateOfficeAsyncWithHttpInfo (string accountId, OfficeForCreate office);
+        System.Threading.Tasks.Task<ApiResponse<Office>> CreateOfficeAsyncWithHttpInfo (string accountId, OfficeForCreate body = null);
         /// <summary>
         /// Delete an office.
         /// </summary>
@@ -227,7 +227,7 @@ namespace DocuSign.Rooms.Api
         /// <returns>Task of ApiResponse (Office)</returns>
         System.Threading.Tasks.Task<ApiResponse<Office>> GetOfficeAsyncWithHttpInfo (string accountId, int? officeId);
         /// <summary>
-        /// Get all offices.
+        /// Get all 
         /// </summary>
         /// <remarks>
         /// 
@@ -240,7 +240,7 @@ namespace DocuSign.Rooms.Api
         System.Threading.Tasks.Task<OfficeSummaryList> GetOfficesAsync (string accountId, OfficesApi.GetOfficesOptions options = null);
 
         /// <summary>
-        /// Get all offices.
+        /// Get all 
         /// </summary>
         /// <remarks>
         /// 
@@ -337,12 +337,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="office"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Office</returns>
-        public Office CreateOffice (string accountId, OfficeForCreate office)
+        public Office CreateOffice (string accountId, OfficeForCreate body = null)
         {
-             ApiResponse<Office> localVarResponse = CreateOfficeWithHttpInfo(accountId, office);
+             ApiResponse<Office> localVarResponse = CreateOfficeWithHttpInfo(accountId, body);
              return localVarResponse.Data;
         }
 
@@ -351,14 +351,11 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="office"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of Office</returns>
-        public ApiResponse< Office > CreateOfficeWithHttpInfo (string accountId, OfficeForCreate office)
+        public ApiResponse< Office > CreateOfficeWithHttpInfo (string accountId, OfficeForCreate body = null)
         {
-            // verify the required parameter 'office' is set
-            if (office == null)
-                throw new ApiException(400, "Missing required parameter 'office' when calling OfficesApi->CreateOffice");
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling OfficesApi->CreateOffice");
@@ -373,13 +370,18 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json"
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -391,13 +393,13 @@ namespace DocuSign.Rooms.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
 
 
-            if (office != null && office.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(office); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = office; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -438,12 +440,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="office"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of Office</returns>
-        public async System.Threading.Tasks.Task<Office> CreateOfficeAsync (string accountId, OfficeForCreate office)
+        public async System.Threading.Tasks.Task<Office> CreateOfficeAsync (string accountId, OfficeForCreate body = null)
         {
-             ApiResponse<Office> localVarResponse = await CreateOfficeAsyncWithHttpInfo(accountId, office);
+             ApiResponse<Office> localVarResponse = await CreateOfficeAsyncWithHttpInfo(accountId, body);
              return localVarResponse.Data;
 
         }
@@ -453,14 +455,11 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
-        /// <param name="office"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (Office)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Office>> CreateOfficeAsyncWithHttpInfo (string accountId, OfficeForCreate office)
+        public async System.Threading.Tasks.Task<ApiResponse<Office>> CreateOfficeAsyncWithHttpInfo (string accountId, OfficeForCreate body = null)
         {
-            // verify the required parameter 'office' is set
-            if (office == null)
-                throw new ApiException(400, "Missing required parameter 'office' when calling OfficesApi->CreateOffice");
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling OfficesApi->CreateOffice");
@@ -475,13 +474,18 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json"
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -493,13 +497,13 @@ namespace DocuSign.Rooms.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
 
 
-            if (office != null && office.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(office); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = office; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -575,7 +579,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -660,7 +666,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -748,7 +756,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -842,7 +852,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -884,7 +896,7 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Get all offices. 
+        /// Get all  
         /// </summary>
         public class GetOfficesOptions
         {
@@ -899,7 +911,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get all offices. 
+        /// Get all  
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -913,7 +925,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get all offices. 
+        /// Get all  
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -941,7 +953,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -995,7 +1009,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get all offices. 
+        /// Get all  
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1010,7 +1024,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get all offices. 
+        /// Get all  
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1038,7 +1052,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1132,7 +1148,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1226,7 +1244,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)

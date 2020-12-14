@@ -34,11 +34,21 @@ namespace DocuSign.Rooms.Model
         {
             // Empty Constructor
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TaskListSummaryList" /> class.
+        /// </summary>
+        /// <param name="TaskListSummaries">TaskListSummaries.</param>
+        public TaskListSummaryList(List<TaskListSummary> TaskListSummaries = default(List<TaskListSummary>))
+        {
+            this.TaskListSummaries = TaskListSummaries;
+        }
+        
         /// <summary>
         /// Gets or Sets TaskListSummaries
         /// </summary>
         [DataMember(Name="taskListSummaries", EmitDefaultValue=false)]
-        public List<TaskListSummary> TaskListSummaries { get; private set; }
+        public List<TaskListSummary> TaskListSummaries { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

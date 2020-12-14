@@ -50,7 +50,7 @@ namespace DocuSign.Rooms.Model
         /// <param name="RejectedByUserId">RejectedByUserId.</param>
         /// <param name="ClosedStatusId">ClosedStatusId.</param>
         /// <param name="FieldData">FieldData.</param>
-        public Room(int? RoomId = default(int?), int? CompanyId = default(int?), string Name = default(string), int? OfficeId = default(int?), DateTime CreatedDate = default(DateTime), DateTime SubmittedForReviewDate = default(DateTime), DateTime ClosedDate = default(DateTime), DateTime RejectedDate = default(DateTime), int? CreatedByUserId = default(int?), int? RejectedByUserId = default(int?), string ClosedStatusId = default(string), NullableFieldData FieldData = default(NullableFieldData))
+        public Room(int? RoomId = default(int?), int? CompanyId = default(int?), string Name = default(string), int? OfficeId = default(int?), DateTime CreatedDate = default(DateTime), DateTime SubmittedForReviewDate = default(DateTime), DateTime ClosedDate = default(DateTime), DateTime RejectedDate = default(DateTime), int? CreatedByUserId = default(int?), int? RejectedByUserId = default(int?), string ClosedStatusId = default(string), FieldData FieldData = default(FieldData))
         {
             this.RoomId = RoomId;
             this.CompanyId = CompanyId;
@@ -125,7 +125,7 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets FieldData
         /// </summary>
         [DataMember(Name="fieldData", EmitDefaultValue=false)]
-        public NullableFieldData FieldData { get; set; }
+        public FieldData FieldData { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

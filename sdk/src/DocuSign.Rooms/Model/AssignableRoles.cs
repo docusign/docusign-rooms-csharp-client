@@ -44,7 +44,8 @@ namespace DocuSign.Rooms.Model
         /// <param name="StartPosition">StartPosition.</param>
         /// <param name="NextUri">NextUri.</param>
         /// <param name="PriorUri">PriorUri.</param>
-        public AssignableRoles(int? CurrentRoleId = default(int?), List<RoleSummary> Roles = default(List<RoleSummary>), int? ResultSetSize = default(int?), int? StartPosition = default(int?), string NextUri = default(string), string PriorUri = default(string))
+        /// <param name="TotalRowCount">TotalRowCount.</param>
+        public AssignableRoles(int? CurrentRoleId = default(int?), List<RoleSummary> Roles = default(List<RoleSummary>), int? ResultSetSize = default(int?), int? StartPosition = default(int?), string NextUri = default(string), string PriorUri = default(string), int? TotalRowCount = default(int?))
         {
             this.CurrentRoleId = CurrentRoleId;
             this.Roles = Roles;
@@ -52,6 +53,7 @@ namespace DocuSign.Rooms.Model
             this.StartPosition = StartPosition;
             this.NextUri = NextUri;
             this.PriorUri = PriorUri;
+            this.TotalRowCount = TotalRowCount;
         }
         
         /// <summary>
@@ -90,6 +92,11 @@ namespace DocuSign.Rooms.Model
         [DataMember(Name="priorUri", EmitDefaultValue=false)]
         public string PriorUri { get; set; }
         /// <summary>
+        /// Gets or Sets TotalRowCount
+        /// </summary>
+        [DataMember(Name="totalRowCount", EmitDefaultValue=false)]
+        public int? TotalRowCount { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -104,6 +111,7 @@ namespace DocuSign.Rooms.Model
             sb.Append("  EndPosition: ").Append(EndPosition).Append("\n");
             sb.Append("  NextUri: ").Append(NextUri).Append("\n");
             sb.Append("  PriorUri: ").Append(PriorUri).Append("\n");
+            sb.Append("  TotalRowCount: ").Append(TotalRowCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -174,6 +182,11 @@ namespace DocuSign.Rooms.Model
                     this.PriorUri == other.PriorUri ||
                     this.PriorUri != null &&
                     this.PriorUri.Equals(other.PriorUri)
+                ) && 
+                (
+                    this.TotalRowCount == other.TotalRowCount ||
+                    this.TotalRowCount != null &&
+                    this.TotalRowCount.Equals(other.TotalRowCount)
                 );
         }
 
@@ -202,6 +215,8 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.NextUri.GetHashCode();
                 if (this.PriorUri != null)
                     hash = hash * 59 + this.PriorUri.GetHashCode();
+                if (this.TotalRowCount != null)
+                    hash = hash * 59 + this.TotalRowCount.GetHashCode();
                 return hash;
             }
         }

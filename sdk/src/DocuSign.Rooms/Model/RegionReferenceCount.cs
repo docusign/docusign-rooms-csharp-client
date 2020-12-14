@@ -34,16 +34,28 @@ namespace DocuSign.Rooms.Model
         {
             // Empty Constructor
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RegionReferenceCount" /> class.
+        /// </summary>
+        /// <param name="ReferenceType">ReferenceType.</param>
+        /// <param name="ReferenceCount">ReferenceCount.</param>
+        public RegionReferenceCount(string ReferenceType = default(string), int? ReferenceCount = default(int?))
+        {
+            this.ReferenceType = ReferenceType;
+            this.ReferenceCount = ReferenceCount;
+        }
+        
         /// <summary>
         /// Gets or Sets ReferenceType
         /// </summary>
         [DataMember(Name="referenceType", EmitDefaultValue=false)]
-        public string ReferenceType { get; private set; }
+        public string ReferenceType { get; set; }
         /// <summary>
         /// Gets or Sets ReferenceCount
         /// </summary>
         [DataMember(Name="referenceCount", EmitDefaultValue=false)]
-        public int? ReferenceCount { get; private set; }
+        public int? ReferenceCount { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

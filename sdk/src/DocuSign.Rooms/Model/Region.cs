@@ -34,12 +34,13 @@ namespace DocuSign.Rooms.Model
         {
             // Empty Constructor
         }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Region" /> class.
         /// </summary>
+        /// <param name="RegionId">RegionId.</param>
         /// <param name="Name">Name (required).</param>
-        public Region(string Name = default(string))
+        /// <param name="CreatedDate">CreatedDate.</param>
+        public Region(int? RegionId = default(int?), string Name = default(string), DateTime CreatedDate = default(DateTime))
         {
             // to ensure "Name" is required (not null)
             if (Name == null)
@@ -50,13 +51,15 @@ namespace DocuSign.Rooms.Model
             {
                 this.Name = Name;
             }
+            this.RegionId = RegionId;
+            this.CreatedDate = CreatedDate;
         }
         
         /// <summary>
         /// Gets or Sets RegionId
         /// </summary>
         [DataMember(Name="regionId", EmitDefaultValue=false)]
-        public int? RegionId { get; private set; }
+        public int? RegionId { get; set; }
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
@@ -66,7 +69,7 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
-        public DateTime CreatedDate { get; private set; }
+        public DateTime CreatedDate { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

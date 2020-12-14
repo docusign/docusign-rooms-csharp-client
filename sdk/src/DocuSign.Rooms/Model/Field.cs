@@ -34,6 +34,17 @@ namespace DocuSign.Rooms.Model
         {
             // Empty Constructor
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Field" /> class.
+        /// </summary>
+        /// <param name="Configuration">Configuration.</param>
+        /// <param name="CustomData">CustomData.</param>
+        public Field(FieldConfiguration Configuration = default(FieldConfiguration), CustomData CustomData = default(CustomData))
+        {
+            this.Configuration = Configuration;
+            this.CustomData = CustomData;
+        }
         
         /// <summary>
         /// Gets or Sets FieldId
@@ -69,12 +80,12 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets Configuration
         /// </summary>
         [DataMember(Name="configuration", EmitDefaultValue=false)]
-        public FieldConfiguration Configuration { get; private set; }
+        public FieldConfiguration Configuration { get; set; }
         /// <summary>
         /// Gets or Sets CustomData
         /// </summary>
         [DataMember(Name="customData", EmitDefaultValue=false)]
-        public CustomData CustomData { get; private set; }
+        public CustomData CustomData { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

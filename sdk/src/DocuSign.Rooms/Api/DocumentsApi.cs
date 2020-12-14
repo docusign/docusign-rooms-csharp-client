@@ -32,10 +32,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="documentId"></param>
-        /// <param name="documentUserForCreate"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
-        DocumentUser CreateDocumentUser (string accountId, int? documentId, DocumentUserForCreate documentUserForCreate);
+        DocumentUser CreateDocumentUser (string accountId, int? documentId, DocumentUserForCreate body = null);
 
         /// <summary>
         /// Grants access to a document for a user.
@@ -45,10 +45,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="documentId"></param>
-        /// <param name="documentUserForCreate"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
-        ApiResponse<DocumentUser> CreateDocumentUserWithHttpInfo (string accountId, int? documentId, DocumentUserForCreate documentUserForCreate);
+        ApiResponse<DocumentUser> CreateDocumentUserWithHttpInfo (string accountId, int? documentId, DocumentUserForCreate body = null);
         /// <summary>
         /// Deletes a document.
         /// </summary>
@@ -109,10 +109,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="documentId"></param>
-        /// <param name="documentUserForCreate"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of DocumentUser</returns>
-        System.Threading.Tasks.Task<DocumentUser> CreateDocumentUserAsync (string accountId, int? documentId, DocumentUserForCreate documentUserForCreate);
+        System.Threading.Tasks.Task<DocumentUser> CreateDocumentUserAsync (string accountId, int? documentId, DocumentUserForCreate body = null);
 
         /// <summary>
         /// Grants access to a document for a user.
@@ -122,10 +122,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="documentId"></param>
-        /// <param name="documentUserForCreate"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (DocumentUser)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentUser>> CreateDocumentUserAsyncWithHttpInfo (string accountId, int? documentId, DocumentUserForCreate documentUserForCreate);
+        System.Threading.Tasks.Task<ApiResponse<DocumentUser>> CreateDocumentUserAsyncWithHttpInfo (string accountId, int? documentId, DocumentUserForCreate body = null);
         /// <summary>
         /// Deletes a document.
         /// </summary>
@@ -237,12 +237,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="documentId"></param>
-        /// <param name="documentUserForCreate"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>DocumentUser</returns>
-        public DocumentUser CreateDocumentUser (string accountId, int? documentId, DocumentUserForCreate documentUserForCreate)
+        public DocumentUser CreateDocumentUser (string accountId, int? documentId, DocumentUserForCreate body = null)
         {
-             ApiResponse<DocumentUser> localVarResponse = CreateDocumentUserWithHttpInfo(accountId, documentId, documentUserForCreate);
+             ApiResponse<DocumentUser> localVarResponse = CreateDocumentUserWithHttpInfo(accountId, documentId, body);
              return localVarResponse.Data;
         }
 
@@ -251,20 +251,17 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="documentId"></param>
-        /// <param name="documentUserForCreate"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of DocumentUser</returns>
-        public ApiResponse< DocumentUser > CreateDocumentUserWithHttpInfo (string accountId, int? documentId, DocumentUserForCreate documentUserForCreate)
+        public ApiResponse< DocumentUser > CreateDocumentUserWithHttpInfo (string accountId, int? documentId, DocumentUserForCreate body = null)
         {
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling DocumentsApi->CreateDocumentUser");
-            // verify the required parameter 'documentUserForCreate' is set
-            if (documentUserForCreate == null)
-                throw new ApiException(400, "Missing required parameter 'documentUserForCreate' when calling DocumentsApi->CreateDocumentUser");
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling DocumentsApi->CreateDocumentUser");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling DocumentsApi->CreateDocumentUser");
 
             var localVarPath = "/v2/accounts/{accountId}/documents/{documentId}/users";
             var localVarPathParams = new Dictionary<String, String>();
@@ -276,13 +273,18 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json"
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -295,13 +297,13 @@ namespace DocuSign.Rooms.Api
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
 
 
-            if (documentUserForCreate != null && documentUserForCreate.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(documentUserForCreate); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = documentUserForCreate; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -342,12 +344,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="documentId"></param>
-        /// <param name="documentUserForCreate"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of DocumentUser</returns>
-        public async System.Threading.Tasks.Task<DocumentUser> CreateDocumentUserAsync (string accountId, int? documentId, DocumentUserForCreate documentUserForCreate)
+        public async System.Threading.Tasks.Task<DocumentUser> CreateDocumentUserAsync (string accountId, int? documentId, DocumentUserForCreate body = null)
         {
-             ApiResponse<DocumentUser> localVarResponse = await CreateDocumentUserAsyncWithHttpInfo(accountId, documentId, documentUserForCreate);
+             ApiResponse<DocumentUser> localVarResponse = await CreateDocumentUserAsyncWithHttpInfo(accountId, documentId, body);
              return localVarResponse.Data;
 
         }
@@ -357,20 +359,17 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="documentId"></param>
-        /// <param name="documentUserForCreate"></param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (DocumentUser)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DocumentUser>> CreateDocumentUserAsyncWithHttpInfo (string accountId, int? documentId, DocumentUserForCreate documentUserForCreate)
+        public async System.Threading.Tasks.Task<ApiResponse<DocumentUser>> CreateDocumentUserAsyncWithHttpInfo (string accountId, int? documentId, DocumentUserForCreate body = null)
         {
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling DocumentsApi->CreateDocumentUser");
-            // verify the required parameter 'documentUserForCreate' is set
-            if (documentUserForCreate == null)
-                throw new ApiException(400, "Missing required parameter 'documentUserForCreate' when calling DocumentsApi->CreateDocumentUser");
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling DocumentsApi->CreateDocumentUser");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling DocumentsApi->CreateDocumentUser");
 
             var localVarPath = "/v2/accounts/{accountId}/documents/{documentId}/users";
             var localVarPathParams = new Dictionary<String, String>();
@@ -382,13 +381,18 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json"
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -401,13 +405,13 @@ namespace DocuSign.Rooms.Api
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
 
 
-            if (documentUserForCreate != null && documentUserForCreate.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(documentUserForCreate); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = documentUserForCreate; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -483,7 +487,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -568,7 +574,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -664,7 +672,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -762,7 +772,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)

@@ -45,7 +45,8 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="DocuSign.Rooms">
+    <Reference Include="DocuSign.Rooms, Version=1.1.0.0, Culture=neutral, PublicKeyToken=7fca6fcbbc219ede, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\sdk\src\DocuSign.Rooms\bin\Debug\net452\DocuSign.Rooms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />

@@ -32,10 +32,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="roomId">Room ID.</param>
-        /// <param name="taskList">Details for task list creation.</param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
-        TaskList CreateTaskList (string accountId, int? roomId, TaskListForCreate taskList);
+        TaskList CreateTaskList (string accountId, int? roomId, TaskListForCreate body = null);
 
         /// <summary>
         /// Add a task list to a room based on a task list template.
@@ -45,12 +45,12 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="roomId">Room ID.</param>
-        /// <param name="taskList">Details for task list creation.</param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
-        ApiResponse<TaskList> CreateTaskListWithHttpInfo (string accountId, int? roomId, TaskListForCreate taskList);
+        ApiResponse<TaskList> CreateTaskListWithHttpInfo (string accountId, int? roomId, TaskListForCreate body = null);
         /// <summary>
-        /// Deletes a task list. If there are attached documents they will remain in the associated room.
+        /// Deletes a task list. If there are attached documents they will remain in the associated 
         /// </summary>
         /// <remarks>
         /// 
@@ -63,7 +63,7 @@ namespace DocuSign.Rooms.Api
         void DeleteTaskList (string accountId, int? taskListId);
 
         /// <summary>
-        /// Deletes a task list. If there are attached documents they will remain in the associated room.
+        /// Deletes a task list. If there are attached documents they will remain in the associated 
         /// </summary>
         /// <remarks>
         /// 
@@ -75,7 +75,7 @@ namespace DocuSign.Rooms.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteTaskListWithHttpInfo (string accountId, int? taskListId);
         /// <summary>
-        /// Returns the summary for all viewable task lists in a room.
+        /// Returns the summary for all viewable task lists in a 
         /// </summary>
         /// <remarks>
         /// 
@@ -88,7 +88,7 @@ namespace DocuSign.Rooms.Api
         TaskListSummaryList GetTaskLists (string accountId, int? roomId);
 
         /// <summary>
-        /// Returns the summary for all viewable task lists in a room.
+        /// Returns the summary for all viewable task lists in a 
         /// </summary>
         /// <remarks>
         /// 
@@ -109,10 +109,10 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="roomId">Room ID.</param>
-        /// <param name="taskList">Details for task list creation.</param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of TaskList</returns>
-        System.Threading.Tasks.Task<TaskList> CreateTaskListAsync (string accountId, int? roomId, TaskListForCreate taskList);
+        System.Threading.Tasks.Task<TaskList> CreateTaskListAsync (string accountId, int? roomId, TaskListForCreate body = null);
 
         /// <summary>
         /// Add a task list to a room based on a task list template.
@@ -122,12 +122,12 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="roomId">Room ID.</param>
-        /// <param name="taskList">Details for task list creation.</param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (TaskList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TaskList>> CreateTaskListAsyncWithHttpInfo (string accountId, int? roomId, TaskListForCreate taskList);
+        System.Threading.Tasks.Task<ApiResponse<TaskList>> CreateTaskListAsyncWithHttpInfo (string accountId, int? roomId, TaskListForCreate body = null);
         /// <summary>
-        /// Deletes a task list. If there are attached documents they will remain in the associated room.
+        /// Deletes a task list. If there are attached documents they will remain in the associated 
         /// </summary>
         /// <remarks>
         /// 
@@ -140,7 +140,7 @@ namespace DocuSign.Rooms.Api
         System.Threading.Tasks.Task DeleteTaskListAsync (string accountId, int? taskListId);
 
         /// <summary>
-        /// Deletes a task list. If there are attached documents they will remain in the associated room.
+        /// Deletes a task list. If there are attached documents they will remain in the associated 
         /// </summary>
         /// <remarks>
         /// 
@@ -152,7 +152,7 @@ namespace DocuSign.Rooms.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteTaskListAsyncWithHttpInfo (string accountId, int? taskListId);
         /// <summary>
-        /// Returns the summary for all viewable task lists in a room.
+        /// Returns the summary for all viewable task lists in a 
         /// </summary>
         /// <remarks>
         /// 
@@ -165,7 +165,7 @@ namespace DocuSign.Rooms.Api
         System.Threading.Tasks.Task<TaskListSummaryList> GetTaskListsAsync (string accountId, int? roomId);
 
         /// <summary>
-        /// Returns the summary for all viewable task lists in a room.
+        /// Returns the summary for all viewable task lists in a 
         /// </summary>
         /// <remarks>
         /// 
@@ -237,12 +237,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="roomId">Room ID.</param>
-        /// <param name="taskList">Details for task list creation.</param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>TaskList</returns>
-        public TaskList CreateTaskList (string accountId, int? roomId, TaskListForCreate taskList)
+        public TaskList CreateTaskList (string accountId, int? roomId, TaskListForCreate body = null)
         {
-             ApiResponse<TaskList> localVarResponse = CreateTaskListWithHttpInfo(accountId, roomId, taskList);
+             ApiResponse<TaskList> localVarResponse = CreateTaskListWithHttpInfo(accountId, roomId, body);
              return localVarResponse.Data;
         }
 
@@ -251,20 +251,17 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="roomId">Room ID.</param>
-        /// <param name="taskList">Details for task list creation.</param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of TaskList</returns>
-        public ApiResponse< TaskList > CreateTaskListWithHttpInfo (string accountId, int? roomId, TaskListForCreate taskList)
+        public ApiResponse< TaskList > CreateTaskListWithHttpInfo (string accountId, int? roomId, TaskListForCreate body = null)
         {
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling TaskListsApi->CreateTaskList");
-            // verify the required parameter 'taskList' is set
-            if (taskList == null)
-                throw new ApiException(400, "Missing required parameter 'taskList' when calling TaskListsApi->CreateTaskList");
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling TaskListsApi->CreateTaskList");
+            // verify the required parameter 'roomId' is set
+            if (roomId == null)
+                throw new ApiException(400, "Missing required parameter 'roomId' when calling TaskListsApi->CreateTaskList");
 
             var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/task_lists";
             var localVarPathParams = new Dictionary<String, String>();
@@ -276,13 +273,18 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json"
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -295,13 +297,13 @@ namespace DocuSign.Rooms.Api
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
 
 
-            if (taskList != null && taskList.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(taskList); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = taskList; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -342,12 +344,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="roomId">Room ID.</param>
-        /// <param name="taskList">Details for task list creation.</param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of TaskList</returns>
-        public async System.Threading.Tasks.Task<TaskList> CreateTaskListAsync (string accountId, int? roomId, TaskListForCreate taskList)
+        public async System.Threading.Tasks.Task<TaskList> CreateTaskListAsync (string accountId, int? roomId, TaskListForCreate body = null)
         {
-             ApiResponse<TaskList> localVarResponse = await CreateTaskListAsyncWithHttpInfo(accountId, roomId, taskList);
+             ApiResponse<TaskList> localVarResponse = await CreateTaskListAsyncWithHttpInfo(accountId, roomId, body);
              return localVarResponse.Data;
 
         }
@@ -357,20 +359,17 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="roomId">Room ID.</param>
-        /// <param name="taskList">Details for task list creation.</param>
+        /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (TaskList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TaskList>> CreateTaskListAsyncWithHttpInfo (string accountId, int? roomId, TaskListForCreate taskList)
+        public async System.Threading.Tasks.Task<ApiResponse<TaskList>> CreateTaskListAsyncWithHttpInfo (string accountId, int? roomId, TaskListForCreate body = null)
         {
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling TaskListsApi->CreateTaskList");
-            // verify the required parameter 'taskList' is set
-            if (taskList == null)
-                throw new ApiException(400, "Missing required parameter 'taskList' when calling TaskListsApi->CreateTaskList");
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling TaskListsApi->CreateTaskList");
+            // verify the required parameter 'roomId' is set
+            if (roomId == null)
+                throw new ApiException(400, "Missing required parameter 'roomId' when calling TaskListsApi->CreateTaskList");
 
             var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/task_lists";
             var localVarPathParams = new Dictionary<String, String>();
@@ -382,13 +381,18 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json"
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -401,13 +405,13 @@ namespace DocuSign.Rooms.Api
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
 
 
-            if (taskList != null && taskList.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(taskList); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = taskList; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -439,7 +443,7 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Deletes a task list. If there are attached documents they will remain in the associated room. 
+        /// Deletes a task list. If there are attached documents they will remain in the associated  
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="taskListId">Task List ID</param>
@@ -452,7 +456,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Deletes a task list. If there are attached documents they will remain in the associated room. 
+        /// Deletes a task list. If there are attached documents they will remain in the associated  
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="taskListId">Task List ID</param>
@@ -483,7 +487,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -523,7 +529,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Deletes a task list. If there are attached documents they will remain in the associated room. 
+        /// Deletes a task list. If there are attached documents they will remain in the associated  
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="taskListId">Task List ID</param>
@@ -537,7 +543,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Deletes a task list. If there are attached documents they will remain in the associated room. 
+        /// Deletes a task list. If there are attached documents they will remain in the associated  
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="taskListId">Task List ID</param>
@@ -568,7 +574,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -611,7 +619,7 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Returns the summary for all viewable task lists in a room. 
+        /// Returns the summary for all viewable task lists in a  
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="roomId">Room ID</param>
@@ -625,7 +633,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Returns the summary for all viewable task lists in a room. 
+        /// Returns the summary for all viewable task lists in a  
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="roomId">Room ID</param>
@@ -656,7 +664,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -704,7 +714,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Returns the summary for all viewable task lists in a room. 
+        /// Returns the summary for all viewable task lists in a  
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="roomId">Room ID</param>
@@ -719,7 +729,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Returns the summary for all viewable task lists in a room. 
+        /// Returns the summary for all viewable task lists in a  
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>/// <param name="roomId">Room ID</param>
@@ -750,7 +760,9 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "text/plain", 
+                "application/json", 
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)

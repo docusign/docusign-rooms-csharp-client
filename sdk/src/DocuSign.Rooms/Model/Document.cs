@@ -34,14 +34,20 @@ namespace DocuSign.Rooms.Model
         {
             // Empty Constructor
         }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Document" /> class.
         /// </summary>
+        /// <param name="DocumentId">DocumentId.</param>
         /// <param name="Name">Name (required).</param>
+        /// <param name="RoomId">RoomId.</param>
+        /// <param name="OwnerId">OwnerId.</param>
+        /// <param name="Size">Size.</param>
         /// <param name="FolderId">FolderId.</param>
+        /// <param name="CreatedDate">CreatedDate.</param>
+        /// <param name="IsSigned">IsSigned.</param>
+        /// <param name="ContentType">ContentType.</param>
         /// <param name="Base64Contents">Base64Contents (required).</param>
-        public Document(string Name = default(string), int? FolderId = default(int?), string Base64Contents = default(string))
+        public Document(int? DocumentId = default(int?), string Name = default(string), int? RoomId = default(int?), int? OwnerId = default(int?), long? Size = default(long?), int? FolderId = default(int?), DateTime CreatedDate = default(DateTime), bool? IsSigned = default(bool?), string ContentType = default(string), string Base64Contents = default(string))
         {
             // to ensure "Name" is required (not null)
             if (Name == null)
@@ -61,14 +67,21 @@ namespace DocuSign.Rooms.Model
             {
                 this.Base64Contents = Base64Contents;
             }
+            this.DocumentId = DocumentId;
+            this.RoomId = RoomId;
+            this.OwnerId = OwnerId;
+            this.Size = Size;
             this.FolderId = FolderId;
+            this.CreatedDate = CreatedDate;
+            this.IsSigned = IsSigned;
+            this.ContentType = ContentType;
         }
         
         /// <summary>
         /// Gets or Sets DocumentId
         /// </summary>
         [DataMember(Name="documentId", EmitDefaultValue=false)]
-        public int? DocumentId { get; private set; }
+        public int? DocumentId { get; set; }
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
@@ -78,17 +91,17 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets RoomId
         /// </summary>
         [DataMember(Name="roomId", EmitDefaultValue=false)]
-        public int? RoomId { get; private set; }
+        public int? RoomId { get; set; }
         /// <summary>
         /// Gets or Sets OwnerId
         /// </summary>
         [DataMember(Name="ownerId", EmitDefaultValue=false)]
-        public int? OwnerId { get; private set; }
+        public int? OwnerId { get; set; }
         /// <summary>
         /// Gets or Sets Size
         /// </summary>
         [DataMember(Name="size", EmitDefaultValue=false)]
-        public long? Size { get; private set; }
+        public long? Size { get; set; }
         /// <summary>
         /// Gets or Sets FolderId
         /// </summary>
@@ -98,12 +111,17 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
-        public DateTime CreatedDate { get; private set; }
+        public DateTime CreatedDate { get; set; }
         /// <summary>
         /// Gets or Sets IsSigned
         /// </summary>
         [DataMember(Name="isSigned", EmitDefaultValue=false)]
-        public bool? IsSigned { get; private set; }
+        public bool? IsSigned { get; set; }
+        /// <summary>
+        /// Gets or Sets ContentType
+        /// </summary>
+        [DataMember(Name="contentType", EmitDefaultValue=false)]
+        public string ContentType { get; set; }
         /// <summary>
         /// Gets or Sets Base64Contents
         /// </summary>
@@ -125,6 +143,7 @@ namespace DocuSign.Rooms.Model
             sb.Append("  FolderId: ").Append(FolderId).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  IsSigned: ").Append(IsSigned).Append("\n");
+            sb.Append("  ContentType: ").Append(ContentType).Append("\n");
             sb.Append("  Base64Contents: ").Append(Base64Contents).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -203,6 +222,11 @@ namespace DocuSign.Rooms.Model
                     this.IsSigned.Equals(other.IsSigned)
                 ) && 
                 (
+                    this.ContentType == other.ContentType ||
+                    this.ContentType != null &&
+                    this.ContentType.Equals(other.ContentType)
+                ) && 
+                (
                     this.Base64Contents == other.Base64Contents ||
                     this.Base64Contents != null &&
                     this.Base64Contents.Equals(other.Base64Contents)
@@ -236,6 +260,8 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.CreatedDate.GetHashCode();
                 if (this.IsSigned != null)
                     hash = hash * 59 + this.IsSigned.GetHashCode();
+                if (this.ContentType != null)
+                    hash = hash * 59 + this.ContentType.GetHashCode();
                 if (this.Base64Contents != null)
                     hash = hash * 59 + this.Base64Contents.GetHashCode();
                 return hash;

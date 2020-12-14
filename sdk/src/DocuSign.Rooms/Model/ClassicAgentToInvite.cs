@@ -42,8 +42,9 @@ namespace DocuSign.Rooms.Model
         /// <param name="LastName">LastName (required).</param>
         /// <param name="Email">Email (required).</param>
         /// <param name="OfficeId">OfficeId (required).</param>
+        /// <param name="CompanyTypeId">CompanyTypeId.</param>
         /// <param name="ESignPermissionProfileId">Required when the company is tightly bound to an eSign account; otherwise ignored..</param>
-        public ClassicAgentToInvite(string FirstName = default(string), string LastName = default(string), string Email = default(string), int? OfficeId = default(int?), string ESignPermissionProfileId = default(string))
+        public ClassicAgentToInvite(string FirstName = default(string), string LastName = default(string), string Email = default(string), int? OfficeId = default(int?), string CompanyTypeId = default(string), string ESignPermissionProfileId = default(string))
         {
             // to ensure "FirstName" is required (not null)
             if (FirstName == null)
@@ -81,6 +82,7 @@ namespace DocuSign.Rooms.Model
             {
                 this.OfficeId = OfficeId;
             }
+            this.CompanyTypeId = CompanyTypeId;
             this.ESignPermissionProfileId = ESignPermissionProfileId;
         }
         
@@ -105,6 +107,11 @@ namespace DocuSign.Rooms.Model
         [DataMember(Name="officeId", EmitDefaultValue=false)]
         public int? OfficeId { get; set; }
         /// <summary>
+        /// Gets or Sets CompanyTypeId
+        /// </summary>
+        [DataMember(Name="companyTypeId", EmitDefaultValue=false)]
+        public string CompanyTypeId { get; set; }
+        /// <summary>
         /// Required when the company is tightly bound to an eSign account; otherwise ignored.
         /// </summary>
         /// <value>Required when the company is tightly bound to an eSign account; otherwise ignored.</value>
@@ -122,6 +129,7 @@ namespace DocuSign.Rooms.Model
             sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  OfficeId: ").Append(OfficeId).Append("\n");
+            sb.Append("  CompanyTypeId: ").Append(CompanyTypeId).Append("\n");
             sb.Append("  ESignPermissionProfileId: ").Append(ESignPermissionProfileId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -180,6 +188,11 @@ namespace DocuSign.Rooms.Model
                     this.OfficeId.Equals(other.OfficeId)
                 ) && 
                 (
+                    this.CompanyTypeId == other.CompanyTypeId ||
+                    this.CompanyTypeId != null &&
+                    this.CompanyTypeId.Equals(other.CompanyTypeId)
+                ) && 
+                (
                     this.ESignPermissionProfileId == other.ESignPermissionProfileId ||
                     this.ESignPermissionProfileId != null &&
                     this.ESignPermissionProfileId.Equals(other.ESignPermissionProfileId)
@@ -205,6 +218,8 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.Email.GetHashCode();
                 if (this.OfficeId != null)
                     hash = hash * 59 + this.OfficeId.GetHashCode();
+                if (this.CompanyTypeId != null)
+                    hash = hash * 59 + this.CompanyTypeId.GetHashCode();
                 if (this.ESignPermissionProfileId != null)
                     hash = hash * 59 + this.ESignPermissionProfileId.GetHashCode();
                 return hash;
