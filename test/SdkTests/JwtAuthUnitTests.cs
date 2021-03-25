@@ -62,7 +62,7 @@ namespace SdkTests
             Assert.IsNotNull(rooms);
             Assert.IsNotNull(rooms.Rooms);
         }
-
+        
         [TestMethod]
         public void JwtUpdatePictureTest()
         {
