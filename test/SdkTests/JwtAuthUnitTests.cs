@@ -62,5 +62,17 @@ namespace SdkTests
             Assert.IsNotNull(rooms);
             Assert.IsNotNull(rooms.Rooms);
         }
+        
+        [TestMethod]
+        public void JwtUpdatePictureTest()
+        {
+            // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
+            RoomsApi roomsApi = new RoomsApi(testConfig.ApiClient);
+            roomsApi.UpdatePicture()
+            RoomSummaryList rooms = roomsApi.GetRooms(testConfig.AccountId, new RoomsApi.GetRoomsOptions());
+
+            Assert.IsNotNull(rooms);
+            Assert.IsNotNull(rooms.Rooms);
+        }
     }
 }
