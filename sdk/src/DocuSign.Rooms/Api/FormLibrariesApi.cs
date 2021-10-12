@@ -28,10 +28,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a paged list of forms libraries.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of form libraries to which the current user has access.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
@@ -41,10 +41,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a paged list of forms libraries.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of form libraries to which the current user has access.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
@@ -53,10 +53,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a paged list of forms in a forms library.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of forms  to which the current user has access in the specified form library.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formLibraryId">Library Id</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formLibraryId">Library Id</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
@@ -66,10 +66,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a paged list of forms in a forms library.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of forms  to which the current user has access in the specified form library.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formLibraryId">Library Id</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formLibraryId">Library Id</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
@@ -80,10 +80,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a paged list of forms libraries.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of form libraries to which the current user has access.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FormLibrarySummaryList</returns>
@@ -93,10 +93,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a paged list of forms libraries.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of form libraries to which the current user has access.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FormLibrarySummaryList)</returns>
@@ -105,10 +105,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a paged list of forms in a forms library.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of forms  to which the current user has access in the specified form library.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formLibraryId">Library Id</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formLibraryId">Library Id</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FormSummaryList</returns>
@@ -118,10 +118,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a paged list of forms in a forms library.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of forms  to which the current user has access in the specified form library.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formLibraryId">Library Id</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formLibraryId">Library Id</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FormSummaryList)</returns>
@@ -182,7 +182,7 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Gets a paged list of forms libraries. 
+        /// Gets a paged list of forms libraries. Returns a list of form libraries to which the current user has access.
         /// </summary>
         public class GetFormLibrariesOptions
         {
@@ -193,10 +193,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a paged list of forms libraries. 
+        /// Gets a paged list of forms libraries. Returns a list of form libraries to which the current user has access.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>FormLibrarySummaryList</returns>
@@ -207,10 +207,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a paged list of forms libraries. 
+        /// Gets a paged list of forms libraries. Returns a list of form libraries to which the current user has access.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of FormLibrarySummaryList</returns>
@@ -230,6 +230,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -289,10 +293,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a paged list of forms libraries. 
+        /// Gets a paged list of forms libraries. Returns a list of form libraries to which the current user has access.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FormLibrarySummaryList</returns>
@@ -304,10 +308,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a paged list of forms libraries. 
+        /// Gets a paged list of forms libraries. Returns a list of form libraries to which the current user has access.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FormLibrarySummaryList)</returns>
@@ -327,6 +331,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -380,7 +388,7 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Gets a paged list of forms in a forms library. 
+        /// Gets a paged list of forms in a forms library. Returns a list of forms  to which the current user has access in the specified form library.
         /// </summary>
         public class GetFormLibraryFormsOptions
         {
@@ -391,10 +399,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a paged list of forms in a forms library. 
+        /// Gets a paged list of forms in a forms library. Returns a list of forms  to which the current user has access in the specified form library.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formLibraryId">Library Id</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formLibraryId">Library Id</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>FormSummaryList</returns>
@@ -405,10 +413,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a paged list of forms in a forms library. 
+        /// Gets a paged list of forms in a forms library. Returns a list of forms  to which the current user has access in the specified form library.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formLibraryId">Library Id</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formLibraryId">Library Id</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of FormSummaryList</returns>
@@ -431,6 +439,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -491,10 +503,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a paged list of forms in a forms library. 
+        /// Gets a paged list of forms in a forms library. Returns a list of forms  to which the current user has access in the specified form library.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formLibraryId">Library Id</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formLibraryId">Library Id</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FormSummaryList</returns>
@@ -506,10 +518,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a paged list of forms in a forms library. 
+        /// Gets a paged list of forms in a forms library. Returns a list of forms  to which the current user has access in the specified form library.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formLibraryId">Library Id</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formLibraryId">Library Id</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FormSummaryList)</returns>
@@ -532,6 +544,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 

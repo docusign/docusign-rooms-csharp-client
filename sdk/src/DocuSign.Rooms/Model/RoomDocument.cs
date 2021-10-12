@@ -48,8 +48,9 @@ namespace DocuSign.Rooms.Model
         /// <param name="DocuSignFormId">DocuSignFormId.</param>
         /// <param name="IsArchived">IsArchived.</param>
         /// <param name="IsVirtual">IsVirtual.</param>
+        /// <param name="IsDynamic">IsDynamic.</param>
         /// <param name="Owner">Owner.</param>
-        public RoomDocument(int? DocumentId = default(int?), string Name = default(string), int? OwnerId = default(int?), long? Size = default(long?), int? FolderId = default(int?), DateTime CreatedDate = default(DateTime), bool? IsSigned = default(bool?), string DocuSignFormId = default(string), bool? IsArchived = default(bool?), bool? IsVirtual = default(bool?), RoomDocumentOwner Owner = default(RoomDocumentOwner))
+        public RoomDocument(int? DocumentId = default(int?), string Name = default(string), int? OwnerId = default(int?), long? Size = default(long?), int? FolderId = default(int?), DateTime CreatedDate = default(DateTime), bool? IsSigned = default(bool?), string DocuSignFormId = default(string), bool? IsArchived = default(bool?), bool? IsVirtual = default(bool?), bool? IsDynamic = default(bool?), RoomDocumentOwner Owner = default(RoomDocumentOwner))
         {
             this.DocumentId = DocumentId;
             this.Name = Name;
@@ -61,6 +62,7 @@ namespace DocuSign.Rooms.Model
             this.DocuSignFormId = DocuSignFormId;
             this.IsArchived = IsArchived;
             this.IsVirtual = IsVirtual;
+            this.IsDynamic = IsDynamic;
             this.Owner = Owner;
         }
         
@@ -115,6 +117,11 @@ namespace DocuSign.Rooms.Model
         [DataMember(Name="isVirtual", EmitDefaultValue=false)]
         public bool? IsVirtual { get; set; }
         /// <summary>
+        /// Gets or Sets IsDynamic
+        /// </summary>
+        [DataMember(Name="isDynamic", EmitDefaultValue=false)]
+        public bool? IsDynamic { get; set; }
+        /// <summary>
         /// Gets or Sets Owner
         /// </summary>
         [DataMember(Name="owner", EmitDefaultValue=false)]
@@ -137,6 +144,7 @@ namespace DocuSign.Rooms.Model
             sb.Append("  DocuSignFormId: ").Append(DocuSignFormId).Append("\n");
             sb.Append("  IsArchived: ").Append(IsArchived).Append("\n");
             sb.Append("  IsVirtual: ").Append(IsVirtual).Append("\n");
+            sb.Append("  IsDynamic: ").Append(IsDynamic).Append("\n");
             sb.Append("  Owner: ").Append(Owner).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -225,6 +233,11 @@ namespace DocuSign.Rooms.Model
                     this.IsVirtual.Equals(other.IsVirtual)
                 ) && 
                 (
+                    this.IsDynamic == other.IsDynamic ||
+                    this.IsDynamic != null &&
+                    this.IsDynamic.Equals(other.IsDynamic)
+                ) && 
+                (
                     this.Owner == other.Owner ||
                     this.Owner != null &&
                     this.Owner.Equals(other.Owner)
@@ -262,6 +275,8 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.IsArchived.GetHashCode();
                 if (this.IsVirtual != null)
                     hash = hash * 59 + this.IsVirtual.GetHashCode();
+                if (this.IsDynamic != null)
+                    hash = hash * 59 + this.IsDynamic.GetHashCode();
                 if (this.Owner != null)
                     hash = hash * 59 + this.Owner.GetHashCode();
                 return hash;

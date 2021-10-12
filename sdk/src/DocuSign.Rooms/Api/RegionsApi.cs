@@ -28,10 +28,10 @@ namespace DocuSign.Rooms.Api
         /// Creates a new region for a company
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new region for a company
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -41,10 +41,10 @@ namespace DocuSign.Rooms.Api
         /// Creates a new region for a company
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new region for a company
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
@@ -53,10 +53,10 @@ namespace DocuSign.Rooms.Api
         /// Delete a region.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Delete a region.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns></returns>
@@ -66,10 +66,10 @@ namespace DocuSign.Rooms.Api
         /// Delete a region.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Delete a region.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -78,10 +78,10 @@ namespace DocuSign.Rooms.Api
         /// Get information about the region with the given regionId
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get information about the region with the given regionId
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns></returns>
@@ -91,10 +91,10 @@ namespace DocuSign.Rooms.Api
         /// Get information about the region with the given regionId
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get information about the region with the given regionId
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>ApiResponse of </returns>
@@ -103,10 +103,10 @@ namespace DocuSign.Rooms.Api
         /// Get region reference counts.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of each type of object and the number of objects of that type referencing the specified region.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns></returns>
@@ -116,35 +116,35 @@ namespace DocuSign.Rooms.Api
         /// Get region reference counts.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of each type of object and the number of objects of that type referencing the specified region.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>ApiResponse of </returns>
         ApiResponse<RegionReferenceCountList> GetRegionReferenceCountsWithHttpInfo (string accountId, int? regionId);
         /// <summary>
-        /// Get account 
+        /// Get account regions.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of regions that are associated with a Rooms account.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
         RegionSummaryList GetRegions (string accountId, RegionsApi.GetRegionsOptions options = null);
 
         /// <summary>
-        /// Get account 
+        /// Get account regions.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of regions that are associated with a Rooms account.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
@@ -155,10 +155,10 @@ namespace DocuSign.Rooms.Api
         /// Creates a new region for a company
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new region for a company
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of Region</returns>
@@ -168,10 +168,10 @@ namespace DocuSign.Rooms.Api
         /// Creates a new region for a company
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new region for a company
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (Region)</returns>
@@ -180,10 +180,10 @@ namespace DocuSign.Rooms.Api
         /// Delete a region.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Delete a region.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>Task of void</returns>
@@ -193,10 +193,10 @@ namespace DocuSign.Rooms.Api
         /// Delete a region.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Delete a region.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -205,10 +205,10 @@ namespace DocuSign.Rooms.Api
         /// Get information about the region with the given regionId
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get information about the region with the given regionId
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>Task of Region</returns>
@@ -218,10 +218,10 @@ namespace DocuSign.Rooms.Api
         /// Get information about the region with the given regionId
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get information about the region with the given regionId
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>Task of ApiResponse (Region)</returns>
@@ -230,10 +230,10 @@ namespace DocuSign.Rooms.Api
         /// Get region reference counts.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of each type of object and the number of objects of that type referencing the specified region.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>Task of RegionReferenceCountList</returns>
@@ -243,35 +243,35 @@ namespace DocuSign.Rooms.Api
         /// Get region reference counts.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of each type of object and the number of objects of that type referencing the specified region.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>Task of ApiResponse (RegionReferenceCountList)</returns>
         System.Threading.Tasks.Task<ApiResponse<RegionReferenceCountList>> GetRegionReferenceCountsAsyncWithHttpInfo (string accountId, int? regionId);
         /// <summary>
-        /// Get account 
+        /// Get account regions.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of regions that are associated with a Rooms account.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RegionSummaryList</returns>
         System.Threading.Tasks.Task<RegionSummaryList> GetRegionsAsync (string accountId, RegionsApi.GetRegionsOptions options = null);
 
         /// <summary>
-        /// Get account 
+        /// Get account regions.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of regions that are associated with a Rooms account.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RegionSummaryList)</returns>
@@ -333,10 +333,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Creates a new region for a company 
+        /// Creates a new region for a company Creates a new region for a company
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Region</returns>
@@ -347,10 +347,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Creates a new region for a company 
+        /// Creates a new region for a company Creates a new region for a company
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of Region</returns>
@@ -436,10 +436,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Creates a new region for a company 
+        /// Creates a new region for a company Creates a new region for a company
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of Region</returns>
@@ -451,10 +451,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Creates a new region for a company 
+        /// Creates a new region for a company Creates a new region for a company
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (Region)</returns>
@@ -535,10 +535,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Delete a region. 
+        /// Delete a region. Delete a region.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns></returns>
@@ -548,10 +548,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Delete a region. 
+        /// Delete a region. Delete a region.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -574,6 +574,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -621,10 +625,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Delete a region. 
+        /// Delete a region. Delete a region.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>Task of void</returns>
@@ -635,10 +639,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Delete a region. 
+        /// Delete a region. Delete a region.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -661,6 +665,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -711,10 +719,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Get information about the region with the given regionId 
+        /// Get information about the region with the given regionId Get information about the region with the given regionId
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>Region</returns>
@@ -725,10 +733,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get information about the region with the given regionId 
+        /// Get information about the region with the given regionId Get information about the region with the given regionId
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>ApiResponse of Region</returns>
@@ -751,6 +759,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -806,10 +818,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get information about the region with the given regionId 
+        /// Get information about the region with the given regionId Get information about the region with the given regionId
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>Task of Region</returns>
@@ -821,10 +833,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get information about the region with the given regionId 
+        /// Get information about the region with the given regionId Get information about the region with the given regionId
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>Task of ApiResponse (Region)</returns>
@@ -847,6 +859,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -897,10 +913,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Get region reference counts. 
+        /// Get region reference counts. This method returns a list of each type of object and the number of objects of that type referencing the specified region.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>RegionReferenceCountList</returns>
@@ -911,10 +927,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get region reference counts. 
+        /// Get region reference counts. This method returns a list of each type of object and the number of objects of that type referencing the specified region.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>ApiResponse of RegionReferenceCountList</returns>
@@ -937,6 +953,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -992,10 +1012,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get region reference counts. 
+        /// Get region reference counts. This method returns a list of each type of object and the number of objects of that type referencing the specified region.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>Task of RegionReferenceCountList</returns>
@@ -1007,10 +1027,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get region reference counts. 
+        /// Get region reference counts. This method returns a list of each type of object and the number of objects of that type referencing the specified region.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="regionId">Id of the desired region</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="regionId">Id of the desired region</param>
         
         
         /// <returns>Task of ApiResponse (RegionReferenceCountList)</returns>
@@ -1033,6 +1053,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1082,7 +1106,7 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Get account  
+        /// Get account regions. Returns a list of regions that are associated with a Rooms account.
         /// </summary>
         public class GetRegionsOptions
         {
@@ -1095,10 +1119,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get account  
+        /// Get account regions. Returns a list of regions that are associated with a Rooms account.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>RegionSummaryList</returns>
@@ -1109,10 +1133,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get account  
+        /// Get account regions. Returns a list of regions that are associated with a Rooms account.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of RegionSummaryList</returns>
@@ -1132,6 +1156,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1192,10 +1220,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get account  
+        /// Get account regions. Returns a list of regions that are associated with a Rooms account.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RegionSummaryList</returns>
@@ -1207,10 +1235,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get account  
+        /// Get account regions. Returns a list of regions that are associated with a Rooms account.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RegionSummaryList)</returns>
@@ -1230,6 +1258,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 

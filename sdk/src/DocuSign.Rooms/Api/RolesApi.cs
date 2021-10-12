@@ -28,10 +28,10 @@ namespace DocuSign.Rooms.Api
         /// Creates a role.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new company role in Rooms
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -41,10 +41,10 @@ namespace DocuSign.Rooms.Api
         /// Creates a role.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new company role in Rooms
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
@@ -53,10 +53,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes the role with the given roleId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes a role from a company account in Rooms
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         
         
         /// <returns></returns>
@@ -66,10 +66,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes the role with the given roleId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes a role from a company account in Rooms
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -78,10 +78,10 @@ namespace DocuSign.Rooms.Api
         /// Get information about the role with the given roleId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get information about the role with the given roleId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
@@ -91,10 +91,10 @@ namespace DocuSign.Rooms.Api
         /// Get information about the role with the given roleId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get information about the role with the given roleId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
@@ -103,10 +103,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a paged-list of roles in your company
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of roles associated with a company account
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
@@ -116,10 +116,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a paged-list of roles in your company
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of roles associated with a company account
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
@@ -128,10 +128,10 @@ namespace DocuSign.Rooms.Api
         /// Updates the role with the given roleId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates the role with the given roleId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -141,10 +141,10 @@ namespace DocuSign.Rooms.Api
         /// Updates the role with the given roleId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates the role with the given roleId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
@@ -155,10 +155,10 @@ namespace DocuSign.Rooms.Api
         /// Creates a role.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new company role in Rooms
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of Role</returns>
@@ -168,10 +168,10 @@ namespace DocuSign.Rooms.Api
         /// Creates a role.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new company role in Rooms
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (Role)</returns>
@@ -180,10 +180,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes the role with the given roleId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes a role from a company account in Rooms
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         
         
         /// <returns>Task of void</returns>
@@ -193,10 +193,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes the role with the given roleId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes a role from a company account in Rooms
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -205,10 +205,10 @@ namespace DocuSign.Rooms.Api
         /// Get information about the role with the given roleId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get information about the role with the given roleId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Role</returns>
@@ -218,10 +218,10 @@ namespace DocuSign.Rooms.Api
         /// Get information about the role with the given roleId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get information about the role with the given roleId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Role)</returns>
@@ -230,10 +230,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a paged-list of roles in your company
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of roles associated with a company account
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RoleSummaryList</returns>
@@ -243,10 +243,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a paged-list of roles in your company
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of roles associated with a company account
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RoleSummaryList)</returns>
@@ -255,10 +255,10 @@ namespace DocuSign.Rooms.Api
         /// Updates the role with the given roleId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates the role with the given roleId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of Role</returns>
@@ -268,10 +268,10 @@ namespace DocuSign.Rooms.Api
         /// Updates the role with the given roleId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates the role with the given roleId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (Role)</returns>
@@ -333,10 +333,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Creates a role. 
+        /// Creates a role. Creates a new company role in Rooms
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Role</returns>
@@ -347,10 +347,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Creates a role. 
+        /// Creates a role. Creates a new company role in Rooms
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of Role</returns>
@@ -436,10 +436,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Creates a role. 
+        /// Creates a role. Creates a new company role in Rooms
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of Role</returns>
@@ -451,10 +451,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Creates a role. 
+        /// Creates a role. Creates a new company role in Rooms
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (Role)</returns>
@@ -535,10 +535,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Deletes the role with the given roleId. 
+        /// Deletes the role with the given roleId. Deletes a role from a company account in Rooms
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         
         
         /// <returns></returns>
@@ -548,10 +548,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Deletes the role with the given roleId. 
+        /// Deletes the role with the given roleId. Deletes a role from a company account in Rooms
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -574,6 +574,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -621,10 +625,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Deletes the role with the given roleId. 
+        /// Deletes the role with the given roleId. Deletes a role from a company account in Rooms
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         
         
         /// <returns>Task of void</returns>
@@ -635,10 +639,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Deletes the role with the given roleId. 
+        /// Deletes the role with the given roleId. Deletes a role from a company account in Rooms
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -661,6 +665,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -710,19 +718,19 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Get information about the role with the given roleId. 
+        /// Get information about the role with the given roleId. Get information about the role with the given roleId.
         /// </summary>
         public class GetRoleOptions
         {
-            /// 
+            /// When set to true, the response includes the &#x60;isAssigned&#x60; property, which specifies whether the role is currently assigned to any users. The default is false. 
             public bool? includeIsAssigned {get; set;}
         }
 
         /// <summary>
-        /// Get information about the role with the given roleId. 
+        /// Get information about the role with the given roleId. Get information about the role with the given roleId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Role</returns>
@@ -733,10 +741,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get information about the role with the given roleId. 
+        /// Get information about the role with the given roleId. Get information about the role with the given roleId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of Role</returns>
@@ -759,6 +767,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -818,10 +830,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get information about the role with the given roleId. 
+        /// Get information about the role with the given roleId. Get information about the role with the given roleId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Role</returns>
@@ -833,10 +845,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get information about the role with the given roleId. 
+        /// Get information about the role with the given roleId. Get information about the role with the given roleId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Role)</returns>
@@ -859,6 +871,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -912,25 +928,27 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Gets a paged-list of roles in your company 
+        /// Gets a paged-list of roles in your company Returns a list of roles associated with a company account
         /// </summary>
         public class GetRolesOptions
         {
-            /// 
+            /// Returns assignable roles based on calling user&#39;s company permissions.               DEPRECATED: Please use filterContext parameter to get the assignable roles. AssignableRolesBasedOnCompanyPermissions returns same results as onlyAssignable&#x3D;true 
             public bool? onlyAssignable {get; set;}
-            /// 
+            /// Attribute establishing filter context for roles being returned - AllRoles, AssignableRolesBasedOnCompanyPermissions, AssignableRolesBasedOnAllPermissions 
+            public string filterContext {get; set;}
+            /// A search filter that returns roles by the beginning of the role name. You can enter the beginning of the role name only to return all of the roles that begin with the text that you entered. 
             public string filter {get; set;}
-            /// 
+            /// The starting zero-based index position of the result set. The default value is 0. 
             public int? startPosition {get; set;}
-            /// 
+            /// The number of results to return. This value must be a number between &#x60;1&#x60; and &#x60;100&#x60; (default). 
             public int? count {get; set;}
         }
 
         /// <summary>
-        /// Gets a paged-list of roles in your company 
+        /// Gets a paged-list of roles in your company Returns a list of roles associated with a company account
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>RoleSummaryList</returns>
@@ -941,10 +959,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a paged-list of roles in your company 
+        /// Gets a paged-list of roles in your company Returns a list of roles associated with a company account
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of RoleSummaryList</returns>
@@ -964,6 +982,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -985,6 +1007,7 @@ namespace DocuSign.Rooms.Api
             if (options != null)
             {
                 if (options.onlyAssignable != null) localVarQueryParams.Add("onlyAssignable", this.ApiClient.ParameterToString(options.onlyAssignable)); // query parameter
+                if (options.filterContext != null) localVarQueryParams.Add("filterContext", this.ApiClient.ParameterToString(options.filterContext)); // query parameter
                 if (options.filter != null) localVarQueryParams.Add("filter", this.ApiClient.ParameterToString(options.filter)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("startPosition", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
@@ -1025,10 +1048,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a paged-list of roles in your company 
+        /// Gets a paged-list of roles in your company Returns a list of roles associated with a company account
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RoleSummaryList</returns>
@@ -1040,10 +1063,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a paged-list of roles in your company 
+        /// Gets a paged-list of roles in your company Returns a list of roles associated with a company account
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RoleSummaryList)</returns>
@@ -1063,6 +1086,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1084,6 +1111,7 @@ namespace DocuSign.Rooms.Api
             if (options != null)
             {
                 if (options.onlyAssignable != null) localVarQueryParams.Add("onlyAssignable", this.ApiClient.ParameterToString(options.onlyAssignable)); // query parameter
+                if (options.filterContext != null) localVarQueryParams.Add("filterContext", this.ApiClient.ParameterToString(options.filterContext)); // query parameter
                 if (options.filter != null) localVarQueryParams.Add("filter", this.ApiClient.ParameterToString(options.filter)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("startPosition", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
@@ -1119,10 +1147,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Updates the role with the given roleId. 
+        /// Updates the role with the given roleId. Updates the role with the given roleId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Role</returns>
@@ -1133,10 +1161,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Updates the role with the given roleId. 
+        /// Updates the role with the given roleId. Updates the role with the given roleId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of Role</returns>
@@ -1226,10 +1254,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Updates the role with the given roleId. 
+        /// Updates the role with the given roleId. Updates the role with the given roleId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of Role</returns>
@@ -1241,10 +1269,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Updates the role with the given roleId. 
+        /// Updates the role with the given roleId. Updates the role with the given roleId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roleId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (Role)</returns>

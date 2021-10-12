@@ -15,7 +15,7 @@ Contact: devcenter@docusign.com
     <Description>An API for an integrator to access the features of DocuSign Rooms.</Description>
     <Company>DocuSign Inc.</Company>
     <Owners>DocuSign</Owners>
-    <Copyright>Copyright © DocuSign 2020</Copyright>
+    <Copyright>Copyright © DocuSign 2021</Copyright>
     <AssemblyTitle>DocuSign.Rooms</AssemblyTitle>
     <Authors>DocuSign</Authors>
     <OutputType>Library</OutputType>
@@ -24,7 +24,7 @@ Contact: devcenter@docusign.com
     <RootNamespace>DocuSign.Rooms</RootNamespace>
     <AssemblyName>DocuSign.Rooms</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>1.1.0-rc</VersionPrefix>
+    <VersionPrefix>1.2.0-rc</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -34,10 +34,7 @@ Contact: devcenter@docusign.com
     <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[1.1.0] - DocuSign Rooms API v2 - 03/25/2021</PackageReleaseNotes>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>DocuSignClient.snk</AssemblyOriginatorKeyFile>
-    <Version>1.1.0</Version>
+    <PackageReleaseNotes>[1.2.0-rc] - Rooms API v2-1.0.9 - 2021-10-06</PackageReleaseNotes>
   </PropertyGroup>
 
   <!-- .NET Framework 4.5.2 compilation flags and build options -->
@@ -45,7 +42,7 @@ Contact: devcenter@docusign.com
     <DefineConstants>NET452</DefineConstants>
   </PropertyGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net452'">
-    <PackageReference Include="BouncyCastle" Version="1.8.1" />
+    <PackageReference Include="BouncyCastle" Version="1.8.9" />
   </ItemGroup>
 
   <!-- .NET Standard 2.0 compilation flags and build options -->
@@ -53,13 +50,13 @@ Contact: devcenter@docusign.com
     <DefineConstants>NETSTANDARD2_0</DefineConstants>
   </PropertyGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="Portable.BouncyCastle" Version="1.8.2" />
+    <PackageReference Include="Portable.BouncyCastle" Version="1.8.10" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="RestSharp" Version="106.10.1" />
+    <PackageReference Include="RestSharp" Version="106.12.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
     <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="5.4.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0" />

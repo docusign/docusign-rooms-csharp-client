@@ -34,6 +34,7 @@ namespace DocuSign.Rooms.Model
         {
             // Empty Constructor
         }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Document" /> class.
         /// </summary>
@@ -47,7 +48,8 @@ namespace DocuSign.Rooms.Model
         /// <param name="IsSigned">IsSigned.</param>
         /// <param name="ContentType">ContentType.</param>
         /// <param name="Base64Contents">Base64Contents (required).</param>
-        public Document(int? DocumentId = default(int?), string Name = default(string), int? RoomId = default(int?), int? OwnerId = default(int?), long? Size = default(long?), int? FolderId = default(int?), DateTime CreatedDate = default(DateTime), bool? IsSigned = default(bool?), string ContentType = default(string), string Base64Contents = default(string))
+        /// <param name="IsDynamic">IsDynamic.</param>
+        public Document(int? DocumentId = default(int?), string Name = default(string), int? RoomId = default(int?), int? OwnerId = default(int?), long? Size = default(long?), int? FolderId = default(int?), DateTime CreatedDate = default(DateTime), bool? IsSigned = default(bool?), string ContentType = default(string), string Base64Contents = default(string), bool? IsDynamic = default(bool?))
         {
             // to ensure "Name" is required (not null)
             if (Name == null)
@@ -75,6 +77,7 @@ namespace DocuSign.Rooms.Model
             this.CreatedDate = CreatedDate;
             this.IsSigned = IsSigned;
             this.ContentType = ContentType;
+            this.IsDynamic = IsDynamic;
         }
         
         /// <summary>
@@ -128,6 +131,11 @@ namespace DocuSign.Rooms.Model
         [DataMember(Name="base64Contents", EmitDefaultValue=false)]
         public string Base64Contents { get; set; }
         /// <summary>
+        /// Gets or Sets IsDynamic
+        /// </summary>
+        [DataMember(Name="isDynamic", EmitDefaultValue=false)]
+        public bool? IsDynamic { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -145,6 +153,7 @@ namespace DocuSign.Rooms.Model
             sb.Append("  IsSigned: ").Append(IsSigned).Append("\n");
             sb.Append("  ContentType: ").Append(ContentType).Append("\n");
             sb.Append("  Base64Contents: ").Append(Base64Contents).Append("\n");
+            sb.Append("  IsDynamic: ").Append(IsDynamic).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -230,6 +239,11 @@ namespace DocuSign.Rooms.Model
                     this.Base64Contents == other.Base64Contents ||
                     this.Base64Contents != null &&
                     this.Base64Contents.Equals(other.Base64Contents)
+                ) && 
+                (
+                    this.IsDynamic == other.IsDynamic ||
+                    this.IsDynamic != null &&
+                    this.IsDynamic.Equals(other.IsDynamic)
                 );
         }
 
@@ -264,6 +278,8 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.ContentType.GetHashCode();
                 if (this.Base64Contents != null)
                     hash = hash * 59 + this.Base64Contents.GetHashCode();
+                if (this.IsDynamic != null)
+                    hash = hash * 59 + this.IsDynamic.GetHashCode();
                 return hash;
             }
         }

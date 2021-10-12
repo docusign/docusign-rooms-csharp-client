@@ -28,7 +28,7 @@ namespace DocuSign.Rooms.Api
         /// Retrieves the list of valid contact sides.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of valid contact sides.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         
@@ -41,7 +41,7 @@ namespace DocuSign.Rooms.Api
         /// Retrieves the list of valid contact sides.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of valid contact sides.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         
@@ -55,7 +55,7 @@ namespace DocuSign.Rooms.Api
         /// Retrieves the list of valid contact sides.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of valid contact sides.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         
@@ -68,7 +68,7 @@ namespace DocuSign.Rooms.Api
         /// Retrieves the list of valid contact sides.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of valid contact sides.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         
@@ -133,7 +133,7 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Retrieves the list of valid contact sides. 
+        /// Retrieves the list of valid contact sides. Returns a list of valid contact sides.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         
@@ -147,7 +147,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Retrieves the list of valid contact sides. 
+        /// Retrieves the list of valid contact sides. Returns a list of valid contact sides.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         
@@ -167,6 +167,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -220,7 +224,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Retrieves the list of valid contact sides. 
+        /// Retrieves the list of valid contact sides. Returns a list of valid contact sides.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         
@@ -235,7 +239,7 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Retrieves the list of valid contact sides. 
+        /// Retrieves the list of valid contact sides. Returns a list of valid contact sides.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         
@@ -255,6 +259,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 

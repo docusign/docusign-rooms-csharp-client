@@ -28,10 +28,10 @@ namespace DocuSign.Rooms.Api
         /// Creates an external form fill session.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -41,10 +41,10 @@ namespace DocuSign.Rooms.Api
         /// Creates an external form fill session.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
@@ -55,10 +55,10 @@ namespace DocuSign.Rooms.Api
         /// Creates an external form fill session.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ExternalFormFillSession</returns>
@@ -68,10 +68,10 @@ namespace DocuSign.Rooms.Api
         /// Creates an external form fill session.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (ExternalFormFillSession)</returns>
@@ -133,10 +133,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Creates an external form fill session. 
+        /// Creates an external form fill session. Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ExternalFormFillSession</returns>
@@ -147,10 +147,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Creates an external form fill session. 
+        /// Creates an external form fill session. Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of ExternalFormFillSession</returns>
@@ -236,10 +236,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Creates an external form fill session. 
+        /// Creates an external form fill session. Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ExternalFormFillSession</returns>
@@ -251,10 +251,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Creates an external form fill session. 
+        /// Creates an external form fill session. Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (ExternalFormFillSession)</returns>

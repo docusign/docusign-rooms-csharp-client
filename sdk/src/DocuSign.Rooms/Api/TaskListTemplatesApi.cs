@@ -28,10 +28,10 @@ namespace DocuSign.Rooms.Api
         /// Returns all task list templates for the company of the active user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns all task list templates for the company of the active user.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
@@ -41,10 +41,10 @@ namespace DocuSign.Rooms.Api
         /// Returns all task list templates for the company of the active user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns all task list templates for the company of the active user.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
@@ -55,10 +55,10 @@ namespace DocuSign.Rooms.Api
         /// Returns all task list templates for the company of the active user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns all task list templates for the company of the active user.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of TaskListTemplateList</returns>
@@ -68,10 +68,10 @@ namespace DocuSign.Rooms.Api
         /// Returns all task list templates for the company of the active user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns all task list templates for the company of the active user.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (TaskListTemplateList)</returns>
@@ -132,21 +132,21 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Returns all task list templates for the company of the active user. 
+        /// Returns all task list templates for the company of the active user. Returns all task list templates for the company of the active user.
         /// </summary>
         public class GetTaskListTemplatesOptions
         {
-            /// 
+            /// The starting zero-based index position from which to start returning values. The default is &#x60;0&#x60;. 
             public int? startPosition {get; set;}
-            /// 
+            /// The number of results to return. This value must be a number between &#x60;1&#x60; and &#x60;100&#x60; (default). 
             public int? count {get; set;}
         }
 
         /// <summary>
-        /// Returns all task list templates for the company of the active user. 
+        /// Returns all task list templates for the company of the active user. Returns all task list templates for the company of the active user.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>TaskListTemplateList</returns>
@@ -157,10 +157,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Returns all task list templates for the company of the active user. 
+        /// Returns all task list templates for the company of the active user. Returns all task list templates for the company of the active user.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of TaskListTemplateList</returns>
@@ -180,6 +180,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -239,10 +243,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Returns all task list templates for the company of the active user. 
+        /// Returns all task list templates for the company of the active user. Returns all task list templates for the company of the active user.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of TaskListTemplateList</returns>
@@ -254,10 +258,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Returns all task list templates for the company of the active user. 
+        /// Returns all task list templates for the company of the active user. Returns all task list templates for the company of the active user.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (TaskListTemplateList)</returns>
@@ -277,6 +281,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 

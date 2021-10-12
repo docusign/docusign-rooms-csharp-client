@@ -28,10 +28,10 @@ namespace DocuSign.Rooms.Api
         /// Get details of a specific field set.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get details of a specific field set.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="fieldSetId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="fieldSetId">The id of the field set.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
@@ -41,10 +41,10 @@ namespace DocuSign.Rooms.Api
         /// Get details of a specific field set.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get details of a specific field set.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="fieldSetId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="fieldSetId">The id of the field set.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
@@ -55,10 +55,10 @@ namespace DocuSign.Rooms.Api
         /// Get details of a specific field set.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get details of a specific field set.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="fieldSetId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="fieldSetId">The id of the field set.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FieldSet</returns>
@@ -68,10 +68,10 @@ namespace DocuSign.Rooms.Api
         /// Get details of a specific field set.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get details of a specific field set.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="fieldSetId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="fieldSetId">The id of the field set.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FieldSet)</returns>
@@ -132,19 +132,19 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Get details of a specific field set. 
+        /// Get details of a specific field set. Get details of a specific field set.
         /// </summary>
         public class GetFieldSetOptions
         {
-            /// 
+            /// A comma-separated list that limits the fields to return:\\n\\n- &#x60;IsRequiredOnCreate&#x60;: include fields that are required in room creation.\\n- &#x60;IsRequiredOnSubmit&#x60;: include fields that are required when submitting a room for review.\\n 
             public List<string> fieldsCustomDataFilters {get; set;}
         }
 
         /// <summary>
-        /// Get details of a specific field set. 
+        /// Get details of a specific field set. Get details of a specific field set.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="fieldSetId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="fieldSetId">The id of the field set.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>FieldSet</returns>
@@ -155,10 +155,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get details of a specific field set. 
+        /// Get details of a specific field set. Get details of a specific field set.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="fieldSetId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="fieldSetId">The id of the field set.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of FieldSet</returns>
@@ -181,6 +181,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -240,10 +244,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get details of a specific field set. 
+        /// Get details of a specific field set. Get details of a specific field set.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="fieldSetId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="fieldSetId">The id of the field set.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FieldSet</returns>
@@ -255,10 +259,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get details of a specific field set. 
+        /// Get details of a specific field set. Get details of a specific field set.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="fieldSetId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="fieldSetId">The id of the field set.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FieldSet)</returns>
@@ -281,6 +285,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 

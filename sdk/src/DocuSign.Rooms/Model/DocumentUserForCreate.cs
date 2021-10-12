@@ -34,6 +34,7 @@ namespace DocuSign.Rooms.Model
         {
             // Empty Constructor
         }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentUserForCreate" /> class.
         /// </summary>

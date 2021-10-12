@@ -28,10 +28,10 @@ namespace DocuSign.Rooms.Api
         /// Gets form based on Id.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns details about a specific form, such as the date it was created and last updated, the number of pages, the form owner, and other information.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formId">Form ID</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formId">Form ID</param>
         
         
         /// <returns></returns>
@@ -41,10 +41,10 @@ namespace DocuSign.Rooms.Api
         /// Gets form based on Id.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns details about a specific form, such as the date it was created and last updated, the number of pages, the form owner, and other information.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formId">Form ID</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formId">Form ID</param>
         
         
         /// <returns>ApiResponse of </returns>
@@ -55,10 +55,10 @@ namespace DocuSign.Rooms.Api
         /// Gets form based on Id.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns details about a specific form, such as the date it was created and last updated, the number of pages, the form owner, and other information.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formId">Form ID</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formId">Form ID</param>
         
         
         /// <returns>Task of FormDetails</returns>
@@ -68,10 +68,10 @@ namespace DocuSign.Rooms.Api
         /// Gets form based on Id.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns details about a specific form, such as the date it was created and last updated, the number of pages, the form owner, and other information.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formId">Form ID</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formId">Form ID</param>
         
         
         /// <returns>Task of ApiResponse (FormDetails)</returns>
@@ -133,10 +133,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Gets form based on Id. 
+        /// Gets form based on Id. Returns details about a specific form, such as the date it was created and last updated, the number of pages, the form owner, and other information.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formId">Form ID</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formId">Form ID</param>
         
         
         /// <returns>FormDetails</returns>
@@ -147,10 +147,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets form based on Id. 
+        /// Gets form based on Id. Returns details about a specific form, such as the date it was created and last updated, the number of pages, the form owner, and other information.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formId">Form ID</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formId">Form ID</param>
         
         
         /// <returns>ApiResponse of FormDetails</returns>
@@ -173,6 +173,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -228,10 +232,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets form based on Id. 
+        /// Gets form based on Id. Returns details about a specific form, such as the date it was created and last updated, the number of pages, the form owner, and other information.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formId">Form ID</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formId">Form ID</param>
         
         
         /// <returns>Task of FormDetails</returns>
@@ -243,10 +247,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets form based on Id. 
+        /// Gets form based on Id. Returns details about a specific form, such as the date it was created and last updated, the number of pages, the form owner, and other information.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formId">Form ID</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formId">Form ID</param>
         
         
         /// <returns>Task of ApiResponse (FormDetails)</returns>
@@ -269,6 +273,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 

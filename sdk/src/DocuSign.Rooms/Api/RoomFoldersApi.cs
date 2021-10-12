@@ -28,10 +28,10 @@ namespace DocuSign.Rooms.Api
         /// Gets room folders accessible to the calling user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Gets a list of room folders in the specified room that are accessible to the current user.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roomId">The room id from which to retrieve folders.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room id from which to retrieve folders.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
@@ -41,10 +41,10 @@ namespace DocuSign.Rooms.Api
         /// Gets room folders accessible to the calling user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Gets a list of room folders in the specified room that are accessible to the current user.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roomId">The room id from which to retrieve folders.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room id from which to retrieve folders.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
@@ -55,10 +55,10 @@ namespace DocuSign.Rooms.Api
         /// Gets room folders accessible to the calling user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Gets a list of room folders in the specified room that are accessible to the current user.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roomId">The room id from which to retrieve folders.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room id from which to retrieve folders.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RoomFolderList</returns>
@@ -68,10 +68,10 @@ namespace DocuSign.Rooms.Api
         /// Gets room folders accessible to the calling user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Gets a list of room folders in the specified room that are accessible to the current user.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roomId">The room id from which to retrieve folders.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room id from which to retrieve folders.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RoomFolderList)</returns>
@@ -132,7 +132,7 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Gets room folders accessible to the calling user. 
+        /// Gets room folders accessible to the calling user. Gets a list of room folders in the specified room that are accessible to the current user.
         /// </summary>
         public class GetRoomFoldersOptions
         {
@@ -143,10 +143,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets room folders accessible to the calling user. 
+        /// Gets room folders accessible to the calling user. Gets a list of room folders in the specified room that are accessible to the current user.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roomId">The room id from which to retrieve folders.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room id from which to retrieve folders.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>RoomFolderList</returns>
@@ -157,10 +157,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets room folders accessible to the calling user. 
+        /// Gets room folders accessible to the calling user. Gets a list of room folders in the specified room that are accessible to the current user.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roomId">The room id from which to retrieve folders.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room id from which to retrieve folders.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of RoomFolderList</returns>
@@ -183,6 +183,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -243,10 +247,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets room folders accessible to the calling user. 
+        /// Gets room folders accessible to the calling user. Gets a list of room folders in the specified room that are accessible to the current user.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roomId">The room id from which to retrieve folders.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room id from which to retrieve folders.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RoomFolderList</returns>
@@ -258,10 +262,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets room folders accessible to the calling user. 
+        /// Gets room folders accessible to the calling user. Gets a list of room folders in the specified room that are accessible to the current user.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="roomId">The room id from which to retrieve folders.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room id from which to retrieve folders.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RoomFolderList)</returns>
@@ -284,6 +288,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
