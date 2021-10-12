@@ -28,10 +28,10 @@ namespace DocuSign.Rooms.Api
         /// Returns all room templates that the active user has access to
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of room templates that the user can use to create a new room. The response includes company and region-level templates
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
@@ -41,10 +41,10 @@ namespace DocuSign.Rooms.Api
         /// Returns all room templates that the active user has access to
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of room templates that the user can use to create a new room. The response includes company and region-level templates
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
@@ -55,10 +55,10 @@ namespace DocuSign.Rooms.Api
         /// Returns all room templates that the active user has access to
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of room templates that the user can use to create a new room. The response includes company and region-level templates
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RoomTemplatesSummaryList</returns>
@@ -68,10 +68,10 @@ namespace DocuSign.Rooms.Api
         /// Returns all room templates that the active user has access to
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of room templates that the user can use to create a new room. The response includes company and region-level templates
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RoomTemplatesSummaryList)</returns>
@@ -132,11 +132,11 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Returns all room templates that the active user has access to 
+        /// Returns all room templates that the active user has access to This method returns a list of room templates that the user can use to create a new room. The response includes company and region-level templates
         /// </summary>
         public class GetRoomTemplatesOptions
         {
-            /// Get all room templates you have access to for this office. Response includes Company and Region level  If onlyAssignable is true, and no officeId is provided, user&#39;s default office is assumed. 
+            /// Get all room templates you have access to for this office. Response includes Company and Region level templates. If onlyAssignable is true, and no officeId is provided, user&#39;s default office is assumed. 
             public int? officeId {get; set;}
             /// Get list of templates you have access to. Default value false. 
             public bool? onlyAssignable {get; set;}
@@ -149,10 +149,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Returns all room templates that the active user has access to 
+        /// Returns all room templates that the active user has access to This method returns a list of room templates that the user can use to create a new room. The response includes company and region-level templates
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>RoomTemplatesSummaryList</returns>
@@ -163,10 +163,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Returns all room templates that the active user has access to 
+        /// Returns all room templates that the active user has access to This method returns a list of room templates that the user can use to create a new room. The response includes company and region-level templates
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of RoomTemplatesSummaryList</returns>
@@ -186,6 +186,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -248,10 +252,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Returns all room templates that the active user has access to 
+        /// Returns all room templates that the active user has access to This method returns a list of room templates that the user can use to create a new room. The response includes company and region-level templates
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RoomTemplatesSummaryList</returns>
@@ -263,10 +267,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Returns all room templates that the active user has access to 
+        /// Returns all room templates that the active user has access to This method returns a list of room templates that the user can use to create a new room. The response includes company and region-level templates
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RoomTemplatesSummaryList)</returns>
@@ -286,6 +290,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 

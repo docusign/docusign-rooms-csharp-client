@@ -28,10 +28,10 @@ namespace DocuSign.Rooms.Api
         /// Adds the user to the designated office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Adds the user to the designated office.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -41,10 +41,10 @@ namespace DocuSign.Rooms.Api
         /// Adds the user to the designated office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Adds the user to the designated office.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -53,10 +53,10 @@ namespace DocuSign.Rooms.Api
         /// Adds the user to the designated region.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Adds the user to the designated region.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -66,10 +66,10 @@ namespace DocuSign.Rooms.Api
         /// Adds the user to the designated region.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Adds the user to the designated region.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -78,10 +78,10 @@ namespace DocuSign.Rooms.Api
         /// Retrieves user information for the user having the given UserId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Retrieves user information for the user having the given UserId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         
         
         /// <returns></returns>
@@ -91,35 +91,35 @@ namespace DocuSign.Rooms.Api
         /// Retrieves user information for the user having the given UserId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Retrieves user information for the user having the given UserId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         
         
         /// <returns>ApiResponse of </returns>
         ApiResponse<User> GetUserWithHttpInfo (string accountId, int? userId);
         /// <summary>
-        /// Gets a paged-list of 
+        /// Gets a paged-list of users.
         /// </summary>
         /// <remarks>
         /// Retrieves a paged-list of Company Users in the User&#39;s company using the given filter and sort parameters.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
         UserSummaryList GetUsers (string accountId, UsersApi.GetUsersOptions options = null);
 
         /// <summary>
-        /// Gets a paged-list of 
+        /// Gets a paged-list of users.
         /// </summary>
         /// <remarks>
         /// Retrieves a paged-list of Company Users in the User&#39;s company using the given filter and sort parameters.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
@@ -128,10 +128,10 @@ namespace DocuSign.Rooms.Api
         /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Invites a new user to join a company account on Rooms Version 5 as an Admin.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -141,10 +141,10 @@ namespace DocuSign.Rooms.Api
         /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Invites a new user to join a company account on Rooms Version 5 as an Admin.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
@@ -153,10 +153,10 @@ namespace DocuSign.Rooms.Api
         /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Invites a new user to join a company account on Rooms Version 5 as an Agent.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -166,10 +166,10 @@ namespace DocuSign.Rooms.Api
         /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Invites a new user to join a company account on Rooms Version 5 as an Agent.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
@@ -178,10 +178,10 @@ namespace DocuSign.Rooms.Api
         /// CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Invites a new user to join a company account on Rooms Version 5 as a Manager.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -191,10 +191,10 @@ namespace DocuSign.Rooms.Api
         /// CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Invites a new user to join a company account on Rooms Version 5 as a Manager.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
@@ -203,10 +203,10 @@ namespace DocuSign.Rooms.Api
         /// NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Invites a new user to join a company account on Rooms Version 6.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -216,10 +216,10 @@ namespace DocuSign.Rooms.Api
         /// NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Invites a new user to join a company account on Rooms Version 6.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
@@ -228,10 +228,10 @@ namespace DocuSign.Rooms.Api
         /// Locks the account of the user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Locks the account of the user.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">User Id of the user attempting to be locked.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">User Id of the user attempting to be locked.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -241,10 +241,10 @@ namespace DocuSign.Rooms.Api
         /// Locks the account of the user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Locks the account of the user.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">User Id of the user attempting to be locked.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">User Id of the user attempting to be locked.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -253,10 +253,10 @@ namespace DocuSign.Rooms.Api
         /// Reinvites the pending user with the given userId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Reinvites an unactivated user to join a company account. You can use this method with either Rooms Version 5 or Rooms Version 6.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId"></param>
         
         
         /// <returns></returns>
@@ -266,10 +266,10 @@ namespace DocuSign.Rooms.Api
         /// Reinvites the pending user with the given userId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Reinvites an unactivated user to join a company account. You can use this method with either Rooms Version 5 or Rooms Version 6.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId"></param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -281,7 +281,7 @@ namespace DocuSign.Rooms.Api
         /// Removes the user. Will fail if the user owns any Rooms.   The rooms will need to be transferred to other agents before removing.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">Id of the user you wish to remove.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">Id of the user you wish to remove.</param>
         
         
         /// <returns></returns>
@@ -294,7 +294,7 @@ namespace DocuSign.Rooms.Api
         /// Removes the user. Will fail if the user owns any Rooms.   The rooms will need to be transferred to other agents before removing.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">Id of the user you wish to remove.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">Id of the user you wish to remove.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -303,10 +303,10 @@ namespace DocuSign.Rooms.Api
         /// Removes the user from the designated office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the user from the designated office.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -316,10 +316,10 @@ namespace DocuSign.Rooms.Api
         /// Removes the user from the designated office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the user from the designated office.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -328,10 +328,10 @@ namespace DocuSign.Rooms.Api
         /// Removes the user from the designated region.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the user from the designated region.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -341,10 +341,10 @@ namespace DocuSign.Rooms.Api
         /// Removes the user from the designated region.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the user from the designated region.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -353,10 +353,10 @@ namespace DocuSign.Rooms.Api
         /// Unlocks the account of the user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Unlocks the account of the user.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">User Id of the user attempting to be unlocked.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">User Id of the user attempting to be unlocked.</param>
         
         
         /// <returns></returns>
@@ -366,10 +366,10 @@ namespace DocuSign.Rooms.Api
         /// Unlocks the account of the user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Unlocks the account of the user.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">User Id of the user attempting to be unlocked.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">User Id of the user attempting to be unlocked.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -378,10 +378,10 @@ namespace DocuSign.Rooms.Api
         /// Updates user information
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates user information
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -391,10 +391,10 @@ namespace DocuSign.Rooms.Api
         /// Updates user information
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates user information
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
@@ -405,10 +405,10 @@ namespace DocuSign.Rooms.Api
         /// Adds the user to the designated office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Adds the user to the designated office.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of void</returns>
@@ -418,10 +418,10 @@ namespace DocuSign.Rooms.Api
         /// Adds the user to the designated office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Adds the user to the designated office.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse</returns>
@@ -430,10 +430,10 @@ namespace DocuSign.Rooms.Api
         /// Adds the user to the designated region.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Adds the user to the designated region.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of void</returns>
@@ -443,10 +443,10 @@ namespace DocuSign.Rooms.Api
         /// Adds the user to the designated region.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Adds the user to the designated region.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse</returns>
@@ -455,10 +455,10 @@ namespace DocuSign.Rooms.Api
         /// Retrieves user information for the user having the given UserId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Retrieves user information for the user having the given UserId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         
         
         /// <returns>Task of User</returns>
@@ -468,35 +468,35 @@ namespace DocuSign.Rooms.Api
         /// Retrieves user information for the user having the given UserId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Retrieves user information for the user having the given UserId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         
         
         /// <returns>Task of ApiResponse (User)</returns>
         System.Threading.Tasks.Task<ApiResponse<User>> GetUserAsyncWithHttpInfo (string accountId, int? userId);
         /// <summary>
-        /// Gets a paged-list of 
+        /// Gets a paged-list of users.
         /// </summary>
         /// <remarks>
         /// Retrieves a paged-list of Company Users in the User&#39;s company using the given filter and sort parameters.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UserSummaryList</returns>
         System.Threading.Tasks.Task<UserSummaryList> GetUsersAsync (string accountId, UsersApi.GetUsersOptions options = null);
 
         /// <summary>
-        /// Gets a paged-list of 
+        /// Gets a paged-list of users.
         /// </summary>
         /// <remarks>
         /// Retrieves a paged-list of Company Users in the User&#39;s company using the given filter and sort parameters.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UserSummaryList)</returns>
@@ -505,10 +505,10 @@ namespace DocuSign.Rooms.Api
         /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Invites a new user to join a company account on Rooms Version 5 as an Admin.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of User</returns>
@@ -518,10 +518,10 @@ namespace DocuSign.Rooms.Api
         /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Invites a new user to join a company account on Rooms Version 5 as an Admin.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (User)</returns>
@@ -530,10 +530,10 @@ namespace DocuSign.Rooms.Api
         /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Invites a new user to join a company account on Rooms Version 5 as an Agent.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of User</returns>
@@ -543,10 +543,10 @@ namespace DocuSign.Rooms.Api
         /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Invites a new user to join a company account on Rooms Version 5 as an Agent.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (User)</returns>
@@ -555,10 +555,10 @@ namespace DocuSign.Rooms.Api
         /// CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Invites a new user to join a company account on Rooms Version 5 as a Manager.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of User</returns>
@@ -568,10 +568,10 @@ namespace DocuSign.Rooms.Api
         /// CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Invites a new user to join a company account on Rooms Version 5 as a Manager.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (User)</returns>
@@ -580,10 +580,10 @@ namespace DocuSign.Rooms.Api
         /// NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Invites a new user to join a company account on Rooms Version 6.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of User</returns>
@@ -593,10 +593,10 @@ namespace DocuSign.Rooms.Api
         /// NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Invites a new user to join a company account on Rooms Version 6.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (User)</returns>
@@ -605,10 +605,10 @@ namespace DocuSign.Rooms.Api
         /// Locks the account of the user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Locks the account of the user.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">User Id of the user attempting to be locked.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">User Id of the user attempting to be locked.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of void</returns>
@@ -618,10 +618,10 @@ namespace DocuSign.Rooms.Api
         /// Locks the account of the user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Locks the account of the user.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">User Id of the user attempting to be locked.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">User Id of the user attempting to be locked.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse</returns>
@@ -630,10 +630,10 @@ namespace DocuSign.Rooms.Api
         /// Reinvites the pending user with the given userId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Reinvites an unactivated user to join a company account. You can use this method with either Rooms Version 5 or Rooms Version 6.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId"></param>
         
         
         /// <returns>Task of void</returns>
@@ -643,10 +643,10 @@ namespace DocuSign.Rooms.Api
         /// Reinvites the pending user with the given userId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Reinvites an unactivated user to join a company account. You can use this method with either Rooms Version 5 or Rooms Version 6.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId"></param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -658,7 +658,7 @@ namespace DocuSign.Rooms.Api
         /// Removes the user. Will fail if the user owns any Rooms.   The rooms will need to be transferred to other agents before removing.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">Id of the user you wish to remove.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">Id of the user you wish to remove.</param>
         
         
         /// <returns>Task of void</returns>
@@ -671,7 +671,7 @@ namespace DocuSign.Rooms.Api
         /// Removes the user. Will fail if the user owns any Rooms.   The rooms will need to be transferred to other agents before removing.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">Id of the user you wish to remove.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">Id of the user you wish to remove.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -680,10 +680,10 @@ namespace DocuSign.Rooms.Api
         /// Removes the user from the designated office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the user from the designated office.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of void</returns>
@@ -693,10 +693,10 @@ namespace DocuSign.Rooms.Api
         /// Removes the user from the designated office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the user from the designated office.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse</returns>
@@ -705,10 +705,10 @@ namespace DocuSign.Rooms.Api
         /// Removes the user from the designated region.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the user from the designated region.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of void</returns>
@@ -718,10 +718,10 @@ namespace DocuSign.Rooms.Api
         /// Removes the user from the designated region.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the user from the designated region.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse</returns>
@@ -730,10 +730,10 @@ namespace DocuSign.Rooms.Api
         /// Unlocks the account of the user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Unlocks the account of the user.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">User Id of the user attempting to be unlocked.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">User Id of the user attempting to be unlocked.</param>
         
         
         /// <returns>Task of void</returns>
@@ -743,10 +743,10 @@ namespace DocuSign.Rooms.Api
         /// Unlocks the account of the user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Unlocks the account of the user.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">User Id of the user attempting to be unlocked.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">User Id of the user attempting to be unlocked.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -755,10 +755,10 @@ namespace DocuSign.Rooms.Api
         /// Updates user information
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates user information
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of User</returns>
@@ -768,10 +768,10 @@ namespace DocuSign.Rooms.Api
         /// Updates user information
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates user information
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (User)</returns>
@@ -833,10 +833,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Adds the user to the designated office. 
+        /// Adds the user to the designated office. Adds the user to the designated office.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -846,10 +846,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Adds the user to the designated office. 
+        /// Adds the user to the designated office. Adds the user to the designated office.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -931,10 +931,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Adds the user to the designated office. 
+        /// Adds the user to the designated office. Adds the user to the designated office.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of void</returns>
@@ -945,10 +945,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Adds the user to the designated office. 
+        /// Adds the user to the designated office. Adds the user to the designated office.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse</returns>
@@ -1033,10 +1033,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Adds the user to the designated region. 
+        /// Adds the user to the designated region. Adds the user to the designated region.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -1046,10 +1046,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Adds the user to the designated region. 
+        /// Adds the user to the designated region. Adds the user to the designated region.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -1131,10 +1131,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Adds the user to the designated region. 
+        /// Adds the user to the designated region. Adds the user to the designated region.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of void</returns>
@@ -1145,10 +1145,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Adds the user to the designated region. 
+        /// Adds the user to the designated region. Adds the user to the designated region.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse</returns>
@@ -1233,10 +1233,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Retrieves user information for the user having the given UserId. 
+        /// Retrieves user information for the user having the given UserId. Retrieves user information for the user having the given UserId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         
         
         /// <returns>User</returns>
@@ -1247,10 +1247,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Retrieves user information for the user having the given UserId. 
+        /// Retrieves user information for the user having the given UserId. Retrieves user information for the user having the given UserId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         
         
         /// <returns>ApiResponse of User</returns>
@@ -1273,6 +1273,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1328,10 +1332,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Retrieves user information for the user having the given UserId. 
+        /// Retrieves user information for the user having the given UserId. Retrieves user information for the user having the given UserId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         
         
         /// <returns>Task of User</returns>
@@ -1343,10 +1347,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Retrieves user information for the user having the given UserId. 
+        /// Retrieves user information for the user having the given UserId. Retrieves user information for the user having the given UserId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         
         
         /// <returns>Task of ApiResponse (User)</returns>
@@ -1369,6 +1373,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1418,7 +1426,7 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Gets a paged-list of  Retrieves a paged-list of Company Users in the User&#39;s company using the given filter and sort parameters.
+        /// Gets a paged-list of users. Retrieves a paged-list of Company Users in the User&#39;s company using the given filter and sort parameters.
         /// </summary>
         public class GetUsersOptions
         {
@@ -1436,7 +1444,7 @@ namespace DocuSign.Rooms.Api
             public int? roleId {get; set;}
             /// Valid values are &#39;Active&#39;, &#39;Pending&#39; 
             public string status {get; set;}
-            /// 
+            /// When set to true, filters for users whose accounts are locked 
             public bool? lockedOnly {get; set;}
             /// Defaults to 0 
             public int? startPosition {get; set;}
@@ -1445,10 +1453,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a paged-list of  Retrieves a paged-list of Company Users in the User&#39;s company using the given filter and sort parameters.
+        /// Gets a paged-list of users. Retrieves a paged-list of Company Users in the User&#39;s company using the given filter and sort parameters.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>UserSummaryList</returns>
@@ -1459,10 +1467,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a paged-list of  Retrieves a paged-list of Company Users in the User&#39;s company using the given filter and sort parameters.
+        /// Gets a paged-list of users. Retrieves a paged-list of Company Users in the User&#39;s company using the given filter and sort parameters.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of UserSummaryList</returns>
@@ -1482,6 +1490,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1549,10 +1561,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a paged-list of  Retrieves a paged-list of Company Users in the User&#39;s company using the given filter and sort parameters.
+        /// Gets a paged-list of users. Retrieves a paged-list of Company Users in the User&#39;s company using the given filter and sort parameters.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UserSummaryList</returns>
@@ -1564,10 +1576,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a paged-list of  Retrieves a paged-list of Company Users in the User&#39;s company using the given filter and sort parameters.
+        /// Gets a paged-list of users. Retrieves a paged-list of Company Users in the User&#39;s company using the given filter and sort parameters.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UserSummaryList)</returns>
@@ -1587,6 +1599,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1649,10 +1665,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin. 
+        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin. Invites a new user to join a company account on Rooms Version 5 as an Admin.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>User</returns>
@@ -1663,10 +1679,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin. 
+        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin. Invites a new user to join a company account on Rooms Version 5 as an Admin.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of User</returns>
@@ -1752,10 +1768,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin. 
+        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin. Invites a new user to join a company account on Rooms Version 5 as an Admin.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of User</returns>
@@ -1767,10 +1783,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin. 
+        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an admin. Invites a new user to join a company account on Rooms Version 5 as an Admin.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (User)</returns>
@@ -1851,10 +1867,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent. 
+        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent. Invites a new user to join a company account on Rooms Version 5 as an Agent.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>User</returns>
@@ -1865,10 +1881,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent. 
+        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent. Invites a new user to join a company account on Rooms Version 5 as an Agent.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of User</returns>
@@ -1954,10 +1970,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent. 
+        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent. Invites a new user to join a company account on Rooms Version 5 as an Agent.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of User</returns>
@@ -1969,10 +1985,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent. 
+        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as an agent. Invites a new user to join a company account on Rooms Version 5 as an Agent.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (User)</returns>
@@ -2053,10 +2069,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager. 
+        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager. Invites a new user to join a company account on Rooms Version 5 as a Manager.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>User</returns>
@@ -2067,10 +2083,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager. 
+        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager. Invites a new user to join a company account on Rooms Version 5 as a Manager.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of User</returns>
@@ -2156,10 +2172,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager. 
+        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager. Invites a new user to join a company account on Rooms Version 5 as a Manager.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of User</returns>
@@ -2171,10 +2187,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager. 
+        /// CLASSIC COMPANY ONLY. Send an invitation to join the company as a manager. Invites a new user to join a company account on Rooms Version 5 as a Manager.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (User)</returns>
@@ -2255,10 +2271,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email. 
+        /// NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email. Invites a new user to join a company account on Rooms Version 6.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>User</returns>
@@ -2269,10 +2285,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email. 
+        /// NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email. Invites a new user to join a company account on Rooms Version 6.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of User</returns>
@@ -2358,10 +2374,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email. 
+        /// NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email. Invites a new user to join a company account on Rooms Version 6.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of User</returns>
@@ -2373,10 +2389,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email. 
+        /// NON-CLASSIC COMPANY ONLY. Send an invitation to the user or non-user having the given email. Invites a new user to join a company account on Rooms Version 6.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (User)</returns>
@@ -2457,10 +2473,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Locks the account of the user. 
+        /// Locks the account of the user. Locks the account of the user.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">User Id of the user attempting to be locked.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">User Id of the user attempting to be locked.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -2470,10 +2486,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Locks the account of the user. 
+        /// Locks the account of the user. Locks the account of the user.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">User Id of the user attempting to be locked.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">User Id of the user attempting to be locked.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -2555,10 +2571,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Locks the account of the user. 
+        /// Locks the account of the user. Locks the account of the user.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">User Id of the user attempting to be locked.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">User Id of the user attempting to be locked.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of void</returns>
@@ -2569,10 +2585,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Locks the account of the user. 
+        /// Locks the account of the user. Locks the account of the user.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">User Id of the user attempting to be locked.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">User Id of the user attempting to be locked.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse</returns>
@@ -2657,10 +2673,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Reinvites the pending user with the given userId. 
+        /// Reinvites the pending user with the given userId. Reinvites an unactivated user to join a company account. You can use this method with either Rooms Version 5 or Rooms Version 6.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId"></param>
         
         
         /// <returns></returns>
@@ -2670,10 +2686,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Reinvites the pending user with the given userId. 
+        /// Reinvites the pending user with the given userId. Reinvites an unactivated user to join a company account. You can use this method with either Rooms Version 5 or Rooms Version 6.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId"></param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -2696,6 +2712,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -2743,10 +2763,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Reinvites the pending user with the given userId. 
+        /// Reinvites the pending user with the given userId. Reinvites an unactivated user to join a company account. You can use this method with either Rooms Version 5 or Rooms Version 6.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId"></param>
         
         
         /// <returns>Task of void</returns>
@@ -2757,10 +2777,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Reinvites the pending user with the given userId. 
+        /// Reinvites the pending user with the given userId. Reinvites an unactivated user to join a company account. You can use this method with either Rooms Version 5 or Rooms Version 6.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId"></param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -2783,6 +2803,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -2836,7 +2860,7 @@ namespace DocuSign.Rooms.Api
         /// Removes a user from the company. Removes the user. Will fail if the user owns any Rooms.   The rooms will need to be transferred to other agents before removing.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">Id of the user you wish to remove.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">Id of the user you wish to remove.</param>
         
         
         /// <returns></returns>
@@ -2849,7 +2873,7 @@ namespace DocuSign.Rooms.Api
         /// Removes a user from the company. Removes the user. Will fail if the user owns any Rooms.   The rooms will need to be transferred to other agents before removing.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">Id of the user you wish to remove.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">Id of the user you wish to remove.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -2872,6 +2896,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -2922,7 +2950,7 @@ namespace DocuSign.Rooms.Api
         /// Removes a user from the company. Removes the user. Will fail if the user owns any Rooms.   The rooms will need to be transferred to other agents before removing.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">Id of the user you wish to remove.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">Id of the user you wish to remove.</param>
         
         
         /// <returns>Task of void</returns>
@@ -2936,7 +2964,7 @@ namespace DocuSign.Rooms.Api
         /// Removes a user from the company. Removes the user. Will fail if the user owns any Rooms.   The rooms will need to be transferred to other agents before removing.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">Id of the user you wish to remove.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">Id of the user you wish to remove.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -2959,6 +2987,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -3009,10 +3041,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Removes the user from the designated office. 
+        /// Removes the user from the designated office. Removes the user from the designated office.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -3022,10 +3054,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Removes the user from the designated office. 
+        /// Removes the user from the designated office. Removes the user from the designated office.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -3107,10 +3139,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Removes the user from the designated office. 
+        /// Removes the user from the designated office. Removes the user from the designated office.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of void</returns>
@@ -3121,10 +3153,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Removes the user from the designated office. 
+        /// Removes the user from the designated office. Removes the user from the designated office.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse</returns>
@@ -3209,10 +3241,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Removes the user from the designated region. 
+        /// Removes the user from the designated region. Removes the user from the designated region.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -3222,10 +3254,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Removes the user from the designated region. 
+        /// Removes the user from the designated region. Removes the user from the designated region.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -3307,10 +3339,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Removes the user from the designated region. 
+        /// Removes the user from the designated region. Removes the user from the designated region.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of void</returns>
@@ -3321,10 +3353,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Removes the user from the designated region. 
+        /// Removes the user from the designated region. Removes the user from the designated region.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse</returns>
@@ -3409,10 +3441,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Unlocks the account of the user. 
+        /// Unlocks the account of the user. Unlocks the account of the user.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">User Id of the user attempting to be unlocked.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">User Id of the user attempting to be unlocked.</param>
         
         
         /// <returns></returns>
@@ -3422,10 +3454,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Unlocks the account of the user. 
+        /// Unlocks the account of the user. Unlocks the account of the user.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">User Id of the user attempting to be unlocked.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">User Id of the user attempting to be unlocked.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -3448,6 +3480,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -3495,10 +3531,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Unlocks the account of the user. 
+        /// Unlocks the account of the user. Unlocks the account of the user.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">User Id of the user attempting to be unlocked.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">User Id of the user attempting to be unlocked.</param>
         
         
         /// <returns>Task of void</returns>
@@ -3509,10 +3545,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Unlocks the account of the user. 
+        /// Unlocks the account of the user. Unlocks the account of the user.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId">User Id of the user attempting to be unlocked.</param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">User Id of the user attempting to be unlocked.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -3535,6 +3571,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -3585,10 +3625,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Updates user information 
+        /// Updates user information Updates user information
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>User</returns>
@@ -3599,10 +3639,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Updates user information 
+        /// Updates user information Updates user information
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of User</returns>
@@ -3692,10 +3732,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Updates user information 
+        /// Updates user information Updates user information
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of User</returns>
@@ -3707,10 +3747,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Updates user information 
+        /// Updates user information Updates user information
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="userId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="userId">The id of the user.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (User)</returns>

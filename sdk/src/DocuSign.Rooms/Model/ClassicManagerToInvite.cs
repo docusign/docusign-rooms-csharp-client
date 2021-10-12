@@ -40,7 +40,6 @@ namespace DocuSign.Rooms.Model
         /// </summary>
         [DataMember(Name="accessLevel", EmitDefaultValue=false)]
         public AccessLevel? AccessLevel { get; set; }
-        
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassicManagerToInvite" /> class.
         /// </summary>

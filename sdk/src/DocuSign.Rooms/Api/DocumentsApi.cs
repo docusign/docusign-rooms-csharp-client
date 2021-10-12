@@ -28,10 +28,10 @@ namespace DocuSign.Rooms.Api
         /// Grants access to a document for a user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Grants a user access to a document. You specify the user&#39;s &#x60;userId&#x60; in the request body. The response is an object that specifies the access the user has.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -41,10 +41,10 @@ namespace DocuSign.Rooms.Api
         /// Grants access to a document for a user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Grants a user access to a document. You specify the user&#39;s &#x60;userId&#x60; in the request body. The response is an object that specifies the access the user has.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
@@ -53,10 +53,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes a document.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Permanently deletes a document. To find the &#x60;documentId&#x60; of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The ID of the document.</param>
         
         
         /// <returns></returns>
@@ -66,10 +66,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes a document.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Permanently deletes a document. To find the &#x60;documentId&#x60; of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The ID of the document.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -78,10 +78,10 @@ namespace DocuSign.Rooms.Api
         /// Get information about the Document with the given DocumentId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
@@ -91,10 +91,10 @@ namespace DocuSign.Rooms.Api
         /// Get information about the Document with the given DocumentId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
@@ -105,10 +105,10 @@ namespace DocuSign.Rooms.Api
         /// Grants access to a document for a user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Grants a user access to a document. You specify the user&#39;s &#x60;userId&#x60; in the request body. The response is an object that specifies the access the user has.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of DocumentUser</returns>
@@ -118,10 +118,10 @@ namespace DocuSign.Rooms.Api
         /// Grants access to a document for a user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Grants a user access to a document. You specify the user&#39;s &#x60;userId&#x60; in the request body. The response is an object that specifies the access the user has.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (DocumentUser)</returns>
@@ -130,10 +130,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes a document.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Permanently deletes a document. To find the &#x60;documentId&#x60; of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The ID of the document.</param>
         
         
         /// <returns>Task of void</returns>
@@ -143,10 +143,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes a document.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Permanently deletes a document. To find the &#x60;documentId&#x60; of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The ID of the document.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -155,10 +155,10 @@ namespace DocuSign.Rooms.Api
         /// Get information about the Document with the given DocumentId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Document</returns>
@@ -168,10 +168,10 @@ namespace DocuSign.Rooms.Api
         /// Get information about the Document with the given DocumentId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Document)</returns>
@@ -233,10 +233,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Grants access to a document for a user. 
+        /// Grants access to a document for a user. Grants a user access to a document. You specify the user&#39;s &#x60;userId&#x60; in the request body. The response is an object that specifies the access the user has.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>DocumentUser</returns>
@@ -247,10 +247,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Grants access to a document for a user. 
+        /// Grants access to a document for a user. Grants a user access to a document. You specify the user&#39;s &#x60;userId&#x60; in the request body. The response is an object that specifies the access the user has.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of DocumentUser</returns>
@@ -340,10 +340,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Grants access to a document for a user. 
+        /// Grants access to a document for a user. Grants a user access to a document. You specify the user&#39;s &#x60;userId&#x60; in the request body. The response is an object that specifies the access the user has.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of DocumentUser</returns>
@@ -355,10 +355,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Grants access to a document for a user. 
+        /// Grants access to a document for a user. Grants a user access to a document. You specify the user&#39;s &#x60;userId&#x60; in the request body. The response is an object that specifies the access the user has.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (DocumentUser)</returns>
@@ -443,10 +443,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Deletes a document. 
+        /// Deletes a document. Permanently deletes a document. To find the &#x60;documentId&#x60; of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The ID of the document.</param>
         
         
         /// <returns></returns>
@@ -456,10 +456,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Deletes a document. 
+        /// Deletes a document. Permanently deletes a document. To find the &#x60;documentId&#x60; of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The ID of the document.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -482,6 +482,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -529,10 +533,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Deletes a document. 
+        /// Deletes a document. Permanently deletes a document. To find the &#x60;documentId&#x60; of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The ID of the document.</param>
         
         
         /// <returns>Task of void</returns>
@@ -543,10 +547,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Deletes a document. 
+        /// Deletes a document. Permanently deletes a document. To find the &#x60;documentId&#x60; of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The ID of the document.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -569,6 +573,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -618,19 +626,19 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Get information about the Document with the given DocumentId. 
+        /// Get information about the Document with the given DocumentId. Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </summary>
         public class GetDocumentOptions
         {
-            /// 
+            /// When set to **true**, includes the contents of the document in the &#x60;base64Contents&#x60; property of the response. The default value is **false**. 
             public bool? includeContents {get; set;}
         }
 
         /// <summary>
-        /// Get information about the Document with the given DocumentId. 
+        /// Get information about the Document with the given DocumentId. Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Document</returns>
@@ -641,10 +649,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get information about the Document with the given DocumentId. 
+        /// Get information about the Document with the given DocumentId. Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of Document</returns>
@@ -667,6 +675,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -726,10 +738,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get information about the Document with the given DocumentId. 
+        /// Get information about the Document with the given DocumentId. Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Document</returns>
@@ -741,10 +753,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get information about the Document with the given DocumentId. 
+        /// Get information about the Document with the given DocumentId. Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="documentId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Document)</returns>
@@ -767,6 +779,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 

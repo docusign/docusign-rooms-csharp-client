@@ -28,10 +28,10 @@ namespace DocuSign.Rooms.Api
         /// Assigns a form to a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -41,10 +41,10 @@ namespace DocuSign.Rooms.Api
         /// Assigns a form to a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
@@ -53,10 +53,10 @@ namespace DocuSign.Rooms.Api
         /// Creates a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new form group with the name given in the &#x60;name&#x60; property of the request body.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -66,10 +66,10 @@ namespace DocuSign.Rooms.Api
         /// Creates a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new form group with the name given in the &#x60;name&#x60; property of the request body.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
@@ -78,10 +78,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes the specified form group.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         
         
         /// <returns></returns>
@@ -91,10 +91,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes the specified form group.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -103,10 +103,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get the specified form group.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         
         
         /// <returns></returns>
@@ -116,10 +116,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get the specified form group.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         
         
         /// <returns>ApiResponse of </returns>
@@ -128,10 +128,10 @@ namespace DocuSign.Rooms.Api
         /// Get account Form Groups.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the company form groups to which the current user has access.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
@@ -141,10 +141,10 @@ namespace DocuSign.Rooms.Api
         /// Get account Form Groups.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the company form groups to which the current user has access.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
@@ -153,10 +153,10 @@ namespace DocuSign.Rooms.Api
         /// Assign office to a form group so the specified office has access to the form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// \&quot;Grants the office &#x60;officeId&#x60; access to the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         
         
         /// <returns></returns>
@@ -166,10 +166,10 @@ namespace DocuSign.Rooms.Api
         /// Assign office to a form group so the specified office has access to the form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// \&quot;Grants the office &#x60;officeId&#x60; access to the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -178,10 +178,10 @@ namespace DocuSign.Rooms.Api
         /// Removes a form from a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the form &#x60;formId&#x60; from the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="formId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="formId">The id of the form.</param>
         
         
         /// <returns></returns>
@@ -191,10 +191,10 @@ namespace DocuSign.Rooms.Api
         /// Removes a form from a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the form &#x60;formId&#x60; from the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="formId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="formId">The id of the form.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -203,10 +203,10 @@ namespace DocuSign.Rooms.Api
         /// Renames a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Renames the specified form group with the name given in the &#x60;name&#x60; property of the request.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -216,10 +216,10 @@ namespace DocuSign.Rooms.Api
         /// Renames a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Renames the specified form group with the name given in the &#x60;name&#x60; property of the request.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
@@ -228,10 +228,10 @@ namespace DocuSign.Rooms.Api
         /// Remove office to a form group so the specified office doesn&#39;t have access to the form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Revoke access to the form group &#x60;formGroupId&#x60; from the office &#x60;officeId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         
         
         /// <returns></returns>
@@ -241,10 +241,10 @@ namespace DocuSign.Rooms.Api
         /// Remove office to a form group so the specified office doesn&#39;t have access to the form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Revoke access to the form group &#x60;formGroupId&#x60; from the office &#x60;officeId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -255,10 +255,10 @@ namespace DocuSign.Rooms.Api
         /// Assigns a form to a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of FormGroupFormToAssign</returns>
@@ -268,10 +268,10 @@ namespace DocuSign.Rooms.Api
         /// Assigns a form to a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (FormGroupFormToAssign)</returns>
@@ -280,10 +280,10 @@ namespace DocuSign.Rooms.Api
         /// Creates a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new form group with the name given in the &#x60;name&#x60; property of the request body.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of FormGroup</returns>
@@ -293,10 +293,10 @@ namespace DocuSign.Rooms.Api
         /// Creates a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new form group with the name given in the &#x60;name&#x60; property of the request body.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (FormGroup)</returns>
@@ -305,10 +305,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes the specified form group.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         
         
         /// <returns>Task of void</returns>
@@ -318,10 +318,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes the specified form group.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -330,10 +330,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get the specified form group.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         
         
         /// <returns>Task of FormGroup</returns>
@@ -343,10 +343,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get the specified form group.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         
         
         /// <returns>Task of ApiResponse (FormGroup)</returns>
@@ -355,10 +355,10 @@ namespace DocuSign.Rooms.Api
         /// Get account Form Groups.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the company form groups to which the current user has access.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FormGroupSummaryList</returns>
@@ -368,10 +368,10 @@ namespace DocuSign.Rooms.Api
         /// Get account Form Groups.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the company form groups to which the current user has access.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FormGroupSummaryList)</returns>
@@ -380,10 +380,10 @@ namespace DocuSign.Rooms.Api
         /// Assign office to a form group so the specified office has access to the form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// \&quot;Grants the office &#x60;officeId&#x60; access to the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         
         
         /// <returns>Task of void</returns>
@@ -393,10 +393,10 @@ namespace DocuSign.Rooms.Api
         /// Assign office to a form group so the specified office has access to the form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// \&quot;Grants the office &#x60;officeId&#x60; access to the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -405,10 +405,10 @@ namespace DocuSign.Rooms.Api
         /// Removes a form from a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the form &#x60;formId&#x60; from the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="formId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="formId">The id of the form.</param>
         
         
         /// <returns>Task of void</returns>
@@ -418,10 +418,10 @@ namespace DocuSign.Rooms.Api
         /// Removes a form from a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the form &#x60;formId&#x60; from the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="formId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="formId">The id of the form.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -430,10 +430,10 @@ namespace DocuSign.Rooms.Api
         /// Renames a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Renames the specified form group with the name given in the &#x60;name&#x60; property of the request.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of FormGroup</returns>
@@ -443,10 +443,10 @@ namespace DocuSign.Rooms.Api
         /// Renames a form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Renames the specified form group with the name given in the &#x60;name&#x60; property of the request.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (FormGroup)</returns>
@@ -455,10 +455,10 @@ namespace DocuSign.Rooms.Api
         /// Remove office to a form group so the specified office doesn&#39;t have access to the form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Revoke access to the form group &#x60;formGroupId&#x60; from the office &#x60;officeId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         
         
         /// <returns>Task of void</returns>
@@ -468,10 +468,10 @@ namespace DocuSign.Rooms.Api
         /// Remove office to a form group so the specified office doesn&#39;t have access to the form group.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Revoke access to the form group &#x60;formGroupId&#x60; from the office &#x60;officeId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -533,10 +533,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Assigns a form to a form group. 
+        /// Assigns a form to a form group. Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>FormGroupFormToAssign</returns>
@@ -547,10 +547,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Assigns a form to a form group. 
+        /// Assigns a form to a form group. Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of FormGroupFormToAssign</returns>
@@ -640,10 +640,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Assigns a form to a form group. 
+        /// Assigns a form to a form group. Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of FormGroupFormToAssign</returns>
@@ -655,10 +655,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Assigns a form to a form group. 
+        /// Assigns a form to a form group. Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (FormGroupFormToAssign)</returns>
@@ -743,10 +743,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Creates a form group. 
+        /// Creates a form group. Creates a new form group with the name given in the &#x60;name&#x60; property of the request body.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>FormGroup</returns>
@@ -757,10 +757,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Creates a form group. 
+        /// Creates a form group. Creates a new form group with the name given in the &#x60;name&#x60; property of the request body.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of FormGroup</returns>
@@ -846,10 +846,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Creates a form group. 
+        /// Creates a form group. Creates a new form group with the name given in the &#x60;name&#x60; property of the request body.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of FormGroup</returns>
@@ -861,10 +861,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Creates a form group. 
+        /// Creates a form group. Creates a new form group with the name given in the &#x60;name&#x60; property of the request body.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (FormGroup)</returns>
@@ -945,10 +945,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Deletes a form group. 
+        /// Deletes a form group. Deletes the specified form group.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         
         
         /// <returns></returns>
@@ -958,10 +958,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Deletes a form group. 
+        /// Deletes a form group. Deletes the specified form group.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -984,6 +984,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1031,10 +1035,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Deletes a form group. 
+        /// Deletes a form group. Deletes the specified form group.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         
         
         /// <returns>Task of void</returns>
@@ -1045,10 +1049,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Deletes a form group. 
+        /// Deletes a form group. Deletes the specified form group.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -1071,6 +1075,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1121,10 +1129,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Gets a form group. 
+        /// Gets a form group. Get the specified form group.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         
         
         /// <returns>FormGroup</returns>
@@ -1135,10 +1143,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a form group. 
+        /// Gets a form group. Get the specified form group.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         
         
         /// <returns>ApiResponse of FormGroup</returns>
@@ -1161,6 +1169,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1216,10 +1228,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a form group. 
+        /// Gets a form group. Get the specified form group.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         
         
         /// <returns>Task of FormGroup</returns>
@@ -1231,10 +1243,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Gets a form group. 
+        /// Gets a form group. Get the specified form group.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         
         
         /// <returns>Task of ApiResponse (FormGroup)</returns>
@@ -1257,6 +1269,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1306,7 +1322,7 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Get account Form Groups. 
+        /// Get account Form Groups. Returns the company form groups to which the current user has access.
         /// </summary>
         public class GetFormGroupsOptions
         {
@@ -1317,10 +1333,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get account Form Groups. 
+        /// Get account Form Groups. Returns the company form groups to which the current user has access.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>FormGroupSummaryList</returns>
@@ -1331,10 +1347,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get account Form Groups. 
+        /// Get account Form Groups. Returns the company form groups to which the current user has access.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of FormGroupSummaryList</returns>
@@ -1354,6 +1370,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1413,10 +1433,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get account Form Groups. 
+        /// Get account Form Groups. Returns the company form groups to which the current user has access.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FormGroupSummaryList</returns>
@@ -1428,10 +1448,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get account Form Groups. 
+        /// Get account Form Groups. Returns the company form groups to which the current user has access.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FormGroupSummaryList)</returns>
@@ -1451,6 +1471,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1505,10 +1529,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Assign office to a form group so the specified office has access to the form group. 
+        /// Assign office to a form group so the specified office has access to the form group. \&quot;Grants the office &#x60;officeId&#x60; access to the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         
         
         /// <returns></returns>
@@ -1518,10 +1542,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Assign office to a form group so the specified office has access to the form group. 
+        /// Assign office to a form group so the specified office has access to the form group. \&quot;Grants the office &#x60;officeId&#x60; access to the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -1547,6 +1571,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1595,10 +1623,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Assign office to a form group so the specified office has access to the form group. 
+        /// Assign office to a form group so the specified office has access to the form group. \&quot;Grants the office &#x60;officeId&#x60; access to the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         
         
         /// <returns>Task of void</returns>
@@ -1609,10 +1637,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Assign office to a form group so the specified office has access to the form group. 
+        /// Assign office to a form group so the specified office has access to the form group. \&quot;Grants the office &#x60;officeId&#x60; access to the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -1638,6 +1666,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1689,10 +1721,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Removes a form from a form group. 
+        /// Removes a form from a form group. Removes the form &#x60;formId&#x60; from the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="formId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="formId">The id of the form.</param>
         
         
         /// <returns></returns>
@@ -1702,10 +1734,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Removes a form from a form group. 
+        /// Removes a form from a form group. Removes the form &#x60;formId&#x60; from the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="formId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="formId">The id of the form.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -1731,6 +1763,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1779,10 +1815,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Removes a form from a form group. 
+        /// Removes a form from a form group. Removes the form &#x60;formId&#x60; from the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="formId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="formId">The id of the form.</param>
         
         
         /// <returns>Task of void</returns>
@@ -1793,10 +1829,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Removes a form from a form group. 
+        /// Removes a form from a form group. Removes the form &#x60;formId&#x60; from the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="formId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="formId">The id of the form.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -1822,6 +1858,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1873,10 +1913,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Renames a form group. 
+        /// Renames a form group. Renames the specified form group with the name given in the &#x60;name&#x60; property of the request.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>FormGroup</returns>
@@ -1887,10 +1927,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Renames a form group. 
+        /// Renames a form group. Renames the specified form group with the name given in the &#x60;name&#x60; property of the request.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of FormGroup</returns>
@@ -1980,10 +2020,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Renames a form group. 
+        /// Renames a form group. Renames the specified form group with the name given in the &#x60;name&#x60; property of the request.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of FormGroup</returns>
@@ -1995,10 +2035,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Renames a form group. 
+        /// Renames a form group. Renames the specified form group with the name given in the &#x60;name&#x60; property of the request.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (FormGroup)</returns>
@@ -2083,10 +2123,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Remove office to a form group so the specified office doesn&#39;t have access to the form group. 
+        /// Remove office to a form group so the specified office doesn&#39;t have access to the form group. Revoke access to the form group &#x60;formGroupId&#x60; from the office &#x60;officeId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         
         
         /// <returns></returns>
@@ -2096,10 +2136,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Remove office to a form group so the specified office doesn&#39;t have access to the form group. 
+        /// Remove office to a form group so the specified office doesn&#39;t have access to the form group. Revoke access to the form group &#x60;formGroupId&#x60; from the office &#x60;officeId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -2125,6 +2165,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -2173,10 +2217,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Remove office to a form group so the specified office doesn&#39;t have access to the form group. 
+        /// Remove office to a form group so the specified office doesn&#39;t have access to the form group. Revoke access to the form group &#x60;formGroupId&#x60; from the office &#x60;officeId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         
         
         /// <returns>Task of void</returns>
@@ -2187,10 +2231,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Remove office to a form group so the specified office doesn&#39;t have access to the form group. 
+        /// Remove office to a form group so the specified office doesn&#39;t have access to the form group. Revoke access to the form group &#x60;formGroupId&#x60; from the office &#x60;officeId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="formGroupId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -2216,6 +2260,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 

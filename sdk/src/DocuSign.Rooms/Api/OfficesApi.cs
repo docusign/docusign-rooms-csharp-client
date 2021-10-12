@@ -28,10 +28,10 @@ namespace DocuSign.Rooms.Api
         /// Create an office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create an office.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns></returns>
@@ -41,10 +41,10 @@ namespace DocuSign.Rooms.Api
         /// Create an office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create an office.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
@@ -53,10 +53,10 @@ namespace DocuSign.Rooms.Api
         /// Delete an office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes an office from a Rooms account.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId"></param>
         
         
         /// <returns></returns>
@@ -66,10 +66,10 @@ namespace DocuSign.Rooms.Api
         /// Delete an office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes an office from a Rooms account.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId"></param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -78,10 +78,10 @@ namespace DocuSign.Rooms.Api
         /// Get information about the office with the given officeId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get information about the office with the given officeId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId">The id of the office.</param>
         
         
         /// <returns></returns>
@@ -91,35 +91,35 @@ namespace DocuSign.Rooms.Api
         /// Get information about the office with the given officeId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get information about the office with the given officeId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId">The id of the office.</param>
         
         
         /// <returns>ApiResponse of </returns>
         ApiResponse<Office> GetOfficeWithHttpInfo (string accountId, int? officeId);
         /// <summary>
-        /// Get all 
+        /// Get all offices.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of offices associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
         OfficeSummaryList GetOffices (string accountId, OfficesApi.GetOfficesOptions options = null);
 
         /// <summary>
-        /// Get all 
+        /// Get all offices.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of offices associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
@@ -128,10 +128,10 @@ namespace DocuSign.Rooms.Api
         /// Lists the number of objects of each type that reference the office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of each type of object and the number of objects of that type referencing the specified office. Note that an office cannot be deleted while existing objects reference it.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId"></param>
         
         
         /// <returns></returns>
@@ -141,10 +141,10 @@ namespace DocuSign.Rooms.Api
         /// Lists the number of objects of each type that reference the office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of each type of object and the number of objects of that type referencing the specified office. Note that an office cannot be deleted while existing objects reference it.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId"></param>
         
         
         /// <returns>ApiResponse of </returns>
@@ -155,10 +155,10 @@ namespace DocuSign.Rooms.Api
         /// Create an office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create an office.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of Office</returns>
@@ -168,10 +168,10 @@ namespace DocuSign.Rooms.Api
         /// Create an office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create an office.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (Office)</returns>
@@ -180,10 +180,10 @@ namespace DocuSign.Rooms.Api
         /// Delete an office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes an office from a Rooms account.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId"></param>
         
         
         /// <returns>Task of void</returns>
@@ -193,10 +193,10 @@ namespace DocuSign.Rooms.Api
         /// Delete an office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes an office from a Rooms account.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId"></param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -205,10 +205,10 @@ namespace DocuSign.Rooms.Api
         /// Get information about the office with the given officeId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get information about the office with the given officeId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId">The id of the office.</param>
         
         
         /// <returns>Task of Office</returns>
@@ -218,35 +218,35 @@ namespace DocuSign.Rooms.Api
         /// Get information about the office with the given officeId.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get information about the office with the given officeId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId">The id of the office.</param>
         
         
         /// <returns>Task of ApiResponse (Office)</returns>
         System.Threading.Tasks.Task<ApiResponse<Office>> GetOfficeAsyncWithHttpInfo (string accountId, int? officeId);
         /// <summary>
-        /// Get all 
+        /// Get all offices.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of offices associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of OfficeSummaryList</returns>
         System.Threading.Tasks.Task<OfficeSummaryList> GetOfficesAsync (string accountId, OfficesApi.GetOfficesOptions options = null);
 
         /// <summary>
-        /// Get all 
+        /// Get all offices.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of offices associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (OfficeSummaryList)</returns>
@@ -255,10 +255,10 @@ namespace DocuSign.Rooms.Api
         /// Lists the number of objects of each type that reference the office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of each type of object and the number of objects of that type referencing the specified office. Note that an office cannot be deleted while existing objects reference it.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId"></param>
         
         
         /// <returns>Task of OfficeReferenceCountList</returns>
@@ -268,10 +268,10 @@ namespace DocuSign.Rooms.Api
         /// Lists the number of objects of each type that reference the office.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of each type of object and the number of objects of that type referencing the specified office. Note that an office cannot be deleted while existing objects reference it.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId"></param>
         
         
         /// <returns>Task of ApiResponse (OfficeReferenceCountList)</returns>
@@ -333,10 +333,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Create an office. 
+        /// Create an office. Create an office.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Office</returns>
@@ -347,10 +347,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Create an office. 
+        /// Create an office. Create an office.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>ApiResponse of Office</returns>
@@ -436,10 +436,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Create an office. 
+        /// Create an office. Create an office.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of Office</returns>
@@ -451,10 +451,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Create an office. 
+        /// Create an office. Create an office.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         /// <param name="body"> (optional)</param>
         
         /// <returns>Task of ApiResponse (Office)</returns>
@@ -535,10 +535,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Delete an office. 
+        /// Delete an office. This method deletes an office from a Rooms account.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId"></param>
         
         
         /// <returns></returns>
@@ -548,10 +548,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Delete an office. 
+        /// Delete an office. This method deletes an office from a Rooms account.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId"></param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -574,6 +574,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -621,10 +625,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Delete an office. 
+        /// Delete an office. This method deletes an office from a Rooms account.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId"></param>
         
         
         /// <returns>Task of void</returns>
@@ -635,10 +639,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Delete an office. 
+        /// Delete an office. This method deletes an office from a Rooms account.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId"></param>
         
         
         /// <returns>Task of ApiResponse</returns>
@@ -661,6 +665,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -711,10 +719,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Get information about the office with the given officeId. 
+        /// Get information about the office with the given officeId. Get information about the office with the given officeId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId">The id of the office.</param>
         
         
         /// <returns>Office</returns>
@@ -725,10 +733,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get information about the office with the given officeId. 
+        /// Get information about the office with the given officeId. Get information about the office with the given officeId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId">The id of the office.</param>
         
         
         /// <returns>ApiResponse of Office</returns>
@@ -751,6 +759,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -806,10 +818,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get information about the office with the given officeId. 
+        /// Get information about the office with the given officeId. Get information about the office with the given officeId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId">The id of the office.</param>
         
         
         /// <returns>Task of Office</returns>
@@ -821,10 +833,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get information about the office with the given officeId. 
+        /// Get information about the office with the given officeId. Get information about the office with the given officeId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId">The id of the office.</param>
         
         
         /// <returns>Task of ApiResponse (Office)</returns>
@@ -847,6 +859,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -896,7 +912,7 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Get all  
+        /// Get all offices. This method returns a list of offices associated with an account.
         /// </summary>
         public class GetOfficesOptions
         {
@@ -911,10 +927,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get all  
+        /// Get all offices. This method returns a list of offices associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>OfficeSummaryList</returns>
@@ -925,10 +941,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get all  
+        /// Get all offices. This method returns a list of offices associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of OfficeSummaryList</returns>
@@ -948,6 +964,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1009,10 +1029,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get all  
+        /// Get all offices. This method returns a list of offices associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of OfficeSummaryList</returns>
@@ -1024,10 +1044,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Get all  
+        /// Get all offices. This method returns a list of offices associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (OfficeSummaryList)</returns>
@@ -1047,6 +1067,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1103,10 +1127,10 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Lists the number of objects of each type that reference the office. 
+        /// Lists the number of objects of each type that reference the office. This method returns a list of each type of object and the number of objects of that type referencing the specified office. Note that an office cannot be deleted while existing objects reference it.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId"></param>
         
         
         /// <returns>OfficeReferenceCountList</returns>
@@ -1117,10 +1141,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Lists the number of objects of each type that reference the office. 
+        /// Lists the number of objects of each type that reference the office. This method returns a list of each type of object and the number of objects of that type referencing the specified office. Note that an office cannot be deleted while existing objects reference it.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId"></param>
         
         
         /// <returns>ApiResponse of OfficeReferenceCountList</returns>
@@ -1143,6 +1167,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1198,10 +1226,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Lists the number of objects of each type that reference the office. 
+        /// Lists the number of objects of each type that reference the office. This method returns a list of each type of object and the number of objects of that type referencing the specified office. Note that an office cannot be deleted while existing objects reference it.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId"></param>
         
         
         /// <returns>Task of OfficeReferenceCountList</returns>
@@ -1213,10 +1241,10 @@ namespace DocuSign.Rooms.Api
         }
 
         /// <summary>
-        /// Lists the number of objects of each type that reference the office. 
+        /// Lists the number of objects of each type that reference the office. This method returns a list of each type of object and the number of objects of that type referencing the specified office. Note that an office cannot be deleted while existing objects reference it.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId"></param>/// <param name="officeId"></param>
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="officeId"></param>
         
         
         /// <returns>Task of ApiResponse (OfficeReferenceCountList)</returns>
@@ -1239,6 +1267,10 @@ namespace DocuSign.Rooms.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 

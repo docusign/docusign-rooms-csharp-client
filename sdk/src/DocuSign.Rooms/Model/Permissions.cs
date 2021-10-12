@@ -46,7 +46,6 @@ namespace DocuSign.Rooms.Model
         /// <param name="CanDeleteOwnedRooms">CanDeleteOwnedRooms.</param>
         /// <param name="AutoAccessToRooms">AutoAccessToRooms.</param>
         /// <param name="CanExportRoomActivityDetailsPeople">CanExportRoomActivityDetailsPeople.</param>
-        /// <param name="IsVisibleInRooms">IsVisibleInRooms.</param>
         /// <param name="CanCopyRoomDetails">CanCopyRoomDetails.</param>
         /// <param name="CanEditAnyRoomRole">CanEditAnyRoomRole.</param>
         /// <param name="CanEditInvitedRoomRole">CanEditInvitedRoomRole.</param>
@@ -69,6 +68,7 @@ namespace DocuSign.Rooms.Model
         /// <param name="CanManageSharedDocs">CanManageSharedDocs.</param>
         /// <param name="CanManageFormGroups">CanManageFormGroups.</param>
         /// <param name="CanShareDocsNotOwned">CanShareDocsNotOwned.</param>
+        /// <param name="CanCreateFormTemplates">CanCreateFormTemplates.</param>
         /// <param name="CanAddTasksToAnyTaskLists">CanAddTasksToAnyTaskLists.</param>
         /// <param name="CanEditEditableTasks">CanEditEditableTasks.</param>
         /// <param name="CanEditAnyTasks">CanEditAnyTasks.</param>
@@ -99,7 +99,7 @@ namespace DocuSign.Rooms.Model
         /// <param name="CanManageRoomDetails">CanManageRoomDetails.</param>
         /// <param name="CanManageRoomTemplates">CanManageRoomTemplates.</param>
         /// <param name="CanManageIntegrationSettings">CanManageIntegrationSettings.</param>
-        public Permissions(bool? CanAddUsersToRooms = default(bool?), bool? CanCreateRooms = default(bool?), bool? CanSubmitRoomsForReview = default(bool?), bool? CanCloseRooms = default(bool?), bool? CanReopenRooms = default(bool?), bool? CanDeleteOwnedRooms = default(bool?), bool? AutoAccessToRooms = default(bool?), bool? CanExportRoomActivityDetailsPeople = default(bool?), bool? IsVisibleInRooms = default(bool?), bool? CanCopyRoomDetails = default(bool?), bool? CanEditAnyRoomRole = default(bool?), bool? CanEditInvitedRoomRole = default(bool?), bool? CanEditRoomSide = default(bool?), bool? CanManageAnyUserRoomAccess = default(bool?), bool? CanManageInvitedUserRoomAccess = default(bool?), bool? IsHiddenInRoom = default(bool?), bool? CanManageRoomOwners = default(bool?), bool? CanDeleteRooms = default(bool?), bool? CanConnectToMortgageCadence = default(bool?), bool? CanViewRoomDetails = default(bool?), bool? CanViewAndEditRoomDetails = default(bool?), bool? CanSendRoomDetailsToLoneWolf = default(bool?), bool? CanAddDocuments = default(bool?), bool? CanAddDocumentsFromFormGroups = default(bool?), bool? CanAddDocumentsFromFormLibraries = default(bool?), bool? DocumentsViewableByOthersInRoomFromOffice = default(bool?), bool? DocumentsAutoOwnedByPeers = default(bool?), bool? CanDeleteOwnedDocuments = default(bool?), bool? CanManageSharedDocs = default(bool?), bool? CanManageFormGroups = default(bool?), bool? CanShareDocsNotOwned = default(bool?), bool? CanAddTasksToAnyTaskLists = default(bool?), bool? CanEditEditableTasks = default(bool?), bool? CanEditAnyTasks = default(bool?), bool? CanDeleteDeletableTasks = default(bool?), bool? CanDeleteAnyTasks = default(bool?), bool? CanApplyTaskList = default(bool?), bool? CanRemoveAnyTaskList = default(bool?), bool? CanSubmitTaskList = default(bool?), bool? CanAutoSubmitTaskList = default(bool?), bool? CanReviewTaskList = default(bool?), bool? CanAutoApproveTaskList = default(bool?), bool? CanManageTaskTemplatesForAllRegionsAllOffices = default(bool?), bool? CanApplyRoomTemplates = default(bool?), bool? CanAddTasksToRooms = default(bool?), bool? CanReviewAnyTask = default(bool?), bool? CanManageDocsOnAnyTask = default(bool?), bool? CanAddMemberAndSetRoleLowerAccessLevel = default(bool?), bool? CanAddMemberAndSetRoleSameAccessLevel = default(bool?), bool? CanChangeMemberRoleLowerAccessLevel = default(bool?), bool? CanChangeMemberRoleSameAccessLevel = default(bool?), bool? CanManageMemberLowerAccessLevel = default(bool?), bool? CanManageMemberSameAccessLevel = default(bool?), bool? CanRemoveCompanyMemberLowerAccessLevel = default(bool?), bool? CanRemoveCompanyMemberSameAccessLevel = default(bool?), bool? CanManageAccount = default(bool?), bool? CanManageLogo = default(bool?), bool? CanManageRolesAndPermissions = default(bool?), bool? CanManageRoomDetails = default(bool?), bool? CanManageRoomTemplates = default(bool?), bool? CanManageIntegrationSettings = default(bool?))
+        public Permissions(bool? CanAddUsersToRooms = default(bool?), bool? CanCreateRooms = default(bool?), bool? CanSubmitRoomsForReview = default(bool?), bool? CanCloseRooms = default(bool?), bool? CanReopenRooms = default(bool?), bool? CanDeleteOwnedRooms = default(bool?), bool? AutoAccessToRooms = default(bool?), bool? CanExportRoomActivityDetailsPeople = default(bool?), bool? CanCopyRoomDetails = default(bool?), bool? CanEditAnyRoomRole = default(bool?), bool? CanEditInvitedRoomRole = default(bool?), bool? CanEditRoomSide = default(bool?), bool? CanManageAnyUserRoomAccess = default(bool?), bool? CanManageInvitedUserRoomAccess = default(bool?), bool? IsHiddenInRoom = default(bool?), bool? CanManageRoomOwners = default(bool?), bool? CanDeleteRooms = default(bool?), bool? CanConnectToMortgageCadence = default(bool?), bool? CanViewRoomDetails = default(bool?), bool? CanViewAndEditRoomDetails = default(bool?), bool? CanSendRoomDetailsToLoneWolf = default(bool?), bool? CanAddDocuments = default(bool?), bool? CanAddDocumentsFromFormGroups = default(bool?), bool? CanAddDocumentsFromFormLibraries = default(bool?), bool? DocumentsViewableByOthersInRoomFromOffice = default(bool?), bool? DocumentsAutoOwnedByPeers = default(bool?), bool? CanDeleteOwnedDocuments = default(bool?), bool? CanManageSharedDocs = default(bool?), bool? CanManageFormGroups = default(bool?), bool? CanShareDocsNotOwned = default(bool?), bool? CanCreateFormTemplates = default(bool?), bool? CanAddTasksToAnyTaskLists = default(bool?), bool? CanEditEditableTasks = default(bool?), bool? CanEditAnyTasks = default(bool?), bool? CanDeleteDeletableTasks = default(bool?), bool? CanDeleteAnyTasks = default(bool?), bool? CanApplyTaskList = default(bool?), bool? CanRemoveAnyTaskList = default(bool?), bool? CanSubmitTaskList = default(bool?), bool? CanAutoSubmitTaskList = default(bool?), bool? CanReviewTaskList = default(bool?), bool? CanAutoApproveTaskList = default(bool?), bool? CanManageTaskTemplatesForAllRegionsAllOffices = default(bool?), bool? CanApplyRoomTemplates = default(bool?), bool? CanAddTasksToRooms = default(bool?), bool? CanReviewAnyTask = default(bool?), bool? CanManageDocsOnAnyTask = default(bool?), bool? CanAddMemberAndSetRoleLowerAccessLevel = default(bool?), bool? CanAddMemberAndSetRoleSameAccessLevel = default(bool?), bool? CanChangeMemberRoleLowerAccessLevel = default(bool?), bool? CanChangeMemberRoleSameAccessLevel = default(bool?), bool? CanManageMemberLowerAccessLevel = default(bool?), bool? CanManageMemberSameAccessLevel = default(bool?), bool? CanRemoveCompanyMemberLowerAccessLevel = default(bool?), bool? CanRemoveCompanyMemberSameAccessLevel = default(bool?), bool? CanManageAccount = default(bool?), bool? CanManageLogo = default(bool?), bool? CanManageRolesAndPermissions = default(bool?), bool? CanManageRoomDetails = default(bool?), bool? CanManageRoomTemplates = default(bool?), bool? CanManageIntegrationSettings = default(bool?))
         {
             this.CanAddUsersToRooms = CanAddUsersToRooms;
             this.CanCreateRooms = CanCreateRooms;
@@ -109,7 +109,6 @@ namespace DocuSign.Rooms.Model
             this.CanDeleteOwnedRooms = CanDeleteOwnedRooms;
             this.AutoAccessToRooms = AutoAccessToRooms;
             this.CanExportRoomActivityDetailsPeople = CanExportRoomActivityDetailsPeople;
-            this.IsVisibleInRooms = IsVisibleInRooms;
             this.CanCopyRoomDetails = CanCopyRoomDetails;
             this.CanEditAnyRoomRole = CanEditAnyRoomRole;
             this.CanEditInvitedRoomRole = CanEditInvitedRoomRole;
@@ -132,6 +131,7 @@ namespace DocuSign.Rooms.Model
             this.CanManageSharedDocs = CanManageSharedDocs;
             this.CanManageFormGroups = CanManageFormGroups;
             this.CanShareDocsNotOwned = CanShareDocsNotOwned;
+            this.CanCreateFormTemplates = CanCreateFormTemplates;
             this.CanAddTasksToAnyTaskLists = CanAddTasksToAnyTaskLists;
             this.CanEditEditableTasks = CanEditEditableTasks;
             this.CanEditAnyTasks = CanEditAnyTasks;
@@ -204,11 +204,6 @@ namespace DocuSign.Rooms.Model
         /// </summary>
         [DataMember(Name="canExportRoomActivityDetailsPeople", EmitDefaultValue=false)]
         public bool? CanExportRoomActivityDetailsPeople { get; set; }
-        /// <summary>
-        /// Gets or Sets IsVisibleInRooms
-        /// </summary>
-        [DataMember(Name="isVisibleInRooms", EmitDefaultValue=false)]
-        public bool? IsVisibleInRooms { get; set; }
         /// <summary>
         /// Gets or Sets CanCopyRoomDetails
         /// </summary>
@@ -319,6 +314,11 @@ namespace DocuSign.Rooms.Model
         /// </summary>
         [DataMember(Name="canShareDocsNotOwned", EmitDefaultValue=false)]
         public bool? CanShareDocsNotOwned { get; set; }
+        /// <summary>
+        /// Gets or Sets CanCreateFormTemplates
+        /// </summary>
+        [DataMember(Name="canCreateFormTemplates", EmitDefaultValue=false)]
+        public bool? CanCreateFormTemplates { get; set; }
         /// <summary>
         /// Gets or Sets CanAddTasksToAnyTaskLists
         /// </summary>
@@ -485,7 +485,6 @@ namespace DocuSign.Rooms.Model
             sb.Append("  CanDeleteOwnedRooms: ").Append(CanDeleteOwnedRooms).Append("\n");
             sb.Append("  AutoAccessToRooms: ").Append(AutoAccessToRooms).Append("\n");
             sb.Append("  CanExportRoomActivityDetailsPeople: ").Append(CanExportRoomActivityDetailsPeople).Append("\n");
-            sb.Append("  IsVisibleInRooms: ").Append(IsVisibleInRooms).Append("\n");
             sb.Append("  CanCopyRoomDetails: ").Append(CanCopyRoomDetails).Append("\n");
             sb.Append("  CanEditAnyRoomRole: ").Append(CanEditAnyRoomRole).Append("\n");
             sb.Append("  CanEditInvitedRoomRole: ").Append(CanEditInvitedRoomRole).Append("\n");
@@ -508,6 +507,7 @@ namespace DocuSign.Rooms.Model
             sb.Append("  CanManageSharedDocs: ").Append(CanManageSharedDocs).Append("\n");
             sb.Append("  CanManageFormGroups: ").Append(CanManageFormGroups).Append("\n");
             sb.Append("  CanShareDocsNotOwned: ").Append(CanShareDocsNotOwned).Append("\n");
+            sb.Append("  CanCreateFormTemplates: ").Append(CanCreateFormTemplates).Append("\n");
             sb.Append("  CanAddTasksToAnyTaskLists: ").Append(CanAddTasksToAnyTaskLists).Append("\n");
             sb.Append("  CanEditEditableTasks: ").Append(CanEditEditableTasks).Append("\n");
             sb.Append("  CanEditAnyTasks: ").Append(CanEditAnyTasks).Append("\n");
@@ -613,11 +613,6 @@ namespace DocuSign.Rooms.Model
                     this.CanExportRoomActivityDetailsPeople == other.CanExportRoomActivityDetailsPeople ||
                     this.CanExportRoomActivityDetailsPeople != null &&
                     this.CanExportRoomActivityDetailsPeople.Equals(other.CanExportRoomActivityDetailsPeople)
-                ) && 
-                (
-                    this.IsVisibleInRooms == other.IsVisibleInRooms ||
-                    this.IsVisibleInRooms != null &&
-                    this.IsVisibleInRooms.Equals(other.IsVisibleInRooms)
                 ) && 
                 (
                     this.CanCopyRoomDetails == other.CanCopyRoomDetails ||
@@ -728,6 +723,11 @@ namespace DocuSign.Rooms.Model
                     this.CanShareDocsNotOwned == other.CanShareDocsNotOwned ||
                     this.CanShareDocsNotOwned != null &&
                     this.CanShareDocsNotOwned.Equals(other.CanShareDocsNotOwned)
+                ) && 
+                (
+                    this.CanCreateFormTemplates == other.CanCreateFormTemplates ||
+                    this.CanCreateFormTemplates != null &&
+                    this.CanCreateFormTemplates.Equals(other.CanCreateFormTemplates)
                 ) && 
                 (
                     this.CanAddTasksToAnyTaskLists == other.CanAddTasksToAnyTaskLists ||
@@ -908,8 +908,6 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.AutoAccessToRooms.GetHashCode();
                 if (this.CanExportRoomActivityDetailsPeople != null)
                     hash = hash * 59 + this.CanExportRoomActivityDetailsPeople.GetHashCode();
-                if (this.IsVisibleInRooms != null)
-                    hash = hash * 59 + this.IsVisibleInRooms.GetHashCode();
                 if (this.CanCopyRoomDetails != null)
                     hash = hash * 59 + this.CanCopyRoomDetails.GetHashCode();
                 if (this.CanEditAnyRoomRole != null)
@@ -954,6 +952,8 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.CanManageFormGroups.GetHashCode();
                 if (this.CanShareDocsNotOwned != null)
                     hash = hash * 59 + this.CanShareDocsNotOwned.GetHashCode();
+                if (this.CanCreateFormTemplates != null)
+                    hash = hash * 59 + this.CanCreateFormTemplates.GetHashCode();
                 if (this.CanAddTasksToAnyTaskLists != null)
                     hash = hash * 59 + this.CanAddTasksToAnyTaskLists.GetHashCode();
                 if (this.CanEditEditableTasks != null)

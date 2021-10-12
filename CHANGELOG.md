@@ -1,9 +1,15 @@
 # DocuSign Rooms C# Client Changelog
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [1.2.0-rc] - Rooms API v2-1.0.9 - 2021-10-06
+### Changed
+- Added support for version v2-1.0.9 of the DocuSign Rooms API.
+- Updated the SDK release version.
+
+
 ## [v1.1.0] - DocuSign Rooms API v2 - 03/25/2021
 ### Changed
-- Updated the SDK release version.
+- Updated the SDK release version
 
 ## [v1.1.0-rc] - DocuSign Rooms API v2 - 12/14/2020
 ### Changed
