@@ -41,7 +41,7 @@ namespace DocuSign.Rooms.Model
         /// <param name="RegionId">RegionId.</param>
         /// <param name="Name">Name (required).</param>
         /// <param name="CreatedDate">CreatedDate.</param>
-        public Region(int? RegionId = default(int?), string Name = default(string), DateTime CreatedDate = default(DateTime))
+        public Region(int? RegionId = default(int?), string Name = default(string), DateTime? CreatedDate = default(DateTime?))
         {
             // to ensure "Name" is required (not null)
             if (Name == null)
@@ -70,7 +70,7 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

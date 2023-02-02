@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.Rooms.Client.SwaggerDateConverter;
 
 namespace DocuSign.Rooms.Model
 {
@@ -35,25 +36,40 @@ namespace DocuSign.Rooms.Model
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="FormGroupForm" /> class.
+        /// </summary>
+        /// <param name="FormId">FormId.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="IsRequired">IsRequired.</param>
+        /// <param name="LastUpdatedDate">LastUpdatedDate.</param>
+        public FormGroupForm(Guid? FormId = default(Guid?), string Name = default(string), bool? IsRequired = default(bool?), DateTime? LastUpdatedDate = default(DateTime?))
+        {
+            this.FormId = FormId;
+            this.Name = Name;
+            this.IsRequired = IsRequired;
+            this.LastUpdatedDate = LastUpdatedDate;
+        }
+        
+        /// <summary>
         /// Gets or Sets FormId
         /// </summary>
         [DataMember(Name="formId", EmitDefaultValue=false)]
-        public Guid? FormId { get; private set; }
+        public Guid? FormId { get; set; }
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name="name", EmitDefaultValue=false)]
-        public string Name { get; private set; }
+        public string Name { get; set; }
         /// <summary>
         /// Gets or Sets IsRequired
         /// </summary>
         [DataMember(Name="isRequired", EmitDefaultValue=false)]
-        public bool? IsRequired { get; private set; }
+        public bool? IsRequired { get; set; }
         /// <summary>
         /// Gets or Sets LastUpdatedDate
         /// </summary>
         [DataMember(Name="lastUpdatedDate", EmitDefaultValue=false)]
-        public DateTime? LastUpdatedDate { get; private set; }
+        public DateTime? LastUpdatedDate { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -152,5 +168,4 @@ namespace DocuSign.Rooms.Model
             yield break;
         }
     }
-
 }

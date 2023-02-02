@@ -40,10 +40,12 @@ namespace DocuSign.Rooms.Model
         /// </summary>
         /// <param name="ErrorCode">ErrorCode.</param>
         /// <param name="Message">Message.</param>
-        public ApiError(string ErrorCode = default(string), string Message = default(string))
+        /// <param name="ReferenceId">ReferenceId.</param>
+        public ApiError(string ErrorCode = default(string), string Message = default(string), string ReferenceId = default(string))
         {
             this.ErrorCode = ErrorCode;
             this.Message = Message;
+            this.ReferenceId = ReferenceId;
         }
         
         /// <summary>
@@ -57,6 +59,11 @@ namespace DocuSign.Rooms.Model
         [DataMember(Name="message", EmitDefaultValue=false)]
         public string Message { get; set; }
         /// <summary>
+        /// Gets or Sets ReferenceId
+        /// </summary>
+        [DataMember(Name="referenceId", EmitDefaultValue=false)]
+        public string ReferenceId { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -66,6 +73,7 @@ namespace DocuSign.Rooms.Model
             sb.Append("class ApiError {\n");
             sb.Append("  ErrorCode: ").Append(ErrorCode).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -111,6 +119,11 @@ namespace DocuSign.Rooms.Model
                     this.Message == other.Message ||
                     this.Message != null &&
                     this.Message.Equals(other.Message)
+                ) && 
+                (
+                    this.ReferenceId == other.ReferenceId ||
+                    this.ReferenceId != null &&
+                    this.ReferenceId.Equals(other.ReferenceId)
                 );
         }
 
@@ -129,6 +142,8 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.ErrorCode.GetHashCode();
                 if (this.Message != null)
                     hash = hash * 59 + this.Message.GetHashCode();
+                if (this.ReferenceId != null)
+                    hash = hash * 59 + this.ReferenceId.GetHashCode();
                 return hash;
             }
         }

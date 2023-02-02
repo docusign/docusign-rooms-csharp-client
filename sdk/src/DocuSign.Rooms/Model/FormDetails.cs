@@ -30,9 +30,13 @@ namespace DocuSign.Rooms.Model
     [DataContract]
     public partial class FormDetails :  IEquatable<FormDetails>, IValidatableObject
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FormDetails" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
         public FormDetails()
         {
-            // Empty Constructor
         }
         
         /// <summary>
@@ -49,17 +53,17 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
-        public DateTime CreatedDate { get; private set; }
+        public DateTime? CreatedDate { get; private set; }
         /// <summary>
         /// Gets or Sets LastUpdatedDate
         /// </summary>
         [DataMember(Name="lastUpdatedDate", EmitDefaultValue=false)]
-        public DateTime LastUpdatedDate { get; private set; }
+        public DateTime? LastUpdatedDate { get; private set; }
         /// <summary>
         /// Gets or Sets AvailableOnDate
         /// </summary>
         [DataMember(Name="availableOnDate", EmitDefaultValue=false)]
-        public DateTime AvailableOnDate { get; private set; }
+        public DateTime? AvailableOnDate { get; private set; }
         /// <summary>
         /// Gets or Sets OwnerName
         /// </summary>

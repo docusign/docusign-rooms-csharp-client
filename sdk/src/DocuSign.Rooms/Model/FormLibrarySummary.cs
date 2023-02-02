@@ -30,9 +30,13 @@ namespace DocuSign.Rooms.Model
     [DataContract]
     public partial class FormLibrarySummary :  IEquatable<FormLibrarySummary>, IValidatableObject
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FormLibrarySummary" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
         public FormLibrarySummary()
         {
-            // Empty Constructor
         }
         
         /// <summary>

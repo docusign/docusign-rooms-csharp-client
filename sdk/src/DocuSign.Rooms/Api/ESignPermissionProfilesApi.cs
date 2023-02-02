@@ -10,9 +10,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using System.Net.Http;
 using DocuSign.Rooms.Client;
 using DocuSign.Rooms.Model;
 
@@ -32,10 +31,8 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
-        
         /// <returns></returns>
-        ESignPermissionProfileList GetESignPermissionProfiles (string accountId);
+        ESignPermissionProfileList GetESignPermissionProfiles(string accountId);
 
         /// <summary>
         /// Gets permission profiles from the associated eSign account.
@@ -45,10 +42,8 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<ESignPermissionProfileList> GetESignPermissionProfilesWithHttpInfo (string accountId);
+        ApiResponse<ESignPermissionProfileList> GetESignPermissionProfilesWithHttpInfo(string accountId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -59,10 +54,8 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
-        
         /// <returns>Task of ESignPermissionProfileList</returns>
-        System.Threading.Tasks.Task<ESignPermissionProfileList> GetESignPermissionProfilesAsync (string accountId);
+        System.Threading.Tasks.Task<ESignPermissionProfileList> GetESignPermissionProfilesAsync(string accountId);
 
         /// <summary>
         /// Gets permission profiles from the associated eSign account.
@@ -72,10 +65,8 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
-        
         /// <returns>Task of ApiResponse (ESignPermissionProfileList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ESignPermissionProfileList>> GetESignPermissionProfilesAsyncWithHttpInfo (string accountId);
+        System.Threading.Tasks.Task<ApiResponse<ESignPermissionProfileList>> GetESignPermissionProfilesAsyncWithHttpInfo(string accountId);
         #endregion Asynchronous Operations
     }
 
@@ -92,7 +83,7 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <param name="aplClient">An instance of AplClient</param>
         /// <returns></returns>
-        public ESignPermissionProfilesApi(ApiClient aplClient)
+        public ESignPermissionProfilesApi(DocuSignClient aplClient)
         {
             this.ApiClient = aplClient;
 
@@ -105,14 +96,14 @@ namespace DocuSign.Rooms.Api
         /// <value>The base path</value>
         public String GetBasePath()
         {
-            return this.ApiClient.RestClient.BaseUrl.ToString();
+            return this.ApiClient.GetBasePath();
         }
 
         /// <summary>
         /// Gets or sets the ApiClient object
         /// </summary>
         /// <value>An instance of the ApiClient</value>
-        public ApiClient ApiClient { get; set; }
+        public DocuSignClient ApiClient { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -137,10 +128,8 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
-        
         /// <returns>ESignPermissionProfileList</returns>
-        public ESignPermissionProfileList GetESignPermissionProfiles (string accountId)
+        public ESignPermissionProfileList GetESignPermissionProfiles(string accountId)
         {
              ApiResponse<ESignPermissionProfileList> localVarResponse = GetESignPermissionProfilesWithHttpInfo(accountId);
              return localVarResponse.Data;
@@ -151,80 +140,13 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
-        
         /// <returns>ApiResponse of ESignPermissionProfileList</returns>
-        public ApiResponse< ESignPermissionProfileList > GetESignPermissionProfilesWithHttpInfo (string accountId)
+        public ApiResponse<ESignPermissionProfileList> GetESignPermissionProfilesWithHttpInfo(string accountId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling ESignPermissionProfilesApi->GetESignPermissionProfiles");
-
-            var localVarPath = "/v2/accounts/{accountId}/esign_permission_profiles";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetESignPermissionProfiles", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<ESignPermissionProfileList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ESignPermissionProfileList) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ESignPermissionProfileList)));
-            }
-            else
-            {
-                return new ApiResponse<ESignPermissionProfileList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ESignPermissionProfileList) this.ApiClient.Deserialize(localVarResponse, typeof(ESignPermissionProfileList)));
-            }
-            
+            return GetESignPermissionProfilesAsyncWithHttpInfo(accountId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -232,14 +154,11 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
-        
         /// <returns>Task of ESignPermissionProfileList</returns>
-        public async System.Threading.Tasks.Task<ESignPermissionProfileList> GetESignPermissionProfilesAsync (string accountId)
+        public async System.Threading.Tasks.Task<ESignPermissionProfileList> GetESignPermissionProfilesAsync(string accountId)
         {
              ApiResponse<ESignPermissionProfileList> localVarResponse = await GetESignPermissionProfilesAsyncWithHttpInfo(accountId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -247,10 +166,8 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
-        
         /// <returns>Task of ApiResponse (ESignPermissionProfileList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ESignPermissionProfileList>> GetESignPermissionProfilesAsyncWithHttpInfo (string accountId)
+        public async System.Threading.Tasks.Task<ApiResponse<ESignPermissionProfileList>> GetESignPermissionProfilesAsyncWithHttpInfo(string accountId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -261,8 +178,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -277,7 +195,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -288,8 +208,6 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -298,11 +216,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -310,10 +227,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ESignPermissionProfileList>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ESignPermissionProfileList) this.ApiClient.Deserialize(localVarResponse, typeof(ESignPermissionProfileList)));
-            
+            return new ApiResponse<ESignPermissionProfileList>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (ESignPermissionProfileList)this.ApiClient.Deserialize(localVarResponse, typeof(ESignPermissionProfileList)));
         }
 
     }

@@ -50,7 +50,7 @@ namespace DocuSign.Rooms.Model
         /// <param name="IsVirtual">IsVirtual.</param>
         /// <param name="IsDynamic">IsDynamic.</param>
         /// <param name="Owner">Owner.</param>
-        public RoomDocument(int? DocumentId = default(int?), string Name = default(string), int? OwnerId = default(int?), long? Size = default(long?), int? FolderId = default(int?), DateTime CreatedDate = default(DateTime), bool? IsSigned = default(bool?), string DocuSignFormId = default(string), bool? IsArchived = default(bool?), bool? IsVirtual = default(bool?), bool? IsDynamic = default(bool?), RoomDocumentOwner Owner = default(RoomDocumentOwner))
+        public RoomDocument(int? DocumentId = default(int?), string Name = default(string), int? OwnerId = default(int?), long? Size = default(long?), int? FolderId = default(int?), DateTime? CreatedDate = default(DateTime?), bool? IsSigned = default(bool?), string DocuSignFormId = default(string), bool? IsArchived = default(bool?), bool? IsVirtual = default(bool?), bool? IsDynamic = default(bool?), RoomDocumentOwner Owner = default(RoomDocumentOwner))
         {
             this.DocumentId = DocumentId;
             this.Name = Name;
@@ -95,7 +95,7 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
         /// <summary>
         /// Gets or Sets IsSigned
         /// </summary>

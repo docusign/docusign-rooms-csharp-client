@@ -30,9 +30,13 @@ namespace DocuSign.Rooms.Model
     [DataContract]
     public partial class ESignPermissionProfileList :  IEquatable<ESignPermissionProfileList>, IValidatableObject
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ESignPermissionProfileList" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
         public ESignPermissionProfileList()
         {
-            // Empty Constructor
         }
         
         /// <summary>

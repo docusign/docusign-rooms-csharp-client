@@ -10,9 +10,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using System.Net.Http;
 using DocuSign.Rooms.Client;
 using DocuSign.Rooms.Model;
 
@@ -31,11 +30,11 @@ namespace DocuSign.Rooms.Api
         /// Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="body">Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;. (optional)</param>
         /// <returns></returns>
-        FormGroupFormToAssign AssignFormGroupForm (string accountId, Guid? formGroupId, FormGroupFormToAssign body = null);
+        FormGroupFormToAssign AssignFormGroupForm(string accountId, Guid? formGroupId, FormGroupFormToAssign body = null);
 
         /// <summary>
         /// Assigns a form to a form group.
@@ -44,11 +43,11 @@ namespace DocuSign.Rooms.Api
         /// Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="body">Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;. (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<FormGroupFormToAssign> AssignFormGroupFormWithHttpInfo (string accountId, Guid? formGroupId, FormGroupFormToAssign body = null);
+        ApiResponse<FormGroupFormToAssign> AssignFormGroupFormWithHttpInfo(string accountId, Guid? formGroupId, FormGroupFormToAssign body = null);
         /// <summary>
         /// Creates a form group.
         /// </summary>
@@ -57,10 +56,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Required input of name for the form group (optional)</param>
         /// <returns></returns>
-        FormGroup CreateFormGroup (string accountId, FormGroupForCreate body = null);
+        FormGroup CreateFormGroup(string accountId, FormGroupForCreate body = null);
 
         /// <summary>
         /// Creates a form group.
@@ -70,10 +68,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Required input of name for the form group (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<FormGroup> CreateFormGroupWithHttpInfo (string accountId, FormGroupForCreate body = null);
+        ApiResponse<FormGroup> CreateFormGroupWithHttpInfo(string accountId, FormGroupForCreate body = null);
         /// <summary>
         /// Deletes a form group.
         /// </summary>
@@ -81,11 +78,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes the specified form group.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
         /// <returns></returns>
-        void DeleteFormGroup (string accountId, Guid? formGroupId);
+        void DeleteFormGroup(string accountId, Guid? formGroupId);
 
         /// <summary>
         /// Deletes a form group.
@@ -94,11 +90,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes the specified form group.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteFormGroupWithHttpInfo (string accountId, Guid? formGroupId);
+        ApiResponse<Object> DeleteFormGroupWithHttpInfo(string accountId, Guid? formGroupId);
         /// <summary>
         /// Gets a form group.
         /// </summary>
@@ -106,11 +101,10 @@ namespace DocuSign.Rooms.Api
         /// Get the specified form group.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
         /// <returns></returns>
-        FormGroup GetFormGroup (string accountId, Guid? formGroupId);
+        FormGroup GetFormGroup(string accountId, Guid? formGroupId);
 
         /// <summary>
         /// Gets a form group.
@@ -119,11 +113,10 @@ namespace DocuSign.Rooms.Api
         /// Get the specified form group.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<FormGroup> GetFormGroupWithHttpInfo (string accountId, Guid? formGroupId);
+        ApiResponse<FormGroup> GetFormGroupWithHttpInfo(string accountId, Guid? formGroupId);
         /// <summary>
         /// Get account Form Groups.
         /// </summary>
@@ -132,10 +125,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        FormGroupSummaryList GetFormGroups (string accountId, FormGroupsApi.GetFormGroupsOptions options = null);
+        FormGroupSummaryList GetFormGroups(string accountId, FormGroupsApi.GetFormGroupsOptions options = null);
 
         /// <summary>
         /// Get account Form Groups.
@@ -145,10 +137,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<FormGroupSummaryList> GetFormGroupsWithHttpInfo (string accountId, FormGroupsApi.GetFormGroupsOptions options = null);
+        ApiResponse<FormGroupSummaryList> GetFormGroupsWithHttpInfo(string accountId, FormGroupsApi.GetFormGroupsOptions options = null);
         /// <summary>
         /// Assign office to a form group so the specified office has access to the form group.
         /// </summary>
@@ -156,11 +147,11 @@ namespace DocuSign.Rooms.Api
         /// \&quot;Grants the office &#x60;officeId&#x60; access to the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         /// <returns></returns>
-        void GrantOfficeAccessToFormGroup (string accountId, Guid? formGroupId, int? officeId);
+        void GrantOfficeAccessToFormGroup(string accountId, Guid? formGroupId, int? officeId);
 
         /// <summary>
         /// Assign office to a form group so the specified office has access to the form group.
@@ -169,11 +160,11 @@ namespace DocuSign.Rooms.Api
         /// \&quot;Grants the office &#x60;officeId&#x60; access to the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> GrantOfficeAccessToFormGroupWithHttpInfo (string accountId, Guid? formGroupId, int? officeId);
+        ApiResponse<Object> GrantOfficeAccessToFormGroupWithHttpInfo(string accountId, Guid? formGroupId, int? officeId);
         /// <summary>
         /// Removes a form from a form group.
         /// </summary>
@@ -181,11 +172,11 @@ namespace DocuSign.Rooms.Api
         /// Removes the form &#x60;formId&#x60; from the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="formId">The id of the form.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="formId">The id of the form.</param>
         /// <returns></returns>
-        void RemoveFormGroupForm (string accountId, Guid? formGroupId, Guid? formId);
+        void RemoveFormGroupForm(string accountId, Guid? formGroupId, Guid? formId);
 
         /// <summary>
         /// Removes a form from a form group.
@@ -194,11 +185,11 @@ namespace DocuSign.Rooms.Api
         /// Removes the form &#x60;formId&#x60; from the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="formId">The id of the form.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="formId">The id of the form.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RemoveFormGroupFormWithHttpInfo (string accountId, Guid? formGroupId, Guid? formId);
+        ApiResponse<Object> RemoveFormGroupFormWithHttpInfo(string accountId, Guid? formGroupId, Guid? formId);
         /// <summary>
         /// Renames a form group.
         /// </summary>
@@ -206,11 +197,11 @@ namespace DocuSign.Rooms.Api
         /// Renames the specified form group with the name given in the &#x60;name&#x60; property of the request.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="body">Required input of name for the form group (optional)</param>
         /// <returns></returns>
-        FormGroup RenameFormGroup (string accountId, Guid? formGroupId, FormGroupForUpdate body = null);
+        FormGroup RenameFormGroup(string accountId, Guid? formGroupId, FormGroupForUpdate body = null);
 
         /// <summary>
         /// Renames a form group.
@@ -219,11 +210,11 @@ namespace DocuSign.Rooms.Api
         /// Renames the specified form group with the name given in the &#x60;name&#x60; property of the request.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="body">Required input of name for the form group (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<FormGroup> RenameFormGroupWithHttpInfo (string accountId, Guid? formGroupId, FormGroupForUpdate body = null);
+        ApiResponse<FormGroup> RenameFormGroupWithHttpInfo(string accountId, Guid? formGroupId, FormGroupForUpdate body = null);
         /// <summary>
         /// Remove office to a form group so the specified office doesn&#39;t have access to the form group.
         /// </summary>
@@ -231,11 +222,11 @@ namespace DocuSign.Rooms.Api
         /// Revoke access to the form group &#x60;formGroupId&#x60; from the office &#x60;officeId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         /// <returns></returns>
-        void RevokeOfficeAccessFromFormGroup (string accountId, Guid? formGroupId, int? officeId);
+        void RevokeOfficeAccessFromFormGroup(string accountId, Guid? formGroupId, int? officeId);
 
         /// <summary>
         /// Remove office to a form group so the specified office doesn&#39;t have access to the form group.
@@ -244,11 +235,11 @@ namespace DocuSign.Rooms.Api
         /// Revoke access to the form group &#x60;formGroupId&#x60; from the office &#x60;officeId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RevokeOfficeAccessFromFormGroupWithHttpInfo (string accountId, Guid? formGroupId, int? officeId);
+        ApiResponse<Object> RevokeOfficeAccessFromFormGroupWithHttpInfo(string accountId, Guid? formGroupId, int? officeId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -258,11 +249,11 @@ namespace DocuSign.Rooms.Api
         /// Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="body">Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;. (optional)</param>
         /// <returns>Task of FormGroupFormToAssign</returns>
-        System.Threading.Tasks.Task<FormGroupFormToAssign> AssignFormGroupFormAsync (string accountId, Guid? formGroupId, FormGroupFormToAssign body = null);
+        System.Threading.Tasks.Task<FormGroupFormToAssign> AssignFormGroupFormAsync(string accountId, Guid? formGroupId, FormGroupFormToAssign body = null);
 
         /// <summary>
         /// Assigns a form to a form group.
@@ -271,11 +262,11 @@ namespace DocuSign.Rooms.Api
         /// Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="body">Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;. (optional)</param>
         /// <returns>Task of ApiResponse (FormGroupFormToAssign)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FormGroupFormToAssign>> AssignFormGroupFormAsyncWithHttpInfo (string accountId, Guid? formGroupId, FormGroupFormToAssign body = null);
+        System.Threading.Tasks.Task<ApiResponse<FormGroupFormToAssign>> AssignFormGroupFormAsyncWithHttpInfo(string accountId, Guid? formGroupId, FormGroupFormToAssign body = null);
         /// <summary>
         /// Creates a form group.
         /// </summary>
@@ -284,10 +275,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Required input of name for the form group (optional)</param>
         /// <returns>Task of FormGroup</returns>
-        System.Threading.Tasks.Task<FormGroup> CreateFormGroupAsync (string accountId, FormGroupForCreate body = null);
+        System.Threading.Tasks.Task<FormGroup> CreateFormGroupAsync(string accountId, FormGroupForCreate body = null);
 
         /// <summary>
         /// Creates a form group.
@@ -297,10 +287,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Required input of name for the form group (optional)</param>
         /// <returns>Task of ApiResponse (FormGroup)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FormGroup>> CreateFormGroupAsyncWithHttpInfo (string accountId, FormGroupForCreate body = null);
+        System.Threading.Tasks.Task<ApiResponse<FormGroup>> CreateFormGroupAsyncWithHttpInfo(string accountId, FormGroupForCreate body = null);
         /// <summary>
         /// Deletes a form group.
         /// </summary>
@@ -308,11 +297,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes the specified form group.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteFormGroupAsync (string accountId, Guid? formGroupId);
+        System.Threading.Tasks.Task DeleteFormGroupAsync(string accountId, Guid? formGroupId);
 
         /// <summary>
         /// Deletes a form group.
@@ -321,11 +309,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes the specified form group.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteFormGroupAsyncWithHttpInfo (string accountId, Guid? formGroupId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteFormGroupAsyncWithHttpInfo(string accountId, Guid? formGroupId);
         /// <summary>
         /// Gets a form group.
         /// </summary>
@@ -333,11 +320,10 @@ namespace DocuSign.Rooms.Api
         /// Get the specified form group.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
         /// <returns>Task of FormGroup</returns>
-        System.Threading.Tasks.Task<FormGroup> GetFormGroupAsync (string accountId, Guid? formGroupId);
+        System.Threading.Tasks.Task<FormGroup> GetFormGroupAsync(string accountId, Guid? formGroupId);
 
         /// <summary>
         /// Gets a form group.
@@ -346,11 +332,10 @@ namespace DocuSign.Rooms.Api
         /// Get the specified form group.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
         /// <returns>Task of ApiResponse (FormGroup)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FormGroup>> GetFormGroupAsyncWithHttpInfo (string accountId, Guid? formGroupId);
+        System.Threading.Tasks.Task<ApiResponse<FormGroup>> GetFormGroupAsyncWithHttpInfo(string accountId, Guid? formGroupId);
         /// <summary>
         /// Get account Form Groups.
         /// </summary>
@@ -359,10 +344,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FormGroupSummaryList</returns>
-        System.Threading.Tasks.Task<FormGroupSummaryList> GetFormGroupsAsync (string accountId, FormGroupsApi.GetFormGroupsOptions options = null);
+        System.Threading.Tasks.Task<FormGroupSummaryList> GetFormGroupsAsync(string accountId, FormGroupsApi.GetFormGroupsOptions options = null);
 
         /// <summary>
         /// Get account Form Groups.
@@ -372,10 +356,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FormGroupSummaryList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FormGroupSummaryList>> GetFormGroupsAsyncWithHttpInfo (string accountId, FormGroupsApi.GetFormGroupsOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<FormGroupSummaryList>> GetFormGroupsAsyncWithHttpInfo(string accountId, FormGroupsApi.GetFormGroupsOptions options = null);
         /// <summary>
         /// Assign office to a form group so the specified office has access to the form group.
         /// </summary>
@@ -383,11 +366,11 @@ namespace DocuSign.Rooms.Api
         /// \&quot;Grants the office &#x60;officeId&#x60; access to the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task GrantOfficeAccessToFormGroupAsync (string accountId, Guid? formGroupId, int? officeId);
+        System.Threading.Tasks.Task GrantOfficeAccessToFormGroupAsync(string accountId, Guid? formGroupId, int? officeId);
 
         /// <summary>
         /// Assign office to a form group so the specified office has access to the form group.
@@ -396,11 +379,11 @@ namespace DocuSign.Rooms.Api
         /// \&quot;Grants the office &#x60;officeId&#x60; access to the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GrantOfficeAccessToFormGroupAsyncWithHttpInfo (string accountId, Guid? formGroupId, int? officeId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> GrantOfficeAccessToFormGroupAsyncWithHttpInfo(string accountId, Guid? formGroupId, int? officeId);
         /// <summary>
         /// Removes a form from a form group.
         /// </summary>
@@ -408,11 +391,11 @@ namespace DocuSign.Rooms.Api
         /// Removes the form &#x60;formId&#x60; from the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="formId">The id of the form.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="formId">The id of the form.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RemoveFormGroupFormAsync (string accountId, Guid? formGroupId, Guid? formId);
+        System.Threading.Tasks.Task RemoveFormGroupFormAsync(string accountId, Guid? formGroupId, Guid? formId);
 
         /// <summary>
         /// Removes a form from a form group.
@@ -421,11 +404,11 @@ namespace DocuSign.Rooms.Api
         /// Removes the form &#x60;formId&#x60; from the form group &#x60;formGroupId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="formId">The id of the form.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="formId">The id of the form.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveFormGroupFormAsyncWithHttpInfo (string accountId, Guid? formGroupId, Guid? formId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveFormGroupFormAsyncWithHttpInfo(string accountId, Guid? formGroupId, Guid? formId);
         /// <summary>
         /// Renames a form group.
         /// </summary>
@@ -433,11 +416,11 @@ namespace DocuSign.Rooms.Api
         /// Renames the specified form group with the name given in the &#x60;name&#x60; property of the request.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="body">Required input of name for the form group (optional)</param>
         /// <returns>Task of FormGroup</returns>
-        System.Threading.Tasks.Task<FormGroup> RenameFormGroupAsync (string accountId, Guid? formGroupId, FormGroupForUpdate body = null);
+        System.Threading.Tasks.Task<FormGroup> RenameFormGroupAsync(string accountId, Guid? formGroupId, FormGroupForUpdate body = null);
 
         /// <summary>
         /// Renames a form group.
@@ -446,11 +429,11 @@ namespace DocuSign.Rooms.Api
         /// Renames the specified form group with the name given in the &#x60;name&#x60; property of the request.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="body">Required input of name for the form group (optional)</param>
         /// <returns>Task of ApiResponse (FormGroup)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FormGroup>> RenameFormGroupAsyncWithHttpInfo (string accountId, Guid? formGroupId, FormGroupForUpdate body = null);
+        System.Threading.Tasks.Task<ApiResponse<FormGroup>> RenameFormGroupAsyncWithHttpInfo(string accountId, Guid? formGroupId, FormGroupForUpdate body = null);
         /// <summary>
         /// Remove office to a form group so the specified office doesn&#39;t have access to the form group.
         /// </summary>
@@ -458,11 +441,11 @@ namespace DocuSign.Rooms.Api
         /// Revoke access to the form group &#x60;formGroupId&#x60; from the office &#x60;officeId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RevokeOfficeAccessFromFormGroupAsync (string accountId, Guid? formGroupId, int? officeId);
+        System.Threading.Tasks.Task RevokeOfficeAccessFromFormGroupAsync(string accountId, Guid? formGroupId, int? officeId);
 
         /// <summary>
         /// Remove office to a form group so the specified office doesn&#39;t have access to the form group.
@@ -471,11 +454,11 @@ namespace DocuSign.Rooms.Api
         /// Revoke access to the form group &#x60;formGroupId&#x60; from the office &#x60;officeId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RevokeOfficeAccessFromFormGroupAsyncWithHttpInfo (string accountId, Guid? formGroupId, int? officeId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> RevokeOfficeAccessFromFormGroupAsyncWithHttpInfo(string accountId, Guid? formGroupId, int? officeId);
         #endregion Asynchronous Operations
     }
 
@@ -492,7 +475,7 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <param name="aplClient">An instance of AplClient</param>
         /// <returns></returns>
-        public FormGroupsApi(ApiClient aplClient)
+        public FormGroupsApi(DocuSignClient aplClient)
         {
             this.ApiClient = aplClient;
 
@@ -505,14 +488,14 @@ namespace DocuSign.Rooms.Api
         /// <value>The base path</value>
         public String GetBasePath()
         {
-            return this.ApiClient.RestClient.BaseUrl.ToString();
+            return this.ApiClient.GetBasePath();
         }
 
         /// <summary>
         /// Gets or sets the ApiClient object
         /// </summary>
         /// <value>An instance of the ApiClient</value>
-        public ApiClient ApiClient { get; set; }
+        public DocuSignClient ApiClient { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -536,11 +519,11 @@ namespace DocuSign.Rooms.Api
         /// Assigns a form to a form group. Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="body">Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;. (optional)</param>
         /// <returns>FormGroupFormToAssign</returns>
-        public FormGroupFormToAssign AssignFormGroupForm (string accountId, Guid? formGroupId, FormGroupFormToAssign body = null)
+        public FormGroupFormToAssign AssignFormGroupForm(string accountId, Guid? formGroupId, FormGroupFormToAssign body = null)
         {
              ApiResponse<FormGroupFormToAssign> localVarResponse = AssignFormGroupFormWithHttpInfo(accountId, formGroupId, body);
              return localVarResponse.Data;
@@ -550,119 +533,41 @@ namespace DocuSign.Rooms.Api
         /// Assigns a form to a form group. Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="body">Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;. (optional)</param>
         /// <returns>ApiResponse of FormGroupFormToAssign</returns>
-        public ApiResponse< FormGroupFormToAssign > AssignFormGroupFormWithHttpInfo (string accountId, Guid? formGroupId, FormGroupFormToAssign body = null)
+        public ApiResponse<FormGroupFormToAssign> AssignFormGroupFormWithHttpInfo(string accountId, Guid? formGroupId, FormGroupFormToAssign body = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling FormGroupsApi->AssignFormGroupForm");
-            // verify the required parameter 'formGroupId' is set
-            if (formGroupId == null)
-                throw new ApiException(400, "Missing required parameter 'formGroupId' when calling FormGroupsApi->AssignFormGroupForm");
-
-            var localVarPath = "/v2/accounts/{accountId}/form_groups/{formGroupId}/assign_form";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formGroupId != null) localVarPathParams.Add("formGroupId", this.ApiClient.ParameterToString(formGroupId)); // path parameter
-
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("AssignFormGroupForm", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<FormGroupFormToAssign>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FormGroupFormToAssign) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FormGroupFormToAssign)));
-            }
-            else
-            {
-                return new ApiResponse<FormGroupFormToAssign>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FormGroupFormToAssign) this.ApiClient.Deserialize(localVarResponse, typeof(FormGroupFormToAssign)));
-            }
-            
+            return AssignFormGroupFormAsyncWithHttpInfo(accountId, formGroupId, body)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Assigns a form to a form group. Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="body">Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;. (optional)</param>
         /// <returns>Task of FormGroupFormToAssign</returns>
-        public async System.Threading.Tasks.Task<FormGroupFormToAssign> AssignFormGroupFormAsync (string accountId, Guid? formGroupId, FormGroupFormToAssign body = null)
+        public async System.Threading.Tasks.Task<FormGroupFormToAssign> AssignFormGroupFormAsync(string accountId, Guid? formGroupId, FormGroupFormToAssign body = null)
         {
              ApiResponse<FormGroupFormToAssign> localVarResponse = await AssignFormGroupFormAsyncWithHttpInfo(accountId, formGroupId, body);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Assigns a form to a form group. Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="body">Assigns the form specified in the &#x60;formId&#x60; property of the request to the form group &#x60;formGroupId&#x60;. (optional)</param>
         /// <returns>Task of ApiResponse (FormGroupFormToAssign)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FormGroupFormToAssign>> AssignFormGroupFormAsyncWithHttpInfo (string accountId, Guid? formGroupId, FormGroupFormToAssign body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FormGroupFormToAssign>> AssignFormGroupFormAsyncWithHttpInfo(string accountId, Guid? formGroupId, FormGroupFormToAssign body = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -676,15 +581,19 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
                 "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json"
+                "application/_*+json", 
+                "application/xml", 
+                "text/xml", 
+                "application/_*+xml"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -692,7 +601,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -703,8 +614,6 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (formGroupId != null) localVarPathParams.Add("formGroupId", this.ApiClient.ParameterToString(formGroupId)); // path parameter
-
-
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
@@ -722,11 +631,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -734,10 +642,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<FormGroupFormToAssign>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FormGroupFormToAssign) this.ApiClient.Deserialize(localVarResponse, typeof(FormGroupFormToAssign)));
-            
+            return new ApiResponse<FormGroupFormToAssign>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (FormGroupFormToAssign)this.ApiClient.Deserialize(localVarResponse, typeof(FormGroupFormToAssign)));
         }
 
 
@@ -747,10 +654,9 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Required input of name for the form group (optional)</param>
         /// <returns>FormGroup</returns>
-        public FormGroup CreateFormGroup (string accountId, FormGroupForCreate body = null)
+        public FormGroup CreateFormGroup(string accountId, FormGroupForCreate body = null)
         {
              ApiResponse<FormGroup> localVarResponse = CreateFormGroupWithHttpInfo(accountId, body);
              return localVarResponse.Data;
@@ -761,88 +667,14 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Required input of name for the form group (optional)</param>
         /// <returns>ApiResponse of FormGroup</returns>
-        public ApiResponse< FormGroup > CreateFormGroupWithHttpInfo (string accountId, FormGroupForCreate body = null)
+        public ApiResponse<FormGroup> CreateFormGroupWithHttpInfo(string accountId, FormGroupForCreate body = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling FormGroupsApi->CreateFormGroup");
-
-            var localVarPath = "/v2/accounts/{accountId}/form_groups";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CreateFormGroup", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<FormGroup>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FormGroup) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FormGroup)));
-            }
-            else
-            {
-                return new ApiResponse<FormGroup>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FormGroup) this.ApiClient.Deserialize(localVarResponse, typeof(FormGroup)));
-            }
-            
+            return CreateFormGroupAsyncWithHttpInfo(accountId, body)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -850,14 +682,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Required input of name for the form group (optional)</param>
         /// <returns>Task of FormGroup</returns>
-        public async System.Threading.Tasks.Task<FormGroup> CreateFormGroupAsync (string accountId, FormGroupForCreate body = null)
+        public async System.Threading.Tasks.Task<FormGroup> CreateFormGroupAsync(string accountId, FormGroupForCreate body = null)
         {
              ApiResponse<FormGroup> localVarResponse = await CreateFormGroupAsyncWithHttpInfo(accountId, body);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -865,10 +695,9 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Required input of name for the form group (optional)</param>
         /// <returns>Task of ApiResponse (FormGroup)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FormGroup>> CreateFormGroupAsyncWithHttpInfo (string accountId, FormGroupForCreate body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FormGroup>> CreateFormGroupAsyncWithHttpInfo(string accountId, FormGroupForCreate body = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -879,15 +708,19 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
                 "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json"
+                "application/_*+json", 
+                "application/xml", 
+                "text/xml", 
+                "application/_*+xml"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -895,7 +728,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -905,8 +740,6 @@ namespace DocuSign.Rooms.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
@@ -924,11 +757,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -936,10 +768,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<FormGroup>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FormGroup) this.ApiClient.Deserialize(localVarResponse, typeof(FormGroup)));
-            
+            return new ApiResponse<FormGroup>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (FormGroup)this.ApiClient.Deserialize(localVarResponse, typeof(FormGroup)));
         }
 
 
@@ -948,11 +779,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes a form group. Deletes the specified form group.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
         /// <returns></returns>
-        public void DeleteFormGroup (string accountId, Guid? formGroupId)
+        public void DeleteFormGroup(string accountId, Guid? formGroupId)
         {
              DeleteFormGroupWithHttpInfo(accountId, formGroupId);
         }
@@ -961,102 +791,37 @@ namespace DocuSign.Rooms.Api
         /// Deletes a form group. Deletes the specified form group.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteFormGroupWithHttpInfo (string accountId, Guid? formGroupId)
+        public ApiResponse<Object> DeleteFormGroupWithHttpInfo(string accountId, Guid? formGroupId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling FormGroupsApi->DeleteFormGroup");
-            // verify the required parameter 'formGroupId' is set
-            if (formGroupId == null)
-                throw new ApiException(400, "Missing required parameter 'formGroupId' when calling FormGroupsApi->DeleteFormGroup");
-
-            var localVarPath = "/v2/accounts/{accountId}/form_groups/{formGroupId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formGroupId != null) localVarPathParams.Add("formGroupId", this.ApiClient.ParameterToString(formGroupId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteFormGroup", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+            return DeleteFormGroupAsyncWithHttpInfo(accountId, formGroupId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Deletes a form group. Deletes the specified form group.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteFormGroupAsync (string accountId, Guid? formGroupId)
+        public async System.Threading.Tasks.Task DeleteFormGroupAsync(string accountId, Guid? formGroupId)
         {
              await DeleteFormGroupAsyncWithHttpInfo(accountId, formGroupId);
-
         }
 
         /// <summary>
         /// Deletes a form group. Deletes the specified form group.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteFormGroupAsyncWithHttpInfo (string accountId, Guid? formGroupId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteFormGroupAsyncWithHttpInfo(string accountId, Guid? formGroupId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1070,8 +835,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -1086,7 +852,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1098,8 +866,6 @@ namespace DocuSign.Rooms.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (formGroupId != null) localVarPathParams.Add("formGroupId", this.ApiClient.ParameterToString(formGroupId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1108,11 +874,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1122,7 +887,7 @@ namespace DocuSign.Rooms.Api
 
             
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 
@@ -1132,11 +897,10 @@ namespace DocuSign.Rooms.Api
         /// Gets a form group. Get the specified form group.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
         /// <returns>FormGroup</returns>
-        public FormGroup GetFormGroup (string accountId, Guid? formGroupId)
+        public FormGroup GetFormGroup(string accountId, Guid? formGroupId)
         {
              ApiResponse<FormGroup> localVarResponse = GetFormGroupWithHttpInfo(accountId, formGroupId);
              return localVarResponse.Data;
@@ -1146,111 +910,38 @@ namespace DocuSign.Rooms.Api
         /// Gets a form group. Get the specified form group.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
         /// <returns>ApiResponse of FormGroup</returns>
-        public ApiResponse< FormGroup > GetFormGroupWithHttpInfo (string accountId, Guid? formGroupId)
+        public ApiResponse<FormGroup> GetFormGroupWithHttpInfo(string accountId, Guid? formGroupId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling FormGroupsApi->GetFormGroup");
-            // verify the required parameter 'formGroupId' is set
-            if (formGroupId == null)
-                throw new ApiException(400, "Missing required parameter 'formGroupId' when calling FormGroupsApi->GetFormGroup");
-
-            var localVarPath = "/v2/accounts/{accountId}/form_groups/{formGroupId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formGroupId != null) localVarPathParams.Add("formGroupId", this.ApiClient.ParameterToString(formGroupId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetFormGroup", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<FormGroup>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FormGroup) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FormGroup)));
-            }
-            else
-            {
-                return new ApiResponse<FormGroup>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FormGroup) this.ApiClient.Deserialize(localVarResponse, typeof(FormGroup)));
-            }
-            
+            return GetFormGroupAsyncWithHttpInfo(accountId, formGroupId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Gets a form group. Get the specified form group.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
         /// <returns>Task of FormGroup</returns>
-        public async System.Threading.Tasks.Task<FormGroup> GetFormGroupAsync (string accountId, Guid? formGroupId)
+        public async System.Threading.Tasks.Task<FormGroup> GetFormGroupAsync(string accountId, Guid? formGroupId)
         {
              ApiResponse<FormGroup> localVarResponse = await GetFormGroupAsyncWithHttpInfo(accountId, formGroupId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets a form group. Get the specified form group.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
         /// <returns>Task of ApiResponse (FormGroup)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FormGroup>> GetFormGroupAsyncWithHttpInfo (string accountId, Guid? formGroupId)
+        public async System.Threading.Tasks.Task<ApiResponse<FormGroup>> GetFormGroupAsyncWithHttpInfo(string accountId, Guid? formGroupId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1264,8 +955,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -1280,7 +972,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1292,8 +986,6 @@ namespace DocuSign.Rooms.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (formGroupId != null) localVarPathParams.Add("formGroupId", this.ApiClient.ParameterToString(formGroupId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1302,11 +994,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1314,10 +1005,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<FormGroup>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FormGroup) this.ApiClient.Deserialize(localVarResponse, typeof(FormGroup)));
-            
+            return new ApiResponse<FormGroup>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (FormGroup)this.ApiClient.Deserialize(localVarResponse, typeof(FormGroup)));
         }
 
 
@@ -1337,10 +1027,9 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>FormGroupSummaryList</returns>
-        public FormGroupSummaryList GetFormGroups (string accountId, FormGroupsApi.GetFormGroupsOptions options = null)
+        public FormGroupSummaryList GetFormGroups(string accountId, FormGroupsApi.GetFormGroupsOptions options = null)
         {
              ApiResponse<FormGroupSummaryList> localVarResponse = GetFormGroupsWithHttpInfo(accountId, options);
              return localVarResponse.Data;
@@ -1351,85 +1040,14 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of FormGroupSummaryList</returns>
-        public ApiResponse< FormGroupSummaryList > GetFormGroupsWithHttpInfo (string accountId, FormGroupsApi.GetFormGroupsOptions options = null)
+        public ApiResponse<FormGroupSummaryList> GetFormGroupsWithHttpInfo(string accountId, FormGroupsApi.GetFormGroupsOptions options = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling FormGroupsApi->GetFormGroups");
-
-            var localVarPath = "/v2/accounts/{accountId}/form_groups";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
-                if (options.startPosition != null) localVarQueryParams.Add("startPosition", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetFormGroups", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<FormGroupSummaryList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FormGroupSummaryList) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FormGroupSummaryList)));
-            }
-            else
-            {
-                return new ApiResponse<FormGroupSummaryList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FormGroupSummaryList) this.ApiClient.Deserialize(localVarResponse, typeof(FormGroupSummaryList)));
-            }
-            
+            return GetFormGroupsAsyncWithHttpInfo(accountId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1437,14 +1055,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FormGroupSummaryList</returns>
-        public async System.Threading.Tasks.Task<FormGroupSummaryList> GetFormGroupsAsync (string accountId, FormGroupsApi.GetFormGroupsOptions options = null)
+        public async System.Threading.Tasks.Task<FormGroupSummaryList> GetFormGroupsAsync(string accountId, FormGroupsApi.GetFormGroupsOptions options = null)
         {
              ApiResponse<FormGroupSummaryList> localVarResponse = await GetFormGroupsAsyncWithHttpInfo(accountId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -1452,10 +1068,9 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FormGroupSummaryList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FormGroupSummaryList>> GetFormGroupsAsyncWithHttpInfo (string accountId, FormGroupsApi.GetFormGroupsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FormGroupSummaryList>> GetFormGroupsAsyncWithHttpInfo(string accountId, FormGroupsApi.GetFormGroupsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1466,8 +1081,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -1482,7 +1098,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1492,13 +1110,11 @@ namespace DocuSign.Rooms.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
             if (options != null)
             {
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("startPosition", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -1508,11 +1124,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1520,10 +1135,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<FormGroupSummaryList>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FormGroupSummaryList) this.ApiClient.Deserialize(localVarResponse, typeof(FormGroupSummaryList)));
-            
+            return new ApiResponse<FormGroupSummaryList>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (FormGroupSummaryList)this.ApiClient.Deserialize(localVarResponse, typeof(FormGroupSummaryList)));
         }
 
 
@@ -1532,11 +1146,11 @@ namespace DocuSign.Rooms.Api
         /// Assign office to a form group so the specified office has access to the form group. \&quot;Grants the office &#x60;officeId&#x60; access to the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         /// <returns></returns>
-        public void GrantOfficeAccessToFormGroup (string accountId, Guid? formGroupId, int? officeId)
+        public void GrantOfficeAccessToFormGroup(string accountId, Guid? formGroupId, int? officeId)
         {
              GrantOfficeAccessToFormGroupWithHttpInfo(accountId, formGroupId, officeId);
         }
@@ -1545,106 +1159,40 @@ namespace DocuSign.Rooms.Api
         /// Assign office to a form group so the specified office has access to the form group. \&quot;Grants the office &#x60;officeId&#x60; access to the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> GrantOfficeAccessToFormGroupWithHttpInfo (string accountId, Guid? formGroupId, int? officeId)
+        public ApiResponse<Object> GrantOfficeAccessToFormGroupWithHttpInfo(string accountId, Guid? formGroupId, int? officeId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling FormGroupsApi->GrantOfficeAccessToFormGroup");
-            // verify the required parameter 'formGroupId' is set
-            if (formGroupId == null)
-                throw new ApiException(400, "Missing required parameter 'formGroupId' when calling FormGroupsApi->GrantOfficeAccessToFormGroup");
-            // verify the required parameter 'officeId' is set
-            if (officeId == null)
-                throw new ApiException(400, "Missing required parameter 'officeId' when calling FormGroupsApi->GrantOfficeAccessToFormGroup");
-
-            var localVarPath = "/v2/accounts/{accountId}/form_groups/{formGroupId}/grant_office_access/{officeId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formGroupId != null) localVarPathParams.Add("formGroupId", this.ApiClient.ParameterToString(formGroupId)); // path parameter
-            if (officeId != null) localVarPathParams.Add("officeId", this.ApiClient.ParameterToString(officeId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GrantOfficeAccessToFormGroup", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+            return GrantOfficeAccessToFormGroupAsyncWithHttpInfo(accountId, formGroupId, officeId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Assign office to a form group so the specified office has access to the form group. \&quot;Grants the office &#x60;officeId&#x60; access to the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GrantOfficeAccessToFormGroupAsync (string accountId, Guid? formGroupId, int? officeId)
+        public async System.Threading.Tasks.Task GrantOfficeAccessToFormGroupAsync(string accountId, Guid? formGroupId, int? officeId)
         {
              await GrantOfficeAccessToFormGroupAsyncWithHttpInfo(accountId, formGroupId, officeId);
-
         }
 
         /// <summary>
         /// Assign office to a form group so the specified office has access to the form group. \&quot;Grants the office &#x60;officeId&#x60; access to the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> GrantOfficeAccessToFormGroupAsyncWithHttpInfo (string accountId, Guid? formGroupId, int? officeId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> GrantOfficeAccessToFormGroupAsyncWithHttpInfo(string accountId, Guid? formGroupId, int? officeId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1661,8 +1209,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -1677,7 +1226,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1690,8 +1241,6 @@ namespace DocuSign.Rooms.Api
             if (formGroupId != null) localVarPathParams.Add("formGroupId", this.ApiClient.ParameterToString(formGroupId)); // path parameter
             if (officeId != null) localVarPathParams.Add("officeId", this.ApiClient.ParameterToString(officeId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1700,11 +1249,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1714,7 +1262,7 @@ namespace DocuSign.Rooms.Api
 
             
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 
@@ -1724,11 +1272,11 @@ namespace DocuSign.Rooms.Api
         /// Removes a form from a form group. Removes the form &#x60;formId&#x60; from the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="formId">The id of the form.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="formId">The id of the form.</param>
         /// <returns></returns>
-        public void RemoveFormGroupForm (string accountId, Guid? formGroupId, Guid? formId)
+        public void RemoveFormGroupForm(string accountId, Guid? formGroupId, Guid? formId)
         {
              RemoveFormGroupFormWithHttpInfo(accountId, formGroupId, formId);
         }
@@ -1737,106 +1285,40 @@ namespace DocuSign.Rooms.Api
         /// Removes a form from a form group. Removes the form &#x60;formId&#x60; from the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="formId">The id of the form.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="formId">The id of the form.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> RemoveFormGroupFormWithHttpInfo (string accountId, Guid? formGroupId, Guid? formId)
+        public ApiResponse<Object> RemoveFormGroupFormWithHttpInfo(string accountId, Guid? formGroupId, Guid? formId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling FormGroupsApi->RemoveFormGroupForm");
-            // verify the required parameter 'formGroupId' is set
-            if (formGroupId == null)
-                throw new ApiException(400, "Missing required parameter 'formGroupId' when calling FormGroupsApi->RemoveFormGroupForm");
-            // verify the required parameter 'formId' is set
-            if (formId == null)
-                throw new ApiException(400, "Missing required parameter 'formId' when calling FormGroupsApi->RemoveFormGroupForm");
-
-            var localVarPath = "/v2/accounts/{accountId}/form_groups/{formGroupId}/unassign_form/{formId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formGroupId != null) localVarPathParams.Add("formGroupId", this.ApiClient.ParameterToString(formGroupId)); // path parameter
-            if (formId != null) localVarPathParams.Add("formId", this.ApiClient.ParameterToString(formId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("RemoveFormGroupForm", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+            return RemoveFormGroupFormAsyncWithHttpInfo(accountId, formGroupId, formId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Removes a form from a form group. Removes the form &#x60;formId&#x60; from the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="formId">The id of the form.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="formId">The id of the form.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RemoveFormGroupFormAsync (string accountId, Guid? formGroupId, Guid? formId)
+        public async System.Threading.Tasks.Task RemoveFormGroupFormAsync(string accountId, Guid? formGroupId, Guid? formId)
         {
              await RemoveFormGroupFormAsyncWithHttpInfo(accountId, formGroupId, formId);
-
         }
 
         /// <summary>
         /// Removes a form from a form group. Removes the form &#x60;formId&#x60; from the form group &#x60;formGroupId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="formId">The id of the form.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="formId">The id of the form.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> RemoveFormGroupFormAsyncWithHttpInfo (string accountId, Guid? formGroupId, Guid? formId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> RemoveFormGroupFormAsyncWithHttpInfo(string accountId, Guid? formGroupId, Guid? formId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1853,8 +1335,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -1869,7 +1352,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1882,8 +1367,6 @@ namespace DocuSign.Rooms.Api
             if (formGroupId != null) localVarPathParams.Add("formGroupId", this.ApiClient.ParameterToString(formGroupId)); // path parameter
             if (formId != null) localVarPathParams.Add("formId", this.ApiClient.ParameterToString(formId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1892,11 +1375,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1906,7 +1388,7 @@ namespace DocuSign.Rooms.Api
 
             
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 
@@ -1916,11 +1398,11 @@ namespace DocuSign.Rooms.Api
         /// Renames a form group. Renames the specified form group with the name given in the &#x60;name&#x60; property of the request.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="body">Required input of name for the form group (optional)</param>
         /// <returns>FormGroup</returns>
-        public FormGroup RenameFormGroup (string accountId, Guid? formGroupId, FormGroupForUpdate body = null)
+        public FormGroup RenameFormGroup(string accountId, Guid? formGroupId, FormGroupForUpdate body = null)
         {
              ApiResponse<FormGroup> localVarResponse = RenameFormGroupWithHttpInfo(accountId, formGroupId, body);
              return localVarResponse.Data;
@@ -1930,119 +1412,41 @@ namespace DocuSign.Rooms.Api
         /// Renames a form group. Renames the specified form group with the name given in the &#x60;name&#x60; property of the request.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="body">Required input of name for the form group (optional)</param>
         /// <returns>ApiResponse of FormGroup</returns>
-        public ApiResponse< FormGroup > RenameFormGroupWithHttpInfo (string accountId, Guid? formGroupId, FormGroupForUpdate body = null)
+        public ApiResponse<FormGroup> RenameFormGroupWithHttpInfo(string accountId, Guid? formGroupId, FormGroupForUpdate body = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling FormGroupsApi->RenameFormGroup");
-            // verify the required parameter 'formGroupId' is set
-            if (formGroupId == null)
-                throw new ApiException(400, "Missing required parameter 'formGroupId' when calling FormGroupsApi->RenameFormGroup");
-
-            var localVarPath = "/v2/accounts/{accountId}/form_groups/{formGroupId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formGroupId != null) localVarPathParams.Add("formGroupId", this.ApiClient.ParameterToString(formGroupId)); // path parameter
-
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("RenameFormGroup", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<FormGroup>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FormGroup) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FormGroup)));
-            }
-            else
-            {
-                return new ApiResponse<FormGroup>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FormGroup) this.ApiClient.Deserialize(localVarResponse, typeof(FormGroup)));
-            }
-            
+            return RenameFormGroupAsyncWithHttpInfo(accountId, formGroupId, body)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Renames a form group. Renames the specified form group with the name given in the &#x60;name&#x60; property of the request.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="body">Required input of name for the form group (optional)</param>
         /// <returns>Task of FormGroup</returns>
-        public async System.Threading.Tasks.Task<FormGroup> RenameFormGroupAsync (string accountId, Guid? formGroupId, FormGroupForUpdate body = null)
+        public async System.Threading.Tasks.Task<FormGroup> RenameFormGroupAsync(string accountId, Guid? formGroupId, FormGroupForUpdate body = null)
         {
              ApiResponse<FormGroup> localVarResponse = await RenameFormGroupAsyncWithHttpInfo(accountId, formGroupId, body);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Renames a form group. Renames the specified form group with the name given in the &#x60;name&#x60; property of the request.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="body">Required input of name for the form group (optional)</param>
         /// <returns>Task of ApiResponse (FormGroup)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FormGroup>> RenameFormGroupAsyncWithHttpInfo (string accountId, Guid? formGroupId, FormGroupForUpdate body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FormGroup>> RenameFormGroupAsyncWithHttpInfo(string accountId, Guid? formGroupId, FormGroupForUpdate body = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2056,15 +1460,19 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
                 "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json"
+                "application/_*+json", 
+                "application/xml", 
+                "text/xml", 
+                "application/_*+xml"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -2072,7 +1480,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -2083,8 +1493,6 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (formGroupId != null) localVarPathParams.Add("formGroupId", this.ApiClient.ParameterToString(formGroupId)); // path parameter
-
-
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
@@ -2102,11 +1510,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2114,10 +1521,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<FormGroup>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FormGroup) this.ApiClient.Deserialize(localVarResponse, typeof(FormGroup)));
-            
+            return new ApiResponse<FormGroup>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (FormGroup)this.ApiClient.Deserialize(localVarResponse, typeof(FormGroup)));
         }
 
 
@@ -2126,11 +1532,11 @@ namespace DocuSign.Rooms.Api
         /// Remove office to a form group so the specified office doesn&#39;t have access to the form group. Revoke access to the form group &#x60;formGroupId&#x60; from the office &#x60;officeId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         /// <returns></returns>
-        public void RevokeOfficeAccessFromFormGroup (string accountId, Guid? formGroupId, int? officeId)
+        public void RevokeOfficeAccessFromFormGroup(string accountId, Guid? formGroupId, int? officeId)
         {
              RevokeOfficeAccessFromFormGroupWithHttpInfo(accountId, formGroupId, officeId);
         }
@@ -2139,106 +1545,40 @@ namespace DocuSign.Rooms.Api
         /// Remove office to a form group so the specified office doesn&#39;t have access to the form group. Revoke access to the form group &#x60;formGroupId&#x60; from the office &#x60;officeId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> RevokeOfficeAccessFromFormGroupWithHttpInfo (string accountId, Guid? formGroupId, int? officeId)
+        public ApiResponse<Object> RevokeOfficeAccessFromFormGroupWithHttpInfo(string accountId, Guid? formGroupId, int? officeId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling FormGroupsApi->RevokeOfficeAccessFromFormGroup");
-            // verify the required parameter 'formGroupId' is set
-            if (formGroupId == null)
-                throw new ApiException(400, "Missing required parameter 'formGroupId' when calling FormGroupsApi->RevokeOfficeAccessFromFormGroup");
-            // verify the required parameter 'officeId' is set
-            if (officeId == null)
-                throw new ApiException(400, "Missing required parameter 'officeId' when calling FormGroupsApi->RevokeOfficeAccessFromFormGroup");
-
-            var localVarPath = "/v2/accounts/{accountId}/form_groups/{formGroupId}/revoke_office_access/{officeId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formGroupId != null) localVarPathParams.Add("formGroupId", this.ApiClient.ParameterToString(formGroupId)); // path parameter
-            if (officeId != null) localVarPathParams.Add("officeId", this.ApiClient.ParameterToString(officeId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("RevokeOfficeAccessFromFormGroup", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+            return RevokeOfficeAccessFromFormGroupAsyncWithHttpInfo(accountId, formGroupId, officeId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Remove office to a form group so the specified office doesn&#39;t have access to the form group. Revoke access to the form group &#x60;formGroupId&#x60; from the office &#x60;officeId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RevokeOfficeAccessFromFormGroupAsync (string accountId, Guid? formGroupId, int? officeId)
+        public async System.Threading.Tasks.Task RevokeOfficeAccessFromFormGroupAsync(string accountId, Guid? formGroupId, int? officeId)
         {
              await RevokeOfficeAccessFromFormGroupAsyncWithHttpInfo(accountId, formGroupId, officeId);
-
         }
 
         /// <summary>
         /// Remove office to a form group so the specified office doesn&#39;t have access to the form group. Revoke access to the form group &#x60;formGroupId&#x60; from the office &#x60;officeId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="formGroupId">The ID of the form group.</param>/// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="formGroupId">The ID of the form group.</param>
+        /// <param name="officeId">The id of the office. This is the id that the system generated when you created the office.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> RevokeOfficeAccessFromFormGroupAsyncWithHttpInfo (string accountId, Guid? formGroupId, int? officeId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> RevokeOfficeAccessFromFormGroupAsyncWithHttpInfo(string accountId, Guid? formGroupId, int? officeId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2255,8 +1595,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -2271,7 +1612,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -2284,8 +1627,6 @@ namespace DocuSign.Rooms.Api
             if (formGroupId != null) localVarPathParams.Add("formGroupId", this.ApiClient.ParameterToString(formGroupId)); // path parameter
             if (officeId != null) localVarPathParams.Add("officeId", this.ApiClient.ParameterToString(officeId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -2294,11 +1635,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2308,7 +1648,7 @@ namespace DocuSign.Rooms.Api
 
             
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 

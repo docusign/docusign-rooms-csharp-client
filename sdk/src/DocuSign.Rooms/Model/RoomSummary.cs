@@ -30,9 +30,13 @@ namespace DocuSign.Rooms.Model
     [DataContract]
     public partial class RoomSummary :  IEquatable<RoomSummary>, IValidatableObject
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RoomSummary" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
         public RoomSummary()
         {
-            // Empty Constructor
         }
         
         /// <summary>
@@ -54,22 +58,22 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
-        public DateTime CreatedDate { get; private set; }
+        public DateTime? CreatedDate { get; private set; }
         /// <summary>
         /// Gets or Sets SubmittedForReviewDate
         /// </summary>
         [DataMember(Name="submittedForReviewDate", EmitDefaultValue=false)]
-        public DateTime SubmittedForReviewDate { get; private set; }
+        public DateTime? SubmittedForReviewDate { get; private set; }
         /// <summary>
         /// Gets or Sets ClosedDate
         /// </summary>
         [DataMember(Name="closedDate", EmitDefaultValue=false)]
-        public DateTime ClosedDate { get; private set; }
+        public DateTime? ClosedDate { get; private set; }
         /// <summary>
         /// Gets or Sets RejectedDate
         /// </summary>
         [DataMember(Name="rejectedDate", EmitDefaultValue=false)]
-        public DateTime RejectedDate { get; private set; }
+        public DateTime? RejectedDate { get; private set; }
         /// <summary>
         /// Gets or Sets CreatedByUserId
         /// </summary>
@@ -89,7 +93,7 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets FieldDataLastUpdatedDate
         /// </summary>
         [DataMember(Name="fieldDataLastUpdatedDate", EmitDefaultValue=false)]
-        public DateTime FieldDataLastUpdatedDate { get; private set; }
+        public DateTime? FieldDataLastUpdatedDate { get; private set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

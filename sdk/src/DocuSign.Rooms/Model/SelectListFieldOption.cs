@@ -30,9 +30,13 @@ namespace DocuSign.Rooms.Model
     [DataContract]
     public partial class SelectListFieldOption :  IEquatable<SelectListFieldOption>, IValidatableObject
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SelectListFieldOption" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
         public SelectListFieldOption()
         {
-            // Empty Constructor
         }
         
         /// <summary>

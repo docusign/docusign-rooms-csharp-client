@@ -36,10 +36,48 @@ namespace DocuSign.Rooms.Model
         }
 
         /// <summary>
+        /// Defines AccessLevel
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AccessLevelEnum
+        {
+            
+            /// <summary>
+            /// Enum Contributor for value: Contributor
+            /// </summary>
+            [EnumMember(Value = "Contributor")]
+            Contributor = 1,
+            
+            /// <summary>
+            /// Enum Office for value: Office
+            /// </summary>
+            [EnumMember(Value = "Office")]
+            Office = 2,
+            
+            /// <summary>
+            /// Enum Region for value: Region
+            /// </summary>
+            [EnumMember(Value = "Region")]
+            Region = 3,
+            
+            /// <summary>
+            /// Enum Company for value: Company
+            /// </summary>
+            [EnumMember(Value = "Company")]
+            Company = 4,
+            
+            /// <summary>
+            /// Enum Admin for value: Admin
+            /// </summary>
+            [EnumMember(Value = "Admin")]
+            Admin = 5
+        }
+
+        /// <summary>
         /// Gets or Sets AccessLevel
         /// </summary>
         [DataMember(Name="accessLevel", EmitDefaultValue=false)]
-        public AccessLevel? AccessLevel { get; set; }
+        public AccessLevelEnum? AccessLevel { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UserToInvite" /> class.
         /// </summary>
@@ -51,9 +89,10 @@ namespace DocuSign.Rooms.Model
         /// <param name="DefaultOfficeId">DefaultOfficeId (required).</param>
         /// <param name="Regions">Regions.</param>
         /// <param name="Offices">Offices.</param>
+        /// <param name="SubscribeToRoomsActivityNotifications">SubscribeToRoomsActivityNotifications (default to true).</param>
         /// <param name="ESignPermissionProfileId">ESignPermissionProfileId (required).</param>
         /// <param name="RedirectUrl">RedirectUrl.</param>
-        public UserToInvite(string FirstName = default(string), string LastName = default(string), string Email = default(string), int? RoleId = default(int?), AccessLevel? AccessLevel = default(AccessLevel?), int? DefaultOfficeId = default(int?), List<int?> Regions = default(List<int?>), List<int?> Offices = default(List<int?>), string ESignPermissionProfileId = default(string), string RedirectUrl = default(string))
+        public UserToInvite(string FirstName = default(string), string LastName = default(string), string Email = default(string), int? RoleId = default(int?), AccessLevelEnum? AccessLevel = default(AccessLevelEnum?), int? DefaultOfficeId = default(int?), List<int?> Regions = default(List<int?>), List<int?> Offices = default(List<int?>), bool? SubscribeToRoomsActivityNotifications = true, string ESignPermissionProfileId = default(string), string RedirectUrl = default(string))
         {
             // to ensure "FirstName" is required (not null)
             if (FirstName == null)
@@ -120,6 +159,15 @@ namespace DocuSign.Rooms.Model
             }
             this.Regions = Regions;
             this.Offices = Offices;
+            // use default value if no "SubscribeToRoomsActivityNotifications" provided
+            if (SubscribeToRoomsActivityNotifications == null)
+            {
+                this.SubscribeToRoomsActivityNotifications = true;
+            }
+            else
+            {
+                this.SubscribeToRoomsActivityNotifications = SubscribeToRoomsActivityNotifications;
+            }
             this.RedirectUrl = RedirectUrl;
         }
         
@@ -159,6 +207,11 @@ namespace DocuSign.Rooms.Model
         [DataMember(Name="offices", EmitDefaultValue=false)]
         public List<int?> Offices { get; set; }
         /// <summary>
+        /// Gets or Sets SubscribeToRoomsActivityNotifications
+        /// </summary>
+        [DataMember(Name="subscribeToRoomsActivityNotifications", EmitDefaultValue=false)]
+        public bool? SubscribeToRoomsActivityNotifications { get; set; }
+        /// <summary>
         /// Gets or Sets ESignPermissionProfileId
         /// </summary>
         [DataMember(Name="eSignPermissionProfileId", EmitDefaultValue=false)]
@@ -184,6 +237,7 @@ namespace DocuSign.Rooms.Model
             sb.Append("  DefaultOfficeId: ").Append(DefaultOfficeId).Append("\n");
             sb.Append("  Regions: ").Append(Regions).Append("\n");
             sb.Append("  Offices: ").Append(Offices).Append("\n");
+            sb.Append("  SubscribeToRoomsActivityNotifications: ").Append(SubscribeToRoomsActivityNotifications).Append("\n");
             sb.Append("  ESignPermissionProfileId: ").Append(ESignPermissionProfileId).Append("\n");
             sb.Append("  RedirectUrl: ").Append(RedirectUrl).Append("\n");
             sb.Append("}\n");
@@ -263,6 +317,11 @@ namespace DocuSign.Rooms.Model
                     this.Offices.SequenceEqual(other.Offices)
                 ) && 
                 (
+                    this.SubscribeToRoomsActivityNotifications == other.SubscribeToRoomsActivityNotifications ||
+                    this.SubscribeToRoomsActivityNotifications != null &&
+                    this.SubscribeToRoomsActivityNotifications.Equals(other.SubscribeToRoomsActivityNotifications)
+                ) && 
+                (
                     this.ESignPermissionProfileId == other.ESignPermissionProfileId ||
                     this.ESignPermissionProfileId != null &&
                     this.ESignPermissionProfileId.Equals(other.ESignPermissionProfileId)
@@ -301,6 +360,8 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.Regions.GetHashCode();
                 if (this.Offices != null)
                     hash = hash * 59 + this.Offices.GetHashCode();
+                if (this.SubscribeToRoomsActivityNotifications != null)
+                    hash = hash * 59 + this.SubscribeToRoomsActivityNotifications.GetHashCode();
                 if (this.ESignPermissionProfileId != null)
                     hash = hash * 59 + this.ESignPermissionProfileId.GetHashCode();
                 if (this.RedirectUrl != null)

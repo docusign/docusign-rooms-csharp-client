@@ -30,9 +30,13 @@ namespace DocuSign.Rooms.Model
     [DataContract]
     public partial class TaskListSummary :  IEquatable<TaskListSummary>, IValidatableObject
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TaskListSummary" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
         public TaskListSummary()
         {
-            // Empty Constructor
         }
         
         /// <summary>
@@ -54,22 +58,22 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets SubmittedForReviewDate
         /// </summary>
         [DataMember(Name="submittedForReviewDate", EmitDefaultValue=false)]
-        public DateTime SubmittedForReviewDate { get; private set; }
+        public DateTime? SubmittedForReviewDate { get; private set; }
         /// <summary>
         /// Gets or Sets ApprovalDate
         /// </summary>
         [DataMember(Name="approvalDate", EmitDefaultValue=false)]
-        public DateTime ApprovalDate { get; private set; }
+        public DateTime? ApprovalDate { get; private set; }
         /// <summary>
         /// Gets or Sets RejectedDate
         /// </summary>
         [DataMember(Name="rejectedDate", EmitDefaultValue=false)]
-        public DateTime RejectedDate { get; private set; }
+        public DateTime? RejectedDate { get; private set; }
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
-        public DateTime CreatedDate { get; private set; }
+        public DateTime? CreatedDate { get; private set; }
         /// <summary>
         /// Gets or Sets ApprovedByUserId
         /// </summary>

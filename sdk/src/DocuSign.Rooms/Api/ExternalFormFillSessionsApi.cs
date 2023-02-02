@@ -10,9 +10,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using System.Net.Http;
 using DocuSign.Rooms.Client;
 using DocuSign.Rooms.Model;
 
@@ -28,54 +27,50 @@ namespace DocuSign.Rooms.Api
         /// Creates an external form fill session.
         /// </summary>
         /// <remarks>
-        /// Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.
+        /// Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; or &#x60;formIds&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.  User may supply up to 10 &#x60;formIds&#x60;. Eventually, &#x60;formId&#x60; will be deprecated.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Request body that accepts the &#x60;roomId&#x60; and &#x60;formId&#x60; or &#x60;formIds&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body. User may supply up to 10 &#x60;formIds&#x60;. Eventually, &#x60;formId&#x60; will be deprecated (optional)</param>
         /// <returns></returns>
-        ExternalFormFillSession CreateExternalFormFillSession (string accountId, ExternalFormFillSessionForCreate body = null);
+        ExternalFormFillSession CreateExternalFormFillSession(string accountId, ExternalFormFillSessionForCreate body = null);
 
         /// <summary>
         /// Creates an external form fill session.
         /// </summary>
         /// <remarks>
-        /// Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.
+        /// Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; or &#x60;formIds&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.  User may supply up to 10 &#x60;formIds&#x60;. Eventually, &#x60;formId&#x60; will be deprecated.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Request body that accepts the &#x60;roomId&#x60; and &#x60;formId&#x60; or &#x60;formIds&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body. User may supply up to 10 &#x60;formIds&#x60;. Eventually, &#x60;formId&#x60; will be deprecated (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<ExternalFormFillSession> CreateExternalFormFillSessionWithHttpInfo (string accountId, ExternalFormFillSessionForCreate body = null);
+        ApiResponse<ExternalFormFillSession> CreateExternalFormFillSessionWithHttpInfo(string accountId, ExternalFormFillSessionForCreate body = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
         /// Creates an external form fill session.
         /// </summary>
         /// <remarks>
-        /// Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.
+        /// Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; or &#x60;formIds&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.  User may supply up to 10 &#x60;formIds&#x60;. Eventually, &#x60;formId&#x60; will be deprecated.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Request body that accepts the &#x60;roomId&#x60; and &#x60;formId&#x60; or &#x60;formIds&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body. User may supply up to 10 &#x60;formIds&#x60;. Eventually, &#x60;formId&#x60; will be deprecated (optional)</param>
         /// <returns>Task of ExternalFormFillSession</returns>
-        System.Threading.Tasks.Task<ExternalFormFillSession> CreateExternalFormFillSessionAsync (string accountId, ExternalFormFillSessionForCreate body = null);
+        System.Threading.Tasks.Task<ExternalFormFillSession> CreateExternalFormFillSessionAsync(string accountId, ExternalFormFillSessionForCreate body = null);
 
         /// <summary>
         /// Creates an external form fill session.
         /// </summary>
         /// <remarks>
-        /// Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.
+        /// Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; or &#x60;formIds&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.  User may supply up to 10 &#x60;formIds&#x60;. Eventually, &#x60;formId&#x60; will be deprecated.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Request body that accepts the &#x60;roomId&#x60; and &#x60;formId&#x60; or &#x60;formIds&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body. User may supply up to 10 &#x60;formIds&#x60;. Eventually, &#x60;formId&#x60; will be deprecated (optional)</param>
         /// <returns>Task of ApiResponse (ExternalFormFillSession)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalFormFillSession>> CreateExternalFormFillSessionAsyncWithHttpInfo (string accountId, ExternalFormFillSessionForCreate body = null);
+        System.Threading.Tasks.Task<ApiResponse<ExternalFormFillSession>> CreateExternalFormFillSessionAsyncWithHttpInfo(string accountId, ExternalFormFillSessionForCreate body = null);
         #endregion Asynchronous Operations
     }
 
@@ -92,7 +87,7 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <param name="aplClient">An instance of AplClient</param>
         /// <returns></returns>
-        public ExternalFormFillSessionsApi(ApiClient aplClient)
+        public ExternalFormFillSessionsApi(DocuSignClient aplClient)
         {
             this.ApiClient = aplClient;
 
@@ -105,14 +100,14 @@ namespace DocuSign.Rooms.Api
         /// <value>The base path</value>
         public String GetBasePath()
         {
-            return this.ApiClient.RestClient.BaseUrl.ToString();
+            return this.ApiClient.GetBasePath();
         }
 
         /// <summary>
         /// Gets or sets the ApiClient object
         /// </summary>
         /// <value>An instance of the ApiClient</value>
-        public ApiClient ApiClient { get; set; }
+        public DocuSignClient ApiClient { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -133,132 +128,54 @@ namespace DocuSign.Rooms.Api
 
 
         /// <summary>
-        /// Creates an external form fill session. Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.
+        /// Creates an external form fill session. Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; or &#x60;formIds&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.  User may supply up to 10 &#x60;formIds&#x60;. Eventually, &#x60;formId&#x60; will be deprecated.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Request body that accepts the &#x60;roomId&#x60; and &#x60;formId&#x60; or &#x60;formIds&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body. User may supply up to 10 &#x60;formIds&#x60;. Eventually, &#x60;formId&#x60; will be deprecated (optional)</param>
         /// <returns>ExternalFormFillSession</returns>
-        public ExternalFormFillSession CreateExternalFormFillSession (string accountId, ExternalFormFillSessionForCreate body = null)
+        public ExternalFormFillSession CreateExternalFormFillSession(string accountId, ExternalFormFillSessionForCreate body = null)
         {
              ApiResponse<ExternalFormFillSession> localVarResponse = CreateExternalFormFillSessionWithHttpInfo(accountId, body);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Creates an external form fill session. Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.
+        /// Creates an external form fill session. Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; or &#x60;formIds&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.  User may supply up to 10 &#x60;formIds&#x60;. Eventually, &#x60;formId&#x60; will be deprecated.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Request body that accepts the &#x60;roomId&#x60; and &#x60;formId&#x60; or &#x60;formIds&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body. User may supply up to 10 &#x60;formIds&#x60;. Eventually, &#x60;formId&#x60; will be deprecated (optional)</param>
         /// <returns>ApiResponse of ExternalFormFillSession</returns>
-        public ApiResponse< ExternalFormFillSession > CreateExternalFormFillSessionWithHttpInfo (string accountId, ExternalFormFillSessionForCreate body = null)
+        public ApiResponse<ExternalFormFillSession> CreateExternalFormFillSessionWithHttpInfo(string accountId, ExternalFormFillSessionForCreate body = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling ExternalFormFillSessionsApi->CreateExternalFormFillSession");
-
-            var localVarPath = "/v2/accounts/{accountId}/external_form_fill_sessions";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CreateExternalFormFillSession", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<ExternalFormFillSession>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ExternalFormFillSession) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ExternalFormFillSession)));
-            }
-            else
-            {
-                return new ApiResponse<ExternalFormFillSession>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ExternalFormFillSession) this.ApiClient.Deserialize(localVarResponse, typeof(ExternalFormFillSession)));
-            }
-            
+            return CreateExternalFormFillSessionAsyncWithHttpInfo(accountId, body)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
-        /// Creates an external form fill session. Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.
+        /// Creates an external form fill session. Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; or &#x60;formIds&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.  User may supply up to 10 &#x60;formIds&#x60;. Eventually, &#x60;formId&#x60; will be deprecated.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Request body that accepts the &#x60;roomId&#x60; and &#x60;formId&#x60; or &#x60;formIds&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body. User may supply up to 10 &#x60;formIds&#x60;. Eventually, &#x60;formId&#x60; will be deprecated (optional)</param>
         /// <returns>Task of ExternalFormFillSession</returns>
-        public async System.Threading.Tasks.Task<ExternalFormFillSession> CreateExternalFormFillSessionAsync (string accountId, ExternalFormFillSessionForCreate body = null)
+        public async System.Threading.Tasks.Task<ExternalFormFillSession> CreateExternalFormFillSessionAsync(string accountId, ExternalFormFillSessionForCreate body = null)
         {
              ApiResponse<ExternalFormFillSession> localVarResponse = await CreateExternalFormFillSessionAsyncWithHttpInfo(accountId, body);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
-        /// Creates an external form fill session. Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.
+        /// Creates an external form fill session. Returns a URL for a new external form fill session, based on the &#x60;roomId&#x60; and &#x60;formId&#x60; or &#x60;formIds&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body.  User may supply up to 10 &#x60;formIds&#x60;. Eventually, &#x60;formId&#x60; will be deprecated.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Request body that accepts the &#x60;roomId&#x60; and &#x60;formId&#x60; or &#x60;formIds&#x60; that you specify in the &#x60;formFillSessionForCreate&#x60; request body. User may supply up to 10 &#x60;formIds&#x60;. Eventually, &#x60;formId&#x60; will be deprecated (optional)</param>
         /// <returns>Task of ApiResponse (ExternalFormFillSession)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalFormFillSession>> CreateExternalFormFillSessionAsyncWithHttpInfo (string accountId, ExternalFormFillSessionForCreate body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalFormFillSession>> CreateExternalFormFillSessionAsyncWithHttpInfo(string accountId, ExternalFormFillSessionForCreate body = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -269,15 +186,19 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
                 "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json"
+                "application/_*+json", 
+                "application/xml", 
+                "text/xml", 
+                "application/_*+xml"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -285,7 +206,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -295,8 +218,6 @@ namespace DocuSign.Rooms.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
@@ -314,11 +235,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -326,10 +246,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ExternalFormFillSession>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ExternalFormFillSession) this.ApiClient.Deserialize(localVarResponse, typeof(ExternalFormFillSession)));
-            
+            return new ApiResponse<ExternalFormFillSession>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (ExternalFormFillSession)this.ApiClient.Deserialize(localVarResponse, typeof(ExternalFormFillSession)));
         }
 
     }

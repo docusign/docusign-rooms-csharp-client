@@ -30,9 +30,13 @@ namespace DocuSign.Rooms.Model
     [DataContract]
     public partial class FormSummary :  IEquatable<FormSummary>, IValidatableObject
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FormSummary" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
         public FormSummary()
         {
-            // Empty Constructor
         }
         
         /// <summary>
@@ -49,7 +53,12 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets LastUpdatedDate
         /// </summary>
         [DataMember(Name="lastUpdatedDate", EmitDefaultValue=false)]
-        public DateTime LastUpdatedDate { get; private set; }
+        public DateTime? LastUpdatedDate { get; private set; }
+        /// <summary>
+        /// Gets or Sets ViewingUserHasAccess
+        /// </summary>
+        [DataMember(Name="viewingUserHasAccess", EmitDefaultValue=false)]
+        public bool? ViewingUserHasAccess { get; private set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -61,6 +70,7 @@ namespace DocuSign.Rooms.Model
             sb.Append("  LibraryFormId: ").Append(LibraryFormId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  LastUpdatedDate: ").Append(LastUpdatedDate).Append("\n");
+            sb.Append("  ViewingUserHasAccess: ").Append(ViewingUserHasAccess).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -111,6 +121,11 @@ namespace DocuSign.Rooms.Model
                     this.LastUpdatedDate == other.LastUpdatedDate ||
                     this.LastUpdatedDate != null &&
                     this.LastUpdatedDate.Equals(other.LastUpdatedDate)
+                ) && 
+                (
+                    this.ViewingUserHasAccess == other.ViewingUserHasAccess ||
+                    this.ViewingUserHasAccess != null &&
+                    this.ViewingUserHasAccess.Equals(other.ViewingUserHasAccess)
                 );
         }
 
@@ -131,6 +146,8 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.LastUpdatedDate != null)
                     hash = hash * 59 + this.LastUpdatedDate.GetHashCode();
+                if (this.ViewingUserHasAccess != null)
+                    hash = hash * 59 + this.ViewingUserHasAccess.GetHashCode();
                 return hash;
             }
         }

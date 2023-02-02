@@ -10,9 +10,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using System.Net.Http;
 using DocuSign.Rooms.Client;
 using DocuSign.Rooms.Model;
 
@@ -32,10 +31,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Name and permission details of the role to be created (optional)</param>
         /// <returns></returns>
-        Role CreateRole (string accountId, RoleForCreate body = null);
+        Role CreateRole(string accountId, RoleForCreate body = null);
 
         /// <summary>
         /// Creates a role.
@@ -45,10 +43,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Name and permission details of the role to be created (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Role> CreateRoleWithHttpInfo (string accountId, RoleForCreate body = null);
+        ApiResponse<Role> CreateRoleWithHttpInfo(string accountId, RoleForCreate body = null);
         /// <summary>
         /// Deletes the role with the given roleId.
         /// </summary>
@@ -56,11 +53,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes a role from a company account in Rooms
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
         /// <returns></returns>
-        void DeleteRole (string accountId, int? roleId);
+        void DeleteRole(string accountId, int? roleId);
 
         /// <summary>
         /// Deletes the role with the given roleId.
@@ -69,11 +65,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes a role from a company account in Rooms
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteRoleWithHttpInfo (string accountId, int? roleId);
+        ApiResponse<Object> DeleteRoleWithHttpInfo(string accountId, int? roleId);
         /// <summary>
         /// Get information about the role with the given roleId.
         /// </summary>
@@ -81,11 +76,11 @@ namespace DocuSign.Rooms.Api
         /// Get information about the role with the given roleId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        Role GetRole (string accountId, int? roleId, RolesApi.GetRoleOptions options = null);
+        Role GetRole(string accountId, int? roleId, RolesApi.GetRoleOptions options = null);
 
         /// <summary>
         /// Get information about the role with the given roleId.
@@ -94,11 +89,11 @@ namespace DocuSign.Rooms.Api
         /// Get information about the role with the given roleId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Role> GetRoleWithHttpInfo (string accountId, int? roleId, RolesApi.GetRoleOptions options = null);
+        ApiResponse<Role> GetRoleWithHttpInfo(string accountId, int? roleId, RolesApi.GetRoleOptions options = null);
         /// <summary>
         /// Gets a paged-list of roles in your company
         /// </summary>
@@ -107,10 +102,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        RoleSummaryList GetRoles (string accountId, RolesApi.GetRolesOptions options = null);
+        RoleSummaryList GetRoles(string accountId, RolesApi.GetRolesOptions options = null);
 
         /// <summary>
         /// Gets a paged-list of roles in your company
@@ -120,10 +114,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<RoleSummaryList> GetRolesWithHttpInfo (string accountId, RolesApi.GetRolesOptions options = null);
+        ApiResponse<RoleSummaryList> GetRolesWithHttpInfo(string accountId, RolesApi.GetRolesOptions options = null);
         /// <summary>
         /// Updates the role with the given roleId.
         /// </summary>
@@ -131,11 +124,11 @@ namespace DocuSign.Rooms.Api
         /// Updates the role with the given roleId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
+        /// <param name="body">Name and permission details of the role to be updated (optional)</param>
         /// <returns></returns>
-        Role UpdateRole (string accountId, int? roleId, RoleForUpdate body = null);
+        Role UpdateRole(string accountId, int? roleId, RoleForUpdate body = null);
 
         /// <summary>
         /// Updates the role with the given roleId.
@@ -144,11 +137,11 @@ namespace DocuSign.Rooms.Api
         /// Updates the role with the given roleId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
+        /// <param name="body">Name and permission details of the role to be updated (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Role> UpdateRoleWithHttpInfo (string accountId, int? roleId, RoleForUpdate body = null);
+        ApiResponse<Role> UpdateRoleWithHttpInfo(string accountId, int? roleId, RoleForUpdate body = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -159,10 +152,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Name and permission details of the role to be created (optional)</param>
         /// <returns>Task of Role</returns>
-        System.Threading.Tasks.Task<Role> CreateRoleAsync (string accountId, RoleForCreate body = null);
+        System.Threading.Tasks.Task<Role> CreateRoleAsync(string accountId, RoleForCreate body = null);
 
         /// <summary>
         /// Creates a role.
@@ -172,10 +164,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Name and permission details of the role to be created (optional)</param>
         /// <returns>Task of ApiResponse (Role)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Role>> CreateRoleAsyncWithHttpInfo (string accountId, RoleForCreate body = null);
+        System.Threading.Tasks.Task<ApiResponse<Role>> CreateRoleAsyncWithHttpInfo(string accountId, RoleForCreate body = null);
         /// <summary>
         /// Deletes the role with the given roleId.
         /// </summary>
@@ -183,11 +174,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes a role from a company account in Rooms
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteRoleAsync (string accountId, int? roleId);
+        System.Threading.Tasks.Task DeleteRoleAsync(string accountId, int? roleId);
 
         /// <summary>
         /// Deletes the role with the given roleId.
@@ -196,11 +186,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes a role from a company account in Rooms
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRoleAsyncWithHttpInfo (string accountId, int? roleId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRoleAsyncWithHttpInfo(string accountId, int? roleId);
         /// <summary>
         /// Get information about the role with the given roleId.
         /// </summary>
@@ -208,11 +197,11 @@ namespace DocuSign.Rooms.Api
         /// Get information about the role with the given roleId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Role</returns>
-        System.Threading.Tasks.Task<Role> GetRoleAsync (string accountId, int? roleId, RolesApi.GetRoleOptions options = null);
+        System.Threading.Tasks.Task<Role> GetRoleAsync(string accountId, int? roleId, RolesApi.GetRoleOptions options = null);
 
         /// <summary>
         /// Get information about the role with the given roleId.
@@ -221,11 +210,11 @@ namespace DocuSign.Rooms.Api
         /// Get information about the role with the given roleId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Role)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Role>> GetRoleAsyncWithHttpInfo (string accountId, int? roleId, RolesApi.GetRoleOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<Role>> GetRoleAsyncWithHttpInfo(string accountId, int? roleId, RolesApi.GetRoleOptions options = null);
         /// <summary>
         /// Gets a paged-list of roles in your company
         /// </summary>
@@ -234,10 +223,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RoleSummaryList</returns>
-        System.Threading.Tasks.Task<RoleSummaryList> GetRolesAsync (string accountId, RolesApi.GetRolesOptions options = null);
+        System.Threading.Tasks.Task<RoleSummaryList> GetRolesAsync(string accountId, RolesApi.GetRolesOptions options = null);
 
         /// <summary>
         /// Gets a paged-list of roles in your company
@@ -247,10 +235,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RoleSummaryList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RoleSummaryList>> GetRolesAsyncWithHttpInfo (string accountId, RolesApi.GetRolesOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<RoleSummaryList>> GetRolesAsyncWithHttpInfo(string accountId, RolesApi.GetRolesOptions options = null);
         /// <summary>
         /// Updates the role with the given roleId.
         /// </summary>
@@ -258,11 +245,11 @@ namespace DocuSign.Rooms.Api
         /// Updates the role with the given roleId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
+        /// <param name="body">Name and permission details of the role to be updated (optional)</param>
         /// <returns>Task of Role</returns>
-        System.Threading.Tasks.Task<Role> UpdateRoleAsync (string accountId, int? roleId, RoleForUpdate body = null);
+        System.Threading.Tasks.Task<Role> UpdateRoleAsync(string accountId, int? roleId, RoleForUpdate body = null);
 
         /// <summary>
         /// Updates the role with the given roleId.
@@ -271,11 +258,11 @@ namespace DocuSign.Rooms.Api
         /// Updates the role with the given roleId.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
+        /// <param name="body">Name and permission details of the role to be updated (optional)</param>
         /// <returns>Task of ApiResponse (Role)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Role>> UpdateRoleAsyncWithHttpInfo (string accountId, int? roleId, RoleForUpdate body = null);
+        System.Threading.Tasks.Task<ApiResponse<Role>> UpdateRoleAsyncWithHttpInfo(string accountId, int? roleId, RoleForUpdate body = null);
         #endregion Asynchronous Operations
     }
 
@@ -292,7 +279,7 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <param name="aplClient">An instance of AplClient</param>
         /// <returns></returns>
-        public RolesApi(ApiClient aplClient)
+        public RolesApi(DocuSignClient aplClient)
         {
             this.ApiClient = aplClient;
 
@@ -305,14 +292,14 @@ namespace DocuSign.Rooms.Api
         /// <value>The base path</value>
         public String GetBasePath()
         {
-            return this.ApiClient.RestClient.BaseUrl.ToString();
+            return this.ApiClient.GetBasePath();
         }
 
         /// <summary>
         /// Gets or sets the ApiClient object
         /// </summary>
         /// <value>An instance of the ApiClient</value>
-        public ApiClient ApiClient { get; set; }
+        public DocuSignClient ApiClient { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -337,10 +324,9 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Name and permission details of the role to be created (optional)</param>
         /// <returns>Role</returns>
-        public Role CreateRole (string accountId, RoleForCreate body = null)
+        public Role CreateRole(string accountId, RoleForCreate body = null)
         {
              ApiResponse<Role> localVarResponse = CreateRoleWithHttpInfo(accountId, body);
              return localVarResponse.Data;
@@ -351,88 +337,14 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Name and permission details of the role to be created (optional)</param>
         /// <returns>ApiResponse of Role</returns>
-        public ApiResponse< Role > CreateRoleWithHttpInfo (string accountId, RoleForCreate body = null)
+        public ApiResponse<Role> CreateRoleWithHttpInfo(string accountId, RoleForCreate body = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RolesApi->CreateRole");
-
-            var localVarPath = "/v2/accounts/{accountId}/roles";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CreateRole", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<Role>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Role) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Role)));
-            }
-            else
-            {
-                return new ApiResponse<Role>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Role) this.ApiClient.Deserialize(localVarResponse, typeof(Role)));
-            }
-            
+            return CreateRoleAsyncWithHttpInfo(accountId, body)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -440,14 +352,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Name and permission details of the role to be created (optional)</param>
         /// <returns>Task of Role</returns>
-        public async System.Threading.Tasks.Task<Role> CreateRoleAsync (string accountId, RoleForCreate body = null)
+        public async System.Threading.Tasks.Task<Role> CreateRoleAsync(string accountId, RoleForCreate body = null)
         {
              ApiResponse<Role> localVarResponse = await CreateRoleAsyncWithHttpInfo(accountId, body);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -455,10 +365,9 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">Name and permission details of the role to be created (optional)</param>
         /// <returns>Task of ApiResponse (Role)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Role>> CreateRoleAsyncWithHttpInfo (string accountId, RoleForCreate body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Role>> CreateRoleAsyncWithHttpInfo(string accountId, RoleForCreate body = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -469,15 +378,19 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
                 "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json"
+                "application/_*+json", 
+                "application/xml", 
+                "text/xml", 
+                "application/_*+xml"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -485,7 +398,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -495,8 +410,6 @@ namespace DocuSign.Rooms.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
@@ -514,11 +427,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -526,10 +438,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Role>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Role) this.ApiClient.Deserialize(localVarResponse, typeof(Role)));
-            
+            return new ApiResponse<Role>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (Role)this.ApiClient.Deserialize(localVarResponse, typeof(Role)));
         }
 
 
@@ -538,11 +449,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes the role with the given roleId. Deletes a role from a company account in Rooms
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
         /// <returns></returns>
-        public void DeleteRole (string accountId, int? roleId)
+        public void DeleteRole(string accountId, int? roleId)
         {
              DeleteRoleWithHttpInfo(accountId, roleId);
         }
@@ -551,102 +461,37 @@ namespace DocuSign.Rooms.Api
         /// Deletes the role with the given roleId. Deletes a role from a company account in Rooms
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteRoleWithHttpInfo (string accountId, int? roleId)
+        public ApiResponse<Object> DeleteRoleWithHttpInfo(string accountId, int? roleId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RolesApi->DeleteRole");
-            // verify the required parameter 'roleId' is set
-            if (roleId == null)
-                throw new ApiException(400, "Missing required parameter 'roleId' when calling RolesApi->DeleteRole");
-
-            var localVarPath = "/v2/accounts/{accountId}/roles/{roleId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roleId != null) localVarPathParams.Add("roleId", this.ApiClient.ParameterToString(roleId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteRole", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+            return DeleteRoleAsyncWithHttpInfo(accountId, roleId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Deletes the role with the given roleId. Deletes a role from a company account in Rooms
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteRoleAsync (string accountId, int? roleId)
+        public async System.Threading.Tasks.Task DeleteRoleAsync(string accountId, int? roleId)
         {
              await DeleteRoleAsyncWithHttpInfo(accountId, roleId);
-
         }
 
         /// <summary>
         /// Deletes the role with the given roleId. Deletes a role from a company account in Rooms
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRoleAsyncWithHttpInfo (string accountId, int? roleId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRoleAsyncWithHttpInfo(string accountId, int? roleId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -660,8 +505,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -676,7 +522,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -688,8 +536,6 @@ namespace DocuSign.Rooms.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roleId != null) localVarPathParams.Add("roleId", this.ApiClient.ParameterToString(roleId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -698,11 +544,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -712,7 +557,7 @@ namespace DocuSign.Rooms.Api
 
             
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 
@@ -730,11 +575,11 @@ namespace DocuSign.Rooms.Api
         /// Get information about the role with the given roleId. Get information about the role with the given roleId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Role</returns>
-        public Role GetRole (string accountId, int? roleId, RolesApi.GetRoleOptions options = null)
+        public Role GetRole(string accountId, int? roleId, RolesApi.GetRoleOptions options = null)
         {
              ApiResponse<Role> localVarResponse = GetRoleWithHttpInfo(accountId, roleId, options);
              return localVarResponse.Data;
@@ -744,115 +589,41 @@ namespace DocuSign.Rooms.Api
         /// Get information about the role with the given roleId. Get information about the role with the given roleId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of Role</returns>
-        public ApiResponse< Role > GetRoleWithHttpInfo (string accountId, int? roleId, RolesApi.GetRoleOptions options = null)
+        public ApiResponse<Role> GetRoleWithHttpInfo(string accountId, int? roleId, RolesApi.GetRoleOptions options = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RolesApi->GetRole");
-            // verify the required parameter 'roleId' is set
-            if (roleId == null)
-                throw new ApiException(400, "Missing required parameter 'roleId' when calling RolesApi->GetRole");
-
-            var localVarPath = "/v2/accounts/{accountId}/roles/{roleId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roleId != null) localVarPathParams.Add("roleId", this.ApiClient.ParameterToString(roleId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.includeIsAssigned != null) localVarQueryParams.Add("includeIsAssigned", this.ApiClient.ParameterToString(options.includeIsAssigned)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetRole", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<Role>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Role) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Role)));
-            }
-            else
-            {
-                return new ApiResponse<Role>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Role) this.ApiClient.Deserialize(localVarResponse, typeof(Role)));
-            }
-            
+            return GetRoleAsyncWithHttpInfo(accountId, roleId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Get information about the role with the given roleId. Get information about the role with the given roleId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Role</returns>
-        public async System.Threading.Tasks.Task<Role> GetRoleAsync (string accountId, int? roleId, RolesApi.GetRoleOptions options = null)
+        public async System.Threading.Tasks.Task<Role> GetRoleAsync(string accountId, int? roleId, RolesApi.GetRoleOptions options = null)
         {
              ApiResponse<Role> localVarResponse = await GetRoleAsyncWithHttpInfo(accountId, roleId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Get information about the role with the given roleId. Get information about the role with the given roleId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Role)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Role>> GetRoleAsyncWithHttpInfo (string accountId, int? roleId, RolesApi.GetRoleOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Role>> GetRoleAsyncWithHttpInfo(string accountId, int? roleId, RolesApi.GetRoleOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -866,8 +637,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -882,7 +654,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -893,12 +667,10 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roleId != null) localVarPathParams.Add("roleId", this.ApiClient.ParameterToString(roleId)); // path parameter
-
             if (options != null)
             {
                 if (options.includeIsAssigned != null) localVarQueryParams.Add("includeIsAssigned", this.ApiClient.ParameterToString(options.includeIsAssigned)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -908,11 +680,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -920,10 +691,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Role>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Role) this.ApiClient.Deserialize(localVarResponse, typeof(Role)));
-            
+            return new ApiResponse<Role>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (Role)this.ApiClient.Deserialize(localVarResponse, typeof(Role)));
         }
 
 
@@ -935,7 +705,7 @@ namespace DocuSign.Rooms.Api
             /// Returns assignable roles based on calling user&#39;s company permissions.               DEPRECATED: Please use filterContext parameter to get the assignable roles. AssignableRolesBasedOnCompanyPermissions returns same results as onlyAssignable&#x3D;true 
             public bool? onlyAssignable {get; set;}
             /// Attribute establishing filter context for roles being returned - AllRoles, AssignableRolesBasedOnCompanyPermissions, AssignableRolesBasedOnAllPermissions 
-            public string filterContext {get; set;}
+            public Object filterContext {get; set;}
             /// A search filter that returns roles by the beginning of the role name. You can enter the beginning of the role name only to return all of the roles that begin with the text that you entered. 
             public string filter {get; set;}
             /// The starting zero-based index position of the result set. The default value is 0. 
@@ -949,10 +719,9 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>RoleSummaryList</returns>
-        public RoleSummaryList GetRoles (string accountId, RolesApi.GetRolesOptions options = null)
+        public RoleSummaryList GetRoles(string accountId, RolesApi.GetRolesOptions options = null)
         {
              ApiResponse<RoleSummaryList> localVarResponse = GetRolesWithHttpInfo(accountId, options);
              return localVarResponse.Data;
@@ -963,88 +732,14 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of RoleSummaryList</returns>
-        public ApiResponse< RoleSummaryList > GetRolesWithHttpInfo (string accountId, RolesApi.GetRolesOptions options = null)
+        public ApiResponse<RoleSummaryList> GetRolesWithHttpInfo(string accountId, RolesApi.GetRolesOptions options = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RolesApi->GetRoles");
-
-            var localVarPath = "/v2/accounts/{accountId}/roles";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.onlyAssignable != null) localVarQueryParams.Add("onlyAssignable", this.ApiClient.ParameterToString(options.onlyAssignable)); // query parameter
-                if (options.filterContext != null) localVarQueryParams.Add("filterContext", this.ApiClient.ParameterToString(options.filterContext)); // query parameter
-                if (options.filter != null) localVarQueryParams.Add("filter", this.ApiClient.ParameterToString(options.filter)); // query parameter
-                if (options.startPosition != null) localVarQueryParams.Add("startPosition", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
-                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetRoles", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<RoleSummaryList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoleSummaryList) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(RoleSummaryList)));
-            }
-            else
-            {
-                return new ApiResponse<RoleSummaryList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoleSummaryList) this.ApiClient.Deserialize(localVarResponse, typeof(RoleSummaryList)));
-            }
-            
+            return GetRolesAsyncWithHttpInfo(accountId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1052,14 +747,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RoleSummaryList</returns>
-        public async System.Threading.Tasks.Task<RoleSummaryList> GetRolesAsync (string accountId, RolesApi.GetRolesOptions options = null)
+        public async System.Threading.Tasks.Task<RoleSummaryList> GetRolesAsync(string accountId, RolesApi.GetRolesOptions options = null)
         {
              ApiResponse<RoleSummaryList> localVarResponse = await GetRolesAsyncWithHttpInfo(accountId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -1067,10 +760,9 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RoleSummaryList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RoleSummaryList>> GetRolesAsyncWithHttpInfo (string accountId, RolesApi.GetRolesOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<RoleSummaryList>> GetRolesAsyncWithHttpInfo(string accountId, RolesApi.GetRolesOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1081,8 +773,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -1097,7 +790,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1107,7 +802,6 @@ namespace DocuSign.Rooms.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
             if (options != null)
             {
                 if (options.onlyAssignable != null) localVarQueryParams.Add("onlyAssignable", this.ApiClient.ParameterToString(options.onlyAssignable)); // query parameter
@@ -1117,7 +811,6 @@ namespace DocuSign.Rooms.Api
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
             }
 
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1126,11 +819,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1138,10 +830,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<RoleSummaryList>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RoleSummaryList) this.ApiClient.Deserialize(localVarResponse, typeof(RoleSummaryList)));
-            
+            return new ApiResponse<RoleSummaryList>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (RoleSummaryList)this.ApiClient.Deserialize(localVarResponse, typeof(RoleSummaryList)));
         }
 
 
@@ -1150,11 +841,11 @@ namespace DocuSign.Rooms.Api
         /// Updates the role with the given roleId. Updates the role with the given roleId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
+        /// <param name="body">Name and permission details of the role to be updated (optional)</param>
         /// <returns>Role</returns>
-        public Role UpdateRole (string accountId, int? roleId, RoleForUpdate body = null)
+        public Role UpdateRole(string accountId, int? roleId, RoleForUpdate body = null)
         {
              ApiResponse<Role> localVarResponse = UpdateRoleWithHttpInfo(accountId, roleId, body);
              return localVarResponse.Data;
@@ -1164,119 +855,41 @@ namespace DocuSign.Rooms.Api
         /// Updates the role with the given roleId. Updates the role with the given roleId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
+        /// <param name="body">Name and permission details of the role to be updated (optional)</param>
         /// <returns>ApiResponse of Role</returns>
-        public ApiResponse< Role > UpdateRoleWithHttpInfo (string accountId, int? roleId, RoleForUpdate body = null)
+        public ApiResponse<Role> UpdateRoleWithHttpInfo(string accountId, int? roleId, RoleForUpdate body = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RolesApi->UpdateRole");
-            // verify the required parameter 'roleId' is set
-            if (roleId == null)
-                throw new ApiException(400, "Missing required parameter 'roleId' when calling RolesApi->UpdateRole");
-
-            var localVarPath = "/v2/accounts/{accountId}/roles/{roleId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roleId != null) localVarPathParams.Add("roleId", this.ApiClient.ParameterToString(roleId)); // path parameter
-
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateRole", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<Role>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Role) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Role)));
-            }
-            else
-            {
-                return new ApiResponse<Role>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Role) this.ApiClient.Deserialize(localVarResponse, typeof(Role)));
-            }
-            
+            return UpdateRoleAsyncWithHttpInfo(accountId, roleId, body)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Updates the role with the given roleId. Updates the role with the given roleId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
+        /// <param name="body">Name and permission details of the role to be updated (optional)</param>
         /// <returns>Task of Role</returns>
-        public async System.Threading.Tasks.Task<Role> UpdateRoleAsync (string accountId, int? roleId, RoleForUpdate body = null)
+        public async System.Threading.Tasks.Task<Role> UpdateRoleAsync(string accountId, int? roleId, RoleForUpdate body = null)
         {
              ApiResponse<Role> localVarResponse = await UpdateRoleAsyncWithHttpInfo(accountId, roleId, body);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Updates the role with the given roleId. Updates the role with the given roleId.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roleId">The id of the role.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roleId">The id of the role.</param>
+        /// <param name="body">Name and permission details of the role to be updated (optional)</param>
         /// <returns>Task of ApiResponse (Role)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Role>> UpdateRoleAsyncWithHttpInfo (string accountId, int? roleId, RoleForUpdate body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Role>> UpdateRoleAsyncWithHttpInfo(string accountId, int? roleId, RoleForUpdate body = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1290,15 +903,19 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
                 "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json"
+                "application/_*+json", 
+                "application/xml", 
+                "text/xml", 
+                "application/_*+xml"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1306,7 +923,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1317,8 +936,6 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roleId != null) localVarPathParams.Add("roleId", this.ApiClient.ParameterToString(roleId)); // path parameter
-
-
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
@@ -1336,11 +953,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1348,10 +964,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Role>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Role) this.ApiClient.Deserialize(localVarResponse, typeof(Role)));
-            
+            return new ApiResponse<Role>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (Role)this.ApiClient.Deserialize(localVarResponse, typeof(Role)));
         }
 
     }

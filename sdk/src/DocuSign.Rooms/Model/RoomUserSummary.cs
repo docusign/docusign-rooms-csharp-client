@@ -30,9 +30,13 @@ namespace DocuSign.Rooms.Model
     [DataContract]
     public partial class RoomUserSummary :  IEquatable<RoomUserSummary>, IValidatableObject
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RoomUserSummary" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
         public RoomUserSummary()
         {
-            // Empty Constructor
         }
         
         /// <summary>

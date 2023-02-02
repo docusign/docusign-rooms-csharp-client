@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.Rooms.Client.SwaggerDateConverter;
 
 namespace DocuSign.Rooms.Model
 {
@@ -37,25 +38,27 @@ namespace DocuSign.Rooms.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FormGroupFormList" /> class.
         /// </summary>
-        /// <param name="GroupForms">GroupForms.</param>
+        /// <param name="Forms">Forms.</param>
         /// <param name="ResultSetSize">ResultSetSize.</param>
         /// <param name="StartPosition">StartPosition.</param>
         /// <param name="NextUri">NextUri.</param>
         /// <param name="PriorUri">PriorUri.</param>
-        public FormGroupFormList(List<FormGroupForm> GroupForms = default(List<FormGroupForm>), int? ResultSetSize = default(int?), int? StartPosition = default(int?), string NextUri = default(string), string PriorUri = default(string))
+        /// <param name="TotalRowCount">TotalRowCount.</param>
+        public FormGroupFormList(List<FormGroupForm> Forms = default(List<FormGroupForm>), int? ResultSetSize = default(int?), int? StartPosition = default(int?), string NextUri = default(string), string PriorUri = default(string), int? TotalRowCount = default(int?))
         {
-            this.GroupForms = GroupForms;
+            this.Forms = Forms;
             this.ResultSetSize = ResultSetSize;
             this.StartPosition = StartPosition;
             this.NextUri = NextUri;
             this.PriorUri = PriorUri;
+            this.TotalRowCount = TotalRowCount;
         }
         
         /// <summary>
-        /// Gets or Sets GroupForms
+        /// Gets or Sets Forms
         /// </summary>
-        [DataMember(Name="groupForms", EmitDefaultValue=false)]
-        public List<FormGroupForm> GroupForms { get; set; }
+        [DataMember(Name="forms", EmitDefaultValue=false)]
+        public List<FormGroupForm> Forms { get; set; }
         /// <summary>
         /// Gets or Sets ResultSetSize
         /// </summary>
@@ -82,6 +85,11 @@ namespace DocuSign.Rooms.Model
         [DataMember(Name="priorUri", EmitDefaultValue=false)]
         public string PriorUri { get; set; }
         /// <summary>
+        /// Gets or Sets TotalRowCount
+        /// </summary>
+        [DataMember(Name="totalRowCount", EmitDefaultValue=false)]
+        public int? TotalRowCount { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -89,12 +97,13 @@ namespace DocuSign.Rooms.Model
         {
             var sb = new StringBuilder();
             sb.Append("class FormGroupFormList {\n");
-            sb.Append("  GroupForms: ").Append(GroupForms).Append("\n");
+            sb.Append("  Forms: ").Append(Forms).Append("\n");
             sb.Append("  ResultSetSize: ").Append(ResultSetSize).Append("\n");
             sb.Append("  StartPosition: ").Append(StartPosition).Append("\n");
             sb.Append("  EndPosition: ").Append(EndPosition).Append("\n");
             sb.Append("  NextUri: ").Append(NextUri).Append("\n");
             sb.Append("  PriorUri: ").Append(PriorUri).Append("\n");
+            sb.Append("  TotalRowCount: ").Append(TotalRowCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -132,9 +141,9 @@ namespace DocuSign.Rooms.Model
 
             return 
                 (
-                    this.GroupForms == other.GroupForms ||
-                    this.GroupForms != null &&
-                    this.GroupForms.SequenceEqual(other.GroupForms)
+                    this.Forms == other.Forms ||
+                    this.Forms != null &&
+                    this.Forms.SequenceEqual(other.Forms)
                 ) && 
                 (
                     this.ResultSetSize == other.ResultSetSize ||
@@ -160,6 +169,11 @@ namespace DocuSign.Rooms.Model
                     this.PriorUri == other.PriorUri ||
                     this.PriorUri != null &&
                     this.PriorUri.Equals(other.PriorUri)
+                ) && 
+                (
+                    this.TotalRowCount == other.TotalRowCount ||
+                    this.TotalRowCount != null &&
+                    this.TotalRowCount.Equals(other.TotalRowCount)
                 );
         }
 
@@ -174,8 +188,8 @@ namespace DocuSign.Rooms.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.GroupForms != null)
-                    hash = hash * 59 + this.GroupForms.GetHashCode();
+                if (this.Forms != null)
+                    hash = hash * 59 + this.Forms.GetHashCode();
                 if (this.ResultSetSize != null)
                     hash = hash * 59 + this.ResultSetSize.GetHashCode();
                 if (this.StartPosition != null)
@@ -186,6 +200,8 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.NextUri.GetHashCode();
                 if (this.PriorUri != null)
                     hash = hash * 59 + this.PriorUri.GetHashCode();
+                if (this.TotalRowCount != null)
+                    hash = hash * 59 + this.TotalRowCount.GetHashCode();
                 return hash;
             }
         }
@@ -195,5 +211,4 @@ namespace DocuSign.Rooms.Model
             yield break;
         }
     }
-
 }

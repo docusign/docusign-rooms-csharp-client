@@ -38,20 +38,12 @@ namespace DocuSign.Rooms.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalFormFillSessionForCreate" /> class.
         /// </summary>
-        /// <param name="FormId">FormId (required).</param>
+        /// <param name="FormId">FormId.</param>
         /// <param name="RoomId">RoomId (required).</param>
+        /// <param name="FormIds">FormIds.</param>
         /// <param name="XFrameAllowedUrl">XFrameAllowedUrl.</param>
-        public ExternalFormFillSessionForCreate(string FormId = default(string), int? RoomId = default(int?), string XFrameAllowedUrl = default(string))
+        public ExternalFormFillSessionForCreate(string FormId = default(string), int? RoomId = default(int?), List<Guid?> FormIds = default(List<Guid?>), string XFrameAllowedUrl = default(string))
         {
-            // to ensure "FormId" is required (not null)
-            if (FormId == null)
-            {
-                throw new InvalidDataException("FormId is a required property for ExternalFormFillSessionForCreate and cannot be null");
-            }
-            else
-            {
-                this.FormId = FormId;
-            }
             // to ensure "RoomId" is required (not null)
             if (RoomId == null)
             {
@@ -61,6 +53,8 @@ namespace DocuSign.Rooms.Model
             {
                 this.RoomId = RoomId;
             }
+            this.FormId = FormId;
+            this.FormIds = FormIds;
             this.XFrameAllowedUrl = XFrameAllowedUrl;
         }
         
@@ -74,6 +68,11 @@ namespace DocuSign.Rooms.Model
         /// </summary>
         [DataMember(Name="roomId", EmitDefaultValue=false)]
         public int? RoomId { get; set; }
+        /// <summary>
+        /// Gets or Sets FormIds
+        /// </summary>
+        [DataMember(Name="formIds", EmitDefaultValue=false)]
+        public List<Guid?> FormIds { get; set; }
         /// <summary>
         /// Gets or Sets XFrameAllowedUrl
         /// </summary>
@@ -89,6 +88,7 @@ namespace DocuSign.Rooms.Model
             sb.Append("class ExternalFormFillSessionForCreate {\n");
             sb.Append("  FormId: ").Append(FormId).Append("\n");
             sb.Append("  RoomId: ").Append(RoomId).Append("\n");
+            sb.Append("  FormIds: ").Append(FormIds).Append("\n");
             sb.Append("  XFrameAllowedUrl: ").Append(XFrameAllowedUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -137,6 +137,11 @@ namespace DocuSign.Rooms.Model
                     this.RoomId.Equals(other.RoomId)
                 ) && 
                 (
+                    this.FormIds == other.FormIds ||
+                    this.FormIds != null &&
+                    this.FormIds.SequenceEqual(other.FormIds)
+                ) && 
+                (
                     this.XFrameAllowedUrl == other.XFrameAllowedUrl ||
                     this.XFrameAllowedUrl != null &&
                     this.XFrameAllowedUrl.Equals(other.XFrameAllowedUrl)
@@ -158,6 +163,8 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.FormId.GetHashCode();
                 if (this.RoomId != null)
                     hash = hash * 59 + this.RoomId.GetHashCode();
+                if (this.FormIds != null)
+                    hash = hash * 59 + this.FormIds.GetHashCode();
                 if (this.XFrameAllowedUrl != null)
                     hash = hash * 59 + this.XFrameAllowedUrl.GetHashCode();
                 return hash;

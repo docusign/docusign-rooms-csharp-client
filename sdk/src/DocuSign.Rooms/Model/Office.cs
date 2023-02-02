@@ -50,7 +50,7 @@ namespace DocuSign.Rooms.Model
         /// <param name="TimeZoneId">TimeZoneId.</param>
         /// <param name="Phone">Phone.</param>
         /// <param name="CreatedDate">CreatedDate.</param>
-        public Office(int? OfficeId = default(int?), string Name = default(string), int? RegionId = default(int?), string Address1 = default(string), string Address2 = default(string), string City = default(string), string StateId = default(string), string PostalCode = default(string), string CountryId = default(string), string TimeZoneId = default(string), string Phone = default(string), DateTime CreatedDate = default(DateTime))
+        public Office(int? OfficeId = default(int?), string Name = default(string), int? RegionId = default(int?), string Address1 = default(string), string Address2 = default(string), string City = default(string), string StateId = default(string), string PostalCode = default(string), string CountryId = default(string), string TimeZoneId = default(string), string Phone = default(string), DateTime? CreatedDate = default(DateTime?))
         {
             // to ensure "Name" is required (not null)
             if (Name == null)
@@ -133,7 +133,7 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

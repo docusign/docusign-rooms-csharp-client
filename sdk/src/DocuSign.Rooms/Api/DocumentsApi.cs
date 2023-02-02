@@ -10,9 +10,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using System.Net.Http;
 using DocuSign.Rooms.Client;
 using DocuSign.Rooms.Model;
 
@@ -31,11 +30,11 @@ namespace DocuSign.Rooms.Api
         /// Grants a user access to a document. You specify the user&#39;s &#x60;userId&#x60; in the request body. The response is an object that specifies the access the user has.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The id of the document.</param>
+        /// <param name="body">Request body with user id that the document has to be granted to (optional)</param>
         /// <returns></returns>
-        DocumentUser CreateDocumentUser (string accountId, int? documentId, DocumentUserForCreate body = null);
+        DocumentUser CreateDocumentUser(string accountId, int? documentId, DocumentUserForCreate body = null);
 
         /// <summary>
         /// Grants access to a document for a user.
@@ -44,11 +43,11 @@ namespace DocuSign.Rooms.Api
         /// Grants a user access to a document. You specify the user&#39;s &#x60;userId&#x60; in the request body. The response is an object that specifies the access the user has.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The id of the document.</param>
+        /// <param name="body">Request body with user id that the document has to be granted to (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<DocumentUser> CreateDocumentUserWithHttpInfo (string accountId, int? documentId, DocumentUserForCreate body = null);
+        ApiResponse<DocumentUser> CreateDocumentUserWithHttpInfo(string accountId, int? documentId, DocumentUserForCreate body = null);
         /// <summary>
         /// Deletes a document.
         /// </summary>
@@ -56,11 +55,10 @@ namespace DocuSign.Rooms.Api
         /// Permanently deletes a document. To find the &#x60;documentId&#x60; of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The ID of the document.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The ID of the document.</param>
         /// <returns></returns>
-        void DeleteDocument (string accountId, int? documentId);
+        void DeleteDocument(string accountId, int? documentId);
 
         /// <summary>
         /// Deletes a document.
@@ -69,11 +67,10 @@ namespace DocuSign.Rooms.Api
         /// Permanently deletes a document. To find the &#x60;documentId&#x60; of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The ID of the document.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The ID of the document.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteDocumentWithHttpInfo (string accountId, int? documentId);
+        ApiResponse<Object> DeleteDocumentWithHttpInfo(string accountId, int? documentId);
         /// <summary>
         /// Get information about the Document with the given DocumentId.
         /// </summary>
@@ -81,11 +78,11 @@ namespace DocuSign.Rooms.Api
         /// Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The id of the document.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        Document GetDocument (string accountId, int? documentId, DocumentsApi.GetDocumentOptions options = null);
+        Document GetDocument(string accountId, int? documentId, DocumentsApi.GetDocumentOptions options = null);
 
         /// <summary>
         /// Get information about the Document with the given DocumentId.
@@ -94,11 +91,11 @@ namespace DocuSign.Rooms.Api
         /// Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The id of the document.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Document> GetDocumentWithHttpInfo (string accountId, int? documentId, DocumentsApi.GetDocumentOptions options = null);
+        ApiResponse<Document> GetDocumentWithHttpInfo(string accountId, int? documentId, DocumentsApi.GetDocumentOptions options = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -108,11 +105,11 @@ namespace DocuSign.Rooms.Api
         /// Grants a user access to a document. You specify the user&#39;s &#x60;userId&#x60; in the request body. The response is an object that specifies the access the user has.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The id of the document.</param>
+        /// <param name="body">Request body with user id that the document has to be granted to (optional)</param>
         /// <returns>Task of DocumentUser</returns>
-        System.Threading.Tasks.Task<DocumentUser> CreateDocumentUserAsync (string accountId, int? documentId, DocumentUserForCreate body = null);
+        System.Threading.Tasks.Task<DocumentUser> CreateDocumentUserAsync(string accountId, int? documentId, DocumentUserForCreate body = null);
 
         /// <summary>
         /// Grants access to a document for a user.
@@ -121,11 +118,11 @@ namespace DocuSign.Rooms.Api
         /// Grants a user access to a document. You specify the user&#39;s &#x60;userId&#x60; in the request body. The response is an object that specifies the access the user has.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The id of the document.</param>
+        /// <param name="body">Request body with user id that the document has to be granted to (optional)</param>
         /// <returns>Task of ApiResponse (DocumentUser)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentUser>> CreateDocumentUserAsyncWithHttpInfo (string accountId, int? documentId, DocumentUserForCreate body = null);
+        System.Threading.Tasks.Task<ApiResponse<DocumentUser>> CreateDocumentUserAsyncWithHttpInfo(string accountId, int? documentId, DocumentUserForCreate body = null);
         /// <summary>
         /// Deletes a document.
         /// </summary>
@@ -133,11 +130,10 @@ namespace DocuSign.Rooms.Api
         /// Permanently deletes a document. To find the &#x60;documentId&#x60; of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The ID of the document.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The ID of the document.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteDocumentAsync (string accountId, int? documentId);
+        System.Threading.Tasks.Task DeleteDocumentAsync(string accountId, int? documentId);
 
         /// <summary>
         /// Deletes a document.
@@ -146,11 +142,10 @@ namespace DocuSign.Rooms.Api
         /// Permanently deletes a document. To find the &#x60;documentId&#x60; of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The ID of the document.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The ID of the document.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDocumentAsyncWithHttpInfo (string accountId, int? documentId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDocumentAsyncWithHttpInfo(string accountId, int? documentId);
         /// <summary>
         /// Get information about the Document with the given DocumentId.
         /// </summary>
@@ -158,11 +153,11 @@ namespace DocuSign.Rooms.Api
         /// Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The id of the document.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Document</returns>
-        System.Threading.Tasks.Task<Document> GetDocumentAsync (string accountId, int? documentId, DocumentsApi.GetDocumentOptions options = null);
+        System.Threading.Tasks.Task<Document> GetDocumentAsync(string accountId, int? documentId, DocumentsApi.GetDocumentOptions options = null);
 
         /// <summary>
         /// Get information about the Document with the given DocumentId.
@@ -171,11 +166,11 @@ namespace DocuSign.Rooms.Api
         /// Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The id of the document.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Document)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Document>> GetDocumentAsyncWithHttpInfo (string accountId, int? documentId, DocumentsApi.GetDocumentOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<Document>> GetDocumentAsyncWithHttpInfo(string accountId, int? documentId, DocumentsApi.GetDocumentOptions options = null);
         #endregion Asynchronous Operations
     }
 
@@ -192,7 +187,7 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <param name="aplClient">An instance of AplClient</param>
         /// <returns></returns>
-        public DocumentsApi(ApiClient aplClient)
+        public DocumentsApi(DocuSignClient aplClient)
         {
             this.ApiClient = aplClient;
 
@@ -205,14 +200,14 @@ namespace DocuSign.Rooms.Api
         /// <value>The base path</value>
         public String GetBasePath()
         {
-            return this.ApiClient.RestClient.BaseUrl.ToString();
+            return this.ApiClient.GetBasePath();
         }
 
         /// <summary>
         /// Gets or sets the ApiClient object
         /// </summary>
         /// <value>An instance of the ApiClient</value>
-        public ApiClient ApiClient { get; set; }
+        public DocuSignClient ApiClient { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -236,11 +231,11 @@ namespace DocuSign.Rooms.Api
         /// Grants access to a document for a user. Grants a user access to a document. You specify the user&#39;s &#x60;userId&#x60; in the request body. The response is an object that specifies the access the user has.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The id of the document.</param>
+        /// <param name="body">Request body with user id that the document has to be granted to (optional)</param>
         /// <returns>DocumentUser</returns>
-        public DocumentUser CreateDocumentUser (string accountId, int? documentId, DocumentUserForCreate body = null)
+        public DocumentUser CreateDocumentUser(string accountId, int? documentId, DocumentUserForCreate body = null)
         {
              ApiResponse<DocumentUser> localVarResponse = CreateDocumentUserWithHttpInfo(accountId, documentId, body);
              return localVarResponse.Data;
@@ -250,119 +245,41 @@ namespace DocuSign.Rooms.Api
         /// Grants access to a document for a user. Grants a user access to a document. You specify the user&#39;s &#x60;userId&#x60; in the request body. The response is an object that specifies the access the user has.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The id of the document.</param>
+        /// <param name="body">Request body with user id that the document has to be granted to (optional)</param>
         /// <returns>ApiResponse of DocumentUser</returns>
-        public ApiResponse< DocumentUser > CreateDocumentUserWithHttpInfo (string accountId, int? documentId, DocumentUserForCreate body = null)
+        public ApiResponse<DocumentUser> CreateDocumentUserWithHttpInfo(string accountId, int? documentId, DocumentUserForCreate body = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling DocumentsApi->CreateDocumentUser");
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling DocumentsApi->CreateDocumentUser");
-
-            var localVarPath = "/v2/accounts/{accountId}/documents/{documentId}/users";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CreateDocumentUser", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<DocumentUser>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentUser) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentUser)));
-            }
-            else
-            {
-                return new ApiResponse<DocumentUser>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentUser) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentUser)));
-            }
-            
+            return CreateDocumentUserAsyncWithHttpInfo(accountId, documentId, body)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Grants access to a document for a user. Grants a user access to a document. You specify the user&#39;s &#x60;userId&#x60; in the request body. The response is an object that specifies the access the user has.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The id of the document.</param>
+        /// <param name="body">Request body with user id that the document has to be granted to (optional)</param>
         /// <returns>Task of DocumentUser</returns>
-        public async System.Threading.Tasks.Task<DocumentUser> CreateDocumentUserAsync (string accountId, int? documentId, DocumentUserForCreate body = null)
+        public async System.Threading.Tasks.Task<DocumentUser> CreateDocumentUserAsync(string accountId, int? documentId, DocumentUserForCreate body = null)
         {
              ApiResponse<DocumentUser> localVarResponse = await CreateDocumentUserAsyncWithHttpInfo(accountId, documentId, body);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Grants access to a document for a user. Grants a user access to a document. You specify the user&#39;s &#x60;userId&#x60; in the request body. The response is an object that specifies the access the user has.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The id of the document.</param>
+        /// <param name="body">Request body with user id that the document has to be granted to (optional)</param>
         /// <returns>Task of ApiResponse (DocumentUser)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DocumentUser>> CreateDocumentUserAsyncWithHttpInfo (string accountId, int? documentId, DocumentUserForCreate body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<DocumentUser>> CreateDocumentUserAsyncWithHttpInfo(string accountId, int? documentId, DocumentUserForCreate body = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -376,15 +293,19 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
                 "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json"
+                "application/_*+json", 
+                "application/xml", 
+                "text/xml", 
+                "application/_*+xml"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -392,7 +313,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -403,8 +326,6 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
-
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
@@ -422,11 +343,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -434,10 +354,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<DocumentUser>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DocumentUser) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentUser)));
-            
+            return new ApiResponse<DocumentUser>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (DocumentUser)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentUser)));
         }
 
 
@@ -446,11 +365,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes a document. Permanently deletes a document. To find the &#x60;documentId&#x60; of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The ID of the document.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The ID of the document.</param>
         /// <returns></returns>
-        public void DeleteDocument (string accountId, int? documentId)
+        public void DeleteDocument(string accountId, int? documentId)
         {
              DeleteDocumentWithHttpInfo(accountId, documentId);
         }
@@ -459,102 +377,37 @@ namespace DocuSign.Rooms.Api
         /// Deletes a document. Permanently deletes a document. To find the &#x60;documentId&#x60; of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The ID of the document.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The ID of the document.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteDocumentWithHttpInfo (string accountId, int? documentId)
+        public ApiResponse<Object> DeleteDocumentWithHttpInfo(string accountId, int? documentId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling DocumentsApi->DeleteDocument");
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling DocumentsApi->DeleteDocument");
-
-            var localVarPath = "/v2/accounts/{accountId}/documents/{documentId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteDocument", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+            return DeleteDocumentAsyncWithHttpInfo(accountId, documentId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Deletes a document. Permanently deletes a document. To find the &#x60;documentId&#x60; of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The ID of the document.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The ID of the document.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteDocumentAsync (string accountId, int? documentId)
+        public async System.Threading.Tasks.Task DeleteDocumentAsync(string accountId, int? documentId)
         {
              await DeleteDocumentAsyncWithHttpInfo(accountId, documentId);
-
         }
 
         /// <summary>
         /// Deletes a document. Permanently deletes a document. To find the &#x60;documentId&#x60; of a document that you want to delete, use the Rooms::GetDocuments method.\\n\\nIf the document is deleted successfully, the HTTP response code is 204 (No Content), so the response body is empty.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The ID of the document.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The ID of the document.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDocumentAsyncWithHttpInfo (string accountId, int? documentId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDocumentAsyncWithHttpInfo(string accountId, int? documentId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -568,8 +421,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -584,7 +438,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -596,8 +452,6 @@ namespace DocuSign.Rooms.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -606,11 +460,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -620,7 +473,7 @@ namespace DocuSign.Rooms.Api
 
             
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 
@@ -638,11 +491,11 @@ namespace DocuSign.Rooms.Api
         /// Get information about the Document with the given DocumentId. Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The id of the document.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Document</returns>
-        public Document GetDocument (string accountId, int? documentId, DocumentsApi.GetDocumentOptions options = null)
+        public Document GetDocument(string accountId, int? documentId, DocumentsApi.GetDocumentOptions options = null)
         {
              ApiResponse<Document> localVarResponse = GetDocumentWithHttpInfo(accountId, documentId, options);
              return localVarResponse.Data;
@@ -652,115 +505,41 @@ namespace DocuSign.Rooms.Api
         /// Get information about the Document with the given DocumentId. Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The id of the document.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of Document</returns>
-        public ApiResponse< Document > GetDocumentWithHttpInfo (string accountId, int? documentId, DocumentsApi.GetDocumentOptions options = null)
+        public ApiResponse<Document> GetDocumentWithHttpInfo(string accountId, int? documentId, DocumentsApi.GetDocumentOptions options = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling DocumentsApi->GetDocument");
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling DocumentsApi->GetDocument");
-
-            var localVarPath = "/v2/accounts/{accountId}/documents/{documentId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.includeContents != null) localVarQueryParams.Add("includeContents", this.ApiClient.ParameterToString(options.includeContents)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetDocument", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<Document>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Document) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Document)));
-            }
-            else
-            {
-                return new ApiResponse<Document>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Document) this.ApiClient.Deserialize(localVarResponse, typeof(Document)));
-            }
-            
+            return GetDocumentAsyncWithHttpInfo(accountId, documentId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Get information about the Document with the given DocumentId. Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The id of the document.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Document</returns>
-        public async System.Threading.Tasks.Task<Document> GetDocumentAsync (string accountId, int? documentId, DocumentsApi.GetDocumentOptions options = null)
+        public async System.Threading.Tasks.Task<Document> GetDocumentAsync(string accountId, int? documentId, DocumentsApi.GetDocumentOptions options = null)
         {
              ApiResponse<Document> localVarResponse = await GetDocumentAsyncWithHttpInfo(accountId, documentId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Get information about the Document with the given DocumentId. Returns information about a document in a room. You can optionally request the contents of the document, which is returned in base64-encoded format.\\n\\nTo find the &#x60;documentId&#x60; of the document that you want to retrieve, use the Rooms::GetDocuments method.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="documentId">The id of the document.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="documentId">The id of the document.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Document)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Document>> GetDocumentAsyncWithHttpInfo (string accountId, int? documentId, DocumentsApi.GetDocumentOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Document>> GetDocumentAsyncWithHttpInfo(string accountId, int? documentId, DocumentsApi.GetDocumentOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -774,8 +553,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -790,7 +570,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -801,12 +583,10 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
             if (options != null)
             {
                 if (options.includeContents != null) localVarQueryParams.Add("includeContents", this.ApiClient.ParameterToString(options.includeContents)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -816,11 +596,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -828,10 +607,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Document>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Document) this.ApiClient.Deserialize(localVarResponse, typeof(Document)));
-            
+            return new ApiResponse<Document>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (Document)this.ApiClient.Deserialize(localVarResponse, typeof(Document)));
         }
 
     }

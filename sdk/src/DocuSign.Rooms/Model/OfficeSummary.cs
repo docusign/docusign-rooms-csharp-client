@@ -30,9 +30,13 @@ namespace DocuSign.Rooms.Model
     [DataContract]
     public partial class OfficeSummary :  IEquatable<OfficeSummary>, IValidatableObject
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OfficeSummary" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
         public OfficeSummary()
         {
-            // Empty Constructor
         }
         
         /// <summary>
@@ -94,7 +98,7 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
-        public DateTime CreatedDate { get; private set; }
+        public DateTime? CreatedDate { get; private set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

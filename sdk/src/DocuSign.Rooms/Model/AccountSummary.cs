@@ -39,7 +39,7 @@ namespace DocuSign.Rooms.Model
         /// Defines CompanyVersion
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum ProductVersion
+        public enum CompanyVersionEnum
         {
             
             /// <summary>
@@ -59,12 +59,12 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets CompanyVersion
         /// </summary>
         [DataMember(Name="companyVersion", EmitDefaultValue=false)]
-        public ProductVersion? CompanyVersion { get; set; }
+        public CompanyVersionEnum? CompanyVersion { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountSummary" /> class.
         /// </summary>
         /// <param name="CompanyVersion">CompanyVersion.</param>
-        public AccountSummary(ProductVersion? CompanyVersion = default(ProductVersion?))
+        public AccountSummary(CompanyVersionEnum? CompanyVersion = default(CompanyVersionEnum?))
         {
             this.CompanyVersion = CompanyVersion;
         }
