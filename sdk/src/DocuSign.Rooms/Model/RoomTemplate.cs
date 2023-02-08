@@ -30,11 +30,15 @@ namespace DocuSign.Rooms.Model
     [DataContract]
     public partial class RoomTemplate :  IEquatable<RoomTemplate>, IValidatableObject
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RoomTemplate" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
         public RoomTemplate()
         {
-            // Empty Constructor
         }
-
+        
         /// <summary>
         /// Gets or Sets RoomTemplateId
         /// </summary>

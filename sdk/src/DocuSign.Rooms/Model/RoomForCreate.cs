@@ -36,6 +36,31 @@ namespace DocuSign.Rooms.Model
         }
 
         /// <summary>
+        /// Defines ListingSource
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ListingSourceEnum
+        {
+            
+            /// <summary>
+            /// Enum PublicRecords for value: PublicRecords
+            /// </summary>
+            [EnumMember(Value = "PublicRecords")]
+            PublicRecords = 1,
+            
+            /// <summary>
+            /// Enum MLS for value: MLS
+            /// </summary>
+            [EnumMember(Value = "MLS")]
+            MLS = 2
+        }
+
+        /// <summary>
+        /// Gets or Sets ListingSource
+        /// </summary>
+        [DataMember(Name="listingSource", EmitDefaultValue=false)]
+        public ListingSourceEnum? ListingSource { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="RoomForCreate" /> class.
         /// </summary>
         /// <param name="Name">Name (required).</param>
@@ -45,7 +70,8 @@ namespace DocuSign.Rooms.Model
         /// <param name="TemplateId">TemplateId.</param>
         /// <param name="OfficeId">OfficeId.</param>
         /// <param name="FieldData">FieldData.</param>
-        public RoomForCreate(string Name = default(string), int? RoleId = default(int?), string TransactionSideId = default(string), int? OwnerId = default(int?), int? TemplateId = default(int?), int? OfficeId = default(int?), FieldDataForCreate FieldData = default(FieldDataForCreate))
+        /// <param name="ListingSource">ListingSource.</param>
+        public RoomForCreate(string Name = default(string), int? RoleId = default(int?), string TransactionSideId = default(string), int? OwnerId = default(int?), int? TemplateId = default(int?), int? OfficeId = default(int?), FieldDataForCreate FieldData = default(FieldDataForCreate), ListingSourceEnum? ListingSource = default(ListingSourceEnum?))
         {
             // to ensure "Name" is required (not null)
             if (Name == null)
@@ -70,6 +96,7 @@ namespace DocuSign.Rooms.Model
             this.TemplateId = TemplateId;
             this.OfficeId = OfficeId;
             this.FieldData = FieldData;
+            this.ListingSource = ListingSource;
         }
         
         /// <summary>
@@ -123,6 +150,7 @@ namespace DocuSign.Rooms.Model
             sb.Append("  TemplateId: ").Append(TemplateId).Append("\n");
             sb.Append("  OfficeId: ").Append(OfficeId).Append("\n");
             sb.Append("  FieldData: ").Append(FieldData).Append("\n");
+            sb.Append("  ListingSource: ").Append(ListingSource).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -193,6 +221,11 @@ namespace DocuSign.Rooms.Model
                     this.FieldData == other.FieldData ||
                     this.FieldData != null &&
                     this.FieldData.Equals(other.FieldData)
+                ) && 
+                (
+                    this.ListingSource == other.ListingSource ||
+                    this.ListingSource != null &&
+                    this.ListingSource.Equals(other.ListingSource)
                 );
         }
 
@@ -221,6 +254,8 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.OfficeId.GetHashCode();
                 if (this.FieldData != null)
                     hash = hash * 59 + this.FieldData.GetHashCode();
+                if (this.ListingSource != null)
+                    hash = hash * 59 + this.ListingSource.GetHashCode();
                 return hash;
             }
         }

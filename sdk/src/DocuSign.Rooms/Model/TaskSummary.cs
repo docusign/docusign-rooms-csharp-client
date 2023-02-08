@@ -51,7 +51,7 @@ namespace DocuSign.Rooms.Model
         /// <param name="CreatedDate">CreatedDate.</param>
         /// <param name="IsDocumentTask">IsDocumentTask.</param>
         /// <param name="RequiresReview">RequiresReview.</param>
-        public TaskSummary(int? TaskId = default(int?), string Name = default(string), bool? RequiresApproval = default(bool?), string DueDateTypeId = default(string), int? DueDateOffset = default(int?), DateTime FixedDueDate = default(DateTime), int? OwnerUserId = default(int?), DateTime CompletionDate = default(DateTime), DateTime ApprovalDate = default(DateTime), DateTime RejectedDate = default(DateTime), DateTime CreatedDate = default(DateTime), bool? IsDocumentTask = default(bool?), bool? RequiresReview = default(bool?))
+        public TaskSummary(int? TaskId = default(int?), string Name = default(string), bool? RequiresApproval = default(bool?), string DueDateTypeId = default(string), int? DueDateOffset = default(int?), DateTime? FixedDueDate = default(DateTime?), int? OwnerUserId = default(int?), DateTime? CompletionDate = default(DateTime?), DateTime? ApprovalDate = default(DateTime?), DateTime? RejectedDate = default(DateTime?), DateTime? CreatedDate = default(DateTime?), bool? IsDocumentTask = default(bool?), bool? RequiresReview = default(bool?))
         {
             this.TaskId = TaskId;
             this.Name = Name;
@@ -97,7 +97,7 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets FixedDueDate
         /// </summary>
         [DataMember(Name="fixedDueDate", EmitDefaultValue=false)]
-        public DateTime FixedDueDate { get; set; }
+        public DateTime? FixedDueDate { get; set; }
         /// <summary>
         /// Gets or Sets OwnerUserId
         /// </summary>
@@ -107,22 +107,22 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets CompletionDate
         /// </summary>
         [DataMember(Name="completionDate", EmitDefaultValue=false)]
-        public DateTime CompletionDate { get; set; }
+        public DateTime? CompletionDate { get; set; }
         /// <summary>
         /// Gets or Sets ApprovalDate
         /// </summary>
         [DataMember(Name="approvalDate", EmitDefaultValue=false)]
-        public DateTime ApprovalDate { get; set; }
+        public DateTime? ApprovalDate { get; set; }
         /// <summary>
         /// Gets or Sets RejectedDate
         /// </summary>
         [DataMember(Name="rejectedDate", EmitDefaultValue=false)]
-        public DateTime RejectedDate { get; set; }
+        public DateTime? RejectedDate { get; set; }
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
         /// <summary>
         /// Gets or Sets IsDocumentTask
         /// </summary>

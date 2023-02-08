@@ -30,9 +30,13 @@ namespace DocuSign.Rooms.Model
     [DataContract]
     public partial class CustomData :  IEquatable<CustomData>, IValidatableObject
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomData" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
         public CustomData()
         {
-            // Empty Constructor
         }
         
         /// <summary>

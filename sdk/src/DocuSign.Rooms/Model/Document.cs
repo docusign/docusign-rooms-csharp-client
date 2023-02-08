@@ -49,7 +49,7 @@ namespace DocuSign.Rooms.Model
         /// <param name="ContentType">ContentType.</param>
         /// <param name="Base64Contents">Base64Contents (required).</param>
         /// <param name="IsDynamic">IsDynamic.</param>
-        public Document(int? DocumentId = default(int?), string Name = default(string), int? RoomId = default(int?), int? OwnerId = default(int?), long? Size = default(long?), int? FolderId = default(int?), DateTime CreatedDate = default(DateTime), bool? IsSigned = default(bool?), string ContentType = default(string), string Base64Contents = default(string), bool? IsDynamic = default(bool?))
+        public Document(int? DocumentId = default(int?), string Name = default(string), int? RoomId = default(int?), int? OwnerId = default(int?), long? Size = default(long?), int? FolderId = default(int?), DateTime? CreatedDate = default(DateTime?), bool? IsSigned = default(bool?), string ContentType = default(string), string Base64Contents = default(string), bool? IsDynamic = default(bool?))
         {
             // to ensure "Name" is required (not null)
             if (Name == null)
@@ -114,7 +114,7 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
         /// <summary>
         /// Gets or Sets IsSigned
         /// </summary>

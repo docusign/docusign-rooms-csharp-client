@@ -30,9 +30,13 @@ namespace DocuSign.Rooms.Model
     [DataContract]
     public partial class DependsOn :  IEquatable<DependsOn>, IValidatableObject
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependsOn" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
         public DependsOn()
         {
-            // Empty Constructor
         }
         
         /// <summary>

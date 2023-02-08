@@ -39,7 +39,7 @@ namespace DocuSign.Rooms.Model
         /// Initializes a new instance of the <see cref="RoomUserRemovalDetail" /> class.
         /// </summary>
         /// <param name="RevocationDate">RevocationDate.</param>
-        public RoomUserRemovalDetail(DateTime RevocationDate = default(DateTime))
+        public RoomUserRemovalDetail(DateTime? RevocationDate = default(DateTime?))
         {
             this.RevocationDate = RevocationDate;
         }
@@ -48,7 +48,7 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets RevocationDate
         /// </summary>
         [DataMember(Name="revocationDate", EmitDefaultValue=false)]
-        public DateTime RevocationDate { get; set; }
+        public DateTime? RevocationDate { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

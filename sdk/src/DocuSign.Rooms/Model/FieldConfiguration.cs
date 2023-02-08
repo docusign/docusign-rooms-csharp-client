@@ -30,9 +30,13 @@ namespace DocuSign.Rooms.Model
     [DataContract]
     public partial class FieldConfiguration :  IEquatable<FieldConfiguration>, IValidatableObject
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FieldConfiguration" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
         public FieldConfiguration()
         {
-            // Empty Constructor
         }
         
         /// <summary>

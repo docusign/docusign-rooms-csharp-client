@@ -47,10 +47,12 @@ namespace DocuSign.Rooms.Model
         /// <param name="ClosedDate">ClosedDate.</param>
         /// <param name="RejectedDate">RejectedDate.</param>
         /// <param name="CreatedByUserId">CreatedByUserId.</param>
+        /// <param name="RoomOwnerIds">RoomOwnerIds.</param>
         /// <param name="RejectedByUserId">RejectedByUserId.</param>
         /// <param name="ClosedStatusId">ClosedStatusId.</param>
+        /// <param name="FieldDataLastUpdatedDate">FieldDataLastUpdatedDate.</param>
         /// <param name="FieldData">FieldData.</param>
-        public Room(int? RoomId = default(int?), int? CompanyId = default(int?), string Name = default(string), int? OfficeId = default(int?), DateTime CreatedDate = default(DateTime), DateTime SubmittedForReviewDate = default(DateTime), DateTime ClosedDate = default(DateTime), DateTime RejectedDate = default(DateTime), int? CreatedByUserId = default(int?), int? RejectedByUserId = default(int?), string ClosedStatusId = default(string), FieldData FieldData = default(FieldData))
+        public Room(int? RoomId = default(int?), int? CompanyId = default(int?), string Name = default(string), int? OfficeId = default(int?), DateTime? CreatedDate = default(DateTime?), DateTime? SubmittedForReviewDate = default(DateTime?), DateTime? ClosedDate = default(DateTime?), DateTime? RejectedDate = default(DateTime?), int? CreatedByUserId = default(int?), List<int?> RoomOwnerIds = default(List<int?>), int? RejectedByUserId = default(int?), string ClosedStatusId = default(string), DateTime? FieldDataLastUpdatedDate = default(DateTime?), FieldData FieldData = default(FieldData))
         {
             this.RoomId = RoomId;
             this.CompanyId = CompanyId;
@@ -61,8 +63,10 @@ namespace DocuSign.Rooms.Model
             this.ClosedDate = ClosedDate;
             this.RejectedDate = RejectedDate;
             this.CreatedByUserId = CreatedByUserId;
+            this.RoomOwnerIds = RoomOwnerIds;
             this.RejectedByUserId = RejectedByUserId;
             this.ClosedStatusId = ClosedStatusId;
+            this.FieldDataLastUpdatedDate = FieldDataLastUpdatedDate;
             this.FieldData = FieldData;
         }
         
@@ -90,27 +94,32 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
         /// <summary>
         /// Gets or Sets SubmittedForReviewDate
         /// </summary>
         [DataMember(Name="submittedForReviewDate", EmitDefaultValue=false)]
-        public DateTime SubmittedForReviewDate { get; set; }
+        public DateTime? SubmittedForReviewDate { get; set; }
         /// <summary>
         /// Gets or Sets ClosedDate
         /// </summary>
         [DataMember(Name="closedDate", EmitDefaultValue=false)]
-        public DateTime ClosedDate { get; set; }
+        public DateTime? ClosedDate { get; set; }
         /// <summary>
         /// Gets or Sets RejectedDate
         /// </summary>
         [DataMember(Name="rejectedDate", EmitDefaultValue=false)]
-        public DateTime RejectedDate { get; set; }
+        public DateTime? RejectedDate { get; set; }
         /// <summary>
         /// Gets or Sets CreatedByUserId
         /// </summary>
         [DataMember(Name="createdByUserId", EmitDefaultValue=false)]
         public int? CreatedByUserId { get; set; }
+        /// <summary>
+        /// Gets or Sets RoomOwnerIds
+        /// </summary>
+        [DataMember(Name="roomOwnerIds", EmitDefaultValue=false)]
+        public List<int?> RoomOwnerIds { get; set; }
         /// <summary>
         /// Gets or Sets RejectedByUserId
         /// </summary>
@@ -121,6 +130,11 @@ namespace DocuSign.Rooms.Model
         /// </summary>
         [DataMember(Name="closedStatusId", EmitDefaultValue=false)]
         public string ClosedStatusId { get; set; }
+        /// <summary>
+        /// Gets or Sets FieldDataLastUpdatedDate
+        /// </summary>
+        [DataMember(Name="fieldDataLastUpdatedDate", EmitDefaultValue=false)]
+        public DateTime? FieldDataLastUpdatedDate { get; set; }
         /// <summary>
         /// Gets or Sets FieldData
         /// </summary>
@@ -143,8 +157,10 @@ namespace DocuSign.Rooms.Model
             sb.Append("  ClosedDate: ").Append(ClosedDate).Append("\n");
             sb.Append("  RejectedDate: ").Append(RejectedDate).Append("\n");
             sb.Append("  CreatedByUserId: ").Append(CreatedByUserId).Append("\n");
+            sb.Append("  RoomOwnerIds: ").Append(RoomOwnerIds).Append("\n");
             sb.Append("  RejectedByUserId: ").Append(RejectedByUserId).Append("\n");
             sb.Append("  ClosedStatusId: ").Append(ClosedStatusId).Append("\n");
+            sb.Append("  FieldDataLastUpdatedDate: ").Append(FieldDataLastUpdatedDate).Append("\n");
             sb.Append("  FieldData: ").Append(FieldData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -228,6 +244,11 @@ namespace DocuSign.Rooms.Model
                     this.CreatedByUserId.Equals(other.CreatedByUserId)
                 ) && 
                 (
+                    this.RoomOwnerIds == other.RoomOwnerIds ||
+                    this.RoomOwnerIds != null &&
+                    this.RoomOwnerIds.SequenceEqual(other.RoomOwnerIds)
+                ) && 
+                (
                     this.RejectedByUserId == other.RejectedByUserId ||
                     this.RejectedByUserId != null &&
                     this.RejectedByUserId.Equals(other.RejectedByUserId)
@@ -236,6 +257,11 @@ namespace DocuSign.Rooms.Model
                     this.ClosedStatusId == other.ClosedStatusId ||
                     this.ClosedStatusId != null &&
                     this.ClosedStatusId.Equals(other.ClosedStatusId)
+                ) && 
+                (
+                    this.FieldDataLastUpdatedDate == other.FieldDataLastUpdatedDate ||
+                    this.FieldDataLastUpdatedDate != null &&
+                    this.FieldDataLastUpdatedDate.Equals(other.FieldDataLastUpdatedDate)
                 ) && 
                 (
                     this.FieldData == other.FieldData ||
@@ -273,10 +299,14 @@ namespace DocuSign.Rooms.Model
                     hash = hash * 59 + this.RejectedDate.GetHashCode();
                 if (this.CreatedByUserId != null)
                     hash = hash * 59 + this.CreatedByUserId.GetHashCode();
+                if (this.RoomOwnerIds != null)
+                    hash = hash * 59 + this.RoomOwnerIds.GetHashCode();
                 if (this.RejectedByUserId != null)
                     hash = hash * 59 + this.RejectedByUserId.GetHashCode();
                 if (this.ClosedStatusId != null)
                     hash = hash * 59 + this.ClosedStatusId.GetHashCode();
+                if (this.FieldDataLastUpdatedDate != null)
+                    hash = hash * 59 + this.FieldDataLastUpdatedDate.GetHashCode();
                 if (this.FieldData != null)
                     hash = hash * 59 + this.FieldData.GetHashCode();
                 return hash;

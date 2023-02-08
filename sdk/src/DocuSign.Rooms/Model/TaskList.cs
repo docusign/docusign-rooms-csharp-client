@@ -49,7 +49,7 @@ namespace DocuSign.Rooms.Model
         /// <param name="RejectedByUserId">RejectedByUserId.</param>
         /// <param name="Comment">Comment.</param>
         /// <param name="Tasks">Tasks.</param>
-        public TaskList(int? TaskListId = default(int?), string Name = default(string), int? TaskListTemplateId = default(int?), DateTime SubmittedForReviewDate = default(DateTime), DateTime ApprovalDate = default(DateTime), DateTime RejectedDate = default(DateTime), DateTime CreatedDate = default(DateTime), int? ApprovedByUserId = default(int?), int? RejectedByUserId = default(int?), string Comment = default(string), List<TaskSummary> Tasks = default(List<TaskSummary>))
+        public TaskList(int? TaskListId = default(int?), string Name = default(string), int? TaskListTemplateId = default(int?), DateTime? SubmittedForReviewDate = default(DateTime?), DateTime? ApprovalDate = default(DateTime?), DateTime? RejectedDate = default(DateTime?), DateTime? CreatedDate = default(DateTime?), int? ApprovedByUserId = default(int?), int? RejectedByUserId = default(int?), string Comment = default(string), List<TaskSummary> Tasks = default(List<TaskSummary>))
         {
             this.TaskListId = TaskListId;
             this.Name = Name;
@@ -83,22 +83,22 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets SubmittedForReviewDate
         /// </summary>
         [DataMember(Name="submittedForReviewDate", EmitDefaultValue=false)]
-        public DateTime SubmittedForReviewDate { get; set; }
+        public DateTime? SubmittedForReviewDate { get; set; }
         /// <summary>
         /// Gets or Sets ApprovalDate
         /// </summary>
         [DataMember(Name="approvalDate", EmitDefaultValue=false)]
-        public DateTime ApprovalDate { get; set; }
+        public DateTime? ApprovalDate { get; set; }
         /// <summary>
         /// Gets or Sets RejectedDate
         /// </summary>
         [DataMember(Name="rejectedDate", EmitDefaultValue=false)]
-        public DateTime RejectedDate { get; set; }
+        public DateTime? RejectedDate { get; set; }
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
         /// <summary>
         /// Gets or Sets ApprovedByUserId
         /// </summary>

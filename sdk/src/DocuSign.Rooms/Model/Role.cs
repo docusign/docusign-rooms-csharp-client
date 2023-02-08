@@ -46,7 +46,7 @@ namespace DocuSign.Rooms.Model
         /// <param name="CreatedDate">CreatedDate.</param>
         /// <param name="IsAssigned">IsAssigned.</param>
         /// <param name="Permissions">Permissions.</param>
-        public Role(int? RoleId = default(int?), string LegacyRoleId = default(string), string Name = default(string), bool? IsDefaultForAdmin = default(bool?), bool? IsExternal = default(bool?), DateTime CreatedDate = default(DateTime), bool? IsAssigned = default(bool?), Permissions Permissions = default(Permissions))
+        public Role(int? RoleId = default(int?), string LegacyRoleId = default(string), string Name = default(string), bool? IsDefaultForAdmin = default(bool?), bool? IsExternal = default(bool?), DateTime? CreatedDate = default(DateTime?), bool? IsAssigned = default(bool?), Permissions Permissions = default(Permissions))
         {
             this.RoleId = RoleId;
             this.LegacyRoleId = LegacyRoleId;
@@ -87,7 +87,7 @@ namespace DocuSign.Rooms.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
         /// <summary>
         /// Gets or Sets IsAssigned
         /// </summary>

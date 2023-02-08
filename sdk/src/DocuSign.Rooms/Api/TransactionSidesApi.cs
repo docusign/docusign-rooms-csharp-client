@@ -10,9 +10,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using System.Net.Http;
 using DocuSign.Rooms.Client;
 using DocuSign.Rooms.Model;
 
@@ -31,11 +30,8 @@ namespace DocuSign.Rooms.Api
         /// Returns a list of valid transaction sides.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns></returns>
-        GlobalTransactionSides GetTransactionSides ();
+        GlobalTransactionSides GetTransactionSides();
 
         /// <summary>
         /// Retrieves the list of valid transaction sides.
@@ -44,11 +40,8 @@ namespace DocuSign.Rooms.Api
         /// Returns a list of valid transaction sides.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<GlobalTransactionSides> GetTransactionSidesWithHttpInfo ();
+        ApiResponse<GlobalTransactionSides> GetTransactionSidesWithHttpInfo();
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -58,11 +51,8 @@ namespace DocuSign.Rooms.Api
         /// Returns a list of valid transaction sides.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of GlobalTransactionSides</returns>
-        System.Threading.Tasks.Task<GlobalTransactionSides> GetTransactionSidesAsync ();
+        System.Threading.Tasks.Task<GlobalTransactionSides> GetTransactionSidesAsync();
 
         /// <summary>
         /// Retrieves the list of valid transaction sides.
@@ -71,11 +61,8 @@ namespace DocuSign.Rooms.Api
         /// Returns a list of valid transaction sides.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ApiResponse (GlobalTransactionSides)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GlobalTransactionSides>> GetTransactionSidesAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<GlobalTransactionSides>> GetTransactionSidesAsyncWithHttpInfo();
         #endregion Asynchronous Operations
     }
 
@@ -92,7 +79,7 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <param name="aplClient">An instance of AplClient</param>
         /// <returns></returns>
-        public TransactionSidesApi(ApiClient aplClient)
+        public TransactionSidesApi(DocuSignClient aplClient)
         {
             this.ApiClient = aplClient;
 
@@ -105,14 +92,14 @@ namespace DocuSign.Rooms.Api
         /// <value>The base path</value>
         public String GetBasePath()
         {
-            return this.ApiClient.RestClient.BaseUrl.ToString();
+            return this.ApiClient.GetBasePath();
         }
 
         /// <summary>
         /// Gets or sets the ApiClient object
         /// </summary>
         /// <value>An instance of the ApiClient</value>
-        public ApiClient ApiClient { get; set; }
+        public DocuSignClient ApiClient { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -136,11 +123,8 @@ namespace DocuSign.Rooms.Api
         /// Retrieves the list of valid transaction sides. Returns a list of valid transaction sides.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>GlobalTransactionSides</returns>
-        public GlobalTransactionSides GetTransactionSides ()
+        public GlobalTransactionSides GetTransactionSides()
         {
              ApiResponse<GlobalTransactionSides> localVarResponse = GetTransactionSidesWithHttpInfo();
              return localVarResponse.Data;
@@ -150,103 +134,32 @@ namespace DocuSign.Rooms.Api
         /// Retrieves the list of valid transaction sides. Returns a list of valid transaction sides.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>ApiResponse of GlobalTransactionSides</returns>
-        public ApiResponse< GlobalTransactionSides > GetTransactionSidesWithHttpInfo ()
+        public ApiResponse<GlobalTransactionSides> GetTransactionSidesWithHttpInfo()
         {
-
-            var localVarPath = "/v2/transaction_sides";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetTransactionSides", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<GlobalTransactionSides>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GlobalTransactionSides) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GlobalTransactionSides)));
-            }
-            else
-            {
-                return new ApiResponse<GlobalTransactionSides>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GlobalTransactionSides) this.ApiClient.Deserialize(localVarResponse, typeof(GlobalTransactionSides)));
-            }
-            
+            return GetTransactionSidesAsyncWithHttpInfo()
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Retrieves the list of valid transaction sides. Returns a list of valid transaction sides.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of GlobalTransactionSides</returns>
-        public async System.Threading.Tasks.Task<GlobalTransactionSides> GetTransactionSidesAsync ()
+        public async System.Threading.Tasks.Task<GlobalTransactionSides> GetTransactionSidesAsync()
         {
              ApiResponse<GlobalTransactionSides> localVarResponse = await GetTransactionSidesAsyncWithHttpInfo();
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Retrieves the list of valid transaction sides. Returns a list of valid transaction sides.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ApiResponse (GlobalTransactionSides)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GlobalTransactionSides>> GetTransactionSidesAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<GlobalTransactionSides>> GetTransactionSidesAsyncWithHttpInfo()
         {
 
             var localVarPath = "/v2/transaction_sides";
@@ -254,8 +167,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -270,7 +184,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -280,8 +196,6 @@ namespace DocuSign.Rooms.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -290,11 +204,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -302,10 +215,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<GlobalTransactionSides>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GlobalTransactionSides) this.ApiClient.Deserialize(localVarResponse, typeof(GlobalTransactionSides)));
-            
+            return new ApiResponse<GlobalTransactionSides>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (GlobalTransactionSides)this.ApiClient.Deserialize(localVarResponse, typeof(GlobalTransactionSides)));
         }
 
     }

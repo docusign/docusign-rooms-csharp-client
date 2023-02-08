@@ -10,9 +10,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using System.Net.Http;
 using DocuSign.Rooms.Client;
 using DocuSign.Rooms.Model;
 
@@ -31,11 +30,11 @@ namespace DocuSign.Rooms.Api
         /// Add a document to a room
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Document details to be added (optional)</param>
         /// <returns></returns>
-        RoomDocument AddDocumentToRoom (string accountId, int? roomId, Document body = null);
+        RoomDocument AddDocumentToRoom(string accountId, int? roomId, Document body = null);
 
         /// <summary>
         /// Add a document to a room.
@@ -44,11 +43,11 @@ namespace DocuSign.Rooms.Api
         /// Add a document to a room
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Document details to be added (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<RoomDocument> AddDocumentToRoomWithHttpInfo (string accountId, int? roomId, Document body = null);
+        ApiResponse<RoomDocument> AddDocumentToRoomWithHttpInfo(string accountId, int? roomId, Document body = null);
         /// <summary>
         /// Add a document to a room via file contents upload.
         /// </summary>
@@ -56,13 +55,11 @@ namespace DocuSign.Rooms.Api
         /// This method uploads the contents of file as a room document for the room that you specify.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="file"></param>
-        
-
-
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="_file">File to be uploaded (optional</param>
         /// <returns></returns>
-        RoomDocument AddDocumentToRoomViaFileUpload (string accountId, int? roomId, byte[] file);
+        RoomDocument AddDocumentToRoomViaFileUpload(string accountId, int? roomId,  byte[] _file = null);
 
         /// <summary>
         /// Add a document to a room via file contents upload.
@@ -71,13 +68,11 @@ namespace DocuSign.Rooms.Api
         /// This method uploads the contents of file as a room document for the room that you specify.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="file"></param>
-        
-
-
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="_file">File to be uploaded (optional</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<RoomDocument> AddDocumentToRoomViaFileUploadWithHttpInfo (string accountId, int? roomId, byte[] file);
+        ApiResponse<RoomDocument> AddDocumentToRoomViaFileUploadWithHttpInfo(string accountId, int? roomId,  byte[] _file = null);
         /// <summary>
         /// Adds a DocuSign Form to a room
         /// </summary>
@@ -85,11 +80,11 @@ namespace DocuSign.Rooms.Api
         /// Adds a form to a room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">Id of the room to which the DocuSign Form is being added</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">Id of the room to which the DocuSign Form is being added</param>
+        /// <param name="body">Contains information about the form being added (optional)</param>
         /// <returns></returns>
-        RoomDocument AddFormToRoom (string accountId, int? roomId, FormForAdd body = null);
+        RoomDocument AddFormToRoom(string accountId, int? roomId, FormForAdd body = null);
 
         /// <summary>
         /// Adds a DocuSign Form to a room
@@ -98,11 +93,11 @@ namespace DocuSign.Rooms.Api
         /// Adds a form to a room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">Id of the room to which the DocuSign Form is being added</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">Id of the room to which the DocuSign Form is being added</param>
+        /// <param name="body">Contains information about the form being added (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<RoomDocument> AddFormToRoomWithHttpInfo (string accountId, int? roomId, FormForAdd body = null);
+        ApiResponse<RoomDocument> AddFormToRoomWithHttpInfo(string accountId, int? roomId, FormForAdd body = null);
         /// <summary>
         /// Creates a new Room
         /// </summary>
@@ -111,10 +106,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">The properties of the new room (optional)</param>
         /// <returns></returns>
-        Room CreateRoom (string accountId, RoomForCreate body = null);
+        Room CreateRoom(string accountId, RoomForCreate body = null);
 
         /// <summary>
         /// Creates a new Room
@@ -124,10 +118,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">The properties of the new room (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Room> CreateRoomWithHttpInfo (string accountId, RoomForCreate body = null);
+        ApiResponse<Room> CreateRoomWithHttpInfo(string accountId, RoomForCreate body = null);
         /// <summary>
         /// Deletes the room having the given room ID.
         /// </summary>
@@ -135,11 +128,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes the room having the given room ID.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">ID of the room to be deleted.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">ID of the room to be deleted.</param>
         /// <returns></returns>
-        void DeleteRoom (string accountId, int? roomId);
+        void DeleteRoom(string accountId, int? roomId);
 
         /// <summary>
         /// Deletes the room having the given room ID.
@@ -148,11 +140,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes the room having the given room ID.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">ID of the room to be deleted.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">ID of the room to be deleted.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteRoomWithHttpInfo (string accountId, int? roomId);
+        ApiResponse<Object> DeleteRoomWithHttpInfo(string accountId, int? roomId);
         /// <summary>
         /// Returns the roles for which the calling user, based on their role within the room, can assign to invitees.
         /// </summary>
@@ -160,11 +151,11 @@ namespace DocuSign.Rooms.Api
         /// This method returns the room-level roles that the current user can assign to the members that they invite to a room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        AssignableRoles GetAssignableRoles (string accountId, int? roomId, RoomsApi.GetAssignableRolesOptions options = null);
+        AssignableRoles GetAssignableRoles(string accountId, int? roomId, RoomsApi.GetAssignableRolesOptions options = null);
 
         /// <summary>
         /// Returns the roles for which the calling user, based on their role within the room, can assign to invitees.
@@ -173,11 +164,11 @@ namespace DocuSign.Rooms.Api
         /// This method returns the room-level roles that the current user can assign to the members that they invite to a room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<AssignableRoles> GetAssignableRolesWithHttpInfo (string accountId, int? roomId, RoomsApi.GetAssignableRolesOptions options = null);
+        ApiResponse<AssignableRoles> GetAssignableRolesWithHttpInfo(string accountId, int? roomId, RoomsApi.GetAssignableRolesOptions options = null);
         /// <summary>
         /// Get documents in the room accessible to the calling user.
         /// </summary>
@@ -185,11 +176,11 @@ namespace DocuSign.Rooms.Api
         /// This method returns a list of documents that the current user can access for a specific room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        RoomDocumentList GetDocuments (string accountId, int? roomId, RoomsApi.GetDocumentsOptions options = null);
+        RoomDocumentList GetDocuments(string accountId, int? roomId, RoomsApi.GetDocumentsOptions options = null);
 
         /// <summary>
         /// Get documents in the room accessible to the calling user.
@@ -198,11 +189,11 @@ namespace DocuSign.Rooms.Api
         /// This method returns a list of documents that the current user can access for a specific room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<RoomDocumentList> GetDocumentsWithHttpInfo (string accountId, int? roomId, RoomsApi.GetDocumentsOptions options = null);
+        ApiResponse<RoomDocumentList> GetDocumentsWithHttpInfo(string accountId, int? roomId, RoomsApi.GetDocumentsOptions options = null);
         /// <summary>
         /// Gets information about the given room.
         /// </summary>
@@ -210,11 +201,11 @@ namespace DocuSign.Rooms.Api
         /// Returns details about the given room
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        Room GetRoom (string accountId, int? roomId, RoomsApi.GetRoomOptions options = null);
+        Room GetRoom(string accountId, int? roomId, RoomsApi.GetRoomOptions options = null);
 
         /// <summary>
         /// Gets information about the given room.
@@ -223,11 +214,11 @@ namespace DocuSign.Rooms.Api
         /// Returns details about the given room
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Room> GetRoomWithHttpInfo (string accountId, int? roomId, RoomsApi.GetRoomOptions options = null);
+        ApiResponse<Room> GetRoomWithHttpInfo(string accountId, int? roomId, RoomsApi.GetRoomOptions options = null);
         /// <summary>
         /// Returns the FieldData associated with the provided roomId.
         /// </summary>
@@ -235,11 +226,10 @@ namespace DocuSign.Rooms.Api
         /// Returns the field data associated with a room. This is the information that appears on the room&#39;s **Details** tab.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <returns></returns>
-        FieldData GetRoomFieldData (string accountId, int? roomId);
+        FieldData GetRoomFieldData(string accountId, int? roomId);
 
         /// <summary>
         /// Returns the FieldData associated with the provided roomId.
@@ -248,11 +238,10 @@ namespace DocuSign.Rooms.Api
         /// Returns the field data associated with a room. This is the information that appears on the room&#39;s **Details** tab.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<FieldData> GetRoomFieldDataWithHttpInfo (string accountId, int? roomId);
+        ApiResponse<FieldData> GetRoomFieldDataWithHttpInfo(string accountId, int? roomId);
         /// <summary>
         /// Gets the field set associated with the room.
         /// </summary>
@@ -260,11 +249,10 @@ namespace DocuSign.Rooms.Api
         /// Returns the field set that a room uses.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <returns></returns>
-        FieldSet GetRoomFieldSet (string accountId, int? roomId);
+        FieldSet GetRoomFieldSet(string accountId, int? roomId);
 
         /// <summary>
         /// Gets the field set associated with the room.
@@ -273,11 +261,10 @@ namespace DocuSign.Rooms.Api
         /// Returns the field set that a room uses.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<FieldSet> GetRoomFieldSetWithHttpInfo (string accountId, int? roomId);
+        ApiResponse<FieldSet> GetRoomFieldSetWithHttpInfo(string accountId, int? roomId);
         /// <summary>
         /// Retrieves the list of users in the given room.
         /// </summary>
@@ -285,11 +272,11 @@ namespace DocuSign.Rooms.Api
         /// This method returns a list of users associated with a room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        RoomUsersResult GetRoomUsers (string accountId, int? roomId, RoomsApi.GetRoomUsersOptions options = null);
+        RoomUsersResult GetRoomUsers(string accountId, int? roomId, RoomsApi.GetRoomUsersOptions options = null);
 
         /// <summary>
         /// Retrieves the list of users in the given room.
@@ -298,11 +285,11 @@ namespace DocuSign.Rooms.Api
         /// This method returns a list of users associated with a room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<RoomUsersResult> GetRoomUsersWithHttpInfo (string accountId, int? roomId, RoomsApi.GetRoomUsersOptions options = null);
+        ApiResponse<RoomUsersResult> GetRoomUsersWithHttpInfo(string accountId, int? roomId, RoomsApi.GetRoomUsersOptions options = null);
         /// <summary>
         /// Gets rooms available to the calling user.
         /// </summary>
@@ -311,10 +298,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        RoomSummaryList GetRooms (string accountId, RoomsApi.GetRoomsOptions options = null);
+        RoomSummaryList GetRooms(string accountId, RoomsApi.GetRoomsOptions options = null);
 
         /// <summary>
         /// Gets rooms available to the calling user.
@@ -324,10 +310,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<RoomSummaryList> GetRoomsWithHttpInfo (string accountId, RoomsApi.GetRoomsOptions options = null);
+        ApiResponse<RoomSummaryList> GetRoomsWithHttpInfo(string accountId, RoomsApi.GetRoomsOptions options = null);
         /// <summary>
         /// Invites a user to the room by email address.
         /// </summary>
@@ -335,11 +320,11 @@ namespace DocuSign.Rooms.Api
         /// This method invites an existing or new member to a specific room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Name, Email, Side, Role of the user being invited (optional)</param>
         /// <returns></returns>
-        RoomInviteResponse InviteUser (string accountId, int? roomId, RoomInvite body = null);
+        RoomInviteResponse InviteUser(string accountId, int? roomId, RoomInvite body = null);
 
         /// <summary>
         /// Invites a user to the room by email address.
@@ -348,11 +333,11 @@ namespace DocuSign.Rooms.Api
         /// This method invites an existing or new member to a specific room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Name, Email, Side, Role of the user being invited (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<RoomInviteResponse> InviteUserWithHttpInfo (string accountId, int? roomId, RoomInvite body = null);
+        ApiResponse<RoomInviteResponse> InviteUserWithHttpInfo(string accountId, int? roomId, RoomInvite body = null);
         /// <summary>
         /// Updates the specified user&#39;s role and transaction side.
         /// </summary>
@@ -360,11 +345,12 @@ namespace DocuSign.Rooms.Api
         /// Updates the specified user&#39;s role and transaction side.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>/// <param name="userId">The id of the user to update.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="userId">The id of the user to update.</param>
+        /// <param name="body">Updated Role and Side of the given user (optional)</param>
         /// <returns></returns>
-        RoomUser PutRoomUser (string accountId, int? roomId, int? userId, RoomUserForUpdate body = null);
+        RoomUser PutRoomUser(string accountId, int? roomId, int? userId, RoomUserForUpdate body = null);
 
         /// <summary>
         /// Updates the specified user&#39;s role and transaction side.
@@ -373,11 +359,12 @@ namespace DocuSign.Rooms.Api
         /// Updates the specified user&#39;s role and transaction side.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>/// <param name="userId">The id of the user to update.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="userId">The id of the user to update.</param>
+        /// <param name="body">Updated Role and Side of the given user (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<RoomUser> PutRoomUserWithHttpInfo (string accountId, int? roomId, int? userId, RoomUserForUpdate body = null);
+        ApiResponse<RoomUser> PutRoomUserWithHttpInfo(string accountId, int? roomId, int? userId, RoomUserForUpdate body = null);
         /// <summary>
         /// Restores the specified user&#39;s access to the room.
         /// </summary>
@@ -385,11 +372,11 @@ namespace DocuSign.Rooms.Api
         /// Restores the specified user&#39;s access to the room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room Id to restore access</param>/// <param name="userId">The user Id getting restored to the room</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The room Id to restore access</param>
+        /// <param name="userId">The user Id getting restored to the room</param>
         /// <returns></returns>
-        void RestoreRoomUserAccess (string accountId, int? roomId, int? userId);
+        void RestoreRoomUserAccess(string accountId, int? roomId, int? userId);
 
         /// <summary>
         /// Restores the specified user&#39;s access to the room.
@@ -398,11 +385,11 @@ namespace DocuSign.Rooms.Api
         /// Restores the specified user&#39;s access to the room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room Id to restore access</param>/// <param name="userId">The user Id getting restored to the room</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The room Id to restore access</param>
+        /// <param name="userId">The user Id getting restored to the room</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RestoreRoomUserAccessWithHttpInfo (string accountId, int? roomId, int? userId);
+        ApiResponse<Object> RestoreRoomUserAccessWithHttpInfo(string accountId, int? roomId, int? userId);
         /// <summary>
         /// Revokes the specified user&#39;s access to the room.
         /// </summary>
@@ -410,11 +397,12 @@ namespace DocuSign.Rooms.Api
         /// Revokes the specified user&#39;s access to the room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room Id to revoke access from</param>/// <param name="userId">The user Id getting revoked from the room</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The room Id to revoke access from</param>
+        /// <param name="userId">The user Id getting revoked from the room</param>
+        /// <param name="body">Contains the date on which the users room access should be revoked (optional)</param>
         /// <returns></returns>
-        void RevokeRoomUserAccess (string accountId, int? roomId, int? userId, RoomUserRemovalDetail body = null);
+        void RevokeRoomUserAccess(string accountId, int? roomId, int? userId, RoomUserRemovalDetail body = null);
 
         /// <summary>
         /// Revokes the specified user&#39;s access to the room.
@@ -423,11 +411,12 @@ namespace DocuSign.Rooms.Api
         /// Revokes the specified user&#39;s access to the room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room Id to revoke access from</param>/// <param name="userId">The user Id getting revoked from the room</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The room Id to revoke access from</param>
+        /// <param name="userId">The user Id getting revoked from the room</param>
+        /// <param name="body">Contains the date on which the users room access should be revoked (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RevokeRoomUserAccessWithHttpInfo (string accountId, int? roomId, int? userId, RoomUserRemovalDetail body = null);
+        ApiResponse<Object> RevokeRoomUserAccessWithHttpInfo(string accountId, int? roomId, int? userId, RoomUserRemovalDetail body = null);
         /// <summary>
         /// Update the picture for a room.
         /// </summary>
@@ -435,11 +424,11 @@ namespace DocuSign.Rooms.Api
         /// This endpoint supports the following content types, application/json as JSON PictureForUpdate{\&quot;fileName\&quot;:\&quot;string\&quot;, \&quot;Base64Contents\&quot;:\&quot;string\&quot;}, multipart/formdata and any other streamed binary content type (as long as either query parameter fileName or request header ContentDisposition filename is included).
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">ID of the room the picture is for.</param>
-        /// <param name="file"></param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">ID of the room the picture is for.</param>
+        /// <param name="_file">File to be uploaded (optional</param>
         /// <returns></returns>
-        RoomPicture UpdatePicture (string accountId, int? roomId, byte[] file, string fileName = "file.jpg");
+        RoomPicture UpdatePicture(string accountId, int? roomId,  byte[] _file = null);
 
         /// <summary>
         /// Update the picture for a room.
@@ -448,11 +437,11 @@ namespace DocuSign.Rooms.Api
         /// This endpoint supports the following content types, application/json as JSON PictureForUpdate{\&quot;fileName\&quot;:\&quot;string\&quot;, \&quot;Base64Contents\&quot;:\&quot;string\&quot;}, multipart/formdata and any other streamed binary content type (as long as either query parameter fileName or request header ContentDisposition filename is included).
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">ID of the room the picture is for.</param>
-        /// <param name="file"></param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">ID of the room the picture is for.</param>
+        /// <param name="_file">File to be uploaded (optional</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<RoomPicture> UpdatePictureWithHttpInfo (string accountId, int? roomId, byte[] file, string fileName = "file.jpg");
+        ApiResponse<RoomPicture> UpdatePictureWithHttpInfo(string accountId, int? roomId,  byte[] _file = null);
         /// <summary>
         /// Updates room field data.
         /// </summary>
@@ -460,11 +449,11 @@ namespace DocuSign.Rooms.Api
         /// Updates room field data.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Dictionary of data to be updated (optional)</param>
         /// <returns></returns>
-        FieldData UpdateRoomFieldData (string accountId, int? roomId, FieldDataForUpdate body = null);
+        FieldData UpdateRoomFieldData(string accountId, int? roomId, FieldDataForUpdate body = null);
 
         /// <summary>
         /// Updates room field data.
@@ -473,11 +462,11 @@ namespace DocuSign.Rooms.Api
         /// Updates room field data.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Dictionary of data to be updated (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<FieldData> UpdateRoomFieldDataWithHttpInfo (string accountId, int? roomId, FieldDataForUpdate body = null);
+        ApiResponse<FieldData> UpdateRoomFieldDataWithHttpInfo(string accountId, int? roomId, FieldDataForUpdate body = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -487,11 +476,11 @@ namespace DocuSign.Rooms.Api
         /// Add a document to a room
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Document details to be added (optional)</param>
         /// <returns>Task of RoomDocument</returns>
-        System.Threading.Tasks.Task<RoomDocument> AddDocumentToRoomAsync (string accountId, int? roomId, Document body = null);
+        System.Threading.Tasks.Task<RoomDocument> AddDocumentToRoomAsync(string accountId, int? roomId, Document body = null);
 
         /// <summary>
         /// Add a document to a room.
@@ -500,11 +489,11 @@ namespace DocuSign.Rooms.Api
         /// Add a document to a room
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Document details to be added (optional)</param>
         /// <returns>Task of ApiResponse (RoomDocument)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RoomDocument>> AddDocumentToRoomAsyncWithHttpInfo (string accountId, int? roomId, Document body = null);
+        System.Threading.Tasks.Task<ApiResponse<RoomDocument>> AddDocumentToRoomAsyncWithHttpInfo(string accountId, int? roomId, Document body = null);
         /// <summary>
         /// Add a document to a room via file contents upload.
         /// </summary>
@@ -512,13 +501,11 @@ namespace DocuSign.Rooms.Api
         /// This method uploads the contents of file as a room document for the room that you specify.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="file"></param>
-        
-
-
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="_file">File to be uploaded (optional</param>
         /// <returns>Task of RoomDocument</returns>
-        System.Threading.Tasks.Task<RoomDocument> AddDocumentToRoomViaFileUploadAsync (string accountId, int? roomId, byte[] file);
+        System.Threading.Tasks.Task<RoomDocument> AddDocumentToRoomViaFileUploadAsync(string accountId, int? roomId,  byte[] _file = null);
 
         /// <summary>
         /// Add a document to a room via file contents upload.
@@ -527,13 +514,11 @@ namespace DocuSign.Rooms.Api
         /// This method uploads the contents of file as a room document for the room that you specify.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="file"></param>
-        
-
-
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="_file">File to be uploaded (optional</param>
         /// <returns>Task of ApiResponse (RoomDocument)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RoomDocument>> AddDocumentToRoomViaFileUploadAsyncWithHttpInfo (string accountId, int? roomId, byte[] file);
+        System.Threading.Tasks.Task<ApiResponse<RoomDocument>> AddDocumentToRoomViaFileUploadAsyncWithHttpInfo(string accountId, int? roomId,  byte[] _file = null);
         /// <summary>
         /// Adds a DocuSign Form to a room
         /// </summary>
@@ -541,11 +526,11 @@ namespace DocuSign.Rooms.Api
         /// Adds a form to a room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">Id of the room to which the DocuSign Form is being added</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">Id of the room to which the DocuSign Form is being added</param>
+        /// <param name="body">Contains information about the form being added (optional)</param>
         /// <returns>Task of RoomDocument</returns>
-        System.Threading.Tasks.Task<RoomDocument> AddFormToRoomAsync (string accountId, int? roomId, FormForAdd body = null);
+        System.Threading.Tasks.Task<RoomDocument> AddFormToRoomAsync(string accountId, int? roomId, FormForAdd body = null);
 
         /// <summary>
         /// Adds a DocuSign Form to a room
@@ -554,11 +539,11 @@ namespace DocuSign.Rooms.Api
         /// Adds a form to a room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">Id of the room to which the DocuSign Form is being added</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">Id of the room to which the DocuSign Form is being added</param>
+        /// <param name="body">Contains information about the form being added (optional)</param>
         /// <returns>Task of ApiResponse (RoomDocument)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RoomDocument>> AddFormToRoomAsyncWithHttpInfo (string accountId, int? roomId, FormForAdd body = null);
+        System.Threading.Tasks.Task<ApiResponse<RoomDocument>> AddFormToRoomAsyncWithHttpInfo(string accountId, int? roomId, FormForAdd body = null);
         /// <summary>
         /// Creates a new Room
         /// </summary>
@@ -567,10 +552,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">The properties of the new room (optional)</param>
         /// <returns>Task of Room</returns>
-        System.Threading.Tasks.Task<Room> CreateRoomAsync (string accountId, RoomForCreate body = null);
+        System.Threading.Tasks.Task<Room> CreateRoomAsync(string accountId, RoomForCreate body = null);
 
         /// <summary>
         /// Creates a new Room
@@ -580,10 +564,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">The properties of the new room (optional)</param>
         /// <returns>Task of ApiResponse (Room)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Room>> CreateRoomAsyncWithHttpInfo (string accountId, RoomForCreate body = null);
+        System.Threading.Tasks.Task<ApiResponse<Room>> CreateRoomAsyncWithHttpInfo(string accountId, RoomForCreate body = null);
         /// <summary>
         /// Deletes the room having the given room ID.
         /// </summary>
@@ -591,11 +574,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes the room having the given room ID.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">ID of the room to be deleted.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">ID of the room to be deleted.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteRoomAsync (string accountId, int? roomId);
+        System.Threading.Tasks.Task DeleteRoomAsync(string accountId, int? roomId);
 
         /// <summary>
         /// Deletes the room having the given room ID.
@@ -604,11 +586,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes the room having the given room ID.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">ID of the room to be deleted.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">ID of the room to be deleted.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRoomAsyncWithHttpInfo (string accountId, int? roomId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRoomAsyncWithHttpInfo(string accountId, int? roomId);
         /// <summary>
         /// Returns the roles for which the calling user, based on their role within the room, can assign to invitees.
         /// </summary>
@@ -616,11 +597,11 @@ namespace DocuSign.Rooms.Api
         /// This method returns the room-level roles that the current user can assign to the members that they invite to a room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of AssignableRoles</returns>
-        System.Threading.Tasks.Task<AssignableRoles> GetAssignableRolesAsync (string accountId, int? roomId, RoomsApi.GetAssignableRolesOptions options = null);
+        System.Threading.Tasks.Task<AssignableRoles> GetAssignableRolesAsync(string accountId, int? roomId, RoomsApi.GetAssignableRolesOptions options = null);
 
         /// <summary>
         /// Returns the roles for which the calling user, based on their role within the room, can assign to invitees.
@@ -629,11 +610,11 @@ namespace DocuSign.Rooms.Api
         /// This method returns the room-level roles that the current user can assign to the members that they invite to a room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (AssignableRoles)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AssignableRoles>> GetAssignableRolesAsyncWithHttpInfo (string accountId, int? roomId, RoomsApi.GetAssignableRolesOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<AssignableRoles>> GetAssignableRolesAsyncWithHttpInfo(string accountId, int? roomId, RoomsApi.GetAssignableRolesOptions options = null);
         /// <summary>
         /// Get documents in the room accessible to the calling user.
         /// </summary>
@@ -641,11 +622,11 @@ namespace DocuSign.Rooms.Api
         /// This method returns a list of documents that the current user can access for a specific room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RoomDocumentList</returns>
-        System.Threading.Tasks.Task<RoomDocumentList> GetDocumentsAsync (string accountId, int? roomId, RoomsApi.GetDocumentsOptions options = null);
+        System.Threading.Tasks.Task<RoomDocumentList> GetDocumentsAsync(string accountId, int? roomId, RoomsApi.GetDocumentsOptions options = null);
 
         /// <summary>
         /// Get documents in the room accessible to the calling user.
@@ -654,11 +635,11 @@ namespace DocuSign.Rooms.Api
         /// This method returns a list of documents that the current user can access for a specific room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RoomDocumentList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RoomDocumentList>> GetDocumentsAsyncWithHttpInfo (string accountId, int? roomId, RoomsApi.GetDocumentsOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<RoomDocumentList>> GetDocumentsAsyncWithHttpInfo(string accountId, int? roomId, RoomsApi.GetDocumentsOptions options = null);
         /// <summary>
         /// Gets information about the given room.
         /// </summary>
@@ -666,11 +647,11 @@ namespace DocuSign.Rooms.Api
         /// Returns details about the given room
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Room</returns>
-        System.Threading.Tasks.Task<Room> GetRoomAsync (string accountId, int? roomId, RoomsApi.GetRoomOptions options = null);
+        System.Threading.Tasks.Task<Room> GetRoomAsync(string accountId, int? roomId, RoomsApi.GetRoomOptions options = null);
 
         /// <summary>
         /// Gets information about the given room.
@@ -679,11 +660,11 @@ namespace DocuSign.Rooms.Api
         /// Returns details about the given room
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Room)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Room>> GetRoomAsyncWithHttpInfo (string accountId, int? roomId, RoomsApi.GetRoomOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<Room>> GetRoomAsyncWithHttpInfo(string accountId, int? roomId, RoomsApi.GetRoomOptions options = null);
         /// <summary>
         /// Returns the FieldData associated with the provided roomId.
         /// </summary>
@@ -691,11 +672,10 @@ namespace DocuSign.Rooms.Api
         /// Returns the field data associated with a room. This is the information that appears on the room&#39;s **Details** tab.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <returns>Task of FieldData</returns>
-        System.Threading.Tasks.Task<FieldData> GetRoomFieldDataAsync (string accountId, int? roomId);
+        System.Threading.Tasks.Task<FieldData> GetRoomFieldDataAsync(string accountId, int? roomId);
 
         /// <summary>
         /// Returns the FieldData associated with the provided roomId.
@@ -704,11 +684,10 @@ namespace DocuSign.Rooms.Api
         /// Returns the field data associated with a room. This is the information that appears on the room&#39;s **Details** tab.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <returns>Task of ApiResponse (FieldData)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FieldData>> GetRoomFieldDataAsyncWithHttpInfo (string accountId, int? roomId);
+        System.Threading.Tasks.Task<ApiResponse<FieldData>> GetRoomFieldDataAsyncWithHttpInfo(string accountId, int? roomId);
         /// <summary>
         /// Gets the field set associated with the room.
         /// </summary>
@@ -716,11 +695,10 @@ namespace DocuSign.Rooms.Api
         /// Returns the field set that a room uses.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <returns>Task of FieldSet</returns>
-        System.Threading.Tasks.Task<FieldSet> GetRoomFieldSetAsync (string accountId, int? roomId);
+        System.Threading.Tasks.Task<FieldSet> GetRoomFieldSetAsync(string accountId, int? roomId);
 
         /// <summary>
         /// Gets the field set associated with the room.
@@ -729,11 +707,10 @@ namespace DocuSign.Rooms.Api
         /// Returns the field set that a room uses.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <returns>Task of ApiResponse (FieldSet)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FieldSet>> GetRoomFieldSetAsyncWithHttpInfo (string accountId, int? roomId);
+        System.Threading.Tasks.Task<ApiResponse<FieldSet>> GetRoomFieldSetAsyncWithHttpInfo(string accountId, int? roomId);
         /// <summary>
         /// Retrieves the list of users in the given room.
         /// </summary>
@@ -741,11 +718,11 @@ namespace DocuSign.Rooms.Api
         /// This method returns a list of users associated with a room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RoomUsersResult</returns>
-        System.Threading.Tasks.Task<RoomUsersResult> GetRoomUsersAsync (string accountId, int? roomId, RoomsApi.GetRoomUsersOptions options = null);
+        System.Threading.Tasks.Task<RoomUsersResult> GetRoomUsersAsync(string accountId, int? roomId, RoomsApi.GetRoomUsersOptions options = null);
 
         /// <summary>
         /// Retrieves the list of users in the given room.
@@ -754,11 +731,11 @@ namespace DocuSign.Rooms.Api
         /// This method returns a list of users associated with a room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RoomUsersResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RoomUsersResult>> GetRoomUsersAsyncWithHttpInfo (string accountId, int? roomId, RoomsApi.GetRoomUsersOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<RoomUsersResult>> GetRoomUsersAsyncWithHttpInfo(string accountId, int? roomId, RoomsApi.GetRoomUsersOptions options = null);
         /// <summary>
         /// Gets rooms available to the calling user.
         /// </summary>
@@ -767,10 +744,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RoomSummaryList</returns>
-        System.Threading.Tasks.Task<RoomSummaryList> GetRoomsAsync (string accountId, RoomsApi.GetRoomsOptions options = null);
+        System.Threading.Tasks.Task<RoomSummaryList> GetRoomsAsync(string accountId, RoomsApi.GetRoomsOptions options = null);
 
         /// <summary>
         /// Gets rooms available to the calling user.
@@ -780,10 +756,9 @@ namespace DocuSign.Rooms.Api
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RoomSummaryList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RoomSummaryList>> GetRoomsAsyncWithHttpInfo (string accountId, RoomsApi.GetRoomsOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<RoomSummaryList>> GetRoomsAsyncWithHttpInfo(string accountId, RoomsApi.GetRoomsOptions options = null);
         /// <summary>
         /// Invites a user to the room by email address.
         /// </summary>
@@ -791,11 +766,11 @@ namespace DocuSign.Rooms.Api
         /// This method invites an existing or new member to a specific room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Name, Email, Side, Role of the user being invited (optional)</param>
         /// <returns>Task of RoomInviteResponse</returns>
-        System.Threading.Tasks.Task<RoomInviteResponse> InviteUserAsync (string accountId, int? roomId, RoomInvite body = null);
+        System.Threading.Tasks.Task<RoomInviteResponse> InviteUserAsync(string accountId, int? roomId, RoomInvite body = null);
 
         /// <summary>
         /// Invites a user to the room by email address.
@@ -804,11 +779,11 @@ namespace DocuSign.Rooms.Api
         /// This method invites an existing or new member to a specific room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Name, Email, Side, Role of the user being invited (optional)</param>
         /// <returns>Task of ApiResponse (RoomInviteResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RoomInviteResponse>> InviteUserAsyncWithHttpInfo (string accountId, int? roomId, RoomInvite body = null);
+        System.Threading.Tasks.Task<ApiResponse<RoomInviteResponse>> InviteUserAsyncWithHttpInfo(string accountId, int? roomId, RoomInvite body = null);
         /// <summary>
         /// Updates the specified user&#39;s role and transaction side.
         /// </summary>
@@ -816,11 +791,12 @@ namespace DocuSign.Rooms.Api
         /// Updates the specified user&#39;s role and transaction side.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>/// <param name="userId">The id of the user to update.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="userId">The id of the user to update.</param>
+        /// <param name="body">Updated Role and Side of the given user (optional)</param>
         /// <returns>Task of RoomUser</returns>
-        System.Threading.Tasks.Task<RoomUser> PutRoomUserAsync (string accountId, int? roomId, int? userId, RoomUserForUpdate body = null);
+        System.Threading.Tasks.Task<RoomUser> PutRoomUserAsync(string accountId, int? roomId, int? userId, RoomUserForUpdate body = null);
 
         /// <summary>
         /// Updates the specified user&#39;s role and transaction side.
@@ -829,11 +805,12 @@ namespace DocuSign.Rooms.Api
         /// Updates the specified user&#39;s role and transaction side.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>/// <param name="userId">The id of the user to update.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="userId">The id of the user to update.</param>
+        /// <param name="body">Updated Role and Side of the given user (optional)</param>
         /// <returns>Task of ApiResponse (RoomUser)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RoomUser>> PutRoomUserAsyncWithHttpInfo (string accountId, int? roomId, int? userId, RoomUserForUpdate body = null);
+        System.Threading.Tasks.Task<ApiResponse<RoomUser>> PutRoomUserAsyncWithHttpInfo(string accountId, int? roomId, int? userId, RoomUserForUpdate body = null);
         /// <summary>
         /// Restores the specified user&#39;s access to the room.
         /// </summary>
@@ -841,11 +818,11 @@ namespace DocuSign.Rooms.Api
         /// Restores the specified user&#39;s access to the room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room Id to restore access</param>/// <param name="userId">The user Id getting restored to the room</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The room Id to restore access</param>
+        /// <param name="userId">The user Id getting restored to the room</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RestoreRoomUserAccessAsync (string accountId, int? roomId, int? userId);
+        System.Threading.Tasks.Task RestoreRoomUserAccessAsync(string accountId, int? roomId, int? userId);
 
         /// <summary>
         /// Restores the specified user&#39;s access to the room.
@@ -854,11 +831,11 @@ namespace DocuSign.Rooms.Api
         /// Restores the specified user&#39;s access to the room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room Id to restore access</param>/// <param name="userId">The user Id getting restored to the room</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The room Id to restore access</param>
+        /// <param name="userId">The user Id getting restored to the room</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RestoreRoomUserAccessAsyncWithHttpInfo (string accountId, int? roomId, int? userId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> RestoreRoomUserAccessAsyncWithHttpInfo(string accountId, int? roomId, int? userId);
         /// <summary>
         /// Revokes the specified user&#39;s access to the room.
         /// </summary>
@@ -866,11 +843,12 @@ namespace DocuSign.Rooms.Api
         /// Revokes the specified user&#39;s access to the room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room Id to revoke access from</param>/// <param name="userId">The user Id getting revoked from the room</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The room Id to revoke access from</param>
+        /// <param name="userId">The user Id getting revoked from the room</param>
+        /// <param name="body">Contains the date on which the users room access should be revoked (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RevokeRoomUserAccessAsync (string accountId, int? roomId, int? userId, RoomUserRemovalDetail body = null);
+        System.Threading.Tasks.Task RevokeRoomUserAccessAsync(string accountId, int? roomId, int? userId, RoomUserRemovalDetail body = null);
 
         /// <summary>
         /// Revokes the specified user&#39;s access to the room.
@@ -879,11 +857,12 @@ namespace DocuSign.Rooms.Api
         /// Revokes the specified user&#39;s access to the room.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room Id to revoke access from</param>/// <param name="userId">The user Id getting revoked from the room</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The room Id to revoke access from</param>
+        /// <param name="userId">The user Id getting revoked from the room</param>
+        /// <param name="body">Contains the date on which the users room access should be revoked (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RevokeRoomUserAccessAsyncWithHttpInfo (string accountId, int? roomId, int? userId, RoomUserRemovalDetail body = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> RevokeRoomUserAccessAsyncWithHttpInfo(string accountId, int? roomId, int? userId, RoomUserRemovalDetail body = null);
         /// <summary>
         /// Update the picture for a room.
         /// </summary>
@@ -891,13 +870,11 @@ namespace DocuSign.Rooms.Api
         /// This endpoint supports the following content types, application/json as JSON PictureForUpdate{\&quot;fileName\&quot;:\&quot;string\&quot;, \&quot;Base64Contents\&quot;:\&quot;string\&quot;}, multipart/formdata and any other streamed binary content type (as long as either query parameter fileName or request header ContentDisposition filename is included).
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">ID of the room the picture is for.</param>
-        /// <param name="file"></param>
-        
-
-
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">ID of the room the picture is for.</param>
+        /// <param name="_file">File to be uploaded (optional</param>
         /// <returns>Task of RoomPicture</returns>
-        System.Threading.Tasks.Task<RoomPicture> UpdatePictureAsync (string accountId, int? roomId, byte[] file, string fileName = "file.jpg");
+        System.Threading.Tasks.Task<RoomPicture> UpdatePictureAsync(string accountId, int? roomId,  byte[] _file = null);
 
         /// <summary>
         /// Update the picture for a room.
@@ -906,13 +883,11 @@ namespace DocuSign.Rooms.Api
         /// This endpoint supports the following content types, application/json as JSON PictureForUpdate{\&quot;fileName\&quot;:\&quot;string\&quot;, \&quot;Base64Contents\&quot;:\&quot;string\&quot;}, multipart/formdata and any other streamed binary content type (as long as either query parameter fileName or request header ContentDisposition filename is included).
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">ID of the room the picture is for.</param>
-        /// <param name="file"></param>
-        
-
-
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">ID of the room the picture is for.</param>
+        /// <param name="_file">File to be uploaded (optional</param>
         /// <returns>Task of ApiResponse (RoomPicture)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RoomPicture>> UpdatePictureAsyncWithHttpInfo (string accountId, int? roomId, byte[] file, string fileName = "file.jpg");
+        System.Threading.Tasks.Task<ApiResponse<RoomPicture>> UpdatePictureAsyncWithHttpInfo(string accountId, int? roomId,  byte[] _file = null);
         /// <summary>
         /// Updates room field data.
         /// </summary>
@@ -920,11 +895,11 @@ namespace DocuSign.Rooms.Api
         /// Updates room field data.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Dictionary of data to be updated (optional)</param>
         /// <returns>Task of FieldData</returns>
-        System.Threading.Tasks.Task<FieldData> UpdateRoomFieldDataAsync (string accountId, int? roomId, FieldDataForUpdate body = null);
+        System.Threading.Tasks.Task<FieldData> UpdateRoomFieldDataAsync(string accountId, int? roomId, FieldDataForUpdate body = null);
 
         /// <summary>
         /// Updates room field data.
@@ -933,11 +908,11 @@ namespace DocuSign.Rooms.Api
         /// Updates room field data.
         /// </remarks>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Dictionary of data to be updated (optional)</param>
         /// <returns>Task of ApiResponse (FieldData)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FieldData>> UpdateRoomFieldDataAsyncWithHttpInfo (string accountId, int? roomId, FieldDataForUpdate body = null);
+        System.Threading.Tasks.Task<ApiResponse<FieldData>> UpdateRoomFieldDataAsyncWithHttpInfo(string accountId, int? roomId, FieldDataForUpdate body = null);
         #endregion Asynchronous Operations
     }
 
@@ -954,7 +929,7 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <param name="aplClient">An instance of AplClient</param>
         /// <returns></returns>
-        public RoomsApi(ApiClient aplClient)
+        public RoomsApi(DocuSignClient aplClient)
         {
             this.ApiClient = aplClient;
 
@@ -967,14 +942,14 @@ namespace DocuSign.Rooms.Api
         /// <value>The base path</value>
         public String GetBasePath()
         {
-            return this.ApiClient.RestClient.BaseUrl.ToString();
+            return this.ApiClient.GetBasePath();
         }
 
         /// <summary>
         /// Gets or sets the ApiClient object
         /// </summary>
         /// <value>An instance of the ApiClient</value>
-        public ApiClient ApiClient { get; set; }
+        public DocuSignClient ApiClient { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -998,11 +973,11 @@ namespace DocuSign.Rooms.Api
         /// Add a document to a room. Add a document to a room
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Document details to be added (optional)</param>
         /// <returns>RoomDocument</returns>
-        public RoomDocument AddDocumentToRoom (string accountId, int? roomId, Document body = null)
+        public RoomDocument AddDocumentToRoom(string accountId, int? roomId, Document body = null)
         {
              ApiResponse<RoomDocument> localVarResponse = AddDocumentToRoomWithHttpInfo(accountId, roomId, body);
              return localVarResponse.Data;
@@ -1012,119 +987,41 @@ namespace DocuSign.Rooms.Api
         /// Add a document to a room. Add a document to a room
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Document details to be added (optional)</param>
         /// <returns>ApiResponse of RoomDocument</returns>
-        public ApiResponse< RoomDocument > AddDocumentToRoomWithHttpInfo (string accountId, int? roomId, Document body = null)
+        public ApiResponse<RoomDocument> AddDocumentToRoomWithHttpInfo(string accountId, int? roomId, Document body = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->AddDocumentToRoom");
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->AddDocumentToRoom");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/documents";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("AddDocumentToRoom", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<RoomDocument>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomDocument) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(RoomDocument)));
-            }
-            else
-            {
-                return new ApiResponse<RoomDocument>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomDocument) this.ApiClient.Deserialize(localVarResponse, typeof(RoomDocument)));
-            }
-            
+            return AddDocumentToRoomAsyncWithHttpInfo(accountId, roomId, body)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Add a document to a room. Add a document to a room
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Document details to be added (optional)</param>
         /// <returns>Task of RoomDocument</returns>
-        public async System.Threading.Tasks.Task<RoomDocument> AddDocumentToRoomAsync (string accountId, int? roomId, Document body = null)
+        public async System.Threading.Tasks.Task<RoomDocument> AddDocumentToRoomAsync(string accountId, int? roomId, Document body = null)
         {
              ApiResponse<RoomDocument> localVarResponse = await AddDocumentToRoomAsyncWithHttpInfo(accountId, roomId, body);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Add a document to a room. Add a document to a room
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Document details to be added (optional)</param>
         /// <returns>Task of ApiResponse (RoomDocument)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RoomDocument>> AddDocumentToRoomAsyncWithHttpInfo (string accountId, int? roomId, Document body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<RoomDocument>> AddDocumentToRoomAsyncWithHttpInfo(string accountId, int? roomId, Document body = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1138,15 +1035,19 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
                 "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json"
+                "application/_*+json", 
+                "application/xml", 
+                "text/xml", 
+                "application/_*+xml"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1154,7 +1055,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1165,8 +1068,6 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
@@ -1184,11 +1085,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1196,10 +1096,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<RoomDocument>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RoomDocument) this.ApiClient.Deserialize(localVarResponse, typeof(RoomDocument)));
-            
+            return new ApiResponse<RoomDocument>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (RoomDocument)this.ApiClient.Deserialize(localVarResponse, typeof(RoomDocument)));
         }
 
 
@@ -1208,15 +1107,13 @@ namespace DocuSign.Rooms.Api
         /// Add a document to a room via file contents upload. This method uploads the contents of file as a room document for the room that you specify.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="file"></param>
-        
-
-
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="_file">File to be uploaded (optional)</param>
         /// <returns>RoomDocument</returns>
-        public RoomDocument AddDocumentToRoomViaFileUpload (string accountId, int? roomId, byte[] file)
+        public RoomDocument AddDocumentToRoomViaFileUpload(string accountId, int? roomId,  byte[] _file = null)
         {
-             ApiResponse<RoomDocument> localVarResponse = AddDocumentToRoomViaFileUploadWithHttpInfo(accountId, roomId, file);
+             ApiResponse<RoomDocument> localVarResponse = AddDocumentToRoomViaFileUploadWithHttpInfo(accountId, roomId,  _file);
              return localVarResponse.Data;
         }
 
@@ -1224,120 +1121,41 @@ namespace DocuSign.Rooms.Api
         /// Add a document to a room via file contents upload. This method uploads the contents of file as a room document for the room that you specify.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="file"></param>
-        
-
-
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="_file">File to be uploaded (optional</param>
         /// <returns>ApiResponse of RoomDocument</returns>
-        public ApiResponse< RoomDocument > AddDocumentToRoomViaFileUploadWithHttpInfo (string accountId, int? roomId, byte[] file)
+        public ApiResponse<RoomDocument> AddDocumentToRoomViaFileUploadWithHttpInfo(string accountId, int? roomId,  byte[] _file = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->AddDocumentToRoomViaFileUpload");
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->AddDocumentToRoomViaFileUpload");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/documents/contents";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "multipart/form-data"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-
-            if (file != null && file.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(file); // http body (model) parameter	
-            }
-            else
-            {
-                localVarPostBody = file; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("AddDocumentToRoomViaFileUpload", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<RoomDocument>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomDocument) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(RoomDocument)));
-            }
-            else
-            {
-                return new ApiResponse<RoomDocument>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomDocument) this.ApiClient.Deserialize(localVarResponse, typeof(RoomDocument)));
-            }
-            
+            return AddDocumentToRoomViaFileUploadAsyncWithHttpInfo(accountId, roomId, _file)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Add a document to a room via file contents upload. This method uploads the contents of file as a room document for the room that you specify.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="file"></param>
-        
-
-
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="_file">File to be uploaded (optional</param>
         /// <returns>Task of RoomDocument</returns>
-        public async System.Threading.Tasks.Task<RoomDocument> AddDocumentToRoomViaFileUploadAsync (string accountId, int? roomId, byte[] file)
+        public async System.Threading.Tasks.Task<RoomDocument> AddDocumentToRoomViaFileUploadAsync(string accountId, int? roomId,  byte[] _file = null)
         {
-             ApiResponse<RoomDocument> localVarResponse = await AddDocumentToRoomViaFileUploadAsyncWithHttpInfo(accountId, roomId, file);
+             ApiResponse<RoomDocument> localVarResponse = await AddDocumentToRoomViaFileUploadAsyncWithHttpInfo(accountId, roomId,  _file);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Add a document to a room via file contents upload. This method uploads the contents of file as a room document for the room that you specify.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="file"></param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="_file">File to be uploaded (optional</param>
         /// <returns>Task of ApiResponse (RoomDocument)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RoomDocument>> AddDocumentToRoomViaFileUploadAsyncWithHttpInfo (string accountId, int? roomId, byte[] file)
+        public async System.Threading.Tasks.Task<ApiResponse<RoomDocument>> AddDocumentToRoomViaFileUploadAsyncWithHttpInfo(string accountId, int? roomId, byte[] _file = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1345,14 +1163,15 @@ namespace DocuSign.Rooms.Api
             // verify the required parameter 'roomId' is set
             if (roomId == null)
                 throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->AddDocumentToRoomViaFileUpload");
-            
+
             var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/documents/contents";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -1364,7 +1183,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1375,15 +1196,15 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-            if (file != null && file.GetType() != typeof(byte[]))
+            if (_file != null && _file.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(file); // http body (model) parameter	
+                localVarPostBody = this.ApiClient.Serialize(_file); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = file; // byte array	
+                localVarPostBody = _file; // byte array
             }
+            localVarHttpContentDisposition = "form-data; name=\"_file\"; filename=\"file\"";
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -1393,11 +1214,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1405,10 +1225,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<RoomDocument>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RoomDocument) this.ApiClient.Deserialize(localVarResponse, typeof(RoomDocument)));
-            
+            return new ApiResponse<RoomDocument>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (RoomDocument)this.ApiClient.Deserialize(localVarResponse, typeof(RoomDocument)));
         }
 
 
@@ -1417,11 +1236,11 @@ namespace DocuSign.Rooms.Api
         /// Adds a DocuSign Form to a room Adds a form to a room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">Id of the room to which the DocuSign Form is being added</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">Id of the room to which the DocuSign Form is being added</param>
+        /// <param name="body">Contains information about the form being added (optional)</param>
         /// <returns>RoomDocument</returns>
-        public RoomDocument AddFormToRoom (string accountId, int? roomId, FormForAdd body = null)
+        public RoomDocument AddFormToRoom(string accountId, int? roomId, FormForAdd body = null)
         {
              ApiResponse<RoomDocument> localVarResponse = AddFormToRoomWithHttpInfo(accountId, roomId, body);
              return localVarResponse.Data;
@@ -1431,119 +1250,41 @@ namespace DocuSign.Rooms.Api
         /// Adds a DocuSign Form to a room Adds a form to a room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">Id of the room to which the DocuSign Form is being added</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">Id of the room to which the DocuSign Form is being added</param>
+        /// <param name="body">Contains information about the form being added (optional)</param>
         /// <returns>ApiResponse of RoomDocument</returns>
-        public ApiResponse< RoomDocument > AddFormToRoomWithHttpInfo (string accountId, int? roomId, FormForAdd body = null)
+        public ApiResponse<RoomDocument> AddFormToRoomWithHttpInfo(string accountId, int? roomId, FormForAdd body = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->AddFormToRoom");
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->AddFormToRoom");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/forms";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("AddFormToRoom", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<RoomDocument>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomDocument) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(RoomDocument)));
-            }
-            else
-            {
-                return new ApiResponse<RoomDocument>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomDocument) this.ApiClient.Deserialize(localVarResponse, typeof(RoomDocument)));
-            }
-            
+            return AddFormToRoomAsyncWithHttpInfo(accountId, roomId, body)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Adds a DocuSign Form to a room Adds a form to a room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">Id of the room to which the DocuSign Form is being added</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">Id of the room to which the DocuSign Form is being added</param>
+        /// <param name="body">Contains information about the form being added (optional)</param>
         /// <returns>Task of RoomDocument</returns>
-        public async System.Threading.Tasks.Task<RoomDocument> AddFormToRoomAsync (string accountId, int? roomId, FormForAdd body = null)
+        public async System.Threading.Tasks.Task<RoomDocument> AddFormToRoomAsync(string accountId, int? roomId, FormForAdd body = null)
         {
              ApiResponse<RoomDocument> localVarResponse = await AddFormToRoomAsyncWithHttpInfo(accountId, roomId, body);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Adds a DocuSign Form to a room Adds a form to a room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">Id of the room to which the DocuSign Form is being added</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">Id of the room to which the DocuSign Form is being added</param>
+        /// <param name="body">Contains information about the form being added (optional)</param>
         /// <returns>Task of ApiResponse (RoomDocument)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RoomDocument>> AddFormToRoomAsyncWithHttpInfo (string accountId, int? roomId, FormForAdd body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<RoomDocument>> AddFormToRoomAsyncWithHttpInfo(string accountId, int? roomId, FormForAdd body = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1557,15 +1298,19 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
                 "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json"
+                "application/_*+json", 
+                "application/xml", 
+                "text/xml", 
+                "application/_*+xml"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1573,7 +1318,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1584,8 +1331,6 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
@@ -1603,11 +1348,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1615,10 +1359,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<RoomDocument>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RoomDocument) this.ApiClient.Deserialize(localVarResponse, typeof(RoomDocument)));
-            
+            return new ApiResponse<RoomDocument>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (RoomDocument)this.ApiClient.Deserialize(localVarResponse, typeof(RoomDocument)));
         }
 
 
@@ -1628,10 +1371,9 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">The properties of the new room (optional)</param>
         /// <returns>Room</returns>
-        public Room CreateRoom (string accountId, RoomForCreate body = null)
+        public Room CreateRoom(string accountId, RoomForCreate body = null)
         {
              ApiResponse<Room> localVarResponse = CreateRoomWithHttpInfo(accountId, body);
              return localVarResponse.Data;
@@ -1642,88 +1384,14 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">The properties of the new room (optional)</param>
         /// <returns>ApiResponse of Room</returns>
-        public ApiResponse< Room > CreateRoomWithHttpInfo (string accountId, RoomForCreate body = null)
+        public ApiResponse<Room> CreateRoomWithHttpInfo(string accountId, RoomForCreate body = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->CreateRoom");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CreateRoom", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<Room>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Room) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Room)));
-            }
-            else
-            {
-                return new ApiResponse<Room>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Room) this.ApiClient.Deserialize(localVarResponse, typeof(Room)));
-            }
-            
+            return CreateRoomAsyncWithHttpInfo(accountId, body)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1731,14 +1399,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">The properties of the new room (optional)</param>
         /// <returns>Task of Room</returns>
-        public async System.Threading.Tasks.Task<Room> CreateRoomAsync (string accountId, RoomForCreate body = null)
+        public async System.Threading.Tasks.Task<Room> CreateRoomAsync(string accountId, RoomForCreate body = null)
         {
              ApiResponse<Room> localVarResponse = await CreateRoomAsyncWithHttpInfo(accountId, body);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -1746,10 +1412,9 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="body">The properties of the new room (optional)</param>
         /// <returns>Task of ApiResponse (Room)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Room>> CreateRoomAsyncWithHttpInfo (string accountId, RoomForCreate body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Room>> CreateRoomAsyncWithHttpInfo(string accountId, RoomForCreate body = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1760,8 +1425,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -1776,7 +1442,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1786,8 +1454,6 @@ namespace DocuSign.Rooms.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
@@ -1805,11 +1471,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1817,10 +1482,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Room>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Room) this.ApiClient.Deserialize(localVarResponse, typeof(Room)));
-            
+            return new ApiResponse<Room>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (Room)this.ApiClient.Deserialize(localVarResponse, typeof(Room)));
         }
 
 
@@ -1829,11 +1493,10 @@ namespace DocuSign.Rooms.Api
         /// Deletes the room having the given room ID. Deletes the room having the given room ID.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">ID of the room to be deleted.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">ID of the room to be deleted.</param>
         /// <returns></returns>
-        public void DeleteRoom (string accountId, int? roomId)
+        public void DeleteRoom(string accountId, int? roomId)
         {
              DeleteRoomWithHttpInfo(accountId, roomId);
         }
@@ -1842,102 +1505,37 @@ namespace DocuSign.Rooms.Api
         /// Deletes the room having the given room ID. Deletes the room having the given room ID.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">ID of the room to be deleted.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">ID of the room to be deleted.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteRoomWithHttpInfo (string accountId, int? roomId)
+        public ApiResponse<Object> DeleteRoomWithHttpInfo(string accountId, int? roomId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->DeleteRoom");
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->DeleteRoom");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteRoom", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+            return DeleteRoomAsyncWithHttpInfo(accountId, roomId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Deletes the room having the given room ID. Deletes the room having the given room ID.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">ID of the room to be deleted.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">ID of the room to be deleted.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteRoomAsync (string accountId, int? roomId)
+        public async System.Threading.Tasks.Task DeleteRoomAsync(string accountId, int? roomId)
         {
              await DeleteRoomAsyncWithHttpInfo(accountId, roomId);
-
         }
 
         /// <summary>
         /// Deletes the room having the given room ID. Deletes the room having the given room ID.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">ID of the room to be deleted.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">ID of the room to be deleted.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRoomAsyncWithHttpInfo (string accountId, int? roomId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRoomAsyncWithHttpInfo(string accountId, int? roomId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1951,8 +1549,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -1967,7 +1566,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1979,8 +1580,6 @@ namespace DocuSign.Rooms.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1989,11 +1588,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2003,7 +1601,7 @@ namespace DocuSign.Rooms.Api
 
             
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 
@@ -2027,11 +1625,11 @@ namespace DocuSign.Rooms.Api
         /// Returns the roles for which the calling user, based on their role within the room, can assign to invitees. This method returns the room-level roles that the current user can assign to the members that they invite to a room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>AssignableRoles</returns>
-        public AssignableRoles GetAssignableRoles (string accountId, int? roomId, RoomsApi.GetAssignableRolesOptions options = null)
+        public AssignableRoles GetAssignableRoles(string accountId, int? roomId, RoomsApi.GetAssignableRolesOptions options = null)
         {
              ApiResponse<AssignableRoles> localVarResponse = GetAssignableRolesWithHttpInfo(accountId, roomId, options);
              return localVarResponse.Data;
@@ -2041,118 +1639,41 @@ namespace DocuSign.Rooms.Api
         /// Returns the roles for which the calling user, based on their role within the room, can assign to invitees. This method returns the room-level roles that the current user can assign to the members that they invite to a room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of AssignableRoles</returns>
-        public ApiResponse< AssignableRoles > GetAssignableRolesWithHttpInfo (string accountId, int? roomId, RoomsApi.GetAssignableRolesOptions options = null)
+        public ApiResponse<AssignableRoles> GetAssignableRolesWithHttpInfo(string accountId, int? roomId, RoomsApi.GetAssignableRolesOptions options = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->GetAssignableRoles");
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->GetAssignableRoles");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/assignable_roles";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.assigneeEmail != null) localVarQueryParams.Add("assigneeEmail", this.ApiClient.ParameterToString(options.assigneeEmail)); // query parameter
-                if (options.filter != null) localVarQueryParams.Add("filter", this.ApiClient.ParameterToString(options.filter)); // query parameter
-                if (options.startPosition != null) localVarQueryParams.Add("startPosition", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
-                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetAssignableRoles", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<AssignableRoles>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AssignableRoles) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(AssignableRoles)));
-            }
-            else
-            {
-                return new ApiResponse<AssignableRoles>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AssignableRoles) this.ApiClient.Deserialize(localVarResponse, typeof(AssignableRoles)));
-            }
-            
+            return GetAssignableRolesAsyncWithHttpInfo(accountId, roomId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Returns the roles for which the calling user, based on their role within the room, can assign to invitees. This method returns the room-level roles that the current user can assign to the members that they invite to a room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of AssignableRoles</returns>
-        public async System.Threading.Tasks.Task<AssignableRoles> GetAssignableRolesAsync (string accountId, int? roomId, RoomsApi.GetAssignableRolesOptions options = null)
+        public async System.Threading.Tasks.Task<AssignableRoles> GetAssignableRolesAsync(string accountId, int? roomId, RoomsApi.GetAssignableRolesOptions options = null)
         {
              ApiResponse<AssignableRoles> localVarResponse = await GetAssignableRolesAsyncWithHttpInfo(accountId, roomId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Returns the roles for which the calling user, based on their role within the room, can assign to invitees. This method returns the room-level roles that the current user can assign to the members that they invite to a room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (AssignableRoles)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AssignableRoles>> GetAssignableRolesAsyncWithHttpInfo (string accountId, int? roomId, RoomsApi.GetAssignableRolesOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<AssignableRoles>> GetAssignableRolesAsyncWithHttpInfo(string accountId, int? roomId, RoomsApi.GetAssignableRolesOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2166,8 +1687,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -2182,7 +1704,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -2193,7 +1717,6 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
             if (options != null)
             {
                 if (options.assigneeEmail != null) localVarQueryParams.Add("assigneeEmail", this.ApiClient.ParameterToString(options.assigneeEmail)); // query parameter
@@ -2201,7 +1724,6 @@ namespace DocuSign.Rooms.Api
                 if (options.startPosition != null) localVarQueryParams.Add("startPosition", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -2211,11 +1733,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2223,10 +1744,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<AssignableRoles>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (AssignableRoles) this.ApiClient.Deserialize(localVarResponse, typeof(AssignableRoles)));
-            
+            return new ApiResponse<AssignableRoles>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (AssignableRoles)this.ApiClient.Deserialize(localVarResponse, typeof(AssignableRoles)));
         }
 
 
@@ -2253,11 +1773,11 @@ namespace DocuSign.Rooms.Api
         /// Get documents in the room accessible to the calling user. This method returns a list of documents that the current user can access for a specific room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>RoomDocumentList</returns>
-        public RoomDocumentList GetDocuments (string accountId, int? roomId, RoomsApi.GetDocumentsOptions options = null)
+        public RoomDocumentList GetDocuments(string accountId, int? roomId, RoomsApi.GetDocumentsOptions options = null)
         {
              ApiResponse<RoomDocumentList> localVarResponse = GetDocumentsWithHttpInfo(accountId, roomId, options);
              return localVarResponse.Data;
@@ -2267,120 +1787,41 @@ namespace DocuSign.Rooms.Api
         /// Get documents in the room accessible to the calling user. This method returns a list of documents that the current user can access for a specific room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of RoomDocumentList</returns>
-        public ApiResponse< RoomDocumentList > GetDocumentsWithHttpInfo (string accountId, int? roomId, RoomsApi.GetDocumentsOptions options = null)
+        public ApiResponse<RoomDocumentList> GetDocumentsWithHttpInfo(string accountId, int? roomId, RoomsApi.GetDocumentsOptions options = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->GetDocuments");
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->GetDocuments");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/documents";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
-                if (options.startPosition != null) localVarQueryParams.Add("startPosition", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
-                if (options.requireContentForDynamicDocuments != null) localVarQueryParams.Add("requireContentForDynamicDocuments", this.ApiClient.ParameterToString(options.requireContentForDynamicDocuments)); // query parameter
-                if (options.roomFolderId != null) localVarQueryParams.Add("roomFolderId", this.ApiClient.ParameterToString(options.roomFolderId)); // query parameter
-                if (options.nameFilter != null) localVarQueryParams.Add("nameFilter", this.ApiClient.ParameterToString(options.nameFilter)); // query parameter
-                if (options.includeArchived != null) localVarQueryParams.Add("includeArchived", this.ApiClient.ParameterToString(options.includeArchived)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetDocuments", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<RoomDocumentList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomDocumentList) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(RoomDocumentList)));
-            }
-            else
-            {
-                return new ApiResponse<RoomDocumentList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomDocumentList) this.ApiClient.Deserialize(localVarResponse, typeof(RoomDocumentList)));
-            }
-            
+            return GetDocumentsAsyncWithHttpInfo(accountId, roomId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Get documents in the room accessible to the calling user. This method returns a list of documents that the current user can access for a specific room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RoomDocumentList</returns>
-        public async System.Threading.Tasks.Task<RoomDocumentList> GetDocumentsAsync (string accountId, int? roomId, RoomsApi.GetDocumentsOptions options = null)
+        public async System.Threading.Tasks.Task<RoomDocumentList> GetDocumentsAsync(string accountId, int? roomId, RoomsApi.GetDocumentsOptions options = null)
         {
              ApiResponse<RoomDocumentList> localVarResponse = await GetDocumentsAsyncWithHttpInfo(accountId, roomId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Get documents in the room accessible to the calling user. This method returns a list of documents that the current user can access for a specific room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RoomDocumentList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RoomDocumentList>> GetDocumentsAsyncWithHttpInfo (string accountId, int? roomId, RoomsApi.GetDocumentsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<RoomDocumentList>> GetDocumentsAsyncWithHttpInfo(string accountId, int? roomId, RoomsApi.GetDocumentsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2394,8 +1835,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -2410,7 +1852,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -2421,7 +1865,6 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
             if (options != null)
             {
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
@@ -2432,7 +1875,6 @@ namespace DocuSign.Rooms.Api
                 if (options.includeArchived != null) localVarQueryParams.Add("includeArchived", this.ApiClient.ParameterToString(options.includeArchived)); // query parameter
             }
 
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -2441,11 +1883,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2453,10 +1894,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<RoomDocumentList>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RoomDocumentList) this.ApiClient.Deserialize(localVarResponse, typeof(RoomDocumentList)));
-            
+            return new ApiResponse<RoomDocumentList>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (RoomDocumentList)this.ApiClient.Deserialize(localVarResponse, typeof(RoomDocumentList)));
         }
 
 
@@ -2473,11 +1913,11 @@ namespace DocuSign.Rooms.Api
         /// Gets information about the given room. Returns details about the given room
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Room</returns>
-        public Room GetRoom (string accountId, int? roomId, RoomsApi.GetRoomOptions options = null)
+        public Room GetRoom(string accountId, int? roomId, RoomsApi.GetRoomOptions options = null)
         {
              ApiResponse<Room> localVarResponse = GetRoomWithHttpInfo(accountId, roomId, options);
              return localVarResponse.Data;
@@ -2487,115 +1927,41 @@ namespace DocuSign.Rooms.Api
         /// Gets information about the given room. Returns details about the given room
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of Room</returns>
-        public ApiResponse< Room > GetRoomWithHttpInfo (string accountId, int? roomId, RoomsApi.GetRoomOptions options = null)
+        public ApiResponse<Room> GetRoomWithHttpInfo(string accountId, int? roomId, RoomsApi.GetRoomOptions options = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->GetRoom");
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->GetRoom");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.includeFieldData != null) localVarQueryParams.Add("includeFieldData", this.ApiClient.ParameterToString(options.includeFieldData)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetRoom", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<Room>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Room) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Room)));
-            }
-            else
-            {
-                return new ApiResponse<Room>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Room) this.ApiClient.Deserialize(localVarResponse, typeof(Room)));
-            }
-            
+            return GetRoomAsyncWithHttpInfo(accountId, roomId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Gets information about the given room. Returns details about the given room
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Room</returns>
-        public async System.Threading.Tasks.Task<Room> GetRoomAsync (string accountId, int? roomId, RoomsApi.GetRoomOptions options = null)
+        public async System.Threading.Tasks.Task<Room> GetRoomAsync(string accountId, int? roomId, RoomsApi.GetRoomOptions options = null)
         {
              ApiResponse<Room> localVarResponse = await GetRoomAsyncWithHttpInfo(accountId, roomId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets information about the given room. Returns details about the given room
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Room)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Room>> GetRoomAsyncWithHttpInfo (string accountId, int? roomId, RoomsApi.GetRoomOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Room>> GetRoomAsyncWithHttpInfo(string accountId, int? roomId, RoomsApi.GetRoomOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2609,8 +1975,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -2625,7 +1992,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -2636,12 +2005,10 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
             if (options != null)
             {
                 if (options.includeFieldData != null) localVarQueryParams.Add("includeFieldData", this.ApiClient.ParameterToString(options.includeFieldData)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -2651,11 +2018,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2663,10 +2029,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Room>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Room) this.ApiClient.Deserialize(localVarResponse, typeof(Room)));
-            
+            return new ApiResponse<Room>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (Room)this.ApiClient.Deserialize(localVarResponse, typeof(Room)));
         }
 
 
@@ -2675,11 +2040,10 @@ namespace DocuSign.Rooms.Api
         /// Returns the FieldData associated with the provided roomId. Returns the field data associated with a room. This is the information that appears on the room&#39;s **Details** tab.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <returns>FieldData</returns>
-        public FieldData GetRoomFieldData (string accountId, int? roomId)
+        public FieldData GetRoomFieldData(string accountId, int? roomId)
         {
              ApiResponse<FieldData> localVarResponse = GetRoomFieldDataWithHttpInfo(accountId, roomId);
              return localVarResponse.Data;
@@ -2689,111 +2053,38 @@ namespace DocuSign.Rooms.Api
         /// Returns the FieldData associated with the provided roomId. Returns the field data associated with a room. This is the information that appears on the room&#39;s **Details** tab.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <returns>ApiResponse of FieldData</returns>
-        public ApiResponse< FieldData > GetRoomFieldDataWithHttpInfo (string accountId, int? roomId)
+        public ApiResponse<FieldData> GetRoomFieldDataWithHttpInfo(string accountId, int? roomId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->GetRoomFieldData");
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->GetRoomFieldData");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/field_data";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetRoomFieldData", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<FieldData>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FieldData) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FieldData)));
-            }
-            else
-            {
-                return new ApiResponse<FieldData>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FieldData) this.ApiClient.Deserialize(localVarResponse, typeof(FieldData)));
-            }
-            
+            return GetRoomFieldDataAsyncWithHttpInfo(accountId, roomId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Returns the FieldData associated with the provided roomId. Returns the field data associated with a room. This is the information that appears on the room&#39;s **Details** tab.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <returns>Task of FieldData</returns>
-        public async System.Threading.Tasks.Task<FieldData> GetRoomFieldDataAsync (string accountId, int? roomId)
+        public async System.Threading.Tasks.Task<FieldData> GetRoomFieldDataAsync(string accountId, int? roomId)
         {
              ApiResponse<FieldData> localVarResponse = await GetRoomFieldDataAsyncWithHttpInfo(accountId, roomId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Returns the FieldData associated with the provided roomId. Returns the field data associated with a room. This is the information that appears on the room&#39;s **Details** tab.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <returns>Task of ApiResponse (FieldData)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FieldData>> GetRoomFieldDataAsyncWithHttpInfo (string accountId, int? roomId)
+        public async System.Threading.Tasks.Task<ApiResponse<FieldData>> GetRoomFieldDataAsyncWithHttpInfo(string accountId, int? roomId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2807,8 +2098,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -2823,7 +2115,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -2835,8 +2129,6 @@ namespace DocuSign.Rooms.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -2845,11 +2137,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2857,10 +2148,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<FieldData>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FieldData) this.ApiClient.Deserialize(localVarResponse, typeof(FieldData)));
-            
+            return new ApiResponse<FieldData>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (FieldData)this.ApiClient.Deserialize(localVarResponse, typeof(FieldData)));
         }
 
 
@@ -2869,11 +2159,10 @@ namespace DocuSign.Rooms.Api
         /// Gets the field set associated with the room. Returns the field set that a room uses.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <returns>FieldSet</returns>
-        public FieldSet GetRoomFieldSet (string accountId, int? roomId)
+        public FieldSet GetRoomFieldSet(string accountId, int? roomId)
         {
              ApiResponse<FieldSet> localVarResponse = GetRoomFieldSetWithHttpInfo(accountId, roomId);
              return localVarResponse.Data;
@@ -2883,111 +2172,38 @@ namespace DocuSign.Rooms.Api
         /// Gets the field set associated with the room. Returns the field set that a room uses.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <returns>ApiResponse of FieldSet</returns>
-        public ApiResponse< FieldSet > GetRoomFieldSetWithHttpInfo (string accountId, int? roomId)
+        public ApiResponse<FieldSet> GetRoomFieldSetWithHttpInfo(string accountId, int? roomId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->GetRoomFieldSet");
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->GetRoomFieldSet");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/field_set";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetRoomFieldSet", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<FieldSet>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FieldSet) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FieldSet)));
-            }
-            else
-            {
-                return new ApiResponse<FieldSet>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FieldSet) this.ApiClient.Deserialize(localVarResponse, typeof(FieldSet)));
-            }
-            
+            return GetRoomFieldSetAsyncWithHttpInfo(accountId, roomId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Gets the field set associated with the room. Returns the field set that a room uses.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <returns>Task of FieldSet</returns>
-        public async System.Threading.Tasks.Task<FieldSet> GetRoomFieldSetAsync (string accountId, int? roomId)
+        public async System.Threading.Tasks.Task<FieldSet> GetRoomFieldSetAsync(string accountId, int? roomId)
         {
              ApiResponse<FieldSet> localVarResponse = await GetRoomFieldSetAsyncWithHttpInfo(accountId, roomId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets the field set associated with the room. Returns the field set that a room uses.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <returns>Task of ApiResponse (FieldSet)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FieldSet>> GetRoomFieldSetAsyncWithHttpInfo (string accountId, int? roomId)
+        public async System.Threading.Tasks.Task<ApiResponse<FieldSet>> GetRoomFieldSetAsyncWithHttpInfo(string accountId, int? roomId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3001,8 +2217,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -3017,7 +2234,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -3029,8 +2248,6 @@ namespace DocuSign.Rooms.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -3039,11 +2256,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3051,10 +2267,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<FieldSet>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FieldSet) this.ApiClient.Deserialize(localVarResponse, typeof(FieldSet)));
-            
+            return new ApiResponse<FieldSet>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (FieldSet)this.ApiClient.Deserialize(localVarResponse, typeof(FieldSet)));
         }
 
 
@@ -3070,18 +2285,18 @@ namespace DocuSign.Rooms.Api
             /// Returns room users filtered by Name and Email. 
             public string filter {get; set;}
             /// Sorts results. Options are FirstNameAsc, FirstNameDesc, LastNameAsc, LastNameDesc, EmailAsc, EmailDesc. Defaults to LastNameDesc 
-            public string sort {get; set;}
+            public Object sort {get; set;}
         }
 
         /// <summary>
         /// Retrieves the list of users in the given room. This method returns a list of users associated with a room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>RoomUsersResult</returns>
-        public RoomUsersResult GetRoomUsers (string accountId, int? roomId, RoomsApi.GetRoomUsersOptions options = null)
+        public RoomUsersResult GetRoomUsers(string accountId, int? roomId, RoomsApi.GetRoomUsersOptions options = null)
         {
              ApiResponse<RoomUsersResult> localVarResponse = GetRoomUsersWithHttpInfo(accountId, roomId, options);
              return localVarResponse.Data;
@@ -3091,118 +2306,41 @@ namespace DocuSign.Rooms.Api
         /// Retrieves the list of users in the given room. This method returns a list of users associated with a room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of RoomUsersResult</returns>
-        public ApiResponse< RoomUsersResult > GetRoomUsersWithHttpInfo (string accountId, int? roomId, RoomsApi.GetRoomUsersOptions options = null)
+        public ApiResponse<RoomUsersResult> GetRoomUsersWithHttpInfo(string accountId, int? roomId, RoomsApi.GetRoomUsersOptions options = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->GetRoomUsers");
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->GetRoomUsers");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/users";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
-                if (options.startPosition != null) localVarQueryParams.Add("startPosition", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
-                if (options.filter != null) localVarQueryParams.Add("filter", this.ApiClient.ParameterToString(options.filter)); // query parameter
-                if (options.sort != null) localVarQueryParams.Add("sort", this.ApiClient.ParameterToString(options.sort)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetRoomUsers", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<RoomUsersResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomUsersResult) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(RoomUsersResult)));
-            }
-            else
-            {
-                return new ApiResponse<RoomUsersResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomUsersResult) this.ApiClient.Deserialize(localVarResponse, typeof(RoomUsersResult)));
-            }
-            
+            return GetRoomUsersAsyncWithHttpInfo(accountId, roomId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Retrieves the list of users in the given room. This method returns a list of users associated with a room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RoomUsersResult</returns>
-        public async System.Threading.Tasks.Task<RoomUsersResult> GetRoomUsersAsync (string accountId, int? roomId, RoomsApi.GetRoomUsersOptions options = null)
+        public async System.Threading.Tasks.Task<RoomUsersResult> GetRoomUsersAsync(string accountId, int? roomId, RoomsApi.GetRoomUsersOptions options = null)
         {
              ApiResponse<RoomUsersResult> localVarResponse = await GetRoomUsersAsyncWithHttpInfo(accountId, roomId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Retrieves the list of users in the given room. This method returns a list of users associated with a room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RoomUsersResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RoomUsersResult>> GetRoomUsersAsyncWithHttpInfo (string accountId, int? roomId, RoomsApi.GetRoomUsersOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<RoomUsersResult>> GetRoomUsersAsyncWithHttpInfo(string accountId, int? roomId, RoomsApi.GetRoomUsersOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3216,8 +2354,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -3232,7 +2371,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -3243,7 +2384,6 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
             if (options != null)
             {
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
@@ -3251,7 +2391,6 @@ namespace DocuSign.Rooms.Api
                 if (options.filter != null) localVarQueryParams.Add("filter", this.ApiClient.ParameterToString(options.filter)); // query parameter
                 if (options.sort != null) localVarQueryParams.Add("sort", this.ApiClient.ParameterToString(options.sort)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -3261,11 +2400,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3273,10 +2411,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<RoomUsersResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RoomUsersResult) this.ApiClient.Deserialize(localVarResponse, typeof(RoomUsersResult)));
-            
+            return new ApiResponse<RoomUsersResult>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (RoomUsersResult)this.ApiClient.Deserialize(localVarResponse, typeof(RoomUsersResult)));
         }
 
 
@@ -3290,7 +2427,7 @@ namespace DocuSign.Rooms.Api
             /// Position of the first item in the total results. Defaults to 0. 
             public int? startPosition {get; set;}
             /// Status of the rooms to return. Defaults to \&quot;Active\&quot;. 
-            public string roomStatus {get; set;}
+            public Object roomStatus {get; set;}
             /// Only return rooms in this office. 
             public int? officeId {get; set;}
             /// Fields data changed start datetime in UTC. Valid formats: yyyy-mm-dd hh:mm:ss or yyyy/mm/dd hh:mm:ss -Time is optional and will default to 00:00:00. 
@@ -3308,10 +2445,9 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>RoomSummaryList</returns>
-        public RoomSummaryList GetRooms (string accountId, RoomsApi.GetRoomsOptions options = null)
+        public RoomSummaryList GetRooms(string accountId, RoomsApi.GetRoomsOptions options = null)
         {
              ApiResponse<RoomSummaryList> localVarResponse = GetRoomsWithHttpInfo(accountId, options);
              return localVarResponse.Data;
@@ -3322,91 +2458,14 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of RoomSummaryList</returns>
-        public ApiResponse< RoomSummaryList > GetRoomsWithHttpInfo (string accountId, RoomsApi.GetRoomsOptions options = null)
+        public ApiResponse<RoomSummaryList> GetRoomsWithHttpInfo(string accountId, RoomsApi.GetRoomsOptions options = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->GetRooms");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
-                if (options.startPosition != null) localVarQueryParams.Add("startPosition", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
-                if (options.roomStatus != null) localVarQueryParams.Add("roomStatus", this.ApiClient.ParameterToString(options.roomStatus)); // query parameter
-                if (options.officeId != null) localVarQueryParams.Add("officeId", this.ApiClient.ParameterToString(options.officeId)); // query parameter
-                if (options.fieldDataChangedStartDate != null) localVarQueryParams.Add("fieldDataChangedStartDate", this.ApiClient.ParameterToString(options.fieldDataChangedStartDate)); // query parameter
-                if (options.fieldDataChangedEndDate != null) localVarQueryParams.Add("fieldDataChangedEndDate", this.ApiClient.ParameterToString(options.fieldDataChangedEndDate)); // query parameter
-                if (options.roomClosedStartDate != null) localVarQueryParams.Add("roomClosedStartDate", this.ApiClient.ParameterToString(options.roomClosedStartDate)); // query parameter
-                if (options.roomClosedEndDate != null) localVarQueryParams.Add("roomClosedEndDate", this.ApiClient.ParameterToString(options.roomClosedEndDate)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetRooms", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<RoomSummaryList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomSummaryList) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(RoomSummaryList)));
-            }
-            else
-            {
-                return new ApiResponse<RoomSummaryList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomSummaryList) this.ApiClient.Deserialize(localVarResponse, typeof(RoomSummaryList)));
-            }
-            
+            return GetRoomsAsyncWithHttpInfo(accountId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -3414,14 +2473,12 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RoomSummaryList</returns>
-        public async System.Threading.Tasks.Task<RoomSummaryList> GetRoomsAsync (string accountId, RoomsApi.GetRoomsOptions options = null)
+        public async System.Threading.Tasks.Task<RoomSummaryList> GetRoomsAsync(string accountId, RoomsApi.GetRoomsOptions options = null)
         {
              ApiResponse<RoomSummaryList> localVarResponse = await GetRoomsAsyncWithHttpInfo(accountId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -3429,10 +2486,9 @@ namespace DocuSign.Rooms.Api
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RoomSummaryList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RoomSummaryList>> GetRoomsAsyncWithHttpInfo (string accountId, RoomsApi.GetRoomsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<RoomSummaryList>> GetRoomsAsyncWithHttpInfo(string accountId, RoomsApi.GetRoomsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3443,8 +2499,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -3459,7 +2516,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -3469,7 +2528,6 @@ namespace DocuSign.Rooms.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
             if (options != null)
             {
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
@@ -3482,7 +2540,6 @@ namespace DocuSign.Rooms.Api
                 if (options.roomClosedEndDate != null) localVarQueryParams.Add("roomClosedEndDate", this.ApiClient.ParameterToString(options.roomClosedEndDate)); // query parameter
             }
 
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -3491,11 +2548,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3503,10 +2559,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<RoomSummaryList>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RoomSummaryList) this.ApiClient.Deserialize(localVarResponse, typeof(RoomSummaryList)));
-            
+            return new ApiResponse<RoomSummaryList>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (RoomSummaryList)this.ApiClient.Deserialize(localVarResponse, typeof(RoomSummaryList)));
         }
 
 
@@ -3515,11 +2570,11 @@ namespace DocuSign.Rooms.Api
         /// Invites a user to the room by email address. This method invites an existing or new member to a specific room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Name, Email, Side, Role of the user being invited (optional)</param>
         /// <returns>RoomInviteResponse</returns>
-        public RoomInviteResponse InviteUser (string accountId, int? roomId, RoomInvite body = null)
+        public RoomInviteResponse InviteUser(string accountId, int? roomId, RoomInvite body = null)
         {
              ApiResponse<RoomInviteResponse> localVarResponse = InviteUserWithHttpInfo(accountId, roomId, body);
              return localVarResponse.Data;
@@ -3529,119 +2584,41 @@ namespace DocuSign.Rooms.Api
         /// Invites a user to the room by email address. This method invites an existing or new member to a specific room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Name, Email, Side, Role of the user being invited (optional)</param>
         /// <returns>ApiResponse of RoomInviteResponse</returns>
-        public ApiResponse< RoomInviteResponse > InviteUserWithHttpInfo (string accountId, int? roomId, RoomInvite body = null)
+        public ApiResponse<RoomInviteResponse> InviteUserWithHttpInfo(string accountId, int? roomId, RoomInvite body = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->InviteUser");
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->InviteUser");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/users";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InviteUser", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<RoomInviteResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomInviteResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(RoomInviteResponse)));
-            }
-            else
-            {
-                return new ApiResponse<RoomInviteResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomInviteResponse) this.ApiClient.Deserialize(localVarResponse, typeof(RoomInviteResponse)));
-            }
-            
+            return InviteUserAsyncWithHttpInfo(accountId, roomId, body)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Invites a user to the room by email address. This method invites an existing or new member to a specific room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Name, Email, Side, Role of the user being invited (optional)</param>
         /// <returns>Task of RoomInviteResponse</returns>
-        public async System.Threading.Tasks.Task<RoomInviteResponse> InviteUserAsync (string accountId, int? roomId, RoomInvite body = null)
+        public async System.Threading.Tasks.Task<RoomInviteResponse> InviteUserAsync(string accountId, int? roomId, RoomInvite body = null)
         {
              ApiResponse<RoomInviteResponse> localVarResponse = await InviteUserAsyncWithHttpInfo(accountId, roomId, body);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Invites a user to the room by email address. This method invites an existing or new member to a specific room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Name, Email, Side, Role of the user being invited (optional)</param>
         /// <returns>Task of ApiResponse (RoomInviteResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RoomInviteResponse>> InviteUserAsyncWithHttpInfo (string accountId, int? roomId, RoomInvite body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<RoomInviteResponse>> InviteUserAsyncWithHttpInfo(string accountId, int? roomId, RoomInvite body = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3655,15 +2632,19 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
                 "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json"
+                "application/_*+json", 
+                "application/xml", 
+                "text/xml", 
+                "application/_*+xml"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -3671,7 +2652,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -3682,8 +2665,6 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
@@ -3701,11 +2682,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3713,10 +2693,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<RoomInviteResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RoomInviteResponse) this.ApiClient.Deserialize(localVarResponse, typeof(RoomInviteResponse)));
-            
+            return new ApiResponse<RoomInviteResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (RoomInviteResponse)this.ApiClient.Deserialize(localVarResponse, typeof(RoomInviteResponse)));
         }
 
 
@@ -3725,11 +2704,12 @@ namespace DocuSign.Rooms.Api
         /// Updates the specified user&#39;s role and transaction side. Updates the specified user&#39;s role and transaction side.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>/// <param name="userId">The id of the user to update.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="userId">The id of the user to update.</param>
+        /// <param name="body">Updated Role and Side of the given user (optional)</param>
         /// <returns>RoomUser</returns>
-        public RoomUser PutRoomUser (string accountId, int? roomId, int? userId, RoomUserForUpdate body = null)
+        public RoomUser PutRoomUser(string accountId, int? roomId, int? userId, RoomUserForUpdate body = null)
         {
              ApiResponse<RoomUser> localVarResponse = PutRoomUserWithHttpInfo(accountId, roomId, userId, body);
              return localVarResponse.Data;
@@ -3739,123 +2719,44 @@ namespace DocuSign.Rooms.Api
         /// Updates the specified user&#39;s role and transaction side. Updates the specified user&#39;s role and transaction side.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>/// <param name="userId">The id of the user to update.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="userId">The id of the user to update.</param>
+        /// <param name="body">Updated Role and Side of the given user (optional)</param>
         /// <returns>ApiResponse of RoomUser</returns>
-        public ApiResponse< RoomUser > PutRoomUserWithHttpInfo (string accountId, int? roomId, int? userId, RoomUserForUpdate body = null)
+        public ApiResponse<RoomUser> PutRoomUserWithHttpInfo(string accountId, int? roomId, int? userId, RoomUserForUpdate body = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->PutRoomUser");
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->PutRoomUser");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling RoomsApi->PutRoomUser");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/users/{userId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
-
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("PutRoomUser", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<RoomUser>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomUser) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(RoomUser)));
-            }
-            else
-            {
-                return new ApiResponse<RoomUser>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomUser) this.ApiClient.Deserialize(localVarResponse, typeof(RoomUser)));
-            }
-            
+            return PutRoomUserAsyncWithHttpInfo(accountId, roomId, userId, body)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Updates the specified user&#39;s role and transaction side. Updates the specified user&#39;s role and transaction side.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>/// <param name="userId">The id of the user to update.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="userId">The id of the user to update.</param>
+        /// <param name="body">Updated Role and Side of the given user (optional)</param>
         /// <returns>Task of RoomUser</returns>
-        public async System.Threading.Tasks.Task<RoomUser> PutRoomUserAsync (string accountId, int? roomId, int? userId, RoomUserForUpdate body = null)
+        public async System.Threading.Tasks.Task<RoomUser> PutRoomUserAsync(string accountId, int? roomId, int? userId, RoomUserForUpdate body = null)
         {
              ApiResponse<RoomUser> localVarResponse = await PutRoomUserAsyncWithHttpInfo(accountId, roomId, userId, body);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Updates the specified user&#39;s role and transaction side. Updates the specified user&#39;s role and transaction side.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>/// <param name="userId">The id of the user to update.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="userId">The id of the user to update.</param>
+        /// <param name="body">Updated Role and Side of the given user (optional)</param>
         /// <returns>Task of ApiResponse (RoomUser)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RoomUser>> PutRoomUserAsyncWithHttpInfo (string accountId, int? roomId, int? userId, RoomUserForUpdate body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<RoomUser>> PutRoomUserAsyncWithHttpInfo(string accountId, int? roomId, int? userId, RoomUserForUpdate body = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3872,15 +2773,19 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
                 "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json"
+                "application/_*+json", 
+                "application/xml", 
+                "text/xml", 
+                "application/_*+xml"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -3888,7 +2793,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -3900,8 +2807,6 @@ namespace DocuSign.Rooms.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
-
-
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
@@ -3919,11 +2824,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3931,10 +2835,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<RoomUser>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RoomUser) this.ApiClient.Deserialize(localVarResponse, typeof(RoomUser)));
-            
+            return new ApiResponse<RoomUser>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (RoomUser)this.ApiClient.Deserialize(localVarResponse, typeof(RoomUser)));
         }
 
 
@@ -3943,11 +2846,11 @@ namespace DocuSign.Rooms.Api
         /// Restores the specified user&#39;s access to the room. Restores the specified user&#39;s access to the room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room Id to restore access</param>/// <param name="userId">The user Id getting restored to the room</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The room Id to restore access</param>
+        /// <param name="userId">The user Id getting restored to the room</param>
         /// <returns></returns>
-        public void RestoreRoomUserAccess (string accountId, int? roomId, int? userId)
+        public void RestoreRoomUserAccess(string accountId, int? roomId, int? userId)
         {
              RestoreRoomUserAccessWithHttpInfo(accountId, roomId, userId);
         }
@@ -3956,106 +2859,40 @@ namespace DocuSign.Rooms.Api
         /// Restores the specified user&#39;s access to the room. Restores the specified user&#39;s access to the room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room Id to restore access</param>/// <param name="userId">The user Id getting restored to the room</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The room Id to restore access</param>
+        /// <param name="userId">The user Id getting restored to the room</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> RestoreRoomUserAccessWithHttpInfo (string accountId, int? roomId, int? userId)
+        public ApiResponse<Object> RestoreRoomUserAccessWithHttpInfo(string accountId, int? roomId, int? userId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->RestoreRoomUserAccess");
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->RestoreRoomUserAccess");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling RoomsApi->RestoreRoomUserAccess");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/users/{userId}/restore_access";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("RestoreRoomUserAccess", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+            return RestoreRoomUserAccessAsyncWithHttpInfo(accountId, roomId, userId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Restores the specified user&#39;s access to the room. Restores the specified user&#39;s access to the room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room Id to restore access</param>/// <param name="userId">The user Id getting restored to the room</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The room Id to restore access</param>
+        /// <param name="userId">The user Id getting restored to the room</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RestoreRoomUserAccessAsync (string accountId, int? roomId, int? userId)
+        public async System.Threading.Tasks.Task RestoreRoomUserAccessAsync(string accountId, int? roomId, int? userId)
         {
              await RestoreRoomUserAccessAsyncWithHttpInfo(accountId, roomId, userId);
-
         }
 
         /// <summary>
         /// Restores the specified user&#39;s access to the room. Restores the specified user&#39;s access to the room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room Id to restore access</param>/// <param name="userId">The user Id getting restored to the room</param>
-        
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The room Id to restore access</param>
+        /// <param name="userId">The user Id getting restored to the room</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> RestoreRoomUserAccessAsyncWithHttpInfo (string accountId, int? roomId, int? userId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> RestoreRoomUserAccessAsyncWithHttpInfo(string accountId, int? roomId, int? userId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4072,8 +2909,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -4088,7 +2926,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -4101,8 +2941,6 @@ namespace DocuSign.Rooms.Api
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -4111,11 +2949,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4125,7 +2962,7 @@ namespace DocuSign.Rooms.Api
 
             
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 
@@ -4135,11 +2972,12 @@ namespace DocuSign.Rooms.Api
         /// Revokes the specified user&#39;s access to the room. Revokes the specified user&#39;s access to the room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room Id to revoke access from</param>/// <param name="userId">The user Id getting revoked from the room</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The room Id to revoke access from</param>
+        /// <param name="userId">The user Id getting revoked from the room</param>
+        /// <param name="body">Contains the date on which the users room access should be revoked (optional)</param>
         /// <returns></returns>
-        public void RevokeRoomUserAccess (string accountId, int? roomId, int? userId, RoomUserRemovalDetail body = null)
+        public void RevokeRoomUserAccess(string accountId, int? roomId, int? userId, RoomUserRemovalDetail body = null)
         {
              RevokeRoomUserAccessWithHttpInfo(accountId, roomId, userId, body);
         }
@@ -4148,114 +2986,43 @@ namespace DocuSign.Rooms.Api
         /// Revokes the specified user&#39;s access to the room. Revokes the specified user&#39;s access to the room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room Id to revoke access from</param>/// <param name="userId">The user Id getting revoked from the room</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The room Id to revoke access from</param>
+        /// <param name="userId">The user Id getting revoked from the room</param>
+        /// <param name="body">Contains the date on which the users room access should be revoked (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> RevokeRoomUserAccessWithHttpInfo (string accountId, int? roomId, int? userId, RoomUserRemovalDetail body = null)
+        public ApiResponse<Object> RevokeRoomUserAccessWithHttpInfo(string accountId, int? roomId, int? userId, RoomUserRemovalDetail body = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->RevokeRoomUserAccess");
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->RevokeRoomUserAccess");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling RoomsApi->RevokeRoomUserAccess");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/users/{userId}/revoke_access";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
-
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("RevokeRoomUserAccess", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+            return RevokeRoomUserAccessAsyncWithHttpInfo(accountId, roomId, userId, body)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Revokes the specified user&#39;s access to the room. Revokes the specified user&#39;s access to the room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room Id to revoke access from</param>/// <param name="userId">The user Id getting revoked from the room</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The room Id to revoke access from</param>
+        /// <param name="userId">The user Id getting revoked from the room</param>
+        /// <param name="body">Contains the date on which the users room access should be revoked (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RevokeRoomUserAccessAsync (string accountId, int? roomId, int? userId, RoomUserRemovalDetail body = null)
+        public async System.Threading.Tasks.Task RevokeRoomUserAccessAsync(string accountId, int? roomId, int? userId, RoomUserRemovalDetail body = null)
         {
              await RevokeRoomUserAccessAsyncWithHttpInfo(accountId, roomId, userId, body);
-
         }
 
         /// <summary>
         /// Revokes the specified user&#39;s access to the room. Revokes the specified user&#39;s access to the room.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The room Id to revoke access from</param>/// <param name="userId">The user Id getting revoked from the room</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The room Id to revoke access from</param>
+        /// <param name="userId">The user Id getting revoked from the room</param>
+        /// <param name="body">Contains the date on which the users room access should be revoked (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> RevokeRoomUserAccessAsyncWithHttpInfo (string accountId, int? roomId, int? userId, RoomUserRemovalDetail body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> RevokeRoomUserAccessAsyncWithHttpInfo(string accountId, int? roomId, int? userId, RoomUserRemovalDetail body = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4272,15 +3039,19 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
                 "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json"
+                "application/_*+json", 
+                "application/xml", 
+                "text/xml", 
+                "application/_*+xml"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -4288,7 +3059,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -4300,8 +3073,6 @@ namespace DocuSign.Rooms.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
-
-
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
@@ -4319,11 +3090,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4333,7 +3103,7 @@ namespace DocuSign.Rooms.Api
 
             
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 
@@ -4343,15 +3113,13 @@ namespace DocuSign.Rooms.Api
         /// Update the picture for a room. This endpoint supports the following content types, application/json as JSON PictureForUpdate{\&quot;fileName\&quot;:\&quot;string\&quot;, \&quot;Base64Contents\&quot;:\&quot;string\&quot;}, multipart/formdata and any other streamed binary content type (as long as either query parameter fileName or request header ContentDisposition filename is included).
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">ID of the room the picture is for.</param>
-        /// <param name="file"></param>
-        
-
-
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">ID of the room the picture is for.</param>
+        /// <param name="_file">File to be uploaded (optional)</param>
         /// <returns>RoomPicture</returns>
-        public RoomPicture UpdatePicture (string accountId, int? roomId, byte[] file, string fileName = "file.jpg")
+        public RoomPicture UpdatePicture(string accountId, int? roomId,  byte[] _file = null)
         {
-             ApiResponse<RoomPicture> localVarResponse = UpdatePictureWithHttpInfo(accountId, roomId, file);
+             ApiResponse<RoomPicture> localVarResponse = UpdatePictureWithHttpInfo(accountId, roomId,  _file);
              return localVarResponse.Data;
         }
 
@@ -4359,91 +3127,29 @@ namespace DocuSign.Rooms.Api
         /// Update the picture for a room. This endpoint supports the following content types, application/json as JSON PictureForUpdate{\&quot;fileName\&quot;:\&quot;string\&quot;, \&quot;Base64Contents\&quot;:\&quot;string\&quot;}, multipart/formdata and any other streamed binary content type (as long as either query parameter fileName or request header ContentDisposition filename is included).
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">ID of the room the picture is for.</param>
-        /// <param name="file"></param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">ID of the room the picture is for.</param>
+        /// <param name="_file">File to be uploaded (optional</param>
         /// <returns>ApiResponse of RoomPicture</returns>
-        public ApiResponse< RoomPicture > UpdatePictureWithHttpInfo (string accountId, int? roomId, byte[] file, string fileName = "file.jpg")
+        public ApiResponse<RoomPicture> UpdatePictureWithHttpInfo(string accountId, int? roomId,  byte[] _file = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->UpdatePicture");
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->UpdatePicture");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/picture";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "multipart/form-data"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdatePicture", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<RoomPicture>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomPicture) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(RoomPicture)));
-            }
-            else
-            {
-                return new ApiResponse<RoomPicture>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RoomPicture) this.ApiClient.Deserialize(localVarResponse, typeof(RoomPicture)));
-            }
-            
+            return UpdatePictureAsyncWithHttpInfo(accountId, roomId, _file)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Update the picture for a room. This endpoint supports the following content types, application/json as JSON PictureForUpdate{\&quot;fileName\&quot;:\&quot;string\&quot;, \&quot;Base64Contents\&quot;:\&quot;string\&quot;}, multipart/formdata and any other streamed binary content type (as long as either query parameter fileName or request header ContentDisposition filename is included).
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">ID of the room the picture is for.</param>
-        /// <param name="file"></param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">ID of the room the picture is for.</param>
+        /// <param name="_file">File to be uploaded (optional</param>
         /// <returns>Task of RoomPicture</returns>
-        public async System.Threading.Tasks.Task<RoomPicture> UpdatePictureAsync (string accountId, int? roomId, byte[] file, string fileName = "file.jpg")
+        public async System.Threading.Tasks.Task<RoomPicture> UpdatePictureAsync(string accountId, int? roomId,  byte[] _file = null)
         {
-             ApiResponse<RoomPicture> localVarResponse = await UpdatePictureAsyncWithHttpInfo(accountId, roomId, file);
+             ApiResponse<RoomPicture> localVarResponse = await UpdatePictureAsyncWithHttpInfo(accountId, roomId,  _file);
              return localVarResponse.Data;
         }
 
@@ -4451,11 +3157,11 @@ namespace DocuSign.Rooms.Api
         /// Update the picture for a room. This endpoint supports the following content types, application/json as JSON PictureForUpdate{\&quot;fileName\&quot;:\&quot;string\&quot;, \&quot;Base64Contents\&quot;:\&quot;string\&quot;}, multipart/formdata and any other streamed binary content type (as long as either query parameter fileName or request header ContentDisposition filename is included).
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">ID of the room the picture is for.</param>
-        /// <param name="file"></param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">ID of the room the picture is for.</param>
+        /// <param name="_file">File to be uploaded (optional</param>
         /// <returns>Task of ApiResponse (RoomPicture)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RoomPicture>> UpdatePictureAsyncWithHttpInfo (string accountId, int? roomId, byte[] file, string fileName = "file.jpg")
+        public async System.Threading.Tasks.Task<ApiResponse<RoomPicture>> UpdatePictureAsyncWithHttpInfo(string accountId, int? roomId, byte[] _file = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4469,8 +3175,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -4491,15 +3198,15 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-            if (file != null && file.GetType() != typeof(byte[]))
+            if (_file != null && _file.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(file); // http body (model) parameter	
+                localVarPostBody = this.ApiClient.Serialize(_file); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = file; // byte array	
+                localVarPostBody = _file; // byte array
             }
+            localVarHttpContentDisposition = "form-data; name=\"_file\"; filename=\"file\"";
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -4509,11 +3216,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4521,10 +3227,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<RoomPicture>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RoomPicture) this.ApiClient.Deserialize(localVarResponse, typeof(RoomPicture)));
-            
+            return new ApiResponse<RoomPicture>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (RoomPicture)this.ApiClient.Deserialize(localVarResponse, typeof(RoomPicture)));
         }
 
 
@@ -4533,11 +3238,11 @@ namespace DocuSign.Rooms.Api
         /// Updates room field data. Updates room field data.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Dictionary of data to be updated (optional)</param>
         /// <returns>FieldData</returns>
-        public FieldData UpdateRoomFieldData (string accountId, int? roomId, FieldDataForUpdate body = null)
+        public FieldData UpdateRoomFieldData(string accountId, int? roomId, FieldDataForUpdate body = null)
         {
              ApiResponse<FieldData> localVarResponse = UpdateRoomFieldDataWithHttpInfo(accountId, roomId, body);
              return localVarResponse.Data;
@@ -4547,119 +3252,41 @@ namespace DocuSign.Rooms.Api
         /// Updates room field data. Updates room field data.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Dictionary of data to be updated (optional)</param>
         /// <returns>ApiResponse of FieldData</returns>
-        public ApiResponse< FieldData > UpdateRoomFieldDataWithHttpInfo (string accountId, int? roomId, FieldDataForUpdate body = null)
+        public ApiResponse<FieldData> UpdateRoomFieldDataWithHttpInfo(string accountId, int? roomId, FieldDataForUpdate body = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomsApi->UpdateRoomFieldData");
-            // verify the required parameter 'roomId' is set
-            if (roomId == null)
-                throw new ApiException(400, "Missing required parameter 'roomId' when calling RoomsApi->UpdateRoomFieldData");
-
-            var localVarPath = "/v2/accounts/{accountId}/rooms/{roomId}/field_data";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain", 
-                "application/json", 
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateRoomFieldData", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<FieldData>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FieldData) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FieldData)));
-            }
-            else
-            {
-                return new ApiResponse<FieldData>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FieldData) this.ApiClient.Deserialize(localVarResponse, typeof(FieldData)));
-            }
-            
+            return UpdateRoomFieldDataAsyncWithHttpInfo(accountId, roomId, body)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
         /// Updates room field data. Updates room field data.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Dictionary of data to be updated (optional)</param>
         /// <returns>Task of FieldData</returns>
-        public async System.Threading.Tasks.Task<FieldData> UpdateRoomFieldDataAsync (string accountId, int? roomId, FieldDataForUpdate body = null)
+        public async System.Threading.Tasks.Task<FieldData> UpdateRoomFieldDataAsync(string accountId, int? roomId, FieldDataForUpdate body = null)
         {
              ApiResponse<FieldData> localVarResponse = await UpdateRoomFieldDataAsyncWithHttpInfo(accountId, roomId, body);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Updates room field data. Updates room field data.
         /// </summary>
         /// <exception cref="DocuSign.Rooms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>/// <param name="roomId">The id of the room.</param>
-        /// <param name="body"> (optional)</param>
-        
+        /// <param name="accountId">(Required) The globally unique identifier (GUID) for the account.</param>
+        /// <param name="roomId">The id of the room.</param>
+        /// <param name="body">Dictionary of data to be updated (optional)</param>
         /// <returns>Task of ApiResponse (FieldData)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FieldData>> UpdateRoomFieldDataAsyncWithHttpInfo (string accountId, int? roomId, FieldDataForUpdate body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FieldData>> UpdateRoomFieldDataAsyncWithHttpInfo(string accountId, int? roomId, FieldDataForUpdate body = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4673,8 +3300,9 @@ namespace DocuSign.Rooms.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -4689,7 +3317,9 @@ namespace DocuSign.Rooms.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "text/plain", 
                 "application/json", 
-                "text/json"
+                "text/json", 
+                "application/xml", 
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -4700,8 +3330,6 @@ namespace DocuSign.Rooms.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (roomId != null) localVarPathParams.Add("roomId", this.ApiClient.ParameterToString(roomId)); // path parameter
-
-
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(body); // http body (model) parameter
@@ -4719,11 +3347,10 @@ namespace DocuSign.Rooms.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4731,10 +3358,9 @@ namespace DocuSign.Rooms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<FieldData>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FieldData) this.ApiClient.Deserialize(localVarResponse, typeof(FieldData)));
-            
+            return new ApiResponse<FieldData>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (FieldData)this.ApiClient.Deserialize(localVarResponse, typeof(FieldData)));
         }
 
     }

@@ -30,9 +30,13 @@ namespace DocuSign.Rooms.Model
     [DataContract]
     public partial class RoomInviteResponse :  IEquatable<RoomInviteResponse>, IValidatableObject
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RoomInviteResponse" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
         public RoomInviteResponse()
         {
-            // Empty Constructor
         }
         
         /// <summary>

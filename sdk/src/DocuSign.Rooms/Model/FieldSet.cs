@@ -30,9 +30,13 @@ namespace DocuSign.Rooms.Model
     [DataContract]
     public partial class FieldSet :  IEquatable<FieldSet>, IValidatableObject
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FieldSet" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
         public FieldSet()
         {
-            // Empty Constructor
         }
         
         /// <summary>

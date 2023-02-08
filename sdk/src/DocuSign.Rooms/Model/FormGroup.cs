@@ -30,9 +30,13 @@ namespace DocuSign.Rooms.Model
     [DataContract]
     public partial class FormGroup :  IEquatable<FormGroup>, IValidatableObject
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FormGroup" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
         public FormGroup()
         {
-            // Empty Constructor
         }
         
         /// <summary>
