@@ -129,7 +129,6 @@ namespace DocuSign.Rooms.Api
             set { _exceptionFactory = value; }
         }
 
-
         /// <summary>
         /// Get details of a specific field set. Get details of a specific field set.
         /// </summary>
@@ -163,10 +162,76 @@ namespace DocuSign.Rooms.Api
         /// <returns>ApiResponse of FieldSet</returns>
         public ApiResponse<FieldSet> GetFieldSetWithHttpInfo(string accountId, Guid? fieldSetId, FieldsApi.GetFieldSetOptions options = null)
         {
-            return GetFieldSetAsyncWithHttpInfo(accountId, fieldSetId, options)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling FieldsApi->GetFieldSet");
+            // verify the required parameter 'fieldSetId' is set
+            if (fieldSetId == null)
+                throw new ApiException(400, "Missing required parameter 'fieldSetId' when calling FieldsApi->GetFieldSet");
+
+            var localVarPath = "/v2/accounts/{accountId}/field_sets/{fieldSetId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain", 
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (fieldSetId != null) localVarPathParams.Add("fieldSetId", this.ApiClient.ParameterToString(fieldSetId)); // path parameter
+            if (options != null)
+            {
+                if (options.fieldsCustomDataFilters != null) localVarQueryParams.Add("fieldsCustomDataFilters", this.ApiClient.ParameterToString(options.fieldsCustomDataFilters)); // query parameter
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetFieldSet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<FieldSet>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (FieldSet)this.ApiClient.Deserialize(localVarResponse, typeof(FieldSet)));
         }
 
         /// <summary>
@@ -246,6 +311,7 @@ namespace DocuSign.Rooms.Api
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
             }
+
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);

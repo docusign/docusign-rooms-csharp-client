@@ -41,3 +41,4 @@ mono_nunit_test.sh
 
 # Specific src and test files
 src/DocuSign.Rooms/packages.config
+src/DocuSign.Rooms/DocuSign.Rooms.nuspec

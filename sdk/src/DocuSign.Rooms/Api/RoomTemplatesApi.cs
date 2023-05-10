@@ -125,7 +125,6 @@ namespace DocuSign.Rooms.Api
             set { _exceptionFactory = value; }
         }
 
-
         /// <summary>
         /// Returns all room templates that the active user has access to This method returns a list of room templates that the user can use to create a new room. The response includes company and region-level templates
         /// </summary>
@@ -165,10 +164,76 @@ namespace DocuSign.Rooms.Api
         /// <returns>ApiResponse of RoomTemplatesSummaryList</returns>
         public ApiResponse<RoomTemplatesSummaryList> GetRoomTemplatesWithHttpInfo(string accountId, RoomTemplatesApi.GetRoomTemplatesOptions options = null)
         {
-            return GetRoomTemplatesAsyncWithHttpInfo(accountId, options)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling RoomTemplatesApi->GetRoomTemplates");
+
+            var localVarPath = "/v2/accounts/{accountId}/room_templates";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain", 
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (options != null)
+            {
+                if (options.officeId != null) localVarQueryParams.Add("officeId", this.ApiClient.ParameterToString(options.officeId)); // query parameter
+                if (options.onlyAssignable != null) localVarQueryParams.Add("onlyAssignable", this.ApiClient.ParameterToString(options.onlyAssignable)); // query parameter
+                if (options.onlyEnabled != null) localVarQueryParams.Add("onlyEnabled", this.ApiClient.ParameterToString(options.onlyEnabled)); // query parameter
+                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
+                if (options.startPosition != null) localVarQueryParams.Add("startPosition", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetRoomTemplates", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<RoomTemplatesSummaryList>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (RoomTemplatesSummaryList)this.ApiClient.Deserialize(localVarResponse, typeof(RoomTemplatesSummaryList)));
         }
 
         /// <summary>
@@ -246,6 +311,7 @@ namespace DocuSign.Rooms.Api
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
             }
+
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
