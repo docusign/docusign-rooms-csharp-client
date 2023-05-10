@@ -1,6 +1,17 @@
+################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/rooms-csharp-sdk/v15/.suo
+/.vs
+/test/.vs/SdkTests
+/test/packages
+/test/.vs/config
+/test
 *.[Oo]bj
 *.user
 *.suo
+*.snk
 [Bb]in
 [Oo]bj
 [Dd]ebug
