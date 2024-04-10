@@ -9,18 +9,15 @@
  */
 
 using System;
-using System.Linq;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = DocuSign.Rooms.Client.SwaggerDateConverter;
 
 namespace DocuSign.Rooms.Model
 {
@@ -35,7 +32,7 @@ namespace DocuSign.Rooms.Model
             // Empty Constructor
         }
 
-        /// <summary>
+                /// <summary>
         /// Defines AccessLevel
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]

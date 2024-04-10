@@ -22,14 +22,14 @@ namespace DocuSign.Rooms.Client
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default configuration and base path (https://rooms.docusign.com/restapi).
+        /// with default configuration and base path (https://demo.rooms.docusign.com/restapi).
         /// </summary>
         [Obsolete("ApiClient is now obsolete and will be removed in a future release. Use DocuSignClient() instead.", false)]
         public ApiClient() : base() { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default base path (https://rooms.docusign.com/restapi).
+        /// with default base path (https://demo.rooms.docusign.com/restapi).
         /// </summary>
         /// <param name="configuration">An instance of Configuration.</param>
         [Obsolete("ApiClient is now obsolete and will be removed in a future release. Use DocuSignClient(Configuration) instead.", false)]

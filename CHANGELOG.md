@@ -1,6 +1,23 @@
 # DocuSign Rooms C# Client Changelog
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v2.0.0-rc1] - Rooms API v2-1.1.1 - 2024-04-10
+### Breaking Changes
+- Updated C# SDK dependencies.
+    - Microsoft.CSharp: Version bumped from 4.5.0 to 4.7.0.
+    - Newtonsoft.Json: Version bumped from 13.0.1 to 13.0.3.
+    - System.ComponentModel.Annotations: Version bumped from 4.5.0 to 5.0.0.
+    - Microsoft.IdentityModel.Protocols: Version bumped from 5.4.0 to 7.3.1.
+    - System.IdentityModel.Tokens.Jwt: Version bumped from 5.4.0 to 7.3.1.
+    - BouncyCastle.Cryptography: Version bumped from 2.2.1 to 2.3.0.
+### Changed
+- Updated the SDK release version.
+
+## [v1.4.2] - Rooms API v2-1.1.1 - 2023-12-15
+### Changed
+- Updated the SDK release version.
+- Removed tracked files which are now present in .gitignore.
+
 ## [v1.4.1] - Rooms API v2-1.1.1 - 2023-05-10
 ### Changed
 - Removed support for .NET Framework 4.5.2. Miminum requirement is now .NET Framework 4.6.2
