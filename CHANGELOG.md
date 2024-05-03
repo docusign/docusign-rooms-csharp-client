@@ -1,6 +1,9 @@
 # DocuSign Rooms C# Client Changelog
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v2.0.0-rc2] - Rooms API v2-1.1.1 - 2024-04-29
+### Breaking Changes
+- Updated from System.IdentityModel.Tokens.Jwt to Microsoft.IdentityModel.JsonWebTokens for token handling.
 ## [v2.0.0-rc1] - Rooms API v2-1.1.1 - 2024-04-10
 ### Breaking Changes
 - Updated C# SDK dependencies.
