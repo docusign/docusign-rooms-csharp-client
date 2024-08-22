@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuSign.Rooms", "src\DocuSign.Rooms\DocuSign.Rooms.csproj", "{7F08371E-EF26-4863-A2FE-655AA90E4223}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuSign.Rooms", "src\DocuSign.Rooms\DocuSign.Rooms.csproj", "{6E9EF7AC-3D50-4BA3-936C-A3A3F24B30C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,10 +10,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7F08371E-EF26-4863-A2FE-655AA90E4223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F08371E-EF26-4863-A2FE-655AA90E4223}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F08371E-EF26-4863-A2FE-655AA90E4223}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F08371E-EF26-4863-A2FE-655AA90E4223}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E9EF7AC-3D50-4BA3-936C-A3A3F24B30C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E9EF7AC-3D50-4BA3-936C-A3A3F24B30C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E9EF7AC-3D50-4BA3-936C-A3A3F24B30C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E9EF7AC-3D50-4BA3-936C-A3A3F24B30C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
