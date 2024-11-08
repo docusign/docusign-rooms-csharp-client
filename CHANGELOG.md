@@ -1,6 +1,13 @@
 # DocuSign Rooms C# Client Changelog
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v2.0.1] - Rooms API v2-1.1.1 - 2024-11-07
+### Changed
+- Fixed Deadlock issue with UI Apps (E.g. WinForms).
+- Fixed deserialization issue of text/csv type response
+- Removed the staging base path and OAuth path constant.
+- Updated the SDK release version.
+
 ## [v2.0.0] - Rooms API v2-1.1.1 - 2024-07-30
 ### Changed
 - Added support for version v2-1.1.1 of the DocuSign Rooms API.
